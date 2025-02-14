@@ -41,7 +41,7 @@ const email = process.env.EMAIL;
         console.log(mdString);
         i += 1;
         const mdHead = `# 📕 Section${i}\n`;
-        const content = mdHead + mdString;
+        const content = mdHead + mdString.parent;
         const filePath = `${saveDirectory}/Section${i}.md`;
         
         fs.writeFileSync(filePath, content);
