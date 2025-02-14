@@ -1,9 +1,9 @@
 import os
-from http.client import responses
+from dotenv import load_dotenv
 from tkinter import image_names
-
 import requests
-import json
+
+load_dotenv()
 
 NOTION_TOKEN = os.getenv("NOTION_TOKEN")
 DATABASE_ID = os.getenv("NOTION_DATABASE_ID")
@@ -44,7 +44,7 @@ def download_image(image_url, folder_name):
     image_path = os.path.join(IMAGE_DIR, image_name)
 
     response = requests.get(image_url)
-    if responses.status_code == 200:
+    if response.status_code == 200:
         with open(image_path, "wb") as img_file:
             img_file.write(response.content)
         print(f"✅ 이미지 저장 완료: {image_path}")
@@ -99,20 +99,25 @@ def parse_notion_to_md(notion_data):
     return lectures
 
 def update_readme(lectures):
-    """README.md 파일 업데이트"""
-    with open(README_FILE, "r", encoding="utf-8") as file:
-        content = file.readlines()
+    # README.md 읽기
+    with open("README.md", "r", encoding="utf-8") as f:
+        content = f.read()
 
-    # 기존 섹션을 찾아 대체
-    start_index = content.index("<!-- START NOTION TABLE -->\n") + 1
-    end_index = content.index("<!-- END NOTION TABLE -->\n")
+    pages = fetch_notion_pages()
 
-    updated_content = content[:start_index] + ["\n".join(lectures) + "\n"] + content[end_index:]
+    table_rows = "| 섹션 | 강의 제목 | 완료 여부 |\n|------|---------|--------|\n"
+    for page in pages:
+        title = page["properties"]["Name"]["title"][0]["text"]["content"]
+        status = page["properties"]["Completed"]["checkbox"] if "Completed" in page["properties"] else False
+        status_icon = "✅" if status.lower() == "completed" else "❌"
 
-    with open(README_FILE, "w", encoding="utf-8") as file:
-        file.writelines(updated_content)
+        table_rows += f"| {title} | {status_icon} |\n"
 
-    print("✅ README.md 업데이트 완료!")
+    # 기존 테이블을 찾아 업데이트
+    updated_content = f"|{title}|{status_icon}|"
+    # README.md 다시 저장
+    with open("README.md", "w", encoding="utf-8") as f:
+        f.write(updated_content)
 
 def save_markdown_file(folder_name, filename, content):
     """Markdown 파일 저장"""
@@ -125,7 +130,7 @@ def save_markdown_file(folder_name, filename, content):
     print(f"✅ 저장 완료: {file_path}")
 
 if __name__ == "__main__":
-    pages = fetch_notion_pages()
+    pages = fetch_notion_pages(DATABASE_ID)
 
     for page in pages:
         page_id = page["id"]
