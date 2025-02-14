@@ -39,7 +39,7 @@ jobs:
         run: |
             git config --global user.name "5a6io"
             git config --global user.email "${{ secrets.EMAIL }}"
-            git checkout -b update-notion-content
+            git checkout -b main
             git add notion_page.md
             git commit -m "Automatic Update: Reflect Notion Data"
-            git push origin update-notion-content
+            git push -u origin main
