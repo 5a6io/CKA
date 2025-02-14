@@ -5,7 +5,7 @@ import notion2md from 'notion2md';
 const execSync = require('child_process').execSync;
 
 require('dotenv').config();
-const notion = new Client({auth : process.env.API_TOKEN});
+const notion = new Client({auth : process.env.NOTION_API_TOKEN});
 
 async function getDatabasePages(databaseId) {
     const response = await notion.databases.query({

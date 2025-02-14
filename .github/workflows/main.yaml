@@ -27,7 +27,7 @@ jobs:
       - name: Convert Notion page to Markdown
         env:
           DATABASE_ID: ${{ secrets.DATABASE_ID }}
-          API_TOKEN: ${{ secrets.API_TOKEN }}
+          NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
         run: |
           node convert.js
         
