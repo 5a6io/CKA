@@ -32,7 +32,6 @@ jobs:
       - name: Get Notion Data
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
-          NOTION_PAGE_ID: ${{ secrets.NOTION_PAGE_ID }}
         run: python python_notion_to_md.py
 
       - name: Check if there are any changes
