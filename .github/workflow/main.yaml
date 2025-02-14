@@ -1,0 +1,48 @@
+name: Convert Notion to Markdown
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  schedule:
+    - cron: "0 */4 * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        run: |
+          npm install
+          npn install @notionhq/client notion2md
+
+      - name: Set environment variables
+        env:
+          DATABASE_ID: ${{ secrets.DATABASE_ID }}
+          API_TOKEN: ${{ secrets.API_TOKEN }}
+
+      - name: Convert Notion page to Markdown
+        run: npm start
+        
+      - name: Check if there are any changes
+        id: verify_diff
+        run: |
+          git diff --quiet . || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push the markdown file
+        if: steps.verify_diff.outputs.changed =='true'
+        run: |
+          git config --global user.name '5a6io'
+          git config --global user.email '${{ secrets.EMAIL }}'
+          git add your-file.md
+          git commit -m "Update Notion page to markdown"
+          git push origin main
