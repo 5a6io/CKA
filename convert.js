@@ -50,7 +50,7 @@ const email = process.env.EMAIL;
         execSync('git config --global user.name \'5a6io\'');
         execSync(`git config --global user.email \'${email}\'`);
         const token = process.env.GITHUB_TOKEN;
-        execSync(`git remote set-url origin https://x-access-token:${token}@github.com/CKA.git`, {stdio: 'inherit'});
+        execSync(`git remote set-url origin https://x-access-token:${token}@github.com/5a6io/CKA.git`, {stdio: 'inherit'});
         execSync('git add .', { stdio: 'inherit' });
         execSync('git commit -m "Add markdown files from Notion"', { stdio: 'inherit' });
         execSync('git push -u origin main', { stdio: 'inherit' });  // 또는 main 브랜치 이름을 사용하는 경우
