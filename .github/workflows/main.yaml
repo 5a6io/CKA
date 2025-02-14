@@ -24,16 +24,10 @@ jobs:
           npm ci
           npm install @notionhq/client notion2md
 
-      - name: Set environment variables
+      - name: Convert Notion page to Markdown
         env:
           DATABASE_ID: ${{ secrets.DATABASE_ID }}
           API_TOKEN: ${{ secrets.API_TOKEN }}
-        run: |
-          echo "DATABASE_ID=${{ secrets.DATABASE_ID }}" >> $GITHUB_ENV
-          echo "API_TOKEN=${{ secrets.API_TOKEN }}" >> $GITHUB_ENV
-
-
-      - name: Convert Notion page to Markdown
         run: |
           node convert.js
         
