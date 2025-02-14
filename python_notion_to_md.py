@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 from tkinter import image_names
 import requests
 import re
+import json
 
 load_dotenv()
 
@@ -19,24 +20,23 @@ HEADERS = {
 IMAGE_DIR = "CKA/images"
 
 def fetch_notion_database():
-    url = f"https://api.notion.com/v1/database/{DATABASE_ID}/query"
+    url = f"https://api.notion.com/v1/database/{DATABASE_ID}"
     response = requests.post(url, headers=HEADERS)
 
     if response.status_code != 200:
         print("Error:", response.status_code, response.text)
         return []
 
-    data = response.json()
-    return data.get("results", [])
+    return json.load(response.json())
 
 def fetch_notion_pages(page_id):
-    url = f"https://api.notion.com/v1/blocks/{page_id}/children"
+    url = f"https://api.notion.com/v1/blocks/{page_id}"
     response = requests.get(url, headers=HEADERS)
 
     if response.status_code != 200:
         print(f"Notion 페이지 요청 실패: {response.text}")
 
-    return response.json().get("results", [])
+    return json.load(response.json())
 
 def download_image(image_url, folder_name):
     os.makedirs(IMAGE_DIR, exist_ok=True)
@@ -86,42 +86,27 @@ def convert_to_md(blocks, folder_name):
     return md_content
 
 
-def parse_notion_to_md(notion_data):
-    """Notion 데이터에서 필요한 정보만 추출"""
-    lectures = []
-    for page in notion_data:
-        properties = page.get("properties", {})
-        name = properties.get("Name", {}).get("title", [{}])[0].get("text", {}).get("content", "No Title")
-        url = page.get("url", "#")
-        status = properties.get("Status", {}).get("select", {}).get("name", "Not Started")
-        emoji = "✅" if status == "Completed" else "⏳" if status == "In Progress" else "❌"
-        lectures.append(f"{emoji} [{name}]({url})")
-
-    return lectures
-
 def update_readme():
     # README.md 읽기
-    pages = fetch_notion_pages(DATABASE_ID)
+    pages = fetch_notion_database()
 
+    summary_section = """
+        # 🌟 CKA (Certified Kubernetes Administrator)
+
+        ## ✍🏻 Summarize Lecture
+
+        I summarized the lecture with watching videos on 'Certified Kubernetes Administrator(CKA) with Practice Test'.
+        """
     table_rows = "| Section | Done |\n|:------|:--------:|\n"
     for page in pages:
-        title = page["properties"]["Name"]["title"][0]["text"]["content"]
-        status = page["properties"]["Completed"]["checkbox"] if "Completed" in page["properties"] else False
-        status_icon = "✅" if status.lower() == "completed" else "❌"
+        title = page["properties"]["Name"]
+        status = page["properties"]["checkbox"]
+        status_icon = "✅" if status == True else "❌"
 
         table_rows += f"| {title} | {status_icon} |\n"
 
-
-    summary_section = """
-    # 🌟 CKA (Certified Kubernetes Administrator)
-
-    ## ✍🏻 Summarize Lecture
-
-    I summarized the lecture with watching videos on 'Certified Kubernetes Administrator(CKA) with Practice Test'.
-    """
-
     # 기존 테이블을 찾아 업데이트
-    updated_content = summary_section + re.sub(f"|{title}|{status_icon}|")
+    updated_content = summary_section + table_rows
     # README.md 다시 저장
     with open("README.md", "w", encoding="utf-8") as f:
         f.write(updated_content)
@@ -137,17 +122,16 @@ def save_markdown_file(folder_name, filename, content):
     print(f"✅ 저장 완료: {file_path}")
 
 if __name__ == "__main__":
-    pages = fetch_notion_pages(DATABASE_ID)
-
     update_readme()
 
+    pages = fetch_notion_database()
     for page in pages:
         page_id = page["id"]
-        title = page["properties"]["Name"]["title"][0]["text"]["content"]
+        title = page["Name"]
         folder_name = f"CKA/{title.replace(' ', '_')}"  # 폴더명 설정
         filename = f"{title.replace(' ', '_')}.md"  # 파일명 설정
 
         blocks = fetch_notion_pages(page_id)
         if blocks:
-            md_content = parse_notion_to_md(blocks, folder_name)
+            md_content = convert_to_md(blocks, folder_name)
             save_markdown_file(folder_name, filename, md_content)
