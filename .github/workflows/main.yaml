@@ -22,7 +22,8 @@ jobs:
       - name: Install dependencies
         run: |
           npm init -y
-          npm install @notionhq/client notion2md
+          npm install @notionhq/client
+          npm install notion-to-md
 
       - name: Convert Notion page to Markdown
         env:
@@ -43,6 +44,6 @@ jobs:
         run: |
           git config --global user.name '5a6io'
           git config --global user.email '${{ secrets.EMAIL }}'
-          git add your-file.md
+          git add .
           git commit -m "Update Notion page to markdown"
           git push origin main
