@@ -22,7 +22,7 @@ jobs:
       - name: Install dependencies
         run: |
           npm ci
-          npm install @notionhq/client notion2md
+          npm install @notion-sdk/client notion2md
 
       - name: Convert Notion page to Markdown
         env:

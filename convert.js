@@ -1,11 +1,11 @@
 import { writeFileSync } from 'node:fs';
-import { Client } from '@notionhq/client';
+import { Client } from '@notion-sdk/client';
 import { execSync } from 'child_process';
 import notion2md from 'notion2md';
 import dotenv from 'dotenv';
 
 dotenv.config();
-const notion = new Client({auth : process.env.NOTION_API_TOKEN});
+const notion = new Client({auth : process.env.NOTION_API_KEY});
 
 async function getDatabasePages(databaseId) {
     const response = await notion.databases.query({
