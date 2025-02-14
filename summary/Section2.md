@@ -1,2 +1,2 @@
 # 📕 Section2
-[object Object]
+undefined
