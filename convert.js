@@ -11,11 +11,11 @@ const n2m = new NotionToMarkdown({
         seperateChildPage: true,
     }
 });
-const databaseId = process.env.DATABASE_ID;
+const pageId = process.env.NOTION_PAGE_ID;
 
   
 (async () => {
-    const mdblocks = await n2m.pageToMarkdown("target_page_id");
+    const mdblocks = await n2m.pageToMarkdown(pageId);
     const mdString = n2m.toMarkdownString(mdblocks);
     
     console.log(mdString);
