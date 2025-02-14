@@ -1,9 +1,14 @@
 name: Sync Notion to Github
 
 on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
   schedule:
-    - cron: "0 23 * * *"
-  workflow_dispatch:
+    - cron: "0 23 * * *" # 매일 오후 11시 실행
 
 jobs:
   sync-notion:
