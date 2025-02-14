@@ -22,6 +22,7 @@ jobs:
       - name: Install dependencies
         run: |
           npm init -y
+          npm install dotenv
           npm install @notionhq/client
           npm install notion-to-md
 
