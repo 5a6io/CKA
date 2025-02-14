@@ -2,6 +2,7 @@ import os
 from dotenv import load_dotenv
 from tkinter import image_names
 import requests
+import re
 
 load_dotenv()
 
@@ -100,9 +101,7 @@ def parse_notion_to_md(notion_data):
 
 def update_readme():
     # README.md 읽기
-    with open("README.md", "r", encoding="utf-8") as f:
-
-    pages = fetch_notion_pages()
+    pages = fetch_notion_pages(DATABASE_ID)
 
     table_rows = "| Section | Done |\n|:------|:--------:|\n"
     for page in pages:
