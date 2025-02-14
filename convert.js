@@ -19,14 +19,28 @@ const databaseId = process.env.DATABASE_ID;
         database_id: databaseId,
       });
 
-      const pages = response.results.map(page => page.id);
+      const saveDirectory = './summary';
 
+      if (!fs.existsSync(saveDirectory)){
+        fs.mkdirSync(saveDirectory);
+        console.log(`디렉토리 "${saveDirectory}"가 생성되었습니다.`);
+      }
+
+      const pages = response.results.map(page => page.id);
+      let i = 0
       for (const pageId of pages){
         const mdblocks = await n2m.pageToMarkdown(pageId);
         const mdString = n2m.toMarkdownString(mdblocks);
         console.log(mdString);
+        i += 1;
+        const mdHead = `# 📕 Section${i}\n`;
+        const content = mdHead + mdString;
+        const filePath = `${saveDirectory}/Section${i}.md`;
+        
+        fs.writeFileSync(filePath, content);
+        console.log(`파일 ${filePath}이 저장되었습니다.`)
       }
     } catch (error){
-        console.error("데이터베이스에서 페이지를 가져오는 중 오류 발생:", error);
+        console.error("다음과 같은 오류 발생:", error);
     }
 })();
