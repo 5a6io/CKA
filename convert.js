@@ -11,12 +11,22 @@ const n2m = new NotionToMarkdown({
         seperateChildPage: true,
     }
 });
-const pageId = process.env.NOTION_PAGE_ID;
-
+const databaseId = process.env.DATABASE_ID;
   
 (async () => {
-    const mdblocks = await n2m.pageToMarkdown(pageId);
-    const mdString = n2m.toMarkdownString(mdblocks);
-    
-    console.log(mdString);
+    try {
+        const response = await notion.databases.query({
+        database_id: databaseId,
+      });
+
+      const pages = response.results.map(page => page.id);
+
+      for (const pageId of pages){
+        const mdblocks = await n2m.pageToMarkdown(pageId);
+        const mdString = n2m.toMarkdownString(mdblocks);
+        console.log(mdString);
+      }
+    } catch (error){
+        console.error("데이터베이스에서 페이지를 가져오는 중 오류 발생:", error);
+    }
 })();
