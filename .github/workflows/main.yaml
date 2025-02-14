@@ -22,7 +22,7 @@ jobs:
       - name: Install dependencies
         run: |
           npm ci
-          npn install @notionhq/client notion2md
+          npm install @notionhq/client notion2md
 
       - name: Set environment variables
         env:
