@@ -98,14 +98,13 @@ def parse_notion_to_md(notion_data):
 
     return lectures
 
-def update_readme(lectures):
+def update_readme():
     # README.md 읽기
     with open("README.md", "r", encoding="utf-8") as f:
-        content = f.read()
 
     pages = fetch_notion_pages()
 
-    table_rows = "| 섹션 | 강의 제목 | 완료 여부 |\n|------|---------|--------|\n"
+    table_rows = "| Section | Done |\n|:------|:--------:|\n"
     for page in pages:
         title = page["properties"]["Name"]["title"][0]["text"]["content"]
         status = page["properties"]["Completed"]["checkbox"] if "Completed" in page["properties"] else False
@@ -113,8 +112,17 @@ def update_readme(lectures):
 
         table_rows += f"| {title} | {status_icon} |\n"
 
+
+    summary_section = """
+    # 🌟 CKA (Certified Kubernetes Administrator)
+
+    ## ✍🏻 Summarize Lecture
+
+    I summarized the lecture with watching videos on 'Certified Kubernetes Administrator(CKA) with Practice Test'.
+    """
+
     # 기존 테이블을 찾아 업데이트
-    updated_content = f"|{title}|{status_icon}|"
+    updated_content = summary_section + re.sub(f"|{title}|{status_icon}|")
     # README.md 다시 저장
     with open("README.md", "w", encoding="utf-8") as f:
         f.write(updated_content)
@@ -131,6 +139,8 @@ def save_markdown_file(folder_name, filename, content):
 
 if __name__ == "__main__":
     pages = fetch_notion_pages(DATABASE_ID)
+
+    update_readme()
 
     for page in pages:
         page_id = page["id"]
