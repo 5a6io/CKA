@@ -28,6 +28,7 @@ jobs:
         env:
           DATABASE_ID: ${{ secrets.DATABASE_ID }}
           NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+          NOTION2MD_FILE_NAME: ${{ secrets.NOTION2MD_FILE_NAME }}
         run: |
           node convert.js
         
