@@ -35,13 +35,13 @@ jobs:
         run: |
           node convert.js
         
-      # - name: Check if there are any changes
-      #   id: verify_diff
-      #   run: |
-      #     git diff --quiet . || echo "changed=true" >> $GITHUB_OUTPUT
+      - name: Check if there are any changes
+        id: verify_diff
+        run: |
+          git diff --quiet . || echo "changed=true" >> $GITHUB_OUTPUT
 
       - name: Commit and push the markdown file
-        # if: steps.verify_diff.outputs.changed =='true'
+        if: steps.verify_diff.outputs.changed =='true'
         run: |
           git config --global user.name '5a6io'
           git config --global user.email '${{ secrets.EMAIL }}'
