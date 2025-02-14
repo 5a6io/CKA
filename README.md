@@ -1,4 +1,4 @@
-# 🌟CKA
+# 🌟CKA(Certified Kubernetes Administrator)
 
 ## ✍🏻Summarize Lecture
 
