@@ -1,7 +1,7 @@
 import { writeFileSync } from 'node:fs';
 import { Client } from '@notionhq/client';
+import notion2md from 'notion2md';
 
-const notion2md = require('notion2md');
 const execSync = require('child_process').execSync;
 
 require('dotenv').config();
