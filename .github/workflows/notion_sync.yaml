@@ -33,9 +33,7 @@ jobs:
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           NOTION_PAGE_ID: ${{ secrets.NOTION_PAGE_ID }}
-        run: |
-            ls CKA/scripts
-            python notion_to_md.py
+        run: python python_notion_to_md.py
 
       - name: Check if there are any changes
         id: verify_diff
