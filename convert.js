@@ -1,6 +1,6 @@
 import { writeFileSync } from 'node:fs';
+import { Client } from '@notionhq/client';
 
-const { Client } = require('@notionhq/client');
 const notion2md = require('notion2md');
 const execSync = require('child_process').execSync;
 
