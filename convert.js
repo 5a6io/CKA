@@ -1,10 +1,9 @@
-import fs from 'fs';
-import { Client } from '@notionhq/client';
-import { execSync } from 'child_process';
-import { NotionToMarkdown } from 'notion-to-md';
-import dotenv from 'dotenv';
+const fs = require('fs');
+const { Client } = require('@notionhq/client');
+const execSync = require('child_process').execSync;
+const { NotionToMarkdown } = require('notion-to-md');
 
-dotenv.config();
+require('dotenv').config();
 const notion = new Client({auth : process.env.NOTION_API_KEY});
 const n2m = new NotionToMarkdown({ 
     notionClient: notion,
