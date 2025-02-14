@@ -13,7 +13,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -29,6 +28,10 @@ jobs:
         env:
           DATABASE_ID: ${{ secrets.DATABASE_ID }}
           API_TOKEN: ${{ secrets.API_TOKEN }}
+        run: |
+          echo "DATABASE_ID=${{ secrets.DATABASE_ID }}" >> $GITHUB_ENV
+          echo "API_TOKEN=${{ secrets.API_TOKEN }}" >> $GITHUB_ENV
+
 
       - name: Convert Notion page to Markdown
         run: |
