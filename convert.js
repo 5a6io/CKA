@@ -1,10 +1,9 @@
-import { writeFileSync } from 'node:fs';
-import { Client } from '@notion-sdk/client';
-import { execSync } from 'child_process';
-import notion2md from 'notion2md';
-import dotenv from 'dotenv';
+const fs = require('fs');
+const { Client } = require('@notionhq/client');
+const execSync = require('child_process').execSync;
+const notion2md = require('notion2md');
 
-dotenv.config();
+require('dotenv').config();
 const notion = new Client({auth : process.env.NOTION_API_KEY});
 
 async function getDatabasePages(databaseId) {
@@ -40,7 +39,7 @@ const pages = await getDatabasePages(databaseId);
       const markdownContent = await convertNotionPageToMD(pageId);
   
       if (markdownContent) {
-        writeFileSync(`./markdown_pages/${pageTitle}.md`, markdownContent);
+        fs.writeFileSync(`./markdown_pages/${pageTitle}.md`, markdownContent);
       }
     }
   
