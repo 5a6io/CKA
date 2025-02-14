@@ -20,7 +20,7 @@ HEADERS = {
 IMAGE_DIR = "CKA/images"
 
 def fetch_notion_database():
-    url = f"https://api.notion.com/v1/database/{DATABASE_ID}"
+    url = f"https://api.notion.com/v1/database/{DATABASE_ID}/query"
     response = requests.post(url, headers=HEADERS)
 
     if response.status_code != 200:
