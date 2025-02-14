@@ -48,4 +48,4 @@ const pages = await getDatabasePages(databaseId);
   
 // 실행: 데이터베이스 ID를 입력하세요
 const databaseId = process.env.DATABASE_ID; // 여기에 데이터베이스 ID 입력
-convertDatabaseToMarkdown(databaseId).then(() => uploadToGitHub());
+convertDatabaseToMarkdown(databaseId);
