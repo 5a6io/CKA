@@ -33,7 +33,7 @@ jobs:
           NOTION2MD_FILE_NAME: ${{ secrets.NOTION2MD_FILE_NAME }}
           NOTION_PAGE_ID: ${{ secrets.NOTION_PAGE_ID }}
         run: |
-          node convert.js
+          node --trace-deprecation convert.js
         
       - name: Check if there are any changes
         id: verify_diff
