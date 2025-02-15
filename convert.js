@@ -45,11 +45,9 @@ const databaseId = process.env.DATABASE_ID;
       console.log(pages);
 
       for (let page of pages){
-        const pageId = page.pageId;
-        const name = page.name;
-        const mdblocks = await n2m.pageToMarkdown(pageId);
+        const mdblocks = await n2m.pageToMarkdown(page.pageId);
         const mdString = n2m.toMarkdownString(mdblocks);
-        const filePath = `${saveDirectory}/${name}.md`;
+        const filePath = `${saveDirectory}/${page.name}.md`;
         let mdContent = mdString.parent;
         
         fs.writeFileSync(filePath, mdContent);

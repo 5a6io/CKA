@@ -1,13 +1,9 @@
 const fs = require('fs');
 const { Client } = require('@notionhq/client');
 const execSync = require('child_process').execSync;
-const { NotionToMarkdown } = require('notion-to-md');
 
 require('dotenv').config();
 const notion = new Client({auth : process.env.NOTION_API_KEY});
-const n2m = new NotionToMarkdown({ 
-    notionClient: notion
-});
 const databaseId = process.env.DATABASE_ID;
   
 (async () => {
@@ -23,10 +19,18 @@ const databaseId = process.env.DATABASE_ID;
       });
 
       let mdContent = `# 🌟CKA(Certified Kubernetes Administrator)\n
-      ## ✍🏻Summarize Lecture\n
-      I summarized the lecture with watching videos on 'Certified Kubernetes Administrator(CKA) with Practice Test.\n
-      |**Section**|**:black_square_button:**|\n
-      |:----------|:------:|\n`;
+      ## ✍🏻Summarize Lecture
+      I summarized the lecture with watching videos on 'Certified Kubernetes Administrator(CKA) with Practice Test.
+      
+      <table>
+      <thead>
+        <tr>
+            <th>Section</th>
+            <th>:black_square_button:</th>
+        </tr>
+      </thead>
+      <tbody>
+      `;
 
       const pages = response.results.map(page => {
         const name = page.properties?.Name?.title?.[0]?.text?.content;
@@ -38,12 +42,11 @@ const databaseId = process.env.DATABASE_ID;
         };
       });
 
-      console.log(pages);
-
       for (let page of pages){
-        mdContent += `|${page.name}|`;
-        mdContent += (page.checkbox == true) ? `:white_check_mark:|\n` : `|\n`;
+        mdContent += `<tr><td>${page.name}</td>`;
+        mdContent += (page.checkbox == true) ? `<td>:white_check_mark:</td></tr>` : `<td></td></tr>`;
       }
+      mdContent += `</tbody></table>`;
       
       fs.writeFileSync("README.md", mdContent);
     } catch (error){
