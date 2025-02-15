@@ -19,6 +19,7 @@ const databaseId = process.env.DATABASE_ID;
 
     let mdContent = `# 🌟CKA(Certified Kubernetes Administrator)
 
+
     ✍🏻I summarized the lecture with watching videos on 'Certified Kubernetes Administrator(CKA) with Practice Test.
       
     `;
@@ -42,7 +43,7 @@ const databaseId = process.env.DATABASE_ID;
 
     mdContent += `</tbody></table>`;
       
-    fs.writeFileSync("README.md", mdContent, "utf8", (e) => {
+    fs.writeFileSync("README.md", mdContent, "utf-8", (e) => {
         console.log(e);
     });
 })();
