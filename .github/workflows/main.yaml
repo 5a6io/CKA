@@ -43,6 +43,7 @@ jobs:
         run: |
           git config --global user.name '5a6io'
           git config --global user.email '${{ secrets.EMAIL }}'
-          git add README.md ./summary
+          git status
+          git add README.md summary
           git commit -m "Update Notion page to markdown"
           git push -u origin main
