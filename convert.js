@@ -6,7 +6,7 @@ import { writeFileSync } from 'node:fs';
 import dotenv from 'dotenv';
 
 dotenv.config();
-const notion = new Client({auth : "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"});
+const notion = new Client({auth : process.env.NOTION_API_KEY});
 const n2m = new NotionToMarkdown({ 
     notionClient: notion,
     config: {
