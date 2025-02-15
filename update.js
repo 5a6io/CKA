@@ -44,7 +44,7 @@ const databaseId = process.env.DATABASE_ID;
 
       for (let page of pages){
         mdContent += `<tr><td>${page.name}</td>`;
-        mdContent += (page.checkbox == true) ? `<td>:white_check_mark:</td></tr>` : `<td></td></tr>`;
+        mdContent += (page.checkbox == true) ? `<td><p>U+2705</p></td></tr>` : `<td></td></tr>`;
       }
       mdContent += `</tbody></table>`;
       
