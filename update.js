@@ -39,13 +39,10 @@ const databaseId = process.env.DATABASE_ID;
 
     for (let page of pages){
         mdContent += `|${page.name}|`;
-        mdContent += (page.checkbox == true) ? `|:ballot_box_with_check:|
-        ` : `||
+        mdContent += (page.checkbox == true) ? `:ballot_box_with_check:|
+        ` : `|
         `;
     }
-    mdContent += `
-    </tbody>
-    </table>`;
       
     fs.writeFileSync("README.md", mdContent, "utf8", (e) => {
         console.log(e);
