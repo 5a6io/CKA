@@ -22,23 +22,20 @@ const databaseId = process.env.DATABASE_ID;
         ],
       });
 
-      const property = response.results.map(page => page.properties);
-      console.log(property);
-
       const mdContent = `# 🌟CKA(Certified Kubernetes Administrator)\n
       ## ✍🏻Summarize Lecture\n
       I summarized the lecture with watching videos on 'Certified Kubernetes Administrator(CKA) with Practice Test.\n
       |**Section**|**:black_square_button:**|\n
       |:----------|:------:|\n`;
-      const pages = response.results.map(page => ({
-        name: page.properties.Name.title[0].text.content,
-        checkbox: page.properties
-    }));
-      for (let i=0; i < pages.length; i++){
-        const name = pages.name;
-        const checkbox = pages.checkbox[i].checkbox;
-        mdContent += `|${name}|`;
-        mdContent += (checkbox == true) ? `:white_check_mark:|\n` : `|\n`;
+      const pages = response.results.map(page => page.id);
+      for (let pageId of pages){
+        const res = await notion.pages.retrieve({ page_id: pageId });
+        const info = res.results.map(page => ({
+            name: page.properties.Name.title[0].tesxt.content,
+            checkbox: page.properties.checkbox.checkbox
+        }));
+        mdContent += `|${info.name}|`;
+        mdContent += (info.checkbox == true) ? `:white_check_mark:|\n` : `|\n`;
       }
       
       fs.writeFileSync("README.md", mdContent);
