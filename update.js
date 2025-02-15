@@ -27,10 +27,6 @@ const databaseId = process.env.DATABASE_ID;
       I summarized the lecture with watching videos on 'Certified Kubernetes Administrator(CKA) with Practice Test.\n
       |**Section**|**:black_square_button:**|\n
       |:----------|:------:|\n`;
-      const names = response.results.map(page => {
-        const title = Object.values(page.properties).find(property => property.Name);
-        return title?.title?.[0].text.content || "Untitled";
-    });
 
     console.log(names);
       const properties = response.results.map(page => page.properties);
@@ -38,6 +34,8 @@ const databaseId = process.env.DATABASE_ID;
         name: property.Name.title?.[0].text.content,
         checkbox: property.Checkbox.checkbox
      }))
+
+     console.log(info);
 
       for (let i of info){
         mdContent += `|${i.name}|`;
