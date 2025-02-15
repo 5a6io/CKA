@@ -27,15 +27,14 @@ const databaseId = process.env.DATABASE_ID;
       I summarized the lecture with watching videos on 'Certified Kubernetes Administrator(CKA) with Practice Test.\n
       |**Section**|**:black_square_button:**|\n
       |:----------|:------:|\n`;
-      const pages = response.results.map(page => page.id);
-      for (let pageId of pages){
-        const res = await notion.pages.retrieve({ page_id: pageId });
-        const info = res.results.map(page => ({
-            name: page.properties.Name.title[0].tesxt.content,
-            checkbox: page.properties.checkbox.checkbox
-        }));
-        mdContent += `|${info.name}|`;
-        mdContent += (info.checkbox == true) ? `:white_check_mark:|\n` : `|\n`;
+      const properties = response.results.map(page => ({
+        properties: page.properties
+    }));
+      for (let property of properties){
+        const name = property.Name.title[0].text.context;
+        const checkbox = property.Checkbox.checkbox;
+        mdContent += `|${name}|`;
+        mdContent += (checkbox == true) ? `:white_check_mark:|\n` : `|\n`;
       }
       
       fs.writeFileSync("README.md", mdContent);
