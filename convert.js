@@ -42,7 +42,7 @@ const databaseId = process.env.DATABASE_ID;
         const mdblocks = await n2m.pageToMarkdown(pageId);
         const mdString = n2m.toMarkdownString(mdblocks);
         const filePath = `${saveDirectory}/${name}.md`;
-        const mdContent = mdString.parent;
+        let mdContent = mdString.parent;
         
         fs.writeFileSync(filePath, mdContent);
         console.log(`파일 ${filePath}이 저장되었습니다.`)
