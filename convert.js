@@ -1,7 +1,7 @@
 import { Client } from '@notionhq/client';
 import { NotionToMarkdown } from 'notion-to-md';
 import { writeFileSync } from 'node:fs';
-import {dotenv} from 'dotenv';
+import { dotenv } from 'dotenv';
 
 dotenv.config();
 const notion = new Client({auth : "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"});

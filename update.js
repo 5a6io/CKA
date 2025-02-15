@@ -1,6 +1,6 @@
 import { Client } from '@notionhq/client';
 import { writeFileSync } from 'node:fs';
-import {dotenv} from 'dotenv';
+import { dotenv } from 'dotenv';
 
 dotenv.config();
 const notion = new Client({auth : process.env.NOTION_API_KEY});
