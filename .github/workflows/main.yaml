@@ -33,13 +33,13 @@ jobs:
         run: |
           node --trace-deprecation update.js
 
-      - name: Convert Notion page to Markdown
-        env:
-          DATABASE_ID: ${{ secrets.DATABASE_ID }}
-          NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
-          NOTION_PAGE_ID: ${{ secrets.NOTION_PAGE_ID }}
-        run: |
-          node --trace-deprecation convert.js
+      # - name: Convert Notion page to Markdown
+      #   env:
+      #     DATABASE_ID: ${{ secrets.DATABASE_ID }}
+      #     NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+      #     NOTION_PAGE_ID: ${{ secrets.NOTION_PAGE_ID }}
+      #   run: |
+      #     node --trace-deprecation convert.js
         
       - name: Check if there are any changes
         id: verify_diff
