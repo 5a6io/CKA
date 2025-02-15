@@ -49,7 +49,7 @@ const databaseId = process.env.DATABASE_ID;
         const name = page.name;
         let parts = name.split(":");
         const filePath = `${saveDirectory}/${parts[0]}-${parts[1]}.md`;
-        const mdHead = `# ${page.name}\n`
+        const mdHead = `# 📕 ${page.name}\n`
         const mdContent = mdHead+ mdString.parent;
         
         writeFileSync(filePath, mdContent, "utf8");
