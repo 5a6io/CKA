@@ -31,7 +31,7 @@ jobs:
           NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
           NOTION_PAGE_ID: ${{ secrets.NOTION_PAGE_ID }}
         run: |
-          node index.js
+          node --trace-deprecation index.js
 
       - name: Convert Notion page to Markdown
         env:
@@ -39,7 +39,7 @@ jobs:
           NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
           NOTION_PAGE_ID: ${{ secrets.NOTION_PAGE_ID }}
         run: |
-          node convert.js
+          node --trace-deprecation convert.js
         
       - name: Check if there are any changes
         id: verify_diff
