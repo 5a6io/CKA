@@ -50,7 +50,7 @@ const databaseId = process.env.DATABASE_ID;
         const filePath = `${saveDirectory}/${page.name}.md`;
         let mdContent = mdString.parent;
         
-        fs.writeFileSync(filePath, mdContent);
+        fs.writeFileSync(filePath, mdContent, "utf8");
         console.log(`파일 ${filePath}이 저장되었습니다.`)
       }
     } catch (error){

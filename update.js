@@ -48,7 +48,7 @@ const databaseId = process.env.DATABASE_ID;
       }
       mdContent += `</tbody></table>`;
       
-      fs.writeFileSync("README.md", mdContent);
+      fs.writeFileSync("README.md", mdContent, "utf8");
     } catch (error){
         console.error("다음과 같은 오류 발생:", error);
     }
