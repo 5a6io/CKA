@@ -25,6 +25,8 @@ const databaseId = process.env.DATABASE_ID;
         ],
       });
 
+      console.log(response);
+
       const saveDirectory = './summary';
 
       if (!fs.existsSync(saveDirectory)){
@@ -38,8 +40,9 @@ const databaseId = process.env.DATABASE_ID;
         const mdblocks = await n2m.pageToMarkdown(id);
         const mdString = n2m.toMarkdownString(mdblocks);
         const filePath = `${saveDirectory}/${name}.md`;
+        const mdContent = mdString.parent;
         
-        fs.writeFileSync(filePath, mdString.parent);
+        fs.writeFileSync(filePath, mdContent);
         console.log(`파일 ${filePath}이 저장되었습니다.`)
       }
     } catch (error){

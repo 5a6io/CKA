@@ -31,7 +31,7 @@ jobs:
           NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
           NOTION_PAGE_ID: ${{ secrets.NOTION_PAGE_ID }}
         run: |
-          node --trace-deprecation index.js
+          node --trace-deprecation update.js
 
       - name: Convert Notion page to Markdown
         env:

@@ -22,6 +22,8 @@ const databaseId = process.env.DATABASE_ID;
         ],
       });
 
+      console.log(response);
+
       const mdContent = `# 🌟CKA(Certified Kubernetes Administrator)\n
       ## ✍🏻Summarize Lecture\n
       I summarized the lecture with watching videos on 'Certified Kubernetes Administrator(CKA) with Practice Test.\n
@@ -29,14 +31,12 @@ const databaseId = process.env.DATABASE_ID;
       |:----------|:------:|\n`;
       const pages = response.results.map(page => ({name: page.name, checkbox: page.checkbox}));
       for (let i = 0; i < pages.length; i++){
-        let { name, checkbox } = pages[i]
+        let { name, checkbox } = pages[i];
         mdContent += `|${name}|`;
-        if (checkbox == true)
-            mdContent += `:white_check_mark:|\n`;
-        else mdContent += `|\n`;
-        
-        fs.writeFileSync("README.md", mdContent);
+        mdContent += (checkbox == true) ? `:white_check_mark:|\n` : `|\n`;
       }
+      
+      fs.writeFileSync("README.md", mdContent);
     } catch (error){
         console.error("다음과 같은 오류 발생:", error);
     }
