@@ -32,10 +32,11 @@ const databaseId = process.env.DATABASE_ID;
       |:----------|:------:|\n`;
       const pages = response.results.map(page => ({
         name: page.properties.Name.title[0].text.content,
-        checkbox: page.properties.checkbox
+        checkbox: page.properties
     }));
       for (let i=0; i < pages.length; i++){
-        let { name, checkbox } = pages[i];
+        const name = pages.name;
+        const checkbox = pages.checkbox[i].checkbox;
         mdContent += `|${name}|`;
         mdContent += (checkbox == true) ? `:white_check_mark:|\n` : `|\n`;
       }

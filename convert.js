@@ -37,7 +37,8 @@ const databaseId = process.env.DATABASE_ID;
         name: page.properties.Name.title[0].text.content
        }));
       for (let i=0; i < pages.length; i++){
-        let { pageId, name } = pages[i];
+        const pageId = pages[i].pageId;
+        const name = pages[i].name;
         const mdblocks = await n2m.pageToMarkdown(pageId);
         const mdString = n2m.toMarkdownString(mdblocks);
         const filePath = `${saveDirectory}/${name}.md`;
