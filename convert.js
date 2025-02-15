@@ -42,14 +42,13 @@ const databaseId = process.env.DATABASE_ID;
         };
       });
 
-      console.log(pages);
-
       for (let page of pages){
         const mdblocks = await n2m.pageToMarkdown(page.pageId);
         const mdString = n2m.toMarkdownString(mdblocks);
         const filePath = `${saveDirectory}/${page.name}.md`;
         let mdContent = mdString.parent;
         
+        console.log(mdString);
         fs.writeFileSync(filePath, mdContent, "utf8");
         console.log(`파일 ${filePath}이 저장되었습니다.`)
       }
