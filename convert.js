@@ -1,6 +1,6 @@
 import { Client } from '@notionhq/client';
 import { NotionToMarkdown } from 'notion-to-md';
-import { writeFileSync } from 'node:fs';
+import fs from 'fs';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -48,7 +48,7 @@ const databaseId = process.env.DATABASE_ID;
         const mdContent = ``+ mdString.parent;
         
         console.log(mdString);
-        writeFileSync(filePath, mdContent, "utf8");
+        fs.writeFileSync(filePath, mdContent, "utf8");
         console.log(`파일 ${filePath}이 저장되었습니다.`)
       }
     } catch (error){
