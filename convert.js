@@ -1,9 +1,9 @@
-const fs = require('fs');
-const { Client } = require('@notionhq/client');
-const execSync = require('child_process').execSync;
-const { NotionToMarkdown } = require('notion-to-md');
+import { Client } from '@notionhq/client';
+import { NotionToMarkdown } from 'notion-to-md';
+import { writeFileSync } from 'node:fs';
+import {dotenv} from 'dotenv';
 
-require('dotenv').config();
+dotenv.config();
 const notion = new Client({auth : "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"});
 const n2m = new NotionToMarkdown({ 
     notionClient: notion,
@@ -49,7 +49,7 @@ const databaseId = process.env.DATABASE_ID;
         let mdContent = mdString.parent;
         
         console.log(mdString);
-        fs.writeFileSync(filePath, mdContent, "utf8");
+        writeFileSync(filePath, mdContent, "utf8");
         console.log(`파일 ${filePath}이 저장되었습니다.`)
       }
     } catch (error){

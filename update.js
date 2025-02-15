@@ -1,8 +1,8 @@
-const fs = require('fs');
-const { Client } = require('@notionhq/client');
-const execSync = require('child_process').execSync;
+import { Client } from '@notionhq/client';
+import { writeFileSync } from 'node:fs';
+import {dotenv} from 'dotenv';
 
-require('dotenv').config();
+dotenv.config();
 const notion = new Client({auth : process.env.NOTION_API_KEY});
 const databaseId = process.env.DATABASE_ID;
   
@@ -19,9 +19,9 @@ const databaseId = process.env.DATABASE_ID;
 
     let mdContent = `# 🌟CKA(Certified Kubernetes Administrator)
 
-    <p>✍🏻I summarized the lecture with watching videos on 'Certified Kubernetes Administrator(CKA) with Practice Test.</p>
+    ✍🏻I summarized the lecture with watching videos on 'Certified Kubernetes Administrator(CKA) with Practice Test.
 
-    
+
 
     `;
 
@@ -44,7 +44,7 @@ const databaseId = process.env.DATABASE_ID;
 
     mdContent += `</tbody></table>`;
       
-    fs.writeFileSync("README.md", mdContent, "utf-8", (e) => {
+    writeFileSync("README.md", mdContent, "utf8", (e) => {
         console.log(e);
     });
 })();
