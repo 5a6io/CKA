@@ -8,7 +8,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: "0 */4 * * *"
+    - cron: "0 */4 * * *" # 4시간마다 수행
 
 jobs:
   build:
@@ -23,15 +23,17 @@ jobs:
         run: |
           npm init -y
           npm install dotenv
-          npm install @notionhq/client
           npm install notion-to-md
 
-      - name: Convert Notion page to Markdown
+      - name: Update README
         env:
           DATABASE_ID: ${{ secrets.DATABASE_ID }}
           NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
-          EMAIL: ${{ secrets.EMAIL }}
           NOTION_PAGE_ID: ${{ secrets.NOTION_PAGE_ID }}
+        run: |
+          node index.js
+
+      - name: Convert Notion page to Markdown
         run: |
           node convert.js
         

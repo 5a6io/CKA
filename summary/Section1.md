@@ -1,2 +1,0 @@
-# 📕 Section1
-undefined
