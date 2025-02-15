@@ -19,12 +19,8 @@ const databaseId = process.env.DATABASE_ID;
 
     let mdContent = `# 🌟CKA(Certified Kubernetes Administrator)
 
-    ## ✍🏻Summarize Lecture
-
-    I summarized the lecture with watching videos on 'Certified Kubernetes Administrator(CKA) with Practice Test.
+    ✍🏻I summarized the lecture with watching videos on 'Certified Kubernetes Administrator(CKA) with Practice Test.
       
-    |Section|black_square_button:|
-    |:------|:------------------:|
     `;
 
     const pages = response.results.map(page => {
@@ -37,12 +33,14 @@ const databaseId = process.env.DATABASE_ID;
         };
     });
 
+    mdContent += `<table><thead><tr><th>Section</th><th>Checkbox</th></tr></thead><tbody>`
+
     for (let page of pages){
-        mdContent += `|${page.name}|`;
-        mdContent += (page.checkbox == true) ? `:ballot_box_with_check:|
-        ` : `|
-        `;
+        mdContent += `<tr><td>${page.name}</td>`;
+        mdContent += (page.checkbox == true) ? `<td>:ballot_box_with_check:</td></tr>` : `<td></td></tr>`;
     }
+
+    mdContent += `</tbody></table>`;
       
     fs.writeFileSync("README.md", mdContent, "utf8", (e) => {
         console.log(e);
