@@ -17,10 +17,10 @@ const databaseId = process.env.DATABASE_ID;
         ],
     });
 
-    let mdContent = `# 🌟CKA(Certified Kubernetes Administrator)
-
-    ✍🏻I summarized the lecture with watching videos on 'Certified Kubernetes Administrator(CKA) with Practice Test.
-
+    let mdContent = `# 🌟CKA(Certified Kubernetes Administrator)\n
+    \n
+    ✍🏻I summarized the lecture with watching videos on 'Certified Kubernetes Administrator(CKA) with Practice Test.\n
+    \n
     `;
 
     const pages = response.results.map(page => {
@@ -33,14 +33,14 @@ const databaseId = process.env.DATABASE_ID;
         };
     });
 
-    mdContent += `<table><thead><tr><th>Section</th><th>Checkbox</th></tr></thead><tbody>`
+    mdContent += `<table>\n<thead>\n<tr>\n<th>Section</th>\n<th>Checkbox</th>\n</tr>\n</thead>\n<tbody>\n`
 
     for (let page of pages){
-        mdContent += `<tr><td>${page.name}</td>`;
-        mdContent += (page.checkbox == true) ? `<td>:ballot_box_with_check:</td></tr>` : `<td></td></tr>`;
+        mdContent += `<tr>\n<td>${page.name}</td>\n`;
+        mdContent += (page.checkbox == true) ? `<td>:ballot_box_with_check:</td>\n</tr>\n` : `<td></td>\n</tr>\n`;
     }
 
-    mdContent += `</tbody></table>`;
+    mdContent += `</tbody>\n</table>\n`;
       
     writeFileSync("README.md", mdContent, "utf8", (e) => {
         console.log(e);

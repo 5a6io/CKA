@@ -1,6 +1,8 @@
 import { Client } from '@notionhq/client';
 import { NotionToMarkdown } from 'notion-to-md';
-import fs from 'fs';
+import { existsSync } from 'node:fs';
+import { mkdirSync } from 'node:fs';
+import { writeFileSync } from 'node:fs';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -27,8 +29,8 @@ const databaseId = process.env.DATABASE_ID;
 
       const saveDirectory = './summary';
 
-      if (!fs.existsSync(saveDirectory)){
-        fs.mkdirSync(saveDirectory);
+      if (!existsSync(saveDirectory)){
+        mkdirSync(saveDirectory);
       }
 
     const pages = response.results.map(page => {
@@ -48,8 +50,7 @@ const databaseId = process.env.DATABASE_ID;
         const mdContent = ``+ mdString.parent;
         
         console.log(mdString);
-        fs.writeFileSync(filePath, mdContent, "utf8");
-        console.log(`파일 ${filePath}이 저장되었습니다.`)
+        writeFileSync(filePath, mdContent, "utf8");
       }
     } catch (error){
         console.error("다음과 같은 오류 발생:", error);
