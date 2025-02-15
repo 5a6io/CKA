@@ -34,7 +34,7 @@ const databaseId = process.env.DATABASE_ID;
 
       const pages = response.results.map(page => ({
         pageId: page.id,
-        name: page.properties.Name.title[0].text.content
+        name: page.properties.Name.title?.[0].text.content
        }));
       for (let page of pages){
         const pageId = page.pageId;

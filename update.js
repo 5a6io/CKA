@@ -29,16 +29,19 @@ const databaseId = process.env.DATABASE_ID;
       |:----------|:------:|\n`;
       const names = response.results.map(page => {
         const title = Object.values(page.properties).find(property => property.Name);
-        return title?.title?.[0].text.content || "Untitle";
+        return title?.title?.[0].text.content || "Untitled";
     });
-      const checkboxes = response.results.map(page => {
-        const checkbox = Object.values(page.properties).find(property => property.Checkbox);
-        return checkbox.checkbox;
-    });
-    
-      for (let i = 0; i < names.length; i++){
-        mdContent += `|${names[i]}|`;
-        mdContent += (checkboxes[i] == true) ? `:white_check_mark:|\n` : `|\n`;
+
+    console.log(names);
+      const properties = response.results.map(page => page.properties);
+      const info = properties.map(property => ({
+        name: property.Name.title?.[0].text.content,
+        checkbox: property.Checkbox.checkbox
+     }))
+
+      for (let i of info){
+        mdContent += `|${i.name}|`;
+        mdContent += (i.checkbox == true) ? `:white_check_mark:|\n` : `|\n`;
       }
       
       fs.writeFileSync("README.md", mdContent);
