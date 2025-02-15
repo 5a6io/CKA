@@ -19,11 +19,9 @@ const databaseId = process.env.DATABASE_ID;
 
     let mdContent = `# 🌟CKA(Certified Kubernetes Administrator)
 
+    <p>✍🏻I summarized the lecture with watching videos on 'Certified Kubernetes Administrator(CKA) with Practice Test.</p>
 
     
-    ✍🏻I summarized the lecture with watching videos on 'Certified Kubernetes Administrator(CKA) with Practice Test.
-    
-
 
     `;
 
