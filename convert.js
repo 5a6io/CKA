@@ -46,7 +46,9 @@ const databaseId = process.env.DATABASE_ID;
       for (let page of pages){
         const mdblocks = await n2m.pageToMarkdown(page.pageId);
         const mdString = n2m.toMarkdownString(mdblocks);
-        const filePath = `${saveDirectory}/${page.name}.md`;
+        const name = page.name;
+        let parts = name.split(":");
+        const filePath = `${saveDirectory}/${parts[0]}-${parts[1]}.md`;
         const mdHead = `# ${page.name}\n`
         const mdContent = mdHead+ mdString.parent;
         

@@ -32,7 +32,9 @@ const databaseId = process.env.DATABASE_ID;
     mdContent += `<table>\n<thead>\n<tr>\n<th>Section</th>\n<th>Checkbox</th>\n</tr>\n</thead>\n<tbody>\n`
 
     for (let page of pages){
-        mdContent += `<tr>\n<td>${page.name}</td>\n`;
+        const name = page.name;
+        let parts = name.split(":");
+        mdContent += `<tr>\n<td>${parts[0]}-${parts[1]}</td>\n`;
         mdContent += (page.checkbox == true) ? `<td>:ballot_box_with_check:</td>\n</tr>\n` : `<td></td>\n</tr>\n`;
     }
 
