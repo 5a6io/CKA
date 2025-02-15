@@ -22,15 +22,19 @@ const databaseId = process.env.DATABASE_ID;
         ],
       });
 
-      console.log(response);
+      const property = response.results.map(page => page.properties);
+      console.log(property);
 
       const mdContent = `# 🌟CKA(Certified Kubernetes Administrator)\n
       ## ✍🏻Summarize Lecture\n
       I summarized the lecture with watching videos on 'Certified Kubernetes Administrator(CKA) with Practice Test.\n
       |**Section**|**:black_square_button:**|\n
       |:----------|:------:|\n`;
-      const pages = response.results.map(page => ({name: page.name, checkbox: page.checkbox}));
-      for (let i = 0; i < pages.length; i++){
+      const pages = response.results.map(page => ({
+        name: page.properties.Name.title[0].text.content,
+        checkbox: page.properties.checkbox
+    }));
+      for (let i=0; i < pages.length; i++){
         let { name, checkbox } = pages[i];
         mdContent += `|${name}|`;
         mdContent += (checkbox == true) ? `:white_check_mark:|\n` : `|\n`;

@@ -25,8 +25,6 @@ const databaseId = process.env.DATABASE_ID;
         ],
       });
 
-      console.log(response);
-
       const saveDirectory = './summary';
 
       if (!fs.existsSync(saveDirectory)){
@@ -34,10 +32,13 @@ const databaseId = process.env.DATABASE_ID;
         console.log(`디렉토리 "${saveDirectory}"가 생성되었습니다.`);
       }
 
-      const pages = response.results.map(page => ({id:page.id, name:page.name}));
-      for (let i = 0; i < pages.length; i++){
-        let { id, name } = pages[i];
-        const mdblocks = await n2m.pageToMarkdown(id);
+      const pages = response.results.map(page => ({
+        pageId: page.id,
+        name: page.properties.Name.title[0].text.content
+       }));
+      for (let i=0; i < pages.length; i++){
+        let { pageId, name } = pages[i];
+        const mdblocks = await n2m.pageToMarkdown(pageId);
         const mdString = n2m.toMarkdownString(mdblocks);
         const filePath = `${saveDirectory}/${name}.md`;
         const mdContent = mdString.parent;
