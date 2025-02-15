@@ -17,7 +17,7 @@ const databaseId = process.env.DATABASE_ID;
         ],
     });
 
-    let mdContent = `# 🌟CKA(Certified Kubernetes Administrator)\n\n✍🏻I summarized the lecture with watching videos on 'Certified Kubernetes Administrator(CKA) with Practice Test.\n\n`;
+    let mdContent = `# 🌟CKA(Certified Kubernetes Administrator)\n\n\n✍🏻I summarized the lecture with watching videos on 'Certified Kubernetes Administrator(CKA) with Practice Test.\n\n\n`;
 
     const pages = response.results.map(page => {
     const name = page.properties?.Name?.title?.[0]?.text?.content;
