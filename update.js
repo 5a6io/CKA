@@ -28,18 +28,21 @@ const databaseId = process.env.DATABASE_ID;
       |**Section**|**:black_square_button:**|\n
       |:----------|:------:|\n`;
 
-    console.log(names);
-      const properties = response.results.map(page => page.properties);
-      const info = properties.map(property => ({
-        name: property.Name.title?.[0].text.content,
-        checkbox: property.Checkbox.checkbox
-     }))
+      const pages = response.results.map(page => {
+        const name = page.properties?.Name?.title?.[0]?.text?.content;
+        const checkbox = page.properties?.Checkbox?.checkbox;
+      
+        return {
+          name: name,
+          checkbox: checkbox
+        };
+      });
 
-     console.log(info);
+      console.log(pages);
 
-      for (let i of info){
-        mdContent += `|${i.name}|`;
-        mdContent += (i.checkbox == true) ? `:white_check_mark:|\n` : `|\n`;
+      for (let page of pages){
+        mdContent += `|${page.name}|`;
+        mdContent += (page.checkbox == true) ? `:white_check_mark:|\n` : `|\n`;
       }
       
       fs.writeFileSync("README.md", mdContent);
