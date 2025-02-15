@@ -47,9 +47,9 @@ const databaseId = process.env.DATABASE_ID;
         const mdblocks = await n2m.pageToMarkdown(page.pageId);
         const mdString = n2m.toMarkdownString(mdblocks);
         const filePath = `${saveDirectory}/${page.name}.md`;
-        const mdContent = ``+ mdString.parent;
+        const mdHead = `# ${page.name}\n`
+        const mdContent = mdHead+ mdString.parent;
         
-        console.log(mdString);
         writeFileSync(filePath, mdContent, "utf8");
       }
     } catch (error){
