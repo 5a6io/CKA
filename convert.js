@@ -29,7 +29,6 @@ const databaseId = process.env.DATABASE_ID;
 
       if (!fs.existsSync(saveDirectory)){
         fs.mkdirSync(saveDirectory);
-        console.log(`디렉토리 "${saveDirectory}"가 생성되었습니다.`);
       }
 
     const pages = response.results.map(page => {
@@ -46,7 +45,7 @@ const databaseId = process.env.DATABASE_ID;
         const mdblocks = await n2m.pageToMarkdown(page.pageId);
         const mdString = n2m.toMarkdownString(mdblocks);
         const filePath = `${saveDirectory}/${page.name}.md`;
-        let mdContent = mdString.parent;
+        const mdContent = ``+ mdString.parent;
         
         console.log(mdString);
         writeFileSync(filePath, mdContent, "utf8");
