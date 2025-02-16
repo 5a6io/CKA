@@ -36,7 +36,7 @@ jobs:
       - name: Check if there are any changes
         id: verify_diff
         run: |
-          git diff --exit-code $(git ls-files README.md summary/*.md) || echo "changed=true" >> $GITHUB_OUTPUT
+          git diff --exit-code -- $(git ls-files -- README.md summary/*.md) || echo "changed=true" >> $GITHUB_OUTPUT
 
       - name: Commit and push the markdown file
         if: steps.verify_diff.outputs.changed =='true'
