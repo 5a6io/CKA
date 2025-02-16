@@ -49,7 +49,7 @@ const databaseId = process.env.DATABASE_ID;
         const filePath = `${saveDirectory}/${page.name}.md`;
         const mdHead = `# 🍨 ${page.name}\n`
         const mdContent = mdHead+ mdString.parent;
-        if (mdStirng.parent == '') writeFileSync(filePath, mdHead, "utf8");
+        if (Object.keys(mdString).length == 0) writeFileSync(filePath, mdHead, "utf8");
         else writeFileSync(filePath, mdContent, "utf8");
       }
     } catch (error){
