@@ -49,8 +49,8 @@ const databaseId = process.env.DATABASE_ID;
         const filePath = `${saveDirectory}/${page.name}.md`;
         const mdHead = `# 🍨 ${page.name}\n`
         const mdContent = mdHead+ mdString.parent;
-        
-        writeFileSync(filePath, mdContent, "utf8");
+        if (mdStirng.parent == '') writeFileSync(filePath, mdHead, "utf8");
+        else writeFileSync(filePath, mdContent, "utf8");
       }
     } catch (error){
         console.error("다음과 같은 오류 발생:", error);
