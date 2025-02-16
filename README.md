@@ -26,7 +26,7 @@
 </tr>
 <tr>
 <td>Section4 - Logging&Monitoring</td>
-<td></td>
+<td>:white_check_mark:</td>
 </tr>
 <tr>
 <td>Section5 - Application Lifecycle Management</td>
