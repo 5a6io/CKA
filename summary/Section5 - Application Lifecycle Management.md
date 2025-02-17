@@ -1,8 +1,5 @@
 # 🍨 Section5 - Application Lifecycle Management
 
-## Application Lifecycle Managemet - Section Introduction
-
-
 ## Rolling Updates and Rollbacks
 
 
