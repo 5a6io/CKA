@@ -34,7 +34,7 @@
 </tr>
 <tr>
 <td>Section6 - Cluster Maintenance</td>
-<td></td>
+<td>:white_check_mark:</td>
 </tr>
 <tr>
 <td>Section7 - Security</td>

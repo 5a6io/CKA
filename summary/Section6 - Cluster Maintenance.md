@@ -66,7 +66,7 @@ pod-eviction-timeout이 지나고 노드가 온라인 상태로 돌아오면 그
 4. 유지보수때문에 node01을 가져와야 함. 노드의 애플리케이션을 비우고 스케줄링할 수 없도록 함.
 
 	```bash
-	kubectl drain --ignore-daemonsets
+	kubectl drain node01 --ignore-daemonsets
 	```
 
 5. 현재 애플리케이션은 어느 노드에서 동작하는가?
@@ -89,7 +89,7 @@ controlplane node does not have any taints. controlplane 노드는 taints를 갖
 11. 처음에는 동작했는데 왜 node01 drain 명령어가 실패했는가?
 there is a pod in node01 which is not part of a replicaset
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/2b30c584-0bbf-4074-9099-540946c35952/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466Q2N3UJYH%2F20250302%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250302T140730Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEIP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQDSYu8J1E7VQcd7fBREtQzgJbGSybiZqmqMW3QE7ghxJwIgYLbqMpMMLh%2BAsnp%2FoPYrFPHd2qyJ%2F5hTVwcQ3hyx%2FfgqiAQIvP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDLJUhLdrWHY3YZ8mJSrcAxqcTXRriGN15sRksnMVRQ6IPzjhqvWT2sjc1hkjcMToiASdZRHcJIf41aLTOBgd1uIyAizGFx4p6yQczTJKMe0Jmd6BDi4XG0cs74%2FUrcOWhslHoFR4GDlLnXGJubMFQt7kyij7eqmC9FiJEssZGfmA7lrSdHNKzCHE9mC92DTTMa%2Bhp6gyhyCx9jE0VLhM08o0m%2B%2BxUzN3ZUmM1xsIGwGY98oBok8j6LMh7F%2F9P1lskGzv7PPPbmt2WhIipS9%2FgtGQlX3orN2zH9zpEljdTas3%2Bulx0i3Accq0mYDY1PLjdg%2FLFe%2BxnVcE30LdD4sDPW11Ts8cBAJXzfVL1vvDuDFv0z%2FKaGgSUsBVrFaslOqi7U7WGmYpHdfNJx8MY0M35W22J9IpqmE%2FgoKWzXMKRiwVtbBIr5cntz4kJAoUv9gH6ovkwJmsVxRxRqWMdJShOutrv%2FLWj9SaYaGg5oOZWc70QMKmgbl7HFihfalOaghUgKuW363eFsyzCgh%2Bu88DQOVDvPaR%2FmyPFudAL4etkVvOiGqNab67v%2Bh2oPaFALckoakY02gDrbR8cK688enoZCGKkhhWbTk8GZthBlSmUan23BGXLX1PzhBHhWZmPqp%2FPONwNDOxI%2FXN4k9pMLj4kL4GOqUBimczCDQ9XrvxgEU8SAtZZb9920g87DhDsbdXJ2fd77PaKPTz43wgnD1JkbBGyriWDsHFcfZgjkKO0tD009wdKZTikvrqeRK2rY%2BUgQLnCDQnrWm0uMoIjCDdO38tEaBJx49E2UP0DbtXut8vAYTvEzoXMWhQnQxFdXWthhcTQfsbyUXVcKcTV3%2Bio8E5EoqaUrUff2OApNEdBZqnc2KSPmaJq%2BN3&X-Amz-Signature=a129002cf4dc3fe7796b9fe3bddbb11b3609150f1950d44f7ec1378b5802043f&X-Amz-SignedHeaders=host&x-id=GetObject)
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/2b30c584-0bbf-4074-9099-540946c35952/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466TQXIZOPT%2F20250303%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250303T140831Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJ7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIBTGngmJQnFEc1iFnARyZ4rlJeARY4qcmY%2Bav%2BrnqEHMAiEAwARl%2Fvs4FOd7o14Y8rh%2FMMzTw%2Bl0eBaVPVvgZJToQdgqiAQI1v%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDAR1UFSoluqlvh2xGircA0CbdZv95yaj7lDHNzg05AvN6fpPiSNd4ORyvPMcsA%2F2%2BeS3b6SPrmTRZYDIsw8TeqHwD86lWLy%2BGF7xBAmiKeXYTrGn4zQ7OdUKvoZL%2BS5SkXqtHGOQATCHELi23UdvprnbolDWC0eEL8ibQnjAr%2BrKp2CEI%2FRiJP7I9qzmGD15mbmnKkojc56AVkGA%2F6wcnS2vL0Z3EjW9JJzl3vbsd3xmt%2BiPUX1jm2U46yaxrueomFLwNVkGnfWyWpFYa96jpsylKZhiXl%2BN27d9vaW8lH3ZvzsKuCOfMfvRG%2FeMhjCvCMX%2By4K1qH16T8%2FvesVquxZA0ZUgNDLobeJB1gzipkKKgQ7wrBJ5knMn0f5dHThU20req6r%2B%2FTciq6novovlldzeXvXlZT2QWnhyu7U2jMns36KEWU4kIFYVbWC%2FOWV4ht1U1zEKyVdPmvh8Ij7AedlSumPZRQSMM3azbmXSYAu4n19QbNys1c%2BBvU2OW9FZjBCegD0pt5mAVfoQzqHWdjogf%2FS7KVSWq7Vpdpmuv7bZMPdVKWoimpfT5VSR%2BuIFhhQPUji6KIQLZVNggZqWss8ztlM0OmAKbHiypdAdHReeQTN6tEGRsApJ9bb03injiJhCzuG5hR6XEIGZMN3Zlr4GOqUBpBY9y%2FRb7xasVZsQAh%2BoV4B8cQGHxzNeqGA%2FxcX6XECDqczq1AW0qR%2FGe0mgJu0YNnrxLzN2yhU7QDXvvZF%2By8M0Rd95Dgs1bClYZFAOOuCnn2vYuVt48YferkxwwX8tk%2BsaKfDKMNoAEjHYduBVun8yxFp2bS0ZSgbA53AkavyiGeAnaw5fqYMxi4j0h3LwjMIxqIek5p%2BC%2BKvkhjz3n56apEM5&X-Amz-Signature=c96b8bfdad12a3e9f5c5a806ad28b6334660c3ee4df5038aec07a6aeb88b1acb&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 1. node01 위 replicaset의 일부가 아닌 pod의 이름
 2. node01을 강제로 drain하면 hr-app은 어떻게 되는가?
@@ -240,7 +240,7 @@ kubeadm과 같은 도구를 사용하여 클러스터를 배포했다면 그 도
 	패키지가 업그레이드되면 kubelet 서비스 재시작. `systemctl restart kubelet` 
 
 
-	`kubectlget nodes` 명령어 실행. 마스터 노드가 1.12로 업그레이드 된 것을 볼 수 있음. worker node는 여전히 1.11임. 한 번에 하나씩 worker node 업그레이드해야 함.
+	`kubectl get nodes` 명령어 실행. 마스터 노드가 1.12로 업그레이드 된 것을 볼 수 있음. worker node는 여전히 1.11임. 한 번에 하나씩 worker node 업그레이드해야 함.
 
 
 	```bash
@@ -258,17 +258,209 @@ kubeadm과 같은 도구를 사용하여 클러스터를 배포했다면 그 도
 ## Demo - Cluster upgrade
 
 
+[bookmark](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade/)
+
+
 ## Practice - Cluster upgrade
+
+1. 현재 클러스터의 kubernetes 버전
+2. 클러스터에 있는 노드 수
+3. 클러스터에서 얼마나 많은 워크로드를 가질 수 있는가?
+
+	```bash
+	kubectl describe node | grep Taints
+	Taints:          <none>
+	Taints:          <none>
+	➡️ 2개
+	```
+
+4. 클러스터에 몇 개의 어플리케이션이 호스팅되었느가?
+5. 파드들은 어느 노드 위에 있는가?
+6. 클러스터를 업그레이드 하려고 함. 어플리케이션에 접근하는 유저들이 영향을 받으면 안 됨. 새 가상 머신을 프로비저닝하면 안 됨. 어떤 업그레이드 전략을 사용할 것인가?
+워크로드를 다른 노드로 옮기는 동안 하나에 하나씩 노드를 업그레이드.
+7. 지금 업그레이드 가능한 가장 최신 kubeadm 버전 → v1.31.6
+8. controlplane 노드를 먼저 업그레이드할 것. 워크노드의 controlplane 노드 drain. 그리고 unschedulable 표시.
+
+	```bash
+	kubectl drain controlplane --ignore-daemonsets
+	```
+
+9. v1.32.0로 controlplane 구성 요소 업그레이드
+
+	[bookmark](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/change-package-repository/#verifying-if-the-kubernetes-package-repositories-are-used)
+
+
+	설치할 패키지 가져온 후 apt update 시도
+
+
+	```bash
+	vi /etc/apt/sources.list.d/kubernetes.list
+	➡️ deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.32/deb/ /
+	apt update
+	apt-cache madison kubeadm
+	apt-get upgrade -y kubeadm=1.32.0-1.1
+	kubeadm upgrade plan v1.32.0
+	kubeadm upgrade apply v1.32.0
+	apt-get upgrade -y kubelet=1.32.0-1.1
+	systemctl daemon-reload
+	systemctl restart kubelet
+	```
+
+10. controlplane 다시 schedulable로 표시
+
+	```bash
+	kubectl uncordon controlplane
+	```
+
+11. worker node의 워크로드를 drain하고 Unschedulable로 표시
+
+	```bash
+	kubectl drain node01 --ignore-daemonsets
+	```
+
+12. v1.32.0으로 worker node 업그레이드
+
+	```bash
+	ssh node01
+	vi /etc/apt/sources.list.d/kubernetes.list
+	➡️ deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.32/deb/ /
+	apt update
+	apt-cache madison kubeadm
+	apt-get upgrade -y kubeadm=1.32.0-1.1
+	kubeadm upgrade node
+	apt-get upgrade -y kubelet=1.32.0-1.1
+	systemctl daemon-reload
+	systemctl restart kubelet
+	```
+
+13. restriction을 제거하고 worker node를 다시 스케줄링 가능한 상태로 표시
+
+	```bash
+	kubectl uncordon node01
+	```
 
 
 ## Backup and Restore Methods
 
 
+etcd cluster는 모든 클러스터와 관련된 정보가 저정되어있는 곳이다. 그리고 어플리케이션이 Persistent Storage로 구성되면 그것도 백업 후보가 될 수 있다.
+
+
+우리는 namespace, secret, configmap 등 명령어를 사용하여 임의적으로 만들 수 있다.  그리고 파일을 생성하고 `kubectl apply`  명령어를 실행함으로써 선언적인 방법으로 생성할 수 있다.
+
+
+누군가 그 정보를 어디에도 기록하지 않고 명령적인 방식으로 객체를 만든다면 어떨까? → 그래서 자원 구성을 백업하는 가장 좋은 방법은 Kube API server에 query하는 것이다.
+
+
+kubectl 을 사용하여 Kube API Server에 질의하거나 API server에 직접적으로 접근하여 클러스터에 생성된 모든 자원 구성을 복사본으로 저장.
+
+
+고려해야 할 많은 자원 그룹이 있다. 물론 우리는 해결책을 개발할 필요❌
+
+
+→ Ark 지금은 Velero, Heptio와 같은 도구가 있다.
+
+
+Kubernetes API를 사용해 Kubernetes 클러스터의 백업 정보를 가져올 수 있다.
+
+
+etcd 클러스터는 클러스터의 상태를 저장한다. 그래서 클러스터 자체, 노드, 클러스터 내에 생성된 다른 모든 자원에 대한 정보를 여기에 저장한다.
+
+
+따라서 리소스를 백업하는 대신 etcd 서버 자체를 백업할 수 있다.
+
+
+etcd를 구성하는 동안 우리는 data directory 즉, 모든 데이터가 저장될 수 있는 장소를 명시한다.
+
+
+backup 도구로 백업할 수 있도록 구성할 수 있는 디렉토리이다.
+
+
+etcd는 또한 스냅샷 솔루션을 가진다. 우리는 etcd contrl 유틸리티의 snapsho save 명령어를 사용하여 etcd 데이터베이스의 스냅샷을 남길 수 있다.
+
+
+어느 정도 지난 시점에 백업으로 클러스터를 복구하기 위해 먼저 Kube API server 서비스를 멈춰야 한다. 복구 과정에서 etcd cluster를 재시작해야 하고, Kube API server에 따라 달라진다. 그리고 snapshot.db file이라고 하는 백업 파일의 경로를 설정하기 위한 경로를 가지고 etcd controls snapshot restore 명령어를 실행하면 된다.
+
+
+etcd가 백업으로부터 복구할 때, 새 클러스터를 구성을 초기화하고 etcd의 멤버를 새 클러스터의 새 멤버로 구성한다. 이것은 갑자기 존재하는 클러스터에 새 멤버가 들어오는 것을 막는다. 이 명령어를 실행하면 새 data directory가 생성된다. 그리고 service demon을 다시 불러오고 etcd service를 재시작한다. 마지막으로 Kube API server 서비스를 시작한다. 클러스터는 이제 원래 상태로 돌아와야 한다.
+
+
 ## Working with ETCDCTL
+
+
+etcdctl은 etcd에 대한 command line client이다. 백업, 복구와 같은 작업에 대해 etcdctl을 사용하기 위해서 `ETCDCTL_API=3`를 설정해야 한다.
+
+
+etcd client를 사용하기 전에 ETCDCTL_API를 값을  export해야 한다.
 
 
 ## Practice Test - Backup and Restore Methods
 
+1. 클러스터에 default namespace에 존재하는 deployment 수
+2. 클러스터에서 운영 중인 ETCD 버전
+
+	```bash
+	kubectl describe pod etcd-controlplane -n kube-system
+	```
+
+3. controlplane 노드로부터 ETCD 클러스터에 도달할 수 있는 주소
+4. ETCD server certificate 파일이 위치한 곳
+/etc/kubernetes/pki/etcd/server.crt
+5. ETCD CA Certificate 파일이 위치한 곳
+/etc/kubernetes/pki/etcd/ca.crt
+6. master node가 오늘밤 정기 유지보수로 재시작이 계획되어있음. 문제가 발생할 것으로 예상하지는 않지만 필요한 백업을 받아야 함. 내장된 snapshot을 사용하여 ETCD database의 snapshot을 가져오기
+
+	/opt/snapshot-pre-boot.db에 백업 파일 저장.
+
+
+	```bash
+	export ETCDCTL_API=3
+	etcdctl --endpoints=https://127.0.0.1:2379 \
+		--cacert=/etc/kubernetes/pki/etcd/ca.crt --cert=/etc/kubernetes/pki/etcd/server.crt --key=/etc/kubernetes/pki/etcd/server.key \
+	  snapshot save /opt/snapshot-pre-boot.db
+	```
+
+7. 재시작 후 master node가 온라인 상태가 되었지만 어플리케이션에 접근할 수 없음. 클러스터의 어플리케이션 상태 확인. 문제?
+Deployment, pod, service(기본으로 주어지는 kubernetes 제외)가 없음.
+8. 백업 파일을 사용해 원래 상태로 복구.
+
+	```bash
+	etcdctl --data-dir /var/lib/restoreetcd snapshot restore /opt/snapshot-pre-boot.db
+	vi /etc/kubernetes/manifests/etcd.yaml
+	➡️volumes.hostPath.path 복구한 경로로 수정
+	kubectl delete pod etcd-controlplane -n kube-system # or systemctl restart kubelet (또는 둘 다)
+	```
+
+
+	/var/lib/etcd는 기존에 존재하는 디렉토리로 삭제 후 시도하거나 새 디렉토리로 지정 필요.
+
 
 ## Practice Test  -  Backup and Restore Methods 2
 
+1. student-node위 kubeconfig에 정의된 클러스터 수
+
+	![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/90fbb5ca-abd8-4e61-942c-f799d3069cf4/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466T75WVK7T%2F20250303%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250303T140837Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJ7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDzJ8Ywy6dxgMbPhGw3HkEU1ctFDPc1amB7s7hxPZgq7gIhAKSUQYnYenONKYIhrIxHSCZVfFaezEblID2D7rAaF1yxKogECNb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1IgwNJOTvQZlcWaPzbewq3AMmFIaJ5a6y1RUI%2BjqdCVyLg3lbht0LfV8IYfwyLQ7F8MjbW2%2FdtAajKKDzsdVy50rSUS9Oezt%2Fjj6X4oraQdEK9fNkHFkA%2B5MT0JvO8G80Oj0zilwGtfpXbrCgkBGiAFAL3L2I4wfldTucpBXzCPmJReBCeoaJLPTwmipbKgKOl%2Ff3K9%2BByO89qDjLeyfxtTau6lmuaRJzaavnvPhSXof46Fq7U7Mvx9jsqWifwW71WydyV%2B99G2XxECXWuwfA6Wf08xihHjbQHehB6iJncQmnOh5Aqwg3MIwjiRfyeKCqvEHjz%2FZYtTk5OIt4u0BvNlhkcIjJYhV15KbG2wp%2FzMEM82LIb8KMEKBMz52v9ZrTi20dUV8B7vvUfOQZeutMVHxcB7KwDR5q%2FTkTrVLJXCcsnA9aNt8DTbQwTqAOO9xZ0Rsa%2FlHGXsOp%2FrfaBckoyT6ybIhiM%2BnEsCiER4kf4yMO6EI8QAOXDeSJEOZBwj%2BDWS4g83%2BOosVRcWvd5OPFlB2zaBUZpzUBMoohitbZzxsOrAcPdwgrBa0ohRD%2FH2WbUzbSojFF8GVKgMkiIdWB4xP9MvRtDjM3y3xgE78YBnZ%2Fagi66IWjgK3JCcLOezQO%2BOiU0gVNKBK5%2FMimjTDM2Za%2BBjqkAQ9aw9x%2BI7FrcUvN99zcZzAzPm%2FStlEqD%2FoZRff5OmjLxnMI%2BC4OoP%2FuN5W9yQ606a0%2BM12wu9ZPLZ0%2Fr5vvPA%2BxY9wHbiVOOk88N5WJPDCI2uMUGQnT6nlX3TPPv7p3SVFS9BkQFh8Jfd47BCb2%2BEsMoDBE%2FRprBKRxyLx5nI0IuSpyW7uL7LcWT7JGc6eeWk8mM7KajHGu3ZpUa%2B%2FfVDF9UTwY&X-Amz-Signature=02b3a2214917f9dee06ccf749caf77f47fa40d16184ac6c9da7bca29c647afe8&X-Amz-SignedHeaders=host&x-id=GetObject)
+
+2. cluster1의 노드 수
+
+	```bash
+	kubectl config use-context cluster1
+	kubectl get nodes
+	```
+
+3. cluster2에서 controlplane node의 이름.
+
+	```bash
+	kubectl config use-context cluster2
+	kubectl get nodes
+	```
+
+4. cluster1에 대한 ETCD 는 어떻게 구성되었는가?
+
+	Stacked ETCD
+
+5. cluster2에 대한 ETCD는 어떻게 구성되었는가?
+
+	No ETCD
+
+6. 
