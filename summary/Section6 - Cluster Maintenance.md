@@ -89,7 +89,7 @@ controlplane node does not have any taints. controlplane 노드는 taints를 갖
 11. 처음에는 동작했는데 왜 node01 drain 명령어가 실패했는가?
 there is a pod in node01 which is not part of a replicaset
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/2b30c584-0bbf-4074-9099-540946c35952/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466TQXIZOPT%2F20250303%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250303T140831Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJ7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIBTGngmJQnFEc1iFnARyZ4rlJeARY4qcmY%2Bav%2BrnqEHMAiEAwARl%2Fvs4FOd7o14Y8rh%2FMMzTw%2Bl0eBaVPVvgZJToQdgqiAQI1v%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDAR1UFSoluqlvh2xGircA0CbdZv95yaj7lDHNzg05AvN6fpPiSNd4ORyvPMcsA%2F2%2BeS3b6SPrmTRZYDIsw8TeqHwD86lWLy%2BGF7xBAmiKeXYTrGn4zQ7OdUKvoZL%2BS5SkXqtHGOQATCHELi23UdvprnbolDWC0eEL8ibQnjAr%2BrKp2CEI%2FRiJP7I9qzmGD15mbmnKkojc56AVkGA%2F6wcnS2vL0Z3EjW9JJzl3vbsd3xmt%2BiPUX1jm2U46yaxrueomFLwNVkGnfWyWpFYa96jpsylKZhiXl%2BN27d9vaW8lH3ZvzsKuCOfMfvRG%2FeMhjCvCMX%2By4K1qH16T8%2FvesVquxZA0ZUgNDLobeJB1gzipkKKgQ7wrBJ5knMn0f5dHThU20req6r%2B%2FTciq6novovlldzeXvXlZT2QWnhyu7U2jMns36KEWU4kIFYVbWC%2FOWV4ht1U1zEKyVdPmvh8Ij7AedlSumPZRQSMM3azbmXSYAu4n19QbNys1c%2BBvU2OW9FZjBCegD0pt5mAVfoQzqHWdjogf%2FS7KVSWq7Vpdpmuv7bZMPdVKWoimpfT5VSR%2BuIFhhQPUji6KIQLZVNggZqWss8ztlM0OmAKbHiypdAdHReeQTN6tEGRsApJ9bb03injiJhCzuG5hR6XEIGZMN3Zlr4GOqUBpBY9y%2FRb7xasVZsQAh%2BoV4B8cQGHxzNeqGA%2FxcX6XECDqczq1AW0qR%2FGe0mgJu0YNnrxLzN2yhU7QDXvvZF%2By8M0Rd95Dgs1bClYZFAOOuCnn2vYuVt48YferkxwwX8tk%2BsaKfDKMNoAEjHYduBVun8yxFp2bS0ZSgbA53AkavyiGeAnaw5fqYMxi4j0h3LwjMIxqIek5p%2BC%2BKvkhjz3n56apEM5&X-Amz-Signature=c96b8bfdad12a3e9f5c5a806ad28b6334660c3ee4df5038aec07a6aeb88b1acb&X-Amz-SignedHeaders=host&x-id=GetObject)
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/2b30c584-0bbf-4074-9099-540946c35952/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB46655EZLJA2%2F20250304%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250304T140846Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIEUuFt0mLWCKwlbgg9amlKNaoxT2Ts%2F9ManxntYJCo4hAiAIIWLyY65ZWBJ8qyXur%2BlsXhwSdbSsF%2FYge13VpVc4pyqIBAjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMfmKpa9QnihSF7AyjKtwD9iLKUCPq7vus55bJfdndEH%2B4Yy0ynP%2Fdt71qi0dDAEPXTUufGIidP9IYui%2BsduHmf%2Fay6pQKcuwHF08FSMv%2F2ReaNES%2FeciL6BOamez3W0vmxZp1F6XV8idwg%2F2qWSjwyEN0v78jzYS99kE8FLWZNZNK7dElnx2bsgKl2t3vxOWuXVvzQjm6gxEsV23Woi3sZWfEsHCvJ7FXwdzj1kMQLRhHaCse9yDvh5WLX2Hp2pNjGiBhWVp%2BP4quTeEtId3zCkiTWzv1MPPNtOKNMJiE31iN3mAwXzGZGoAYXlWSLisx0%2BvFZFfgodSrHK%2F01EnrzQ4BL3BeTjBE5LiNwkRUmfi%2B8ksN3f21OKEBj0OUYnHJm8fTvnPNqOspOIyX8aiOBVq8uRbTMaBHg%2BjTsvj0C1aAoOTrzigpQaueWkj%2BPZPjYe9TbTqt1eVod49F8HYKamcxyPTQq0E%2FjUlWUIWieZ5EFyQ2XW3xaiRAODdpHQu0ZLfKjHBkvVic%2By%2B4AViXjk22vPQab%2BwvTM%2FQWcW8qTvgclVAIBhL%2Fugu0AbNpDUa8ZPNZ7yJ%2FWkGMUd4ySqFKLaI74c10sUdBbtglURHjzcneKavAtqgqVyqfApjSneWfggel45LpPDKMWEw1oqcvgY6pgEaidhR9Dx7efY%2BrmKRUZyM5m%2FSMqtLjes4peFYlQMqs4Y8h%2Bmv9%2FNKtk0%2BEV59caH9pSgEB2oFS3BWw4IPl9JoIGjDmTGPKgJ%2FQSwEuibnDeqrn4jLL2UO72F3I5gr9BDqbny7V9LJWYfPPYSnSrcXd1MxXwM5rwTpME%2Fo2c705aV7ki%2FrlPBjylqUNSfZuL83iDSo1i8onqrdDxCSpmOLd1B372vF&X-Amz-Signature=f98c8cf12614cb33c52b11ffa1a9755b1a01f131dd8904834cece8b94d64b32f&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 1. node01 위 replicaset의 일부가 아닌 pod의 이름
 2. node01을 강제로 drain하면 hr-app은 어떻게 되는가?
@@ -400,7 +400,7 @@ etcd client를 사용하기 전에 ETCDCTL_API를 값을  export해야 한다.
 2. 클러스터에서 운영 중인 ETCD 버전
 
 	```bash
-	kubectl describe pod etcd-controlplane -n kube-system
+	kubectl describe pods etcd-controlplane -n kube-system
 	```
 
 3. controlplane 노드로부터 ETCD 클러스터에 도달할 수 있는 주소
@@ -428,7 +428,7 @@ Deployment, pod, service(기본으로 주어지는 kubernetes 제외)가 없음.
 	etcdctl --data-dir /var/lib/restoreetcd snapshot restore /opt/snapshot-pre-boot.db
 	vi /etc/kubernetes/manifests/etcd.yaml
 	➡️volumes.hostPath.path 복구한 경로로 수정
-	kubectl delete pod etcd-controlplane -n kube-system # or systemctl restart kubelet (또는 둘 다)
+	kubectl delete pods etcd-controlplane -n kube-system # or systemctl restart kubelet (또는 둘 다)
 	```
 
 
@@ -437,9 +437,12 @@ Deployment, pod, service(기본으로 주어지는 kubernetes 제외)가 없음.
 
 ## Practice Test  -  Backup and Restore Methods 2
 
+
+### 다중 클러스터에서 백업과 복구
+
 1. student-node위 kubeconfig에 정의된 클러스터 수
 
-	![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/90fbb5ca-abd8-4e61-942c-f799d3069cf4/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466T75WVK7T%2F20250303%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250303T140837Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJ7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDzJ8Ywy6dxgMbPhGw3HkEU1ctFDPc1amB7s7hxPZgq7gIhAKSUQYnYenONKYIhrIxHSCZVfFaezEblID2D7rAaF1yxKogECNb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1IgwNJOTvQZlcWaPzbewq3AMmFIaJ5a6y1RUI%2BjqdCVyLg3lbht0LfV8IYfwyLQ7F8MjbW2%2FdtAajKKDzsdVy50rSUS9Oezt%2Fjj6X4oraQdEK9fNkHFkA%2B5MT0JvO8G80Oj0zilwGtfpXbrCgkBGiAFAL3L2I4wfldTucpBXzCPmJReBCeoaJLPTwmipbKgKOl%2Ff3K9%2BByO89qDjLeyfxtTau6lmuaRJzaavnvPhSXof46Fq7U7Mvx9jsqWifwW71WydyV%2B99G2XxECXWuwfA6Wf08xihHjbQHehB6iJncQmnOh5Aqwg3MIwjiRfyeKCqvEHjz%2FZYtTk5OIt4u0BvNlhkcIjJYhV15KbG2wp%2FzMEM82LIb8KMEKBMz52v9ZrTi20dUV8B7vvUfOQZeutMVHxcB7KwDR5q%2FTkTrVLJXCcsnA9aNt8DTbQwTqAOO9xZ0Rsa%2FlHGXsOp%2FrfaBckoyT6ybIhiM%2BnEsCiER4kf4yMO6EI8QAOXDeSJEOZBwj%2BDWS4g83%2BOosVRcWvd5OPFlB2zaBUZpzUBMoohitbZzxsOrAcPdwgrBa0ohRD%2FH2WbUzbSojFF8GVKgMkiIdWB4xP9MvRtDjM3y3xgE78YBnZ%2Fagi66IWjgK3JCcLOezQO%2BOiU0gVNKBK5%2FMimjTDM2Za%2BBjqkAQ9aw9x%2BI7FrcUvN99zcZzAzPm%2FStlEqD%2FoZRff5OmjLxnMI%2BC4OoP%2FuN5W9yQ606a0%2BM12wu9ZPLZ0%2Fr5vvPA%2BxY9wHbiVOOk88N5WJPDCI2uMUGQnT6nlX3TPPv7p3SVFS9BkQFh8Jfd47BCb2%2BEsMoDBE%2FRprBKRxyLx5nI0IuSpyW7uL7LcWT7JGc6eeWk8mM7KajHGu3ZpUa%2B%2FfVDF9UTwY&X-Amz-Signature=02b3a2214917f9dee06ccf749caf77f47fa40d16184ac6c9da7bca29c647afe8&X-Amz-SignedHeaders=host&x-id=GetObject)
+	![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/90fbb5ca-abd8-4e61-942c-f799d3069cf4/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB46647KIMPB2%2F20250304%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250304T140855Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQC6xHqTmqL6i2gWf%2BiqBWHatdH5LIu59iZRJvil4Q9RJAIga9YvDW0e3VSb8CBB17BRjZ7W3yS%2B31m6eEGUrsklHHAqiAQI7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDJGzNckSGz7Yi1geCyrcA5bkmZzvFwKiYym644EDrAYePIQOZOghnPVrGNHgMZ8BQaN6jytHsbfDFSjNMVckks1LUNB%2B3OhFq9UFWhU9BlCCcDrBHOze3xtoonYYhAbuezODsrdhtbMCDHK4566Prjr%2B6CkYES83rNL6ef9j%2BdOSHRT5wPIrcmXplfGGOGCcTevfPPEOE8SPKWUoHD8oSRnzWdCp%2BcvAx3EViq0gmnVPNFkpO%2BrLN4SmbSzT4SCISl1LVtK2u1uOKv1GmJKABuGKhg4pDwtl5VE1JHfnNwexztH7CMlEATzyjrzz3BITo5SQaoNKIkNHe6E3cbpH1Mo%2BihsgPm1Xt5hxfOIgm1oRtXguJWsSQoKcmfwA27MSMcNj1KnVXFT%2Fa9VA4g5q6ulu8drX1BiZgjCI9WOO%2BJqE344n%2F%2FF8B6in9cHnx%2Fl1T1Je9e6%2FahK0cRWFHRpMdiXyviwTu4PmTcVoy9vHwTnwJT7JMNYmEFnYm9c56Bh22xcQC1Quwj13VBibq9MU8H6hU3BuJb15SIcTdn1tA%2FtVWdt8v%2FCJ%2F4%2BV6KTK8RHeTv%2Fi%2B8ceVU2iooLobckSVjbo2opLdWoGHR6Op3Lms2NEoEf9Wm%2B%2BzEt5peOdK0Kzl5WHpaGE4%2BSYCMJVMNqLnL4GOqUBag7%2F8xEKT%2BUR7caNKp550q9jSsgTCX9uTy3yGBY2HG0VfaqRmtQXpbKONhvzFIFB0X9EzwxlA52fnJg7MMnyGyK5EOgGgNdUMDsoN1%2FWKrRWl6hoIc0zOyp9cJ20CizslkN0MOPf0O6huPzmgcXOcsHtD6bRU%2Fdy2FdvfSd20jW9h5ncWjW59ZxiswFBUhWLOoEfhQVXY4uCEgd3N5GSuGLX0490&X-Amz-Signature=d1fae71203248570a872caa60ec6ea666be58dea9383117f3a03501f616e6d32&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 2. cluster1의 노드 수
 
@@ -459,8 +462,89 @@ Deployment, pod, service(기본으로 주어지는 kubernetes 제외)가 없음.
 
 	Stacked ETCD
 
+
+	`kubectl get pods -n kube-system`을 수행했을 때 etcd pod가 보인다면 Stacked ETCD 
+
+
+	`kubectl describe pods <api-server-name> -n kube-system` 을 실행하면 API server가 ETCD server와 실제로 소통하기 위해 사용하는 URL이 있음. localhost나 controlplane node의 IP 주소이면 Stacked ETCD 
+
 5. cluster2에 대한 ETCD는 어떻게 구성되었는가?
 
-	No ETCD
+	External ETCD
 
-6. 
+
+	kubectl get pods -n kube-system을 했을 때 ETCD pod가 보이지 않음. 서버에 문제가 있기 때문일 수도? ssh로 controlplane node 접속. /etc/kubernetes/manifests로 이동하면 정적 pod 구성을 볼 수 있음.
+
+
+	세 개의 manifests만 있음. ETCD server는 안 보임.
+
+
+	일단 Stacked ETCD가 아니란 것을 알 수 있음. 다시 `kubectl get pods -n kube-system`을 실행. 이번에는 API server의 구성을 살피기 위해 `kubectl describe pods <api-server> -n kube-system` 을 실행.
+
+
+	ETCD server 구성으로 가면 분리된 IP 주소를 볼 수 있음.
+
+
+	External ETCD server를 사용하고 있음을 알 수 있음.
+
+6. cluster2에서 사용되는 External ETCD datastore의 IP 주소.
+7. cluster1에서 사용 중인 ETCD datastore에 대해 사용 중인 기본 data  directory는?
+8. cluster2에서 사용되는 ETCD datasource에 대해 사용 중인 default data directory는 무엇인가? External ETCD를 사용.
+
+	`etcd-server`로 접속해서 `ps -ef | grep -i etcd` 실행. `--data-dir=/var/lib/etcd-data` 라고 적혀있음을 알 수 있음.
+
+9. etcd-server가 속한 ETCD cluster의 노드의 수
+
+	```bash
+	export ETCDCTL_API=3
+	etcdctl --endpoints=https://127.0.0.1:2379 \
+	--cacert=/etc/etcd/pki/ca.pem --cert=/etc/etcd/pki/etcd.pem \
+	--key=/etc/etcd/pki/etcd-key.pem member list
+	```
+
+
+	member가 한 개 밖에 없음. 그러므로 1.
+
+10. cluster1의 etcd를 백업하고 /opt/cluster1.db에 student-node에 저장.
+
+	```bash
+	ssh cluster1-controlplane
+	export ETCDCTL_API=3
+	etcdctl --endpoints=https://<advertise-client-url>:2379 \
+	--cacert=/etc/kubernetes/pki/etcd/ca.crt \
+	--cert=/etc/kubernetes/pki/etcd/server.crt \
+	--key=/etc/kubernetes/pki/etcd/server.key \
+	snapshot save /opt/cluster1.db
+	exit
+	# student-node로 돌아옴.
+	scp cluster1-controlplane:/opt/cluster1.db /opt/
+	```
+
+
+	etcd server에 도달할 수 있도록 advertise client URL을 사용해야 함.
+
+11. cluster2에 대한 ETCD 백업이 /opt/cluster2.db에 저장됨. snapshot 파일을 사용해 새 경로 /var/lib/etcd-data-new에 cluster2 복구 수행.
+
+	```bash
+	scp /opt/cluster2.db etcd-server:/root
+	
+	ssh etcd-server
+	export ETCDCTL_API=3
+	etcdctl --data-dir=/var/lib/etcd-data-new \
+	snapshot restore /root/cluster2.db
+	
+	chown -R etcd:etcd /var/lib/etcd-data-new
+	
+	vi /etc/systemd/system/etcd.service
+	➡️--data-dir을 복구한 경로로 변경.
+	
+	systemctl daemon-reload
+	systemctl restart etcd
+	exit
+	# student-node로 돌아옴.
+	kubectl delete pods kube-controller-manager-cluster2-controlplane kube-scheduler-cluster2-controlplane -n kube-system
+	
+	ssh cluster2-controlplane
+	systemctl restart kubelet
+	```
+
