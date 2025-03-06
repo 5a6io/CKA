@@ -228,10 +228,249 @@ curl https://kube-apiserver:6443/api/v1/pod \
 이 안에 API 서버 엔드포인트 세부 정보, 사용할 인증서 등을 명시.
 
 
+클라이언트가 서버에[서 보낸 인증서를 검증하거나 그 반대의 경우 모든 인증 기관의 공인 인증서 사본이 필요하다.
+
+
+웹 애플리케이션의 경우 사용자의 브라우저 내에 설치되어있다.
+
+
+다양한 구성 요소들이 서로 검증하기 위해 Kubernetes에서는 모두 CA의 루트 인증서 사본이 필요함.
+
+
+인증서를 가진 서버나  클라이언트를 구성할 때마다 CA 루트 인증서도 명시할 필요가 있음.
+
+
+ETCD server는 고가용성 환경에서와 같이 여러 서버에 걸쳐 클러스터로 배포할 수 있음.
+
+
+클러스터에서 다른 멤버 간의 의사소통을 보호하기 위해 추가적인 peer 인증서를 생성해야 함.
+
+
+일단 인증서가 생성되면 ETCD 서버가 시작되는 동안 인증서를 지정. 서버 키를 지정하는 키 및 인증 파일 옵션이 있음. peer 인증서를 지정하는 다른 옵션도 있음.
+
+
+ETCD 서버에 연결된 클라이언트가 유효한지 확인하려면 CA 루트 인증서가 필요함.
+
+
+`kubernetes`, `kubernetes.default`, `kubernetes.default.svc`, `kubernetes.default.svc.cluster.local`  → IP 주소로도 불림. Kube API 서버를 실행하는 호스트 또는 이를 실행하는 pod의 IP 주소.
+
+
+모두 Kube API server에 대해 생성된 인증서에 존재해야 함. → Kube API 서버를 참조하는 것들이 유효한 연결을 설정할 수 있음.
+
+
+대신할 이름을 어떻게 명시하는가? → openssl config file을 생성해야 함. OpenSSL.cnf 파일을 생성하고 `[alt_names]` 부분에 대신할 이름을 명시. IP 주소 뿐만 아니라 DNS 이름도.
+
+
+인증서 서명 요청을 생성할 때 이 구성 파일을 옵션으로 전달.
+
+
+마지막으로 CA 인증서와 키를 사용하여 인증서 서명. → Kube API server 인증서가 생김.
+
+
+API 서버가 ETCD 및 kubelet 서버와 클라이언트로 통신할 때 사용하는 API 클라이언트 인증서를 고려함.
+
+
+인증서들의 위치는 Kube API 서버 실행 파일 또는 서비스 구성 파일로 전달됨.
+
+
+먼저 모든 구성 요소가 클라이언트를 검증하기 위해 CA 인증서가 필요한 것을 기억하기 위해서CA 파일이 전달되어야 함.
+
+
+그리고 tls cert 옵션에 API server인증서를 명시. CA파일로 ETCD 서버와 다시 연결하기 위해 Kube API 서버에서 사용하는 클라이언트 인증서도 명시.
+
+
+마지막으로 kubelet과 연결하기 위한 Kube API 서버 클라이언트 인증서 명시.
+
+
+kubelet 서버는 각 노드에서 운영하는 ACTPS API 서버로, 노드 관리를 담당. API 서버가 노드를 모니터링하고 이 노드에서 어떤 포드를 예약할지에 대한 정보를 보내기 위해 소통하는 것.
+
+
+클러스터 내 각 노드는 키 인증서 쌍이 필요함.
+
+
+인증서 이름은 어떻게 되는가? 각 노드의 이름을 가짐. node01, node02와 같이.
+
+
+일단 인증서가 생성되면 kubelet config 파일에 작성. root CA 인증서를 명시하고 Kubelet 노드 인증서를 명시.
+
+
+클러스터 내 각 노드마다 해야 함.
+
+
+클라이언트 인증서의 경우는? API 서버가 어떤 노드를 인증 중인지 알고 적절한 권한 세트를 제공해야 하므로 올바른 형식의 이름 필요.
+
+
+노드는 kube-scheduler와 같이 시스템의 구성  요소 이기 때문에 키워드인 system으로 시작해야 함. 그리고 그 뒤에 node:노드 이름이 옴.
+
+
+API server는 어떻게 올바른 권한 집합을 주는가? admin user에 대한 그룹 이름 명시하면 admin user는 관리자 권하는 갖음. 따라서, 노드도 마찬가지로 시스템 노드라는 그룹에 추가하면 됨.
+
+
+일단 인증서가 생성되면 앞과 마찬가지로 kube config파일로 이동.
+
+
 ## View Certificate Details
 
 
+환경에 인증서와 관련된 여러 이슈 발생. → 클러스터 전체의 모든 인증서를 요청 받음.
+
+> organization, expiration, issuer 등을 어떻게 구하는가?
+
+kubeadm이 설정한 환경에서 /etc/kubernetes/manifests/kube-apiserver.yaml 찾음.
+
+
+API 서버를 시작하는 데 사용된 명령은 사용하는 모든 인증서에 대한 정보를 갖고 있음.
+
+
+각 용도로 사용되는 인증서 파일을 확인하고 적어두기 → 다음, 각각의 인증서 내부를 살펴 해당 인증서에 관해 더 상세하게 보기. → 인증서를 디코딩하고 세부 사항 살피기. 
+
+
+```bash
+openssl x509 -in /etc/kubernetes/pki/apiserver.crt -text -noout
+```
+
+
+kube-apiserver의 경우 대체하는 이름이 많기 때문에 전부 있는지 살펴야 함.
+
+
+그런 다음 인증서의 유효성 섹션을 확인해 유효 기간 만료일을 확인하고 인증서 발급자(증명서를 발행한 CA) 확인.
+
+
+kubeadm은 kubernetes ca라고 함. 모두 다른 인증서의 정보를 확인하려면 위와 같은 절차를 따르면 됨.
+
+
+확인할 것 → 올바른 이름과 대체 이름, 조직, 올바른 발행인에 의해 발행되고 인증서가 만료되지 않았는지 확인.
+
+
+인증서 요구사항은 쿠버네티스 문서 페이지에 상세하게 나옴.
+
+
+문제가 생기면 로그를 살펴봐야 함.
+
+
+```bash
+journal -u etcd.service -l
+```
+
+
+처음부터 혼자 클러스터를 설정하고 서비스가 OS에서 Native Services로 구성돼 있다면 운영체제 로깅 기능을 이용한 서비스 로그를 봄.
+
+
+kubeadm으로 클러스터를 설정하면 다양한 구성 요소가 포드로 배포됨. → 로그를 보면 kube control 로그 명령과 Pod 이름이 있음.
+
+
+Kube API server나 ETCD 서버와 같은 핵심 구성 요소가 다운되면 kube control 명령이 동작하지 않음.
+
+
+이런 경우 docker로 가서 로그를 가져와야 함.
+
+
+docker ps -a 명령으로 모든 컨테이너를 목록화하고 Docker 로그를 확인해 컨테이너 ID를 입력함.
+
+
 ## Practice Test - View Certificates
+
+1. kube-apiserver에 사용된 인증서 파일
+
+	```bash
+	cat /etc/kubernetes/manifests/kube-apiserver.yaml
+	.➡️--tls-cert-file=/etc/kubernetes/pki/apiserver.crt
+	```
+
+2. ETCD 서버에 클라이언트로 kube-apiserver를 인증하기 위해 사용되는 인증서
+
+	```bash
+	cat /etc/kubernetes/manifests/kube-apiserver.yaml
+	.➡️--etcd-certfile=/etc/kubernetes/pki/apiserver-etcd-client.crt
+	```
+
+3. kubelet 서버에 kubeapi-server를 인증하기 위해 사용된 키
+
+	```bash
+	cat /etc/kubernetes/manifests/kube-apiserver.ya
+	➡️--kubelet-client-key=/etc/kubernetes/pki/apiserver-kubelet-client.key
+	```
+
+4. ETCD 서버에 사용된 ETCD 서버 인증서
+
+	```bash
+	cat /etc/kubernetes/manifests/etcd.yaml
+	➡️--cert-file=/etc/kubernetes/pki/etcd/server.crt
+	```
+
+5. ETCD server에 제공하기 위해 사용된 ETCD 서버 CA Root 인증서
+etcd 서버는 자체 CA를 가질 수 있음. 그래서 kube-api server에서 사용된 것과 다를 수 있음.
+
+	```bash
+	cat /etc/kubernetes/manifests/etcd.yaml
+	➡️--trusted-ca-file=/etc/kubernetes/pki/etcd/ca.crt
+	```
+
+6. Kube API 인증서에 구성된 CA(Common Name)은?
+
+	```bash
+	openssl x509 -in /etc/kubernetes/pki/apiserver.crt -text -noout
+	.➡️ Subject: CN = kube-apiserver
+	```
+
+7. Kube API Server 인증서를 발행한 CA의 이름이 무엇인가?
+
+	```bash
+	openssl x509 -in /etc/kubernetes/pki/apiserver.crt -text -noout
+	.➡️ Issuer: CN = kubernetes
+	```
+
+8. Kube API Server 인증서에 구성된 대체 이름이 아닌 것.
+
+	```bash
+	openssl x509 -in /etc/kubernetes/pki/apiserver.crt -text -noout
+	.➡️X509v3 Subject Alternative Name: DNS: controlplane, DNS: kubernetes, DNS:kubernetes.default, DNS:kubernetes.default.svc, DNS:kubernetes.default.svc.cluster.local, IP Address:172.20.0.1, IP Address:192.168.242.173
+	```
+
+9. ETCD 서버 인증서에 구성된 CN은?
+
+	```bash
+	openssl x509 -in /etc/kubernetes/pki/etcd/server.crt -text -noout
+	➡️Subject: CN = controlplane
+	```
+
+10. 발행된 일자로부터 Kube-API Server 인증서는 얼마나 유효한가? 1년
+
+	```bash
+	openssl x509 -in /etc/kubernetes/pki/apiserver.crt -text -noout
+	➡️Validity
+				Not Before: Mar 6 09:36:46 2025 GMT
+				Not After : Mar 6 09:41:46 2026 GMT
+	```
+
+11. 발행된 일자로부터 Root CA 인증서는 얼마나 유효한가? 10년
+
+	```bash
+	openssl x509 -in /etc/kubernetes/pki/ca.crt -text -noout
+	➡️Validity
+				Not Before: Mar 6 09:36:46 2025 GMT
+				Not After : Mar 4 09:41:46 2035 GMT
+	```
+
+12. kubectl이 갑자기 응답을 멈춤. 최근에 수정된 /etc/kubernetes/manifests/etcd.yaml 파일 확인 후 수정
+
+	```bash
+	vi /etc/kubernetes/manifests/etcd.yaml
+	➡️--cert-file=/etc/kubernetes/pki/etcd/server-certificate.crt 수정
+	➡️--cert-file=/etc/kubernetes/pki/etcd/server.crt
+	```
+
+13. kube-api server가 다시 멈춤. kube-api server로그를 보고 주 이유를 알아내서 고치기.
+
+	```bash
+	crictl ps -a | grep kube-apiserver # 컨테이너 번호 가져오기
+	crictl logs --tail=2 e0cde15b70f4e
+	vi /etc/kubernetes/manifests/kube-apiserver.yaml
+	➡️--etcd-cafile=/etc/kubernetes/pki/etcd/ca.crt # 수정
+	```
+
+
+	![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/feaa57d9-69a1-477b-90eb-075854919446/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466QUMUET3P%2F20250306%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250306T140857Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQCVDfJl%2FO8Fzv3CYb5%2FWEA2Gp9OPLGLEO%2BG3%2F0n5OrYkAIgBuo30xfPprq9gn%2F2EEp5CkVtxguW28vEcPCYnCwWV9Aq%2FwMILxAAGgw2Mzc0MjMxODM4MDUiDD3OtiB8OOpZVzm4UircA9dx4T9a%2FP9wt8BaXfSpE39v6OcdXKtkbSJvbQDMDmPxxZHUmSOYB1Lb3hC%2BmDBTg6tbh1LwcqPjC1mcNj5Ws5QrvH3v2w4xzyAYQ%2F%2Bg%2BkNuN4fK6KlYSlVWve1MIrxZedl2kQyqjvF1RGJHu11DFte75qdySVF%2BQdOXYuT2D8eDwG8rJZcka4V6OgpaQlQk6T7GUOPU%2FyIgqKf2Zcj4WZnQpDlrynlVQOaV5mpyVzdNMgKUGRF9mory6HTxBMM5cpTssPnGH0hzufluzRljo2eiyokpPWmLHxGts7TrgoYIh2%2F1DFBtZULG0vRRxhs53coUF2s%2FG%2BFMlUIgMMbXPGJ%2ByLI9V0NFQ8UuP41yt9mWTtifsUaUKMouU%2FqJV0l5nAqmGnP5t0smG9Gby8n9coSq%2FhWD%2BDKn%2Fz2geIp1stRONL888afydv0GQ%2FgvmRX1WD3GY1p3FVvq2iSGhVVSMYn2TXZwgmJ%2F7Hut3hyqR9rmTN%2FTilPMVZ3NB%2BxLwUtcQRxCtciYjQhgTngGw3X3ebwcvc3XuSDQiVy0UALvi4j96rFuU%2BjC6b5wSBCxelMHYXlMia2BpUTtQSmpjbbIdGc%2BqD4Dcfm2gY9DhWyozOyYyjVbvpYQpEj7BuRNMOvPpr4GOqUBzNxgSscxbeEMrel2Z%2F8Yk27T91b%2BXHErLfYS3ez%2BoxddEogM2s8LjeQ1BoxIKCuVdM%2BsFY21LkoFdE36LHbS8exYJfecUnQ7pLNvgITHNjtQCxZXVjhdGMTsShS9MOFSZxcJBWk6IhnpgmP1nwMUoP0OJMukEXkirGVEWH6F103DLSF%2FTFz1g0%2Botkk8%2F%2F31m%2FPDH7qhUU%2F9VkidPK6vx3Pxgr1c&X-Amz-Signature=553e9fcb4164079b68e6465bbfbe748856bb073562c2f72d4e8f975b102c063f&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
 ## Certificates API
