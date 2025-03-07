@@ -470,11 +470,143 @@ etcd 서버는 자체 CA를 가질 수 있음. 그래서 kube-api server에서 �
 	```
 
 
-	![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/feaa57d9-69a1-477b-90eb-075854919446/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466QUMUET3P%2F20250306%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250306T140857Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQCVDfJl%2FO8Fzv3CYb5%2FWEA2Gp9OPLGLEO%2BG3%2F0n5OrYkAIgBuo30xfPprq9gn%2F2EEp5CkVtxguW28vEcPCYnCwWV9Aq%2FwMILxAAGgw2Mzc0MjMxODM4MDUiDD3OtiB8OOpZVzm4UircA9dx4T9a%2FP9wt8BaXfSpE39v6OcdXKtkbSJvbQDMDmPxxZHUmSOYB1Lb3hC%2BmDBTg6tbh1LwcqPjC1mcNj5Ws5QrvH3v2w4xzyAYQ%2F%2Bg%2BkNuN4fK6KlYSlVWve1MIrxZedl2kQyqjvF1RGJHu11DFte75qdySVF%2BQdOXYuT2D8eDwG8rJZcka4V6OgpaQlQk6T7GUOPU%2FyIgqKf2Zcj4WZnQpDlrynlVQOaV5mpyVzdNMgKUGRF9mory6HTxBMM5cpTssPnGH0hzufluzRljo2eiyokpPWmLHxGts7TrgoYIh2%2F1DFBtZULG0vRRxhs53coUF2s%2FG%2BFMlUIgMMbXPGJ%2ByLI9V0NFQ8UuP41yt9mWTtifsUaUKMouU%2FqJV0l5nAqmGnP5t0smG9Gby8n9coSq%2FhWD%2BDKn%2Fz2geIp1stRONL888afydv0GQ%2FgvmRX1WD3GY1p3FVvq2iSGhVVSMYn2TXZwgmJ%2F7Hut3hyqR9rmTN%2FTilPMVZ3NB%2BxLwUtcQRxCtciYjQhgTngGw3X3ebwcvc3XuSDQiVy0UALvi4j96rFuU%2BjC6b5wSBCxelMHYXlMia2BpUTtQSmpjbbIdGc%2BqD4Dcfm2gY9DhWyozOyYyjVbvpYQpEj7BuRNMOvPpr4GOqUBzNxgSscxbeEMrel2Z%2F8Yk27T91b%2BXHErLfYS3ez%2BoxddEogM2s8LjeQ1BoxIKCuVdM%2BsFY21LkoFdE36LHbS8exYJfecUnQ7pLNvgITHNjtQCxZXVjhdGMTsShS9MOFSZxcJBWk6IhnpgmP1nwMUoP0OJMukEXkirGVEWH6F103DLSF%2FTFz1g0%2Botkk8%2F%2F31m%2FPDH7qhUU%2F9VkidPK6vx3Pxgr1c&X-Amz-Signature=553e9fcb4164079b68e6465bbfbe748856bb073562c2f72d4e8f975b102c063f&X-Amz-SignedHeaders=host&x-id=GetObject)
+	![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/feaa57d9-69a1-477b-90eb-075854919446/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466QB2LBM5N%2F20250307%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250307T140847Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEP3%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIByUExcU8dEh9j988PaRTgnCG7JgjfptbIkK2jFmDtiLAiEAu3N0mtiwypZkdL41rm9nUsnLjKQtun%2FZq0mchFP3oLkq%2FwMIRhAAGgw2Mzc0MjMxODM4MDUiDCpYjlj1teZEfOvoHircA5fd7IDxWRCOYUGDfAVCrYYsCCm%2BxY8m7b1WMOaRxw5Z1qHeXpyFyliEa00a%2FpcpHfW4gzAHMvxG5XiXUDngIgOiXurxITtcTdT8VYYDAwgfCtusMNCNmK5pE0fgE3xp6tjlhiWSo3S5vFicCuHUEoQ6CUPVhsl%2BNlBEsgi7zIrF5uyWX51a1obVwqltsqguQTTAHvz9OQuQB3A2sqf4NksbRFF7biTfKEYiSL7zdxYtlqsS%2BrrUE4E9FZpEg0C5SFEYKZHdukbd%2BdQlTCWXjlMpDXO0Z9l6KRIijwA8GHtOJp2IUY2jj5ib4sVSd39atVaqEF491%2BBuW3DyidFd%2BAh4rbhFqk9s8fwF3gM1iin6eaRfeXKJc9r%2FpoHsqSh4SAO%2FPQKpA9Zi24QuNGlOmo1q%2BlI9imIMFxlfCVTqzSJ%2BDsqAEIen2U9iaxFJOqYIAaZDrAuumxNeYJd15bvPoDNPIz9tl9B8qUjeLPqISD%2B6MSXu%2FvLYAeo7ysL%2FbvJmJv3ALiDtAw7dVLzLB2A1yfSIMsu8HkhoNVAGneG6VORTdQ4H6spNSScRmE7CRGwZRoLGvChr5sNFzllTJ7lvoklNw1IXATo4ldrq0gHtF7N6HRXEFTeMDWM0ZPjEMM3fq74GOqUB7wVMe4NuSdXfLL97DyGYsVpmhK6RwGn%2BVmOVww945NdZUiNmGNMUzRB9rMa1Mcg%2FOT7FGSa5TCFEavnrfpWUXNKyPnA7w%2Fft%2F%2BNcofwDD8LOGuulDWBvXAepG2fa4tN8g2gOKFaGHnBywlHjkGljtovDifH9XTxhOPUKOk1xdyeO%2FeTXG17U4RgtzX6ZSJR4%2FQfIKG3Dle1j6stZp%2Fz9LTKL8HCe&X-Amz-Signature=6035223be127ecbe0f8520f523834625e673aa22a6c71ac59f570e793eeb7b23&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
 ## Certificates API
 
+
+내가 유일한 클러스터 관리자 → 팀에 새 관리자가 들어옴. → 키와 인증서 파일 한 쌍 필요. → 개인 키를 만들어서 인증서 요청을 나에게 보냄. → 내 CA 서버로 가져가서 서버의 개인키와 루트 인증서를 사용하여 서명함. → 서명한 것을 새 팀원에게 전달.
+
+
+인증서 유효 기간이 끝날 때마다 위 과정 수행.
+
+
+CA 서버는 무엇인가?
+
+
+CA는 우리가 생성한 키와 인증서 파일 한 쌍. 이 파일 쌍에 접근할 수 있는 사람은 누구든 쿠버네티스 환경에 대한 인증서에 서명 가능. → 파일들을 안전한 환경에 보호해야 함. → 이것이 CA 서버.
+
+
+인증서 키 파일은 해당 서버에 안전하게 저장됨. 인증서에 서명하고 싶을 때마다 해당 서버에 로그인 해야만 가능.
+
+
+현재는 kubernetes master node 자체에 인증서가 배치돼 있음. master node는 CA server임. kubeadm tool은 같은 작업 수행.
+
+
+CA 파일 쌍을 생성하여 master node에 저장.
+
+
+수동적으로 요청을 서명했지만, 사용자가 증가하고 팀이 성장함에 따라 인증서 서명 요청을 관리하고 만료되면 인증서를 재생성하는 자동화된 방법 필요.
+
+
+Kubernetes는 내장된 certificates API가 있음.
+
+
+certificates API를 가지고 API 요청을 통해 쿠버네티스에 직접 인증서 서명 요청을 보냄.
+
+
+관리자가 마스터 노드에 로그인하여 직접 인증서를 서명하는 대신 인증서 요청을 받으면 CertificateSigningRequest라는 Kubernetes API 객체를 생성.
+
+
+객체가 생성되면 클러스터 관리자는 모든 인증서 서명 요청이 볼 수 있음.
+
+
+요청은 kubectl  명령어를 사용하여 쉽게 검토하고 승인할 수 있음.
+
+
+인증서를 추출하여 사용자와 공유 가능.
+
+> 만드는 방법
+
+```bash
+openssl genrsa -out jane.key 2048
+openssl req -new -key jane.key -subj "/CN=jane" -out jane.csr # CSR 객체 생성
+```
+
+
+CertificateSigningRequest 객체는 일반적인 필드가 있는 manifest 파일을 사용하여 다른 Kubernetes 객체와 마찬가지로 생성됨.
+
+
+request field는 사용자가 보낸 인증서 서명 요청을 지정. 일반 텍스트로 명시하면 안 됨. Base64를 사용하여 암호화해야 됨. 그리고 요청을 보냄
+
+
+객체가 생성되면 모든 인증서 서명 요청은 `kubectl get csr` 명령어를 실행하여 관리자가 볼 수 있음.
+
+
+새 요청을 확인하고 `kubectl certificate approve` 명령어를 실행하여 요청을 승인함.
+
+
+Kubenetes는 CA 키 쌍을 사용하여 인증서를 서명하고 유저에 대한 인증서를 생성. 이를 추출하여 사용자와 공유함.
+
+
+yaml형식으로 출력하면 certificate 부분은 이전과 마찬가지로 base64 인코딩 형식.
+
+
+디코딩하려면 텍스트를 가져와서 Base64 유틸리티의 디코딩 옵션 사용. → 평문 형식을 제공. end user와 공유 가능.
+
+
+인증서와 관련된 작업을 실제로 어떤 구성 요소가 담당해서 하는가?
+
+
+모든 인증서 관련 작업은 controller manager에 의해 수행됨.
+
+
+controller manager를 자세히 보면 CSR-Approving, CSR-Signing 등으로 불리는 것이 있음. 이것들이 이러한 구체적인 작업을 수행.
+
+
+인증서에 서명해야 하는 사람이 있다면 CA 서버와 루트 인증서와 개인 키가 필요하다는 것을 알고 있음. 컨트롤러 관리자 서비스 구성에는 이를 지정할 수 있는 두 가지 옵션이 있음.
+
+
+```bash
+--cluster-signing-cert-file=/etc/kubernetes/pki/ca.crt
+--cluster-signing-key-file=/etc/kubernetes/pki/ca.key
+```
+
+
+## Practice Test - Certificates API
+
+1. akshay.csr 파일의 내용을 가지고 akshay 이름을 가진 CertificateSigningRequest 객체 생성.
+
+	CSR을 생성할 때 signerName이라는 추가 필드도 추가해야 한다는 점에 유의하세요. API 서버에 대한 클라이언트 인증을 위해 내장된 서명자 kubernetes.io/kube-apiserver-client 를 사용합니다.
+
+
+	```yaml
+	apiVersion: certificates.k8s.io/v1
+	kind: CertificateSigningRequest
+	metadata:
+	  name: akshay
+	spec:
+	  groups:
+	  - system:authenticated
+	  request: < the base64 encoded value of the csr file >
+	  signerName: kubernetes.io/kube-apiserver-client
+	  usages:
+	    - client auth
+	```
+
+2. 새로 생성한 CSR 객체의 상태
+3. CSR Request 승인
+
+	```bash
+	kubectl certificate approve akshay
+	```
+
+4. 클러스터에서 이용가능한 CSR request 수. approved와 pending 포함
+5. 정기 점검 중 새 CSR 요청이 있다는 것을 깨달음. 요청의 이름은?
+6. 들어온 요청을 인지하지 못함. CSR 이 무슨 그룹에 접근을 요청하는가? yaml로 출력하여 확인.
+
+	```bash
+	kubectl get csr agent-smith -o yaml
+	```
+
+7. 요청 거절.
+
+	```bash
+	kubectl certificate deny agent-smith
+	```
+
+8. 새 CSR 객체 삭제
 
 ## KubeConfig
 
