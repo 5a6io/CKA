@@ -372,105 +372,105 @@ docker ps -a 명령으로 모든 컨테이너를 목록화하고 Docker 로그�
 
 1. kube-apiserver에 사용된 인증서 파일
 
-	```bash
-	cat /etc/kubernetes/manifests/kube-apiserver.yaml
-	.➡️--tls-cert-file=/etc/kubernetes/pki/apiserver.crt
-	```
+    ```bash
+    cat /etc/kubernetes/manifests/kube-apiserver.yaml
+    .➡️--tls-cert-file=/etc/kubernetes/pki/apiserver.crt
+    ```
 
 2. ETCD 서버에 클라이언트로 kube-apiserver를 인증하기 위해 사용되는 인증서
 
-	```bash
-	cat /etc/kubernetes/manifests/kube-apiserver.yaml
-	.➡️--etcd-certfile=/etc/kubernetes/pki/apiserver-etcd-client.crt
-	```
+    ```bash
+    cat /etc/kubernetes/manifests/kube-apiserver.yaml
+    .➡️--etcd-certfile=/etc/kubernetes/pki/apiserver-etcd-client.crt
+    ```
 
 3. kubelet 서버에 kubeapi-server를 인증하기 위해 사용된 키
 
-	```bash
-	cat /etc/kubernetes/manifests/kube-apiserver.ya
-	➡️--kubelet-client-key=/etc/kubernetes/pki/apiserver-kubelet-client.key
-	```
+    ```bash
+    cat /etc/kubernetes/manifests/kube-apiserver.ya
+    ➡️--kubelet-client-key=/etc/kubernetes/pki/apiserver-kubelet-client.key
+    ```
 
 4. ETCD 서버에 사용된 ETCD 서버 인증서
 
-	```bash
-	cat /etc/kubernetes/manifests/etcd.yaml
-	➡️--cert-file=/etc/kubernetes/pki/etcd/server.crt
-	```
+    ```bash
+    cat /etc/kubernetes/manifests/etcd.yaml
+    ➡️--cert-file=/etc/kubernetes/pki/etcd/server.crt
+    ```
 
 5. ETCD server에 제공하기 위해 사용된 ETCD 서버 CA Root 인증서
 etcd 서버는 자체 CA를 가질 수 있음. 그래서 kube-api server에서 사용된 것과 다를 수 있음.
 
-	```bash
-	cat /etc/kubernetes/manifests/etcd.yaml
-	➡️--trusted-ca-file=/etc/kubernetes/pki/etcd/ca.crt
-	```
+    ```bash
+    cat /etc/kubernetes/manifests/etcd.yaml
+    ➡️--trusted-ca-file=/etc/kubernetes/pki/etcd/ca.crt
+    ```
 
 6. Kube API 인증서에 구성된 CA(Common Name)은?
 
-	```bash
-	openssl x509 -in /etc/kubernetes/pki/apiserver.crt -text -noout
-	.➡️ Subject: CN = kube-apiserver
-	```
+    ```bash
+    openssl x509 -in /etc/kubernetes/pki/apiserver.crt -text -noout
+    .➡️ Subject: CN = kube-apiserver
+    ```
 
 7. Kube API Server 인증서를 발행한 CA의 이름이 무엇인가?
 
-	```bash
-	openssl x509 -in /etc/kubernetes/pki/apiserver.crt -text -noout
-	.➡️ Issuer: CN = kubernetes
-	```
+    ```bash
+    openssl x509 -in /etc/kubernetes/pki/apiserver.crt -text -noout
+    .➡️ Issuer: CN = kubernetes
+    ```
 
 8. Kube API Server 인증서에 구성된 대체 이름이 아닌 것.
 
-	```bash
-	openssl x509 -in /etc/kubernetes/pki/apiserver.crt -text -noout
-	.➡️X509v3 Subject Alternative Name: DNS: controlplane, DNS: kubernetes, DNS:kubernetes.default, DNS:kubernetes.default.svc, DNS:kubernetes.default.svc.cluster.local, IP Address:172.20.0.1, IP Address:192.168.242.173
-	```
+    ```bash
+    openssl x509 -in /etc/kubernetes/pki/apiserver.crt -text -noout
+    .➡️X509v3 Subject Alternative Name: DNS: controlplane, DNS: kubernetes, DNS:kubernetes.default, DNS:kubernetes.default.svc, DNS:kubernetes.default.svc.cluster.local, IP Address:172.20.0.1, IP Address:192.168.242.173
+    ```
 
 9. ETCD 서버 인증서에 구성된 CN은?
 
-	```bash
-	openssl x509 -in /etc/kubernetes/pki/etcd/server.crt -text -noout
-	➡️Subject: CN = controlplane
-	```
+    ```bash
+    openssl x509 -in /etc/kubernetes/pki/etcd/server.crt -text -noout
+    ➡️Subject: CN = controlplane
+    ```
 
 10. 발행된 일자로부터 Kube-API Server 인증서는 얼마나 유효한가? 1년
 
-	```bash
-	openssl x509 -in /etc/kubernetes/pki/apiserver.crt -text -noout
-	➡️Validity
-				Not Before: Mar 6 09:36:46 2025 GMT
-				Not After : Mar 6 09:41:46 2026 GMT
-	```
+    ```bash
+    openssl x509 -in /etc/kubernetes/pki/apiserver.crt -text -noout
+    ➡️Validity
+    			Not Before: Mar 6 09:36:46 2025 GMT
+    			Not After : Mar 6 09:41:46 2026 GMT
+    ```
 
 11. 발행된 일자로부터 Root CA 인증서는 얼마나 유효한가? 10년
 
-	```bash
-	openssl x509 -in /etc/kubernetes/pki/ca.crt -text -noout
-	➡️Validity
-				Not Before: Mar 6 09:36:46 2025 GMT
-				Not After : Mar 4 09:41:46 2035 GMT
-	```
+    ```bash
+    openssl x509 -in /etc/kubernetes/pki/ca.crt -text -noout
+    ➡️Validity
+    			Not Before: Mar 6 09:36:46 2025 GMT
+    			Not After : Mar 4 09:41:46 2035 GMT
+    ```
 
 12. kubectl이 갑자기 응답을 멈춤. 최근에 수정된 /etc/kubernetes/manifests/etcd.yaml 파일 확인 후 수정
 
-	```bash
-	vi /etc/kubernetes/manifests/etcd.yaml
-	➡️--cert-file=/etc/kubernetes/pki/etcd/server-certificate.crt 수정
-	➡️--cert-file=/etc/kubernetes/pki/etcd/server.crt
-	```
+    ```bash
+    vi /etc/kubernetes/manifests/etcd.yaml
+    ➡️--cert-file=/etc/kubernetes/pki/etcd/server-certificate.crt 수정
+    ➡️--cert-file=/etc/kubernetes/pki/etcd/server.crt
+    ```
 
 13. kube-api server가 다시 멈춤. kube-api server로그를 보고 주 이유를 알아내서 고치기.
 
-	```bash
-	crictl ps -a | grep kube-apiserver # 컨테이너 번호 가져오기
-	crictl logs --tail=2 e0cde15b70f4e
-	vi /etc/kubernetes/manifests/kube-apiserver.yaml
-	➡️--etcd-cafile=/etc/kubernetes/pki/etcd/ca.crt # 수정
-	```
+    ```bash
+    crictl ps -a | grep kube-apiserver # 컨테이너 번호 가져오기
+    crictl logs --tail=2 e0cde15b70f4e
+    vi /etc/kubernetes/manifests/kube-apiserver.yaml
+    ➡️--etcd-cafile=/etc/kubernetes/pki/etcd/ca.crt # 수정
+    ```
 
 
-	![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/feaa57d9-69a1-477b-90eb-075854919446/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466QB2LBM5N%2F20250307%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250307T140847Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEP3%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIByUExcU8dEh9j988PaRTgnCG7JgjfptbIkK2jFmDtiLAiEAu3N0mtiwypZkdL41rm9nUsnLjKQtun%2FZq0mchFP3oLkq%2FwMIRhAAGgw2Mzc0MjMxODM4MDUiDCpYjlj1teZEfOvoHircA5fd7IDxWRCOYUGDfAVCrYYsCCm%2BxY8m7b1WMOaRxw5Z1qHeXpyFyliEa00a%2FpcpHfW4gzAHMvxG5XiXUDngIgOiXurxITtcTdT8VYYDAwgfCtusMNCNmK5pE0fgE3xp6tjlhiWSo3S5vFicCuHUEoQ6CUPVhsl%2BNlBEsgi7zIrF5uyWX51a1obVwqltsqguQTTAHvz9OQuQB3A2sqf4NksbRFF7biTfKEYiSL7zdxYtlqsS%2BrrUE4E9FZpEg0C5SFEYKZHdukbd%2BdQlTCWXjlMpDXO0Z9l6KRIijwA8GHtOJp2IUY2jj5ib4sVSd39atVaqEF491%2BBuW3DyidFd%2BAh4rbhFqk9s8fwF3gM1iin6eaRfeXKJc9r%2FpoHsqSh4SAO%2FPQKpA9Zi24QuNGlOmo1q%2BlI9imIMFxlfCVTqzSJ%2BDsqAEIen2U9iaxFJOqYIAaZDrAuumxNeYJd15bvPoDNPIz9tl9B8qUjeLPqISD%2B6MSXu%2FvLYAeo7ysL%2FbvJmJv3ALiDtAw7dVLzLB2A1yfSIMsu8HkhoNVAGneG6VORTdQ4H6spNSScRmE7CRGwZRoLGvChr5sNFzllTJ7lvoklNw1IXATo4ldrq0gHtF7N6HRXEFTeMDWM0ZPjEMM3fq74GOqUB7wVMe4NuSdXfLL97DyGYsVpmhK6RwGn%2BVmOVww945NdZUiNmGNMUzRB9rMa1Mcg%2FOT7FGSa5TCFEavnrfpWUXNKyPnA7w%2Fft%2F%2BNcofwDD8LOGuulDWBvXAepG2fa4tN8g2gOKFaGHnBywlHjkGljtovDifH9XTxhOPUKOk1xdyeO%2FeTXG17U4RgtzX6ZSJR4%2FQfIKG3Dle1j6stZp%2Fz9LTKL8HCe&X-Amz-Signature=6035223be127ecbe0f8520f523834625e673aa22a6c71ac59f570e793eeb7b23&X-Amz-SignedHeaders=host&x-id=GetObject)
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/feaa57d9-69a1-477b-90eb-075854919446/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466UIHP3T2L%2F20250308%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250308T140413Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEBUaCXVzLXdlc3QtMiJIMEYCIQCmEj2l%2BOIZNoasfpLBYdXvuCS1IlcZEDVWRr6wOXmu3wIhAPEhW6%2BRr5TUvHTEmXla%2FQv0x9zKL3on9o1gni3n2FSSKv8DCF4QABoMNjM3NDIzMTgzODA1IgwcT6VeNW54V0LGFcgq3AP7kWWY7hfjzUW3GPmbowUfBXxLBudoZVePBXBvc3EyKLYB4XvY5AYlrqzzfZmD%2Fae%2Bkga0ux5F6KDdpuzq%2BWct7lA18ZVhmMUkGGBK42QAROWw%2BrmnYe328i%2FiglsUYNtX%2BPwVQmYXeTXXMYIZAKntU%2ByfYaFojlpCt44THPCBwqCYrj0GeFuckJgQKRzEJDbAyooBL3KqvzhgD3KPAyGSB1HWaPRm1WCMbWbSH7cdNV2xcZsY5oVs%2BOoGJDQKJRA8MlkiluPE1aVlJx2qfSriKYXOJ2qQtqmwKo4HmzkkBjS90N1R41j6G1ZtWeM6x61KZaQzGSKyeCscO0G5%2BG2GH44AJzKGhn6UPr2AHPlGTdGnft7EDxSme9MaPPNClGyuIw5rEc0ow0jRfrHzTToFa%2FR%2Fj7LrcXlVT4V5DGSZOxWSZdtkBnBPkbnMi1Uc0H0GzyqLRb3o12LVLBNMpal%2Fay%2FtWTPmGZvIpVs0JqsIr9yob7agYbdCoJ5N%2F%2FM3c4Z0BUoHKuA8K3lwjK8iOgOh8N2iB4EmKaWIs40Y201o1D97f5ANAvT9vGX6sZym0oh2o1%2ButC1TEteohTFw81VPOvmoMt653veEN3J6KQJBcIYyoz6NXRE0ZKXAaTCEg7G%2BBjqkAdjSBdz1TBrUaPF4EqeB3jtWhE34X%2FQisVz1tDoKuJ0cPXA5MISjZVT%2BKYk05OU5JUbw3iEbtGSj3yzHxgV4wfk4%2FevCTz4qwPriZzD1SQ1vjXjL9FfRppw2z0VAY7jifZ5Ofz3rJSnOHRLlkkMPdkMUmudiqGvPfdVviSShAHGdt%2FYXxn%2FHaBv9lFUIQ4gxqLpSPXHhTDTMroZIUlk7H%2FPUC3Yn&X-Amz-Signature=cdf4b6c92f097cff8b860fe636ba3b0b06e52953a857cc1a69af22b01a379564&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
 ## Certificates API
@@ -568,43 +568,53 @@ controller manager를 자세히 보면 CSR-Approving, CSR-Signing 등으로 불�
 
 1. akshay.csr 파일의 내용을 가지고 akshay 이름을 가진 CertificateSigningRequest 객체 생성.
 
-	CSR을 생성할 때 signerName이라는 추가 필드도 추가해야 한다는 점에 유의하세요. API 서버에 대한 클라이언트 인증을 위해 내장된 서명자 kubernetes.io/kube-apiserver-client 를 사용합니다.
+    CSR을 생성할 때 signerName이라는 추가 필드도 추가해야 한다는 점에 유의하세요. API 서버에 대한 클라이언트 인증을 위해 내장된 서명자 kubernetes.io/kube-apiserver-client 를 사용합니다.
 
 
-	```yaml
-	apiVersion: certificates.k8s.io/v1
-	kind: CertificateSigningRequest
-	metadata:
-	  name: akshay
-	spec:
-	  groups:
-	  - system:authenticated
-	  request: < the base64 encoded value of the csr file >
-	  signerName: kubernetes.io/kube-apiserver-client
-	  usages:
-	    - client auth
-	```
+    명령어로 생성할 수 없음. 그러므로 yaml 작성 필요.
+
+
+    ```yaml
+    apiVersion: certificates.k8s.io/v1
+    kind: CertificateSigningRequest
+    metadata:
+      name: akshay
+    spec:
+      groups:
+      - system:authenticated
+      request: < the base64 encoded value of the csr file >
+      signerName: kubernetes.io/kube-apiserver-client
+      usages:
+        - client auth
+    ```
 
 2. 새로 생성한 CSR 객체의 상태
 3. CSR Request 승인
 
-	```bash
-	kubectl certificate approve akshay
-	```
+    ```bash
+    kubectl certificate approve akshay
+    ```
 
 4. 클러스터에서 이용가능한 CSR request 수. approved와 pending 포함
 5. 정기 점검 중 새 CSR 요청이 있다는 것을 깨달음. 요청의 이름은?
 6. 들어온 요청을 인지하지 못함. CSR 이 무슨 그룹에 접근을 요청하는가? yaml로 출력하여 확인.
 
-	```bash
-	kubectl get csr agent-smith -o yaml
-	```
+    ```bash
+    kubectl get csr agent-smith -o yaml
+    ➡️spec:
+        groups:
+        - system:masters
+        - system:authenticated
+    ```
 
 7. 요청 거절.
 
-	```bash
-	kubectl certificate deny agent-smith
-	```
+    system:masters는 모든 권한을 가지고 있음. 그러므로 요청을 거절.
+
+
+    ```bash
+    kubectl certificate deny agent-smith
+    ```
 
 8. 새 CSR 객체 삭제
 

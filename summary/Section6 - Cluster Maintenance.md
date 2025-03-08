@@ -65,16 +65,16 @@ pod-eviction-timeout이 지나고 노드가 온라인 상태로 돌아오면 그
 3. 애플리케이션은 어느 노드 위에 놓여있는가
 4. 유지보수때문에 node01을 가져와야 함. 노드의 애플리케이션을 비우고 스케줄링할 수 없도록 함.
 
-	```bash
-	kubectl drain node01 --ignore-daemonsets
-	```
+    ```bash
+    kubectl drain node01 --ignore-daemonsets
+    ```
 
 5. 현재 애플리케이션은 어느 노드에서 동작하는가?
 6. node01을 다시 스케줄링할 수 있도록 함.
 
-	```bash
-	kubectl uncordon node01
-	```
+    ```bash
+    kubectl uncordon node01
+    ```
 
 7. default 네임스페이스에서 node01 위에 스케줄링된 파드 수
 8. 왜 node01에 파드가 없는가?
@@ -82,26 +82,26 @@ Only when new pods are created they will be scheduled. 새 파드가 생겼을 �
 9. controlplane 노드 위에 왜 파드가 위치했는가?
 controlplane node does not have any taints. controlplane 노드는 taints를 갖고 있지 않다.
 
-	> 💡 대게 다중 노드 클러스터를 가질 때 master node(controlplane node)는 파드가 위치하는 것을 방지하고자 taints를 가짐.
+    > 💡 대게 다중 노드 클러스터를 가질 때 master node(controlplane node)는 파드가 위치하는 것을 방지하고자 taints를 가짐.
 
 10. node01을 다시 유지관리 작업을 수행해야 함. 이전과 같은 명령어를 사용하여 작업 수행.
 작동하는가? 작동하지 않음.
 11. 처음에는 동작했는데 왜 node01 drain 명령어가 실패했는가?
 there is a pod in node01 which is not part of a replicaset
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/2b30c584-0bbf-4074-9099-540946c35952/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466Z5QCTC6P%2F20250307%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250307T140819Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEP3%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIB1CKvaqX732tAU3xTPHcQ0bUE1uKqQexjhi8SZ1gZiiAiBErkj3W7OYKgPkKA5tSJbfYf1AHYPotUU%2BOIi0qjOmUir%2FAwhGEAAaDDYzNzQyMzE4MzgwNSIMUXppuDPnyJR99eoiKtwD2TBJDl%2FTMdwwRf6lJHTJbJekimktvlbUMgufVv1IhqCvj2T3UR%2FHTAvf0YoMIUT41wjiDm5GpW1cq7snQjceFhJ%2FzORRYJLXYeJ5%2BhyGjslFvkzcdVs3hT3qcSZAdWNJiG1lw6KygyEZblQ7EEDmwaZ87GvZD8W5dLl2JR%2BSoKe151XiOpYzSqCV8rBltTg%2FFtWKE7O6lrmMj5DgOLExAb2wuTAfQGE9bFN6G%2FXqTN%2FgiIgs9JGEc%2Fpqb0u2mVX6PB1VhNs1rBI9qk7mdYqNz8bXTCDf%2BRqfdweiUM8etoanRoPbCDQ7qsw3I9CdHeIBl4c3yoFbxJ3uBp0SGdIq93SqkbbMQYIfeJDg3Fi8yvU%2FkF5hvXbaersEWRvF6Z6iNLveqB0toxuuCKb%2BVfjuFww9PEBr4S3EE5aSAaXs%2BB9nXdC3dpENc83dFdSVWusaMdMLKmKg%2BUebB7NvUtgSqZ%2B0ClH9kcM5qyUTyVhJeab7mOX8Axd%2Fa97GUjvArU0LIsyBvK3wCoAI9J4FG19fqm6yrDCtDArEv6RRaFrH8PwGTGYVkMeBR%2BXfWDzfaWF05PDBXQ3vK7gg%2FHLA9fzLSm3qJW3zSQK3dn12yksJs5O09bn6ifPNbrdLqA4w4N%2BrvgY6pgHt%2FPkFCejoxnBC8EIelQQ1tcWiJz%2BzdXhVESCKmAW%2FeiVGT%2F6qyHRlAE9SIJhTYinvVwd9yexRHKtkiP3JTlqwuDyaFyQv5nsqgCvgr3drrgvxFp4k4jlW2LlfHiH%2FbaBxKyuaKf6ktW5Pf8NywSBApdE8kEjY1wc7pWkjs6vUXuaTqcPAHlIdBLmHe3kxBdVb66qOebes1AgZs4P0%2BzaAe7DMbNk1&X-Amz-Signature=06ec4490f30fc5663c842c1f9ed168ce80e6b5f6ed064c7fb20187b55e2b1043&X-Amz-SignedHeaders=host&x-id=GetObject)
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/2b30c584-0bbf-4074-9099-540946c35952/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4667G5D7SKA%2F20250308%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250308T140355Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEBMaCXVzLXdlc3QtMiJHMEUCIQCfvZIKPfwwfpQAIn1dj2xLTMaHSt1NadGOwfXvWkwzSwIgcQGQ%2BHiTJU3o2Rypqf4BIaUURVhiqMn%2FGhXE3iS%2Bk%2Fgq%2FwMIXBAAGgw2Mzc0MjMxODM4MDUiDMUHaRxI85q8%2FK%2F9ASrcAzlitOl38DBnjTFL8fJPS8ZcvpBXPKaIE6Sy5AwuYYIco1r4ZueEbAsS8VX0D3X5SSPZbVK8QCK1%2B06bzW4MPgvJTXAPq1428Wjk5ay6fkpbHT83MvtF7U0hMCx7OUH7svZ7YW2Ux2nGnYeT8%2FkKH3eLRB7sY%2BjuL8LvKPn8rsjOZsmlLC%2FxbGMcHGzF0u3BIXiy9TafA9kzqiXJ1fCrR0FbT7EhfMLVKlVw2hryVDBcjwpYVp%2BjLwBR72X1l9q3m%2FOyrtvCiavYJLHLeAQLr91KzZYgiqt7YZ0daz2%2Fu%2BuulGIyHcLsGRdfbcmsw20%2FdDZz9BiogXW0uwjpTVQYFPZJGqRbyq8wGhlh0xOUSfMNSIbraU20K4ZFDuBbiThtBcSZL74szgB60JB%2BNPAWh8Nyi7ksRxeWGyIRHt5fvh9vYDr6EdW9I0shpqUIGaD45FhaTvtqLtP9AyXHZfKfbo52QHTpR67zhxQ8jUjufAN5Cuj%2FzfkRjbNf9O2lh%2F3Joo2%2BIwgCeINrxCsAs%2BNCIWRWae5nOGqBibLKoQp2BugHzwxuS%2Bxi8MKFQ3CzFHj3b568v0BtJxD5HyrizdBqZ4qqxIBu%2FLGKaxcwsNcKjukGVg%2F%2BbyhRjr278pXSML28sL4GOqUBc1dLcq5drpg4G7CjzL03g7UJTIIyQQNemZteDaOZGhRWfdrGDEEWEkQh2WQrlPksAwaDzQfHzMxplx5dpGtvkJHdnPTVwdEjBCcMJV8iJGo7a12mERLkEfqkCtMfbvB1t2Rxi5JkegmHF%2B%2BhsATFYWdUjrgjwR5lxCcftObb880lOe1Oox1rYfMaxg4xBF1WtODnZ9TqiiykpdTfFby%2FGtWWKRsg&X-Amz-Signature=3d098b40f044f1263aa17d58c18b2131c5f4e30936dfea2c7cc2a052a1b33af7&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 1. node01 위 replicaset의 일부가 아닌 pod의 이름
 2. node01을 강제로 drain하면 hr-app은 어떻게 되는가?
 hr-app will be lost forever
 3. hr-app은 중요한 애플리케이션으로 없어지면 안 됨. 더 이상 node01에 스케줄링되면 안 됨. node01을 스케줄링할 수 없도록 표시.
 
-	```bash
-	kubectl cordon node01
-	```
+    ```bash
+    kubectl cordon node01
+    ```
 
 
-	node01에 더 이상 스케줄링 불가. hr-app은 여전히 node01에서 실행 중.
+    node01에 더 이상 스케줄링 불가. hr-app은 여전히 node01에서 실행 중.
 
 
 ## Cluster Upgrade Process
@@ -150,109 +150,109 @@ kubeadm과 같은 도구를 사용하여 클러스터를 배포했다면 그 도
 
 1. master node를 업그레이드하고 worker 노드를 업그레이드 한다.
 
-	master node가 업그레이드 되는 동안 API server, scheduler, 그리고 controller-manager와 같은 control plane 구성 요소들은 잠깐 내린다.
+    master node가 업그레이드 되는 동안 API server, scheduler, 그리고 controller-manager와 같은 control plane 구성 요소들은 잠깐 내린다.
 
 
-	master가 내려간다고 해서 worker 노드들과 클러스터 위 어플리케이션이 영향을 받는 것은 아님. 
+    master가 내려간다고 해서 worker 노드들과 클러스터 위 어플리케이션이 영향을 받는 것은 아님. 
 
 
-	worker node 위 모든 워크로드들은 사용자들에게 계속해서 제공함.
+    worker node 위 모든 워크로드들은 사용자들에게 계속해서 제공함.
 
 
-	master가 내려갔기 때문에 모든 관리 기능이 중단됨. kubectl 혹은 다른 Kubernetes API를 사용해서 cluster에 접근 불가. 새 애플리케이션 배포하거나 존재하는 것들 수정 불가.
-	pod가 fail이 되면 자동적으로 생성되지 않음.
-	하지만 노드와 파드가 올라오자마자 애플리케이션도 동작함. 사용자는 영향을 받지 않을 것임.
-	일단 업그레이드가 끝나고 클러스터가 백업되면 정상적을 동작해야 함.
-	이제 우리는 버전 1.11의 master와 master 구성 요소들과 버전 1.10의 worker node를 가짐. → 지원되는 구성.
+    master가 내려갔기 때문에 모든 관리 기능이 중단됨. kubectl 혹은 다른 Kubernetes API를 사용해서 cluster에 접근 불가. 새 애플리케이션 배포하거나 존재하는 것들 수정 불가.
+    pod가 fail이 되면 자동적으로 생성되지 않음.
+    하지만 노드와 파드가 올라오자마자 애플리케이션도 동작함. 사용자는 영향을 받지 않을 것임.
+    일단 업그레이드가 끝나고 클러스터가 백업되면 정상적을 동작해야 함.
+    이제 우리는 버전 1.11의 master와 master 구성 요소들과 버전 1.10의 worker node를 가짐. → 지원되는 구성.
 
 
-	이제 worker node를 업그레이드. worker node를 업그레이드하기 위해 사용할 수 있는 다른 전략이 있음.
+    이제 worker node를 업그레이드. worker node를 업그레이드하기 위해 사용할 수 있는 다른 전략이 있음.
 
 
-		1. 모든 것을 한 번에 업그레이드.
-		pod가 내려가면 사용자는 더 이상 어플리케이션에 접근할 수 없음. → 다운타임이 필요한 전략.
-		업그레이드 되고 노드가 백업 되면 새 파드가 스케줄링됨. 사용자들은 다시 접근 가능.
+        1. 모든 것을 한 번에 업그레이드.
+        pod가 내려가면 사용자는 더 이상 어플리케이션에 접근할 수 없음. → 다운타임이 필요한 전략.
+        업그레이드 되고 노드가 백업 되면 새 파드가 스케줄링됨. 사용자들은 다시 접근 가능.
 
 
-		2. 한 번에 노드 한 개를 업그레이드.
-		마스터가 업그레이드 되고 노드가 업그레이드 대기 중인 상태. → 먼저 첫 번째 노드를 업그레이드.
-		워크로드는 두 번재와 세 번째로 옮김. 사용자들은 그 노드들로부터 제공받을 수 있음.
-		첫번째 노드가 업그레이드되고 백업하면 두 번째 노드를 업그레이드. 이 때 워크로드는 첫 번째나 세 번째 노드로.
-		그리고 세 번째 노드를 업그레이드하면 워크로드들은 첫 번째와 두 번째로.
-		모든 worker node가 업그레이드 될 때까지 같은 과정을 반복.
+        2. 한 번에 노드 한 개를 업그레이드.
+        마스터가 업그레이드 되고 노드가 업그레이드 대기 중인 상태. → 먼저 첫 번째 노드를 업그레이드.
+        워크로드는 두 번재와 세 번째로 옮김. 사용자들은 그 노드들로부터 제공받을 수 있음.
+        첫번째 노드가 업그레이드되고 백업하면 두 번째 노드를 업그레이드. 이 때 워크로드는 첫 번째나 세 번째 노드로.
+        그리고 세 번째 노드를 업그레이드하면 워크로드들은 첫 번째와 두 번째로.
+        모든 worker node가 업그레이드 될 때까지 같은 과정을 반복.
 
 
-		3. 클러스터에 새 노드 추가.
-		새 소프트웨어 버전을 가진 노드. 특히 쉽게 새 노드를 프로비저닝할 수 있는 클라우드 환경에서 편리함. 그리고 오래된 버전은 폐기. 새 버전을 가진 노드가 클러스터에 추가될 수 있음.
-		워크로드들을 새 노드로 옮기고 오래된 것 폐기.
+        3. 클러스터에 새 노드 추가.
+        새 소프트웨어 버전을 가진 노드. 특히 쉽게 새 노드를 프로비저닝할 수 있는 클라우드 환경에서 편리함. 그리고 오래된 버전은 폐기. 새 버전을 가진 노드가 클러스터에 추가될 수 있음.
+        워크로드들을 새 노드로 옮기고 오래된 것 폐기.
 
 
-	kubeadm의 upgrade 명령어로 클러스터를 업그레이드함.
+    kubeadm의 upgrade 명령어로 클러스터를 업그레이드함.
 
 
-	```bash
-	kubeadm upgrade plan
-	```
+    ```bash
+    kubeadm upgrade plan
+    ```
 
 
-	위 명령어를 실행하면 정보를 줌. 현재 클러스터 버전, kubeadm tool 버전, kubernetes의 최신의 안정적인 버전. controlplane 구성 요소들 리스트와 그것들의 버전 그리고 어느 버전으로 업그레이드 가능한지.
+    위 명령어를 실행하면 정보를 줌. 현재 클러스터 버전, kubeadm tool 버전, kubernetes의 최신의 안정적인 버전. controlplane 구성 요소들 리스트와 그것들의 버전 그리고 어느 버전으로 업그레이드 가능한지.
 
 
-	controlplane 구성 요소들 업그레이드 후 각 노드 위 kubelet 버전을 수동적으로 업그레이드 해야 함.
+    controlplane 구성 요소들 업그레이드 후 각 노드 위 kubelet 버전을 수동적으로 업그레이드 해야 함.
 
 
-	> kubeadm은 kubelet을 설치하거나 업그레이드하지 않음.
+    > kubeadm은 kubelet을 설치하거나 업그레이드하지 않음.
 
 
-	마지막으로 클러스터를 업그레이드하지 위한 명령어를 알려줌. 또한, 클러스터를 업그레이드하기 전에 kubeadm tool 자체도 업그레이드 해야 함. kubeadm 버전은 kubenetes와 똑같은 버전을 사용.
+    마지막으로 클러스터를 업그레이드하지 위한 명령어를 알려줌. 또한, 클러스터를 업그레이드하기 전에 kubeadm tool 자체도 업그레이드 해야 함. kubeadm 버전은 kubenetes와 똑같은 버전을 사용.
 
 
-	먼저, kubeadm 버전부터 version 1.12로 업그레이드. upgrade plan으로부터 얻은 명령어를 사용해서 클러스터 업그레이드.
+    먼저, kubeadm 버전부터 version 1.12로 업그레이드. upgrade plan으로부터 얻은 명령어를 사용해서 클러스터 업그레이드.
 
 
-	```bash
-	kubeadm upgrade apply v1.12.0
-	```
+    ```bash
+    kubeadm upgrade apply v1.12.0
+    ```
 
 
-	필요한 이미지를 가져오고 클러스터 구성 요소들을 업그레이드.
+    필요한 이미지를 가져오고 클러스터 구성 요소들을 업그레이드.
 
 
-	완료되면 controlplane 구성 요소들은 1.12가 된다.
+    완료되면 controlplane 구성 요소들은 1.12가 된다.
 
 
-	`kubectl get nodes` 명령어를 실행하면 master node는 여전히 1.11인 것을 볼 수 있음. → 이 명령어의 출력에서 API 서버 자체의 버전이 아닌 API server에 등록된 각 노드의 kubelet의 버전이 표시되기 때문.
+    `kubectl get nodes` 명령어를 실행하면 master node는 여전히 1.11인 것을 볼 수 있음. → 이 명령어의 출력에서 API 서버 자체의 버전이 아닌 API server에 등록된 각 노드의 kubelet의 버전이 표시되기 때문.
 
 2. kubelet 업그레이드
 
-	설정에 따라 master node 위에 실행 중인 kubelet일 수도 있고 아닐 수도 있음.
+    설정에 따라 master node 위에 실행 중인 kubelet일 수도 있고 아닐 수도 있음.
 
 
-	이 경우 kubeadm을 가지고 배포된 클러스터는 master node의 kubelet을 가지며, master node위 파드로 controlplane 구성 요소들을 실행하는 데 사용된다.
+    이 경우 kubeadm을 가지고 배포된 클러스터는 master node의 kubelet을 가지며, master node위 파드로 controlplane 구성 요소들을 실행하는 데 사용된다.
 
 
-	kubernets 클러스터는 처음부터 설치할 때 master node 위에 kubelet을 설치하지 않는다. master node를 볼 수 없을 것이다. 이 경우 명령어 출력에서 마스터 노드를 볼 수 없을 것.
+    kubernets 클러스터는 처음부터 설치할 때 master node 위에 kubelet을 설치하지 않는다. master node를 볼 수 없을 것이다. 이 경우 명령어 출력에서 마스터 노드를 볼 수 없을 것.
 
 
-	만약 master node 위 kubelet을 가지고 있다면 `apt-get uprade kubelet` 명령어 실행.
+    만약 master node 위 kubelet을 가지고 있다면 `apt-get uprade kubelet` 명령어 실행.
 
 
-	패키지가 업그레이드되면 kubelet 서비스 재시작. `systemctl restart kubelet` 
+    패키지가 업그레이드되면 kubelet 서비스 재시작. `systemctl restart kubelet` 
 
 
-	`kubectl get nodes` 명령어 실행. 마스터 노드가 1.12로 업그레이드 된 것을 볼 수 있음. worker node는 여전히 1.11임. 한 번에 하나씩 worker node 업그레이드해야 함.
+    `kubectl get nodes` 명령어 실행. 마스터 노드가 1.12로 업그레이드 된 것을 볼 수 있음. worker node는 여전히 1.11임. 한 번에 하나씩 worker node 업그레이드해야 함.
 
 
-	```bash
-	kubectl drain node-1
-	apt-get upgrade -y kubeadm=1.12.0-00
-	apt-get upgrade -y kubelet=1.12.0-00
-	systemctl restart kubelet
-	kubectl uncordon node-1
-	```
+    ```bash
+    kubectl drain node-1
+    apt-get upgrade -y kubeadm=1.12.0-00
+    apt-get upgrade -y kubelet=1.12.0-00
+    systemctl restart kubelet
+    kubectl uncordon node-1
+    ```
 
 
-	모든 worker node를 업그레이드 할 때까지 위 명령어 반복.
+    모든 worker node를 업그레이드 할 때까지 위 명령어 반복.
 
 
 ## Demo - Cluster upgrade
@@ -267,12 +267,12 @@ kubeadm과 같은 도구를 사용하여 클러스터를 배포했다면 그 도
 2. 클러스터에 있는 노드 수
 3. 클러스터에서 얼마나 많은 워크로드를 가질 수 있는가?
 
-	```bash
-	kubectl describe node | grep Taints
-	Taints:          <none>
-	Taints:          <none>
-	➡️ 2개
-	```
+    ```bash
+    kubectl describe node | grep Taints
+    Taints:          <none>
+    Taints:          <none>
+    ➡️ 2개
+    ```
 
 4. 클러스터에 몇 개의 어플리케이션이 호스팅되었느가?
 5. 파드들은 어느 노드 위에 있는가?
@@ -281,63 +281,63 @@ kubeadm과 같은 도구를 사용하여 클러스터를 배포했다면 그 도
 7. 지금 업그레이드 가능한 가장 최신 kubeadm 버전 → v1.31.6
 8. controlplane 노드를 먼저 업그레이드할 것. 워크노드의 controlplane 노드 drain. 그리고 unschedulable 표시.
 
-	```bash
-	kubectl drain controlplane --ignore-daemonsets
-	```
+    ```bash
+    kubectl drain controlplane --ignore-daemonsets
+    ```
 
 9. v1.32.0로 controlplane 구성 요소 업그레이드
 
-	[bookmark](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/change-package-repository/#verifying-if-the-kubernetes-package-repositories-are-used)
+    [bookmark](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/change-package-repository/#verifying-if-the-kubernetes-package-repositories-are-used)
 
 
-	설치할 패키지 가져온 후 apt update 시도
+    설치할 패키지 가져온 후 apt update 시도
 
 
-	```bash
-	vi /etc/apt/sources.list.d/kubernetes.list
-	➡️ deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.32/deb/ /
-	apt update
-	apt-cache madison kubeadm
-	apt-get upgrade -y kubeadm=1.32.0-1.1
-	kubeadm upgrade plan v1.32.0
-	kubeadm upgrade apply v1.32.0
-	apt-get upgrade -y kubelet=1.32.0-1.1
-	systemctl daemon-reload
-	systemctl restart kubelet
-	```
+    ```bash
+    vi /etc/apt/sources.list.d/kubernetes.list
+    ➡️ deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.32/deb/ /
+    apt update
+    apt-cache madison kubeadm
+    apt-get upgrade -y kubeadm=1.32.0-1.1
+    kubeadm upgrade plan v1.32.0
+    kubeadm upgrade apply v1.32.0
+    apt-get upgrade -y kubelet=1.32.0-1.1
+    systemctl daemon-reload
+    systemctl restart kubelet
+    ```
 
 10. controlplane 다시 schedulable로 표시
 
-	```bash
-	kubectl uncordon controlplane
-	```
+    ```bash
+    kubectl uncordon controlplane
+    ```
 
 11. worker node의 워크로드를 drain하고 Unschedulable로 표시
 
-	```bash
-	kubectl drain node01 --ignore-daemonsets
-	```
+    ```bash
+    kubectl drain node01 --ignore-daemonsets
+    ```
 
 12. v1.32.0으로 worker node 업그레이드
 
-	```bash
-	ssh node01
-	vi /etc/apt/sources.list.d/kubernetes.list
-	➡️ deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.32/deb/ /
-	apt update
-	apt-cache madison kubeadm
-	apt-get upgrade -y kubeadm=1.32.0-1.1
-	kubeadm upgrade node
-	apt-get upgrade -y kubelet=1.32.0-1.1
-	systemctl daemon-reload
-	systemctl restart kubelet
-	```
+    ```bash
+    ssh node01
+    vi /etc/apt/sources.list.d/kubernetes.list
+    ➡️ deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.32/deb/ /
+    apt update
+    apt-cache madison kubeadm
+    apt-get upgrade -y kubeadm=1.32.0-1.1
+    kubeadm upgrade node
+    apt-get upgrade -y kubelet=1.32.0-1.1
+    systemctl daemon-reload
+    systemctl restart kubelet
+    ```
 
 13. restriction을 제거하고 worker node를 다시 스케줄링 가능한 상태로 표시
 
-	```bash
-	kubectl uncordon node01
-	```
+    ```bash
+    kubectl uncordon node01
+    ```
 
 
 ## Backup and Restore Methods
@@ -399,9 +399,9 @@ etcd client를 사용하기 전에 ETCDCTL_API를 값을  export해야 한다.
 1. 클러스터에 default namespace에 존재하는 deployment 수
 2. 클러스터에서 운영 중인 ETCD 버전
 
-	```bash
-	kubectl describe pods etcd-controlplane -n kube-system
-	```
+    ```bash
+    kubectl describe pods etcd-controlplane -n kube-system
+    ```
 
 3. controlplane 노드로부터 ETCD 클러스터에 도달할 수 있는 주소
 4. ETCD server certificate 파일이 위치한 곳
@@ -410,29 +410,29 @@ etcd client를 사용하기 전에 ETCDCTL_API를 값을  export해야 한다.
 /etc/kubernetes/pki/etcd/ca.crt
 6. master node가 오늘밤 정기 유지보수로 재시작이 계획되어있음. 문제가 발생할 것으로 예상하지는 않지만 필요한 백업을 받아야 함. 내장된 snapshot을 사용하여 ETCD database의 snapshot을 가져오기
 
-	/opt/snapshot-pre-boot.db에 백업 파일 저장.
+    /opt/snapshot-pre-boot.db에 백업 파일 저장.
 
 
-	```bash
-	export ETCDCTL_API=3
-	etcdctl --endpoints=https://127.0.0.1:2379 \
-		--cacert=/etc/kubernetes/pki/etcd/ca.crt --cert=/etc/kubernetes/pki/etcd/server.crt --key=/etc/kubernetes/pki/etcd/server.key \
-	  snapshot save /opt/snapshot-pre-boot.db
-	```
+    ```bash
+    export ETCDCTL_API=3
+    etcdctl --endpoints=https://127.0.0.1:2379 \
+    	--cacert=/etc/kubernetes/pki/etcd/ca.crt --cert=/etc/kubernetes/pki/etcd/server.crt --key=/etc/kubernetes/pki/etcd/server.key \
+      snapshot save /opt/snapshot-pre-boot.db
+    ```
 
 7. 재시작 후 master node가 온라인 상태가 되었지만 어플리케이션에 접근할 수 없음. 클러스터의 어플리케이션 상태 확인. 문제?
 Deployment, pod, service(기본으로 주어지는 kubernetes 제외)가 없음.
 8. 백업 파일을 사용해 원래 상태로 복구.
 
-	```bash
-	etcdctl --data-dir /var/lib/restoreetcd snapshot restore /opt/snapshot-pre-boot.db
-	vi /etc/kubernetes/manifests/etcd.yaml
-	➡️volumes.hostPath.path 복구한 경로로 수정
-	kubectl delete pods etcd-controlplane -n kube-system # or systemctl restart kubelet (또는 둘 다)
-	```
+    ```bash
+    etcdctl --data-dir /var/lib/restoreetcd snapshot restore /opt/snapshot-pre-boot.db
+    vi /etc/kubernetes/manifests/etcd.yaml
+    ➡️volumes.hostPath.path 복구한 경로로 수정
+    kubectl delete pods etcd-controlplane -n kube-system # or systemctl restart kubelet (또는 둘 다)
+    ```
 
 
-	/var/lib/etcd는 기존에 존재하는 디렉토리로 삭제 후 시도하거나 새 디렉토리로 지정 필요.
+    /var/lib/etcd는 기존에 존재하는 디렉토리로 삭제 후 시도하거나 새 디렉토리로 지정 필요.
 
 
 ## Practice Test  -  Backup and Restore Methods 2
@@ -442,109 +442,109 @@ Deployment, pod, service(기본으로 주어지는 kubernetes 제외)가 없음.
 
 1. student-node위 kubeconfig에 정의된 클러스터 수
 
-	![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/90fbb5ca-abd8-4e61-942c-f799d3069cf4/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466RFAMKG2O%2F20250307%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250307T140829Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEP3%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIGYGnZJsWInUjtNqQA%2Fwfz%2FifVOkM77anXokS%2BntPAepAiEA0Ovi1N%2Bk48kLWyiA4D06Ypg3wf8abe8mJhC8Ob5oCG4q%2FwMIRhAAGgw2Mzc0MjMxODM4MDUiDDzaBE0YZ0O13pWmtyrcA6%2F555QEca9z6jubbjmZqmHEkzCD5bh6NmXmDBfbNw9qv3Ay9eo%2BIFSC98hSarqVK9xGyMh1Qpcy4euOtYzukOGqg1oNMlWf98L1FPVwNa4RA%2FaNq6snkGuu6yUuXQOUCToXoPoDYoL4dbBBiS19jDM1JJcrucfLBaOx3UHMRVKgjy9xPc6dk9jl1tP%2FTfNTLtgkMoZ3mAm6xxZE8QalYuS476y9kl80iduHxFCKJnf3m5o5i9H931flJn0691bQXEg5sZtPxnKMQJ%2FR7RZzGwCjtcENccnT%2FAVLCj9mQJGeK1rKGK0vulrGbKDWSUKewGSJRcYNP1TH3LdpFaCSGVmXGSRSctZcz5m14BvABn5bByFZAZSnRNvSJ5jj1mMPCKfv9KCOnK9dMngXLXtZcq1GOGSI88zryTcgD%2FSTFYXIfDnEs4w1FmxlTyrkoJAvC29vbiPetzqHRRzHP%2F4Mx1Nj%2FCozL58iWPFar4rvoW1912rEBflZnQwwijfHnk85ek6mkDL9jbJnph0q7DysX8%2Fs3PElO7myQx46gvzwqArRzUF2LNS4jGMEO17Um6AlEUele%2F1nWoHnDyXaveRlG8YfNAT1ba1eHQ5LHXBkZHL4jQ0YkuFu6S5duy8wMMbfq74GOqUBSreesP%2BT5%2B98AIW6K2qR%2F5zLEDvcHmObIThkxTD8X%2B8qRtZidasaf%2BnOAOty6RGDZbBzhdIGoa2Ujy9jzyNsJX6cJFWK1gDLydU7OeaE5V1bUHY4tzC584bvk0d9Jl6fNMAI8CiVmFCtcHB2Pv%2BxlXfndKuqfxT5twtCGydycY5O5MDf7L0EwFQgJ9reg%2Bxv2268ZD2Q%2BFKcW1bc7syT3JfdIGq8&X-Amz-Signature=d0a936f2ec35d7bb42bb0c544cde6d46cf0a99a5927afe96b7b95a523f648613&X-Amz-SignedHeaders=host&x-id=GetObject)
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/90fbb5ca-abd8-4e61-942c-f799d3069cf4/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466TJURPGWB%2F20250308%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250308T140404Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEBUaCXVzLXdlc3QtMiJGMEQCIGDT3MlePbaDUe%2BJgLVHPbFYe%2BX%2BMYUFIBlxjb%2FWdfN0AiBxQm5iv8xorpimZbC84gOCS7wooDXuCq%2BCSLGFwW1jCCr%2FAwheEAAaDDYzNzQyMzE4MzgwNSIMmb%2F70Jt4VhT5ay27KtwD%2BqALaH2yc85JqaXwtFoLREAohtg%2BxTRBrj%2Be5ESCZcPkslEJOnGiFsxrde9K7s56Abnx%2BzxiAgbEXhtUBcbJ5%2B7PBdHYZcJKNNYPQBibzkVHpeC6KPdS3pDTKWAt4sxMV3gOcyufWrIdhF7WMgO%2BvOOXgIpB8G03Alqs3PxclLSzwoEbjXen%2FatQIhmFz80JD7frikaRSl7aKqb46ucL%2FTs4PRB52d2Nn59PEzys7ctGW834K1%2BFArAhmmupzPqXFw1RpUyjnBmXAAVjUJwQJ7NlIwdVh5l7jbQB8ek93W0tBWAmMUoTVTY27%2BFgyYne9esuoASwB5U0lH7AurwDcn8mLOOKiHo78wxalGh3aSI8SrnnXD1b4GWJzT%2BTW7mHuIEA9FK%2Bv2txPoPY73y8ex1mAlhu0B%2BKvmMFeLihkvw6B3TrvSpCxphZQvgsX6Ift4PjYjIHpJsn4qsbQ0iDNVzOJrrvlzL4vICSEYhnxqz6f7jrkcSBMxZlQcdpHs7WhS9agzlV9E4mCLWT2a5zY5d%2Fi7j3BUqckDp078k%2BiXAimc0QY14W40OtpCCxY7nG4BNFXMbsqOXCY%2B0LJgAy2g%2BwrCP4tBEyzccD1ffKrVpObPOumew9phvX%2FM4wnP%2BwvgY6pgEchBQUPQpp%2FAkR4Isd%2Fb4ysvRx0waDMnxy2AJ0X7%2Ft6W51NmXJwbgZvu9SpeIZ4UJwjDXwr3OVKdftOpQkSOk%2B5CBWEWrJP0nUfyshuYzAoJ5wXrYddvRArOSbhZI%2BvptD9BnSbkQ3ncZem9zQnu8PXVOwoBVGb3krICN%2FoJmnpw%2FV7ly7aXvZi9UQAaASkEo%2F6y6Fh6T39tMThdS2ywGSpKMdZ3S%2F&X-Amz-Signature=003dd1c77cadcfbcdb97870fbdbea254e27cccdf488a6482246507e768115c9d&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 2. cluster1의 노드 수
 
-	```bash
-	kubectl config use-context cluster1
-	kubectl get nodes
-	```
+    ```bash
+    kubectl config use-context cluster1
+    kubectl get nodes
+    ```
 
 3. cluster2에서 controlplane node의 이름.
 
-	```bash
-	kubectl config use-context cluster2
-	kubectl get nodes
-	```
+    ```bash
+    kubectl config use-context cluster2
+    kubectl get nodes
+    ```
 
 4. cluster1에 대한 ETCD 는 어떻게 구성되었는가?
 
-	Stacked ETCD
+    Stacked ETCD
 
 
-	`kubectl get pods -n kube-system`을 수행했을 때 etcd pod가 보인다면 Stacked ETCD 
+    `kubectl get pods -n kube-system`을 수행했을 때 etcd pod가 보인다면 Stacked ETCD 
 
 
-	`kubectl describe pods <api-server-name> -n kube-system` 을 실행하면 API server가 ETCD server와 실제로 소통하기 위해 사용하는 URL이 있음. localhost나 controlplane node의 IP 주소이면 Stacked ETCD 
+    `kubectl describe pods <api-server-name> -n kube-system` 을 실행하면 API server가 ETCD server와 실제로 소통하기 위해 사용하는 URL이 있음. localhost나 controlplane node의 IP 주소이면 Stacked ETCD 
 
 5. cluster2에 대한 ETCD는 어떻게 구성되었는가?
 
-	External ETCD
+    External ETCD
 
 
-	kubectl get pods -n kube-system을 했을 때 ETCD pod가 보이지 않음. 서버에 문제가 있기 때문일 수도? ssh로 controlplane node 접속. /etc/kubernetes/manifests로 이동하면 정적 pod 구성을 볼 수 있음.
+    kubectl get pods -n kube-system을 했을 때 ETCD pod가 보이지 않음. 서버에 문제가 있기 때문일 수도? ssh로 controlplane node 접속. /etc/kubernetes/manifests로 이동하면 정적 pod 구성을 볼 수 있음.
 
 
-	세 개의 manifests만 있음. ETCD server는 안 보임.
+    세 개의 manifests만 있음. ETCD server는 안 보임.
 
 
-	일단 Stacked ETCD가 아니란 것을 알 수 있음. 다시 `kubectl get pods -n kube-system`을 실행. 이번에는 API server의 구성을 살피기 위해 `kubectl describe pods <api-server> -n kube-system` 을 실행.
+    일단 Stacked ETCD가 아니란 것을 알 수 있음. 다시 `kubectl get pods -n kube-system`을 실행. 이번에는 API server의 구성을 살피기 위해 `kubectl describe pods <api-server> -n kube-system` 을 실행.
 
 
-	ETCD server 구성으로 가면 분리된 IP 주소를 볼 수 있음.
+    ETCD server 구성으로 가면 분리된 IP 주소를 볼 수 있음.
 
 
-	External ETCD server를 사용하고 있음을 알 수 있음.
+    External ETCD server를 사용하고 있음을 알 수 있음.
 
 6. cluster2에서 사용되는 External ETCD datastore의 IP 주소.
 7. cluster1에서 사용 중인 ETCD datastore에 대해 사용 중인 기본 data  directory는?
 8. cluster2에서 사용되는 ETCD datasource에 대해 사용 중인 default data directory는 무엇인가? External ETCD를 사용.
 
-	`etcd-server`로 접속해서 `ps -ef | grep -i etcd` 실행. `--data-dir=/var/lib/etcd-data` 라고 적혀있음을 알 수 있음.
+    `etcd-server`로 접속해서 `ps -ef | grep -i etcd` 실행. `--data-dir=/var/lib/etcd-data` 라고 적혀있음을 알 수 있음.
 
 9. etcd-server가 속한 ETCD cluster의 노드의 수
 
-	```bash
-	export ETCDCTL_API=3
-	etcdctl --endpoints=https://127.0.0.1:2379 \
-	--cacert=/etc/etcd/pki/ca.pem --cert=/etc/etcd/pki/etcd.pem \
-	--key=/etc/etcd/pki/etcd-key.pem member list
-	```
+    ```bash
+    export ETCDCTL_API=3
+    etcdctl --endpoints=https://127.0.0.1:2379 \
+    --cacert=/etc/etcd/pki/ca.pem --cert=/etc/etcd/pki/etcd.pem \
+    --key=/etc/etcd/pki/etcd-key.pem member list
+    ```
 
 
-	member가 한 개 밖에 없음. 그러므로 1.
+    member가 한 개 밖에 없음. 그러므로 1.
 
 10. cluster1의 etcd를 백업하고 /opt/cluster1.db에 student-node에 저장.
 
-	```bash
-	ssh cluster1-controlplane
-	export ETCDCTL_API=3
-	etcdctl --endpoints=https://<advertise-client-url>:2379 \
-	--cacert=/etc/kubernetes/pki/etcd/ca.crt \
-	--cert=/etc/kubernetes/pki/etcd/server.crt \
-	--key=/etc/kubernetes/pki/etcd/server.key \
-	snapshot save /opt/cluster1.db
-	exit
-	# student-node로 돌아옴.
-	scp cluster1-controlplane:/opt/cluster1.db /opt/
-	```
+    ```bash
+    ssh cluster1-controlplane
+    export ETCDCTL_API=3
+    etcdctl --endpoints=https://<advertise-client-url>:2379 \
+    --cacert=/etc/kubernetes/pki/etcd/ca.crt \
+    --cert=/etc/kubernetes/pki/etcd/server.crt \
+    --key=/etc/kubernetes/pki/etcd/server.key \
+    snapshot save /opt/cluster1.db
+    exit
+    # student-node로 돌아옴.
+    scp cluster1-controlplane:/opt/cluster1.db /opt/
+    ```
 
 
-	etcd server에 도달할 수 있도록 advertise client URL을 사용해야 함.
+    etcd server에 도달할 수 있도록 advertise client URL을 사용해야 함.
 
 11. cluster2에 대한 ETCD 백업이 /opt/cluster2.db에 저장됨. snapshot 파일을 사용해 새 경로 /var/lib/etcd-data-new에 cluster2 복구 수행.
 
-	```bash
-	scp /opt/cluster2.db etcd-server:/root
-	
-	ssh etcd-server
-	export ETCDCTL_API=3
-	etcdctl --data-dir=/var/lib/etcd-data-new \
-	snapshot restore /root/cluster2.db
-	
-	chown -R etcd:etcd /var/lib/etcd-data-new
-	
-	vi /etc/systemd/system/etcd.service
-	➡️--data-dir을 복구한 경로로 변경.
-	
-	systemctl daemon-reload
-	systemctl restart etcd
-	exit
-	# student-node로 돌아옴.
-	kubectl delete pods kube-controller-manager-cluster2-controlplane kube-scheduler-cluster2-controlplane -n kube-system
-	
-	ssh cluster2-controlplane
-	systemctl restart kubelet
-	```
+    ```bash
+    scp /opt/cluster2.db etcd-server:/root
+    
+    ssh etcd-server
+    export ETCDCTL_API=3
+    etcdctl --data-dir=/var/lib/etcd-data-new \
+    snapshot restore /root/cluster2.db
+    
+    chown -R etcd:etcd /var/lib/etcd-data-new
+    
+    vi /etc/systemd/system/etcd.service
+    ➡️--data-dir을 복구한 경로로 변경.
+    
+    systemctl daemon-reload
+    systemctl restart etcd
+    exit
+    # student-node로 돌아옴.
+    kubectl delete pods kube-controller-manager-cluster2-controlplane kube-scheduler-cluster2-controlplane -n kube-system
+    
+    ssh cluster2-controlplane
+    systemctl restart kubelet
+    ```
 

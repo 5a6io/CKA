@@ -75,7 +75,7 @@ Hello, Application Version: v2 ; Color: green OK
 
 1. replica set이 1개씩 줄어들음.
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/977ac0a0-6f7e-4aae-99ae-af3cd4e061cf/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4663QESQDFG%2F20250307%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250307T140807Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEP3%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCICFaiQjIqhI2315EvoThhtujGlZNvUPiTa4AqxyKipO2AiEAp9cXg%2F6CzD0ieAmAexWKDllOye467C%2BD%2F%2BGqf61UwdIq%2FwMIRhAAGgw2Mzc0MjMxODM4MDUiDOAl0zwqyivJarp5VCrcA2e%2BZtLNp4rqoelXAyW9uOIJuHI92KVr2USSuO9ctTJobLIsz6IyQh1OIisoTjPA%2FwpYjjqzG9oPg0Lz6se0luPARinAXTlSnxBpFK%2F6pvZcsqRgi%2BYXTCLefJL8AUFY%2BRqo58XtKj8F9jfngsDRQ70NYxWv923WCednGnjE4bbHeSAZN8tMvx2bwiGh1EEnJ4h8PS7%2BeJzsPd8qwESio2AtPcxyvkRP%2Bp%2F89Srv9TCCJGr2m5zaIzYGxBzShMBCcsHh%2B%2F0XiX1adx9WCCPAjY4m%2FZAN9uz471Xq8divYZccOFvePQMb8DhPbwvLRAaTXGx%2Fh9t28fdrjCq%2BVhljgXiXKay2GxzkhKszpojMMbMAFi7OgtYev1q7r4pn9LZip6LzSLtfuksVBf0CxboiTBqkbeynY9rE%2BvKuNCWAm0x6vhjRQmkt%2BoOc%2FSyS0Q8Vrxm6eDsHXePG68eSXG100vCUTP3AwHZ6HeKwhL9G%2FK3Uju%2FLke7oVjfmpCMU7Wt7UEAUn%2FBXIx9zaENnEI7kGBvd4PfEKrJs1%2BL7LVodr5n%2BLjexTLCmDLjlyW7ANU3dmw09NuWZ1OoUBYn1S2vQzWsR8QQ7rpcP61jumSP%2FmkHpbSUsPOmSnr2yJkf8MJ3fq74GOqUBZGDGeyBD8UzKSFQ9EC1W0t%2ByaFnLuUik5cElIRlmPYkBaF%2Brm96895iu7q7hWE5x2mtd%2BsWr7D3e%2BobLQt9r%2BNSoAuo9bd0gVxVopWOIhqUtO5c19m56Oh1EbuGCIat28%2BVpOfYy1WZ58XR62HVeLOZGJuUS1s8teeu8Wwkj2W%2BJ9bPbPiIcsWE87I0fHd1gIoLENlfP9w%2FGY7hmmMHyEwcpfjtB&X-Amz-Signature=1d88b9543f30ece986da1d32b7ef225e89b752130cbf9d001fb537d9f64af418&X-Amz-SignedHeaders=host&x-id=GetObject)
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/977ac0a0-6f7e-4aae-99ae-af3cd4e061cf/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466WZ7AQQAK%2F20250308%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250308T140345Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEBQaCXVzLXdlc3QtMiJGMEQCIF8SG9RM19hSZagaNANGQYmo3FtXGcz6ARM8lCEQNpM9AiACs4xoUHUnzHW5VoVA8ecmlkkIA%2FXKIBC6BcyhO9Sy2Sr%2FAwhdEAAaDDYzNzQyMzE4MzgwNSIMTbZRiquJtdrOQAA%2FKtwD5Try8%2FIa2EnphfaUk9QtZSStqA0ToFOzqY7CwXd9k2Tn%2B8xEz2gTQYxwoEi845yqm0O%2F55gtIZQlvAbxzeQ7LayYPX8tcHHSJfS4VP0nHMzzXixtQJsMlVV23pQMhB8Ns%2Bi8yWc5A%2BYX9I8nLN0IapzVhfFIZ%2BnetIXOE3Yod61QVs%2BtpdeLC%2Ba9rCKDnfgRJkWnHL3Zvk9fn0UXmqgHP5ziqyXpmY5ekDzPM3%2BvLqZusN7%2BBWZxCDmJpZqrzoQcG3XVf4N1jVb1VIp%2FpSH7WiccNz4WaaS3xyKf6%2FZYOc0yWlsW%2F5bLseonV2q2QlsQWrAXenDRj3375egtyvUrBUW2fYpi5x3fgJQoxq9pDx5Gu454jZHzQAb3YPpH0pjZTnXMxWMiqRHoJ%2Ba6Hqj6VxXS%2FY%2BEkTiiE3V6ylA%2FZd00V2dBZcDLzbS%2Fus6h0MmlqXtln86oE%2BdUUjKOXhwOL8u9j0QXNvHVcDUHO55p9J9FJVDVKUd%2BFg6rer4v5c%2F%2BDzJfoesSEme72ZRYPOBpasu3vhQlts0QyLHRpZnT6kOxRzkhNWefVKzYhJVMBynfnzDkrSkiu2KpnYvBHYzaDFF9qWPqRI6rkIhkF3OZVIv%2Fx1aszUJ%2FFqSzEK4wiemwvgY6pgEBNs260JKs%2B4l8pGZGeQlVD6W9Lo1zaQVLoMIjwTq2BrfuHiNq%2FiYrx61c0khDdEor6JS9E4xIp3IhgF1l8nmZujBxNW2KHpy9Uc4PBBj733Fihhx%2FHLAzqxOdgj1%2F8Vw5hI4Ympkf%2BIur%2BdmglYsYSnMv%2FQUPEU%2BOoO92ZvireQ%2BsQspzYJwoBmTtyCL7m0ZDg1vTKl%2FTK6SWA1gTuVRY2ZydcwtO&X-Amz-Signature=85a6432c8bed37fad805e93c664704b6cf1f9224c7420a244ba67b19a4e516a4&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 1. rolling update에서 recreate로 전략 바꾸기
 2. 현재 디플로이먼트의 이미지 바꾸기 v2 → v3
@@ -91,7 +91,7 @@ Hello, Application Version: v3 ; Color: red OK
 ```
 
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/05c9a172-cfaa-4570-8937-288b1d07d12d/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4663QESQDFG%2F20250307%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250307T140807Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEP3%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCICFaiQjIqhI2315EvoThhtujGlZNvUPiTa4AqxyKipO2AiEAp9cXg%2F6CzD0ieAmAexWKDllOye467C%2BD%2F%2BGqf61UwdIq%2FwMIRhAAGgw2Mzc0MjMxODM4MDUiDOAl0zwqyivJarp5VCrcA2e%2BZtLNp4rqoelXAyW9uOIJuHI92KVr2USSuO9ctTJobLIsz6IyQh1OIisoTjPA%2FwpYjjqzG9oPg0Lz6se0luPARinAXTlSnxBpFK%2F6pvZcsqRgi%2BYXTCLefJL8AUFY%2BRqo58XtKj8F9jfngsDRQ70NYxWv923WCednGnjE4bbHeSAZN8tMvx2bwiGh1EEnJ4h8PS7%2BeJzsPd8qwESio2AtPcxyvkRP%2Bp%2F89Srv9TCCJGr2m5zaIzYGxBzShMBCcsHh%2B%2F0XiX1adx9WCCPAjY4m%2FZAN9uz471Xq8divYZccOFvePQMb8DhPbwvLRAaTXGx%2Fh9t28fdrjCq%2BVhljgXiXKay2GxzkhKszpojMMbMAFi7OgtYev1q7r4pn9LZip6LzSLtfuksVBf0CxboiTBqkbeynY9rE%2BvKuNCWAm0x6vhjRQmkt%2BoOc%2FSyS0Q8Vrxm6eDsHXePG68eSXG100vCUTP3AwHZ6HeKwhL9G%2FK3Uju%2FLke7oVjfmpCMU7Wt7UEAUn%2FBXIx9zaENnEI7kGBvd4PfEKrJs1%2BL7LVodr5n%2BLjexTLCmDLjlyW7ANU3dmw09NuWZ1OoUBYn1S2vQzWsR8QQ7rpcP61jumSP%2FmkHpbSUsPOmSnr2yJkf8MJ3fq74GOqUBZGDGeyBD8UzKSFQ9EC1W0t%2ByaFnLuUik5cElIRlmPYkBaF%2Brm96895iu7q7hWE5x2mtd%2BsWr7D3e%2BobLQt9r%2BNSoAuo9bd0gVxVopWOIhqUtO5c19m56Oh1EbuGCIat28%2BVpOfYy1WZ58XR62HVeLOZGJuUS1s8teeu8Wwkj2W%2BJ9bPbPiIcsWE87I0fHd1gIoLENlfP9w%2FGY7hmmMHyEwcpfjtB&X-Amz-Signature=479be7e29985fa615956adba270488d082deb3ef1ed56e6ca3f170d20a7b79e4&X-Amz-SignedHeaders=host&x-id=GetObject)
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/05c9a172-cfaa-4570-8937-288b1d07d12d/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466WZ7AQQAK%2F20250308%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250308T140345Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEBQaCXVzLXdlc3QtMiJGMEQCIF8SG9RM19hSZagaNANGQYmo3FtXGcz6ARM8lCEQNpM9AiACs4xoUHUnzHW5VoVA8ecmlkkIA%2FXKIBC6BcyhO9Sy2Sr%2FAwhdEAAaDDYzNzQyMzE4MzgwNSIMTbZRiquJtdrOQAA%2FKtwD5Try8%2FIa2EnphfaUk9QtZSStqA0ToFOzqY7CwXd9k2Tn%2B8xEz2gTQYxwoEi845yqm0O%2F55gtIZQlvAbxzeQ7LayYPX8tcHHSJfS4VP0nHMzzXixtQJsMlVV23pQMhB8Ns%2Bi8yWc5A%2BYX9I8nLN0IapzVhfFIZ%2BnetIXOE3Yod61QVs%2BtpdeLC%2Ba9rCKDnfgRJkWnHL3Zvk9fn0UXmqgHP5ziqyXpmY5ekDzPM3%2BvLqZusN7%2BBWZxCDmJpZqrzoQcG3XVf4N1jVb1VIp%2FpSH7WiccNz4WaaS3xyKf6%2FZYOc0yWlsW%2F5bLseonV2q2QlsQWrAXenDRj3375egtyvUrBUW2fYpi5x3fgJQoxq9pDx5Gu454jZHzQAb3YPpH0pjZTnXMxWMiqRHoJ%2Ba6Hqj6VxXS%2FY%2BEkTiiE3V6ylA%2FZd00V2dBZcDLzbS%2Fus6h0MmlqXtln86oE%2BdUUjKOXhwOL8u9j0QXNvHVcDUHO55p9J9FJVDVKUd%2BFg6rer4v5c%2F%2BDzJfoesSEme72ZRYPOBpasu3vhQlts0QyLHRpZnT6kOxRzkhNWefVKzYhJVMBynfnzDkrSkiu2KpnYvBHYzaDFF9qWPqRI6rkIhkF3OZVIv%2Fx1aszUJ%2FFqSzEK4wiemwvgY6pgEBNs260JKs%2B4l8pGZGeQlVD6W9Lo1zaQVLoMIjwTq2BrfuHiNq%2FiYrx61c0khDdEor6JS9E4xIp3IhgF1l8nmZujBxNW2KHpy9Uc4PBBj733Fihhx%2FHLAzqxOdgj1%2F8Vw5hI4Ympkf%2BIur%2BdmglYsYSnMv%2FQUPEU%2BOoO92ZvireQ%2BsQspzYJwoBmTtyCL7m0ZDg1vTKl%2FTK6SWA1gTuVRY2ZydcwtO&X-Amz-Signature=b4f9d994994c50d4430be04250b804b5bb34f5ac4ca94dd4898f1f3f8bdc5f93&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
 한꺼번에 바뀌다 보니 처음에 /root/curl-test.sh를 수행했을 때 이전 v2 출력문이 나옴.
@@ -157,7 +157,7 @@ command:
 2. /root/webapp-color에 주어진 Dockerfile 관찰. 컨테이너 시작 시 명령어.
 →  python app.py
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/9e974328-4af4-45d2-80e0-fea968f6a9a9/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4663QESQDFG%2F20250307%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250307T140807Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEP3%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCICFaiQjIqhI2315EvoThhtujGlZNvUPiTa4AqxyKipO2AiEAp9cXg%2F6CzD0ieAmAexWKDllOye467C%2BD%2F%2BGqf61UwdIq%2FwMIRhAAGgw2Mzc0MjMxODM4MDUiDOAl0zwqyivJarp5VCrcA2e%2BZtLNp4rqoelXAyW9uOIJuHI92KVr2USSuO9ctTJobLIsz6IyQh1OIisoTjPA%2FwpYjjqzG9oPg0Lz6se0luPARinAXTlSnxBpFK%2F6pvZcsqRgi%2BYXTCLefJL8AUFY%2BRqo58XtKj8F9jfngsDRQ70NYxWv923WCednGnjE4bbHeSAZN8tMvx2bwiGh1EEnJ4h8PS7%2BeJzsPd8qwESio2AtPcxyvkRP%2Bp%2F89Srv9TCCJGr2m5zaIzYGxBzShMBCcsHh%2B%2F0XiX1adx9WCCPAjY4m%2FZAN9uz471Xq8divYZccOFvePQMb8DhPbwvLRAaTXGx%2Fh9t28fdrjCq%2BVhljgXiXKay2GxzkhKszpojMMbMAFi7OgtYev1q7r4pn9LZip6LzSLtfuksVBf0CxboiTBqkbeynY9rE%2BvKuNCWAm0x6vhjRQmkt%2BoOc%2FSyS0Q8Vrxm6eDsHXePG68eSXG100vCUTP3AwHZ6HeKwhL9G%2FK3Uju%2FLke7oVjfmpCMU7Wt7UEAUn%2FBXIx9zaENnEI7kGBvd4PfEKrJs1%2BL7LVodr5n%2BLjexTLCmDLjlyW7ANU3dmw09NuWZ1OoUBYn1S2vQzWsR8QQ7rpcP61jumSP%2FmkHpbSUsPOmSnr2yJkf8MJ3fq74GOqUBZGDGeyBD8UzKSFQ9EC1W0t%2ByaFnLuUik5cElIRlmPYkBaF%2Brm96895iu7q7hWE5x2mtd%2BsWr7D3e%2BobLQt9r%2BNSoAuo9bd0gVxVopWOIhqUtO5c19m56Oh1EbuGCIat28%2BVpOfYy1WZ58XR62HVeLOZGJuUS1s8teeu8Wwkj2W%2BJ9bPbPiIcsWE87I0fHd1gIoLENlfP9w%2FGY7hmmMHyEwcpfjtB&X-Amz-Signature=49583fc8576c8e0fc463fbddc92d1a605161cb849f844164f91a5d3d51b2d4c0&X-Amz-SignedHeaders=host&x-id=GetObject)
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/9e974328-4af4-45d2-80e0-fea968f6a9a9/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466WZ7AQQAK%2F20250308%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250308T140345Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEBQaCXVzLXdlc3QtMiJGMEQCIF8SG9RM19hSZagaNANGQYmo3FtXGcz6ARM8lCEQNpM9AiACs4xoUHUnzHW5VoVA8ecmlkkIA%2FXKIBC6BcyhO9Sy2Sr%2FAwhdEAAaDDYzNzQyMzE4MzgwNSIMTbZRiquJtdrOQAA%2FKtwD5Try8%2FIa2EnphfaUk9QtZSStqA0ToFOzqY7CwXd9k2Tn%2B8xEz2gTQYxwoEi845yqm0O%2F55gtIZQlvAbxzeQ7LayYPX8tcHHSJfS4VP0nHMzzXixtQJsMlVV23pQMhB8Ns%2Bi8yWc5A%2BYX9I8nLN0IapzVhfFIZ%2BnetIXOE3Yod61QVs%2BtpdeLC%2Ba9rCKDnfgRJkWnHL3Zvk9fn0UXmqgHP5ziqyXpmY5ekDzPM3%2BvLqZusN7%2BBWZxCDmJpZqrzoQcG3XVf4N1jVb1VIp%2FpSH7WiccNz4WaaS3xyKf6%2FZYOc0yWlsW%2F5bLseonV2q2QlsQWrAXenDRj3375egtyvUrBUW2fYpi5x3fgJQoxq9pDx5Gu454jZHzQAb3YPpH0pjZTnXMxWMiqRHoJ%2Ba6Hqj6VxXS%2FY%2BEkTiiE3V6ylA%2FZd00V2dBZcDLzbS%2Fus6h0MmlqXtln86oE%2BdUUjKOXhwOL8u9j0QXNvHVcDUHO55p9J9FJVDVKUd%2BFg6rer4v5c%2F%2BDzJfoesSEme72ZRYPOBpasu3vhQlts0QyLHRpZnT6kOxRzkhNWefVKzYhJVMBynfnzDkrSkiu2KpnYvBHYzaDFF9qWPqRI6rkIhkF3OZVIv%2Fx1aszUJ%2FFqSzEK4wiemwvgY6pgEBNs260JKs%2B4l8pGZGeQlVD6W9Lo1zaQVLoMIjwTq2BrfuHiNq%2FiYrx61c0khDdEor6JS9E4xIp3IhgF1l8nmZujBxNW2KHpy9Uc4PBBj733Fihhx%2FHLAzqxOdgj1%2F8Vw5hI4Ympkf%2BIur%2BdmglYsYSnMv%2FQUPEU%2BOoO92ZvireQ%2BsQspzYJwoBmTtyCL7m0ZDg1vTKl%2FTK6SWA1gTuVRY2ZydcwtO&X-Amz-Signature=520e32f255fe28ab86fa1b9e45a4a524dc79e2e42fb572a51142cfa47d70a53e&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 1. /root/webapp-color에 주어진 Dockerfile2 관찰. 컨테이너 시작 시 명령어.
 → python app.py —color red
@@ -165,23 +165,23 @@ command:
 > 💡 ENTRYPOINT 뒤에 CMD가 붙음.  kuberentes로 생각하면 command 뒤에 args가 붙는 것.
 
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/a7a73a61-b2e0-4efa-873f-fd3273a38150/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4663QESQDFG%2F20250307%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250307T140807Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEP3%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCICFaiQjIqhI2315EvoThhtujGlZNvUPiTa4AqxyKipO2AiEAp9cXg%2F6CzD0ieAmAexWKDllOye467C%2BD%2F%2BGqf61UwdIq%2FwMIRhAAGgw2Mzc0MjMxODM4MDUiDOAl0zwqyivJarp5VCrcA2e%2BZtLNp4rqoelXAyW9uOIJuHI92KVr2USSuO9ctTJobLIsz6IyQh1OIisoTjPA%2FwpYjjqzG9oPg0Lz6se0luPARinAXTlSnxBpFK%2F6pvZcsqRgi%2BYXTCLefJL8AUFY%2BRqo58XtKj8F9jfngsDRQ70NYxWv923WCednGnjE4bbHeSAZN8tMvx2bwiGh1EEnJ4h8PS7%2BeJzsPd8qwESio2AtPcxyvkRP%2Bp%2F89Srv9TCCJGr2m5zaIzYGxBzShMBCcsHh%2B%2F0XiX1adx9WCCPAjY4m%2FZAN9uz471Xq8divYZccOFvePQMb8DhPbwvLRAaTXGx%2Fh9t28fdrjCq%2BVhljgXiXKay2GxzkhKszpojMMbMAFi7OgtYev1q7r4pn9LZip6LzSLtfuksVBf0CxboiTBqkbeynY9rE%2BvKuNCWAm0x6vhjRQmkt%2BoOc%2FSyS0Q8Vrxm6eDsHXePG68eSXG100vCUTP3AwHZ6HeKwhL9G%2FK3Uju%2FLke7oVjfmpCMU7Wt7UEAUn%2FBXIx9zaENnEI7kGBvd4PfEKrJs1%2BL7LVodr5n%2BLjexTLCmDLjlyW7ANU3dmw09NuWZ1OoUBYn1S2vQzWsR8QQ7rpcP61jumSP%2FmkHpbSUsPOmSnr2yJkf8MJ3fq74GOqUBZGDGeyBD8UzKSFQ9EC1W0t%2ByaFnLuUik5cElIRlmPYkBaF%2Brm96895iu7q7hWE5x2mtd%2BsWr7D3e%2BobLQt9r%2BNSoAuo9bd0gVxVopWOIhqUtO5c19m56Oh1EbuGCIat28%2BVpOfYy1WZ58XR62HVeLOZGJuUS1s8teeu8Wwkj2W%2BJ9bPbPiIcsWE87I0fHd1gIoLENlfP9w%2FGY7hmmMHyEwcpfjtB&X-Amz-Signature=95452320dd47ded9a896dbbff105c272f03a2ac2488c067787b3edb79e2bc52d&X-Amz-SignedHeaders=host&x-id=GetObject)
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/a7a73a61-b2e0-4efa-873f-fd3273a38150/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466WZ7AQQAK%2F20250308%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250308T140346Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEBQaCXVzLXdlc3QtMiJGMEQCIF8SG9RM19hSZagaNANGQYmo3FtXGcz6ARM8lCEQNpM9AiACs4xoUHUnzHW5VoVA8ecmlkkIA%2FXKIBC6BcyhO9Sy2Sr%2FAwhdEAAaDDYzNzQyMzE4MzgwNSIMTbZRiquJtdrOQAA%2FKtwD5Try8%2FIa2EnphfaUk9QtZSStqA0ToFOzqY7CwXd9k2Tn%2B8xEz2gTQYxwoEi845yqm0O%2F55gtIZQlvAbxzeQ7LayYPX8tcHHSJfS4VP0nHMzzXixtQJsMlVV23pQMhB8Ns%2Bi8yWc5A%2BYX9I8nLN0IapzVhfFIZ%2BnetIXOE3Yod61QVs%2BtpdeLC%2Ba9rCKDnfgRJkWnHL3Zvk9fn0UXmqgHP5ziqyXpmY5ekDzPM3%2BvLqZusN7%2BBWZxCDmJpZqrzoQcG3XVf4N1jVb1VIp%2FpSH7WiccNz4WaaS3xyKf6%2FZYOc0yWlsW%2F5bLseonV2q2QlsQWrAXenDRj3375egtyvUrBUW2fYpi5x3fgJQoxq9pDx5Gu454jZHzQAb3YPpH0pjZTnXMxWMiqRHoJ%2Ba6Hqj6VxXS%2FY%2BEkTiiE3V6ylA%2FZd00V2dBZcDLzbS%2Fus6h0MmlqXtln86oE%2BdUUjKOXhwOL8u9j0QXNvHVcDUHO55p9J9FJVDVKUd%2BFg6rer4v5c%2F%2BDzJfoesSEme72ZRYPOBpasu3vhQlts0QyLHRpZnT6kOxRzkhNWefVKzYhJVMBynfnzDkrSkiu2KpnYvBHYzaDFF9qWPqRI6rkIhkF3OZVIv%2Fx1aszUJ%2FFqSzEK4wiemwvgY6pgEBNs260JKs%2B4l8pGZGeQlVD6W9Lo1zaQVLoMIjwTq2BrfuHiNq%2FiYrx61c0khDdEor6JS9E4xIp3IhgF1l8nmZujBxNW2KHpy9Uc4PBBj733Fihhx%2FHLAzqxOdgj1%2F8Vw5hI4Ympkf%2BIur%2BdmglYsYSnMv%2FQUPEU%2BOoO92ZvireQ%2BsQspzYJwoBmTtyCL7m0ZDg1vTKl%2FTK6SWA1gTuVRY2ZydcwtO&X-Amz-Signature=707edcd197e09410e62dca43ba0bc34027088b21f19d47d9dfae2f6f0b7b2a8b&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 1. webapp-color-2 디렉토리 안 두 파일 관찰. 컨테이너 시작 시 명령어. 디렉토리 안 Dockerfile로부터 만든 이미지라 가정.
 → —color green
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/a9b0e3d1-ad6b-430e-93a5-81bb9a82fa08/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4663QESQDFG%2F20250307%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250307T140807Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEP3%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCICFaiQjIqhI2315EvoThhtujGlZNvUPiTa4AqxyKipO2AiEAp9cXg%2F6CzD0ieAmAexWKDllOye467C%2BD%2F%2BGqf61UwdIq%2FwMIRhAAGgw2Mzc0MjMxODM4MDUiDOAl0zwqyivJarp5VCrcA2e%2BZtLNp4rqoelXAyW9uOIJuHI92KVr2USSuO9ctTJobLIsz6IyQh1OIisoTjPA%2FwpYjjqzG9oPg0Lz6se0luPARinAXTlSnxBpFK%2F6pvZcsqRgi%2BYXTCLefJL8AUFY%2BRqo58XtKj8F9jfngsDRQ70NYxWv923WCednGnjE4bbHeSAZN8tMvx2bwiGh1EEnJ4h8PS7%2BeJzsPd8qwESio2AtPcxyvkRP%2Bp%2F89Srv9TCCJGr2m5zaIzYGxBzShMBCcsHh%2B%2F0XiX1adx9WCCPAjY4m%2FZAN9uz471Xq8divYZccOFvePQMb8DhPbwvLRAaTXGx%2Fh9t28fdrjCq%2BVhljgXiXKay2GxzkhKszpojMMbMAFi7OgtYev1q7r4pn9LZip6LzSLtfuksVBf0CxboiTBqkbeynY9rE%2BvKuNCWAm0x6vhjRQmkt%2BoOc%2FSyS0Q8Vrxm6eDsHXePG68eSXG100vCUTP3AwHZ6HeKwhL9G%2FK3Uju%2FLke7oVjfmpCMU7Wt7UEAUn%2FBXIx9zaENnEI7kGBvd4PfEKrJs1%2BL7LVodr5n%2BLjexTLCmDLjlyW7ANU3dmw09NuWZ1OoUBYn1S2vQzWsR8QQ7rpcP61jumSP%2FmkHpbSUsPOmSnr2yJkf8MJ3fq74GOqUBZGDGeyBD8UzKSFQ9EC1W0t%2ByaFnLuUik5cElIRlmPYkBaF%2Brm96895iu7q7hWE5x2mtd%2BsWr7D3e%2BobLQt9r%2BNSoAuo9bd0gVxVopWOIhqUtO5c19m56Oh1EbuGCIat28%2BVpOfYy1WZ58XR62HVeLOZGJuUS1s8teeu8Wwkj2W%2BJ9bPbPiIcsWE87I0fHd1gIoLENlfP9w%2FGY7hmmMHyEwcpfjtB&X-Amz-Signature=a93e62a13def2234e78756a70c0ac4e874f544f4149df7cb2fa2e111e0792785&X-Amz-SignedHeaders=host&x-id=GetObject)
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/a9b0e3d1-ad6b-430e-93a5-81bb9a82fa08/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466WZ7AQQAK%2F20250308%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250308T140346Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEBQaCXVzLXdlc3QtMiJGMEQCIF8SG9RM19hSZagaNANGQYmo3FtXGcz6ARM8lCEQNpM9AiACs4xoUHUnzHW5VoVA8ecmlkkIA%2FXKIBC6BcyhO9Sy2Sr%2FAwhdEAAaDDYzNzQyMzE4MzgwNSIMTbZRiquJtdrOQAA%2FKtwD5Try8%2FIa2EnphfaUk9QtZSStqA0ToFOzqY7CwXd9k2Tn%2B8xEz2gTQYxwoEi845yqm0O%2F55gtIZQlvAbxzeQ7LayYPX8tcHHSJfS4VP0nHMzzXixtQJsMlVV23pQMhB8Ns%2Bi8yWc5A%2BYX9I8nLN0IapzVhfFIZ%2BnetIXOE3Yod61QVs%2BtpdeLC%2Ba9rCKDnfgRJkWnHL3Zvk9fn0UXmqgHP5ziqyXpmY5ekDzPM3%2BvLqZusN7%2BBWZxCDmJpZqrzoQcG3XVf4N1jVb1VIp%2FpSH7WiccNz4WaaS3xyKf6%2FZYOc0yWlsW%2F5bLseonV2q2QlsQWrAXenDRj3375egtyvUrBUW2fYpi5x3fgJQoxq9pDx5Gu454jZHzQAb3YPpH0pjZTnXMxWMiqRHoJ%2Ba6Hqj6VxXS%2FY%2BEkTiiE3V6ylA%2FZd00V2dBZcDLzbS%2Fus6h0MmlqXtln86oE%2BdUUjKOXhwOL8u9j0QXNvHVcDUHO55p9J9FJVDVKUd%2BFg6rer4v5c%2F%2BDzJfoesSEme72ZRYPOBpasu3vhQlts0QyLHRpZnT6kOxRzkhNWefVKzYhJVMBynfnzDkrSkiu2KpnYvBHYzaDFF9qWPqRI6rkIhkF3OZVIv%2Fx1aszUJ%2FFqSzEK4wiemwvgY6pgEBNs260JKs%2B4l8pGZGeQlVD6W9Lo1zaQVLoMIjwTq2BrfuHiNq%2FiYrx61c0khDdEor6JS9E4xIp3IhgF1l8nmZujBxNW2KHpy9Uc4PBBj733Fihhx%2FHLAzqxOdgj1%2F8Vw5hI4Ympkf%2BIur%2BdmglYsYSnMv%2FQUPEU%2BOoO92ZvireQ%2BsQspzYJwoBmTtyCL7m0ZDg1vTKl%2FTK6SWA1gTuVRY2ZydcwtO&X-Amz-Signature=d411c3877430ce9c7bc859f5977abc5884e3abb6eece81b71bb0baad975c59d4&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/d072cded-54c9-4901-8066-9f80315a1b60/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4663QESQDFG%2F20250307%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250307T140807Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEP3%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCICFaiQjIqhI2315EvoThhtujGlZNvUPiTa4AqxyKipO2AiEAp9cXg%2F6CzD0ieAmAexWKDllOye467C%2BD%2F%2BGqf61UwdIq%2FwMIRhAAGgw2Mzc0MjMxODM4MDUiDOAl0zwqyivJarp5VCrcA2e%2BZtLNp4rqoelXAyW9uOIJuHI92KVr2USSuO9ctTJobLIsz6IyQh1OIisoTjPA%2FwpYjjqzG9oPg0Lz6se0luPARinAXTlSnxBpFK%2F6pvZcsqRgi%2BYXTCLefJL8AUFY%2BRqo58XtKj8F9jfngsDRQ70NYxWv923WCednGnjE4bbHeSAZN8tMvx2bwiGh1EEnJ4h8PS7%2BeJzsPd8qwESio2AtPcxyvkRP%2Bp%2F89Srv9TCCJGr2m5zaIzYGxBzShMBCcsHh%2B%2F0XiX1adx9WCCPAjY4m%2FZAN9uz471Xq8divYZccOFvePQMb8DhPbwvLRAaTXGx%2Fh9t28fdrjCq%2BVhljgXiXKay2GxzkhKszpojMMbMAFi7OgtYev1q7r4pn9LZip6LzSLtfuksVBf0CxboiTBqkbeynY9rE%2BvKuNCWAm0x6vhjRQmkt%2BoOc%2FSyS0Q8Vrxm6eDsHXePG68eSXG100vCUTP3AwHZ6HeKwhL9G%2FK3Uju%2FLke7oVjfmpCMU7Wt7UEAUn%2FBXIx9zaENnEI7kGBvd4PfEKrJs1%2BL7LVodr5n%2BLjexTLCmDLjlyW7ANU3dmw09NuWZ1OoUBYn1S2vQzWsR8QQ7rpcP61jumSP%2FmkHpbSUsPOmSnr2yJkf8MJ3fq74GOqUBZGDGeyBD8UzKSFQ9EC1W0t%2ByaFnLuUik5cElIRlmPYkBaF%2Brm96895iu7q7hWE5x2mtd%2BsWr7D3e%2BobLQt9r%2BNSoAuo9bd0gVxVopWOIhqUtO5c19m56Oh1EbuGCIat28%2BVpOfYy1WZ58XR62HVeLOZGJuUS1s8teeu8Wwkj2W%2BJ9bPbPiIcsWE87I0fHd1gIoLENlfP9w%2FGY7hmmMHyEwcpfjtB&X-Amz-Signature=a65e5da3cb660b856be57884a97d6a5cf54c58c5fafca67cacc1067d8a373bb1&X-Amz-SignedHeaders=host&x-id=GetObject)
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/d072cded-54c9-4901-8066-9f80315a1b60/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466WZ7AQQAK%2F20250308%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250308T140346Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEBQaCXVzLXdlc3QtMiJGMEQCIF8SG9RM19hSZagaNANGQYmo3FtXGcz6ARM8lCEQNpM9AiACs4xoUHUnzHW5VoVA8ecmlkkIA%2FXKIBC6BcyhO9Sy2Sr%2FAwhdEAAaDDYzNzQyMzE4MzgwNSIMTbZRiquJtdrOQAA%2FKtwD5Try8%2FIa2EnphfaUk9QtZSStqA0ToFOzqY7CwXd9k2Tn%2B8xEz2gTQYxwoEi845yqm0O%2F55gtIZQlvAbxzeQ7LayYPX8tcHHSJfS4VP0nHMzzXixtQJsMlVV23pQMhB8Ns%2Bi8yWc5A%2BYX9I8nLN0IapzVhfFIZ%2BnetIXOE3Yod61QVs%2BtpdeLC%2Ba9rCKDnfgRJkWnHL3Zvk9fn0UXmqgHP5ziqyXpmY5ekDzPM3%2BvLqZusN7%2BBWZxCDmJpZqrzoQcG3XVf4N1jVb1VIp%2FpSH7WiccNz4WaaS3xyKf6%2FZYOc0yWlsW%2F5bLseonV2q2QlsQWrAXenDRj3375egtyvUrBUW2fYpi5x3fgJQoxq9pDx5Gu454jZHzQAb3YPpH0pjZTnXMxWMiqRHoJ%2Ba6Hqj6VxXS%2FY%2BEkTiiE3V6ylA%2FZd00V2dBZcDLzbS%2Fus6h0MmlqXtln86oE%2BdUUjKOXhwOL8u9j0QXNvHVcDUHO55p9J9FJVDVKUd%2BFg6rer4v5c%2F%2BDzJfoesSEme72ZRYPOBpasu3vhQlts0QyLHRpZnT6kOxRzkhNWefVKzYhJVMBynfnzDkrSkiu2KpnYvBHYzaDFF9qWPqRI6rkIhkF3OZVIv%2Fx1aszUJ%2FFqSzEK4wiemwvgY6pgEBNs260JKs%2B4l8pGZGeQlVD6W9Lo1zaQVLoMIjwTq2BrfuHiNq%2FiYrx61c0khDdEor6JS9E4xIp3IhgF1l8nmZujBxNW2KHpy9Uc4PBBj733Fihhx%2FHLAzqxOdgj1%2F8Vw5hI4Ympkf%2BIur%2BdmglYsYSnMv%2FQUPEU%2BOoO92ZvireQ%2BsQspzYJwoBmTtyCL7m0ZDg1vTKl%2FTK6SWA1gTuVRY2ZydcwtO&X-Amz-Signature=5c254071ecea17d04a71a24c3e57f4516c2589a2735c2e0adaab0940e976376a&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 1. webapp-color-3 디렉토리 안 두 파일 관찰. 컨테이너 시작 시 명령어. 디렉토리 안 Dockerfile로부터 만든 이미지라 가정.
 → python [app.py](http://app.py/) —color pink
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/e62ca764-701e-481a-ac07-919d52c15a4a/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4663QESQDFG%2F20250307%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250307T140807Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEP3%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCICFaiQjIqhI2315EvoThhtujGlZNvUPiTa4AqxyKipO2AiEAp9cXg%2F6CzD0ieAmAexWKDllOye467C%2BD%2F%2BGqf61UwdIq%2FwMIRhAAGgw2Mzc0MjMxODM4MDUiDOAl0zwqyivJarp5VCrcA2e%2BZtLNp4rqoelXAyW9uOIJuHI92KVr2USSuO9ctTJobLIsz6IyQh1OIisoTjPA%2FwpYjjqzG9oPg0Lz6se0luPARinAXTlSnxBpFK%2F6pvZcsqRgi%2BYXTCLefJL8AUFY%2BRqo58XtKj8F9jfngsDRQ70NYxWv923WCednGnjE4bbHeSAZN8tMvx2bwiGh1EEnJ4h8PS7%2BeJzsPd8qwESio2AtPcxyvkRP%2Bp%2F89Srv9TCCJGr2m5zaIzYGxBzShMBCcsHh%2B%2F0XiX1adx9WCCPAjY4m%2FZAN9uz471Xq8divYZccOFvePQMb8DhPbwvLRAaTXGx%2Fh9t28fdrjCq%2BVhljgXiXKay2GxzkhKszpojMMbMAFi7OgtYev1q7r4pn9LZip6LzSLtfuksVBf0CxboiTBqkbeynY9rE%2BvKuNCWAm0x6vhjRQmkt%2BoOc%2FSyS0Q8Vrxm6eDsHXePG68eSXG100vCUTP3AwHZ6HeKwhL9G%2FK3Uju%2FLke7oVjfmpCMU7Wt7UEAUn%2FBXIx9zaENnEI7kGBvd4PfEKrJs1%2BL7LVodr5n%2BLjexTLCmDLjlyW7ANU3dmw09NuWZ1OoUBYn1S2vQzWsR8QQ7rpcP61jumSP%2FmkHpbSUsPOmSnr2yJkf8MJ3fq74GOqUBZGDGeyBD8UzKSFQ9EC1W0t%2ByaFnLuUik5cElIRlmPYkBaF%2Brm96895iu7q7hWE5x2mtd%2BsWr7D3e%2BobLQt9r%2BNSoAuo9bd0gVxVopWOIhqUtO5c19m56Oh1EbuGCIat28%2BVpOfYy1WZ58XR62HVeLOZGJuUS1s8teeu8Wwkj2W%2BJ9bPbPiIcsWE87I0fHd1gIoLENlfP9w%2FGY7hmmMHyEwcpfjtB&X-Amz-Signature=a7bf7c2ac4f4850a7bdc08cea0bec1f1a30313ea2a7503ddb1eafc1c6cedd9f8&X-Amz-SignedHeaders=host&x-id=GetObject)
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/e62ca764-701e-481a-ac07-919d52c15a4a/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466WZ7AQQAK%2F20250308%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250308T140346Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEBQaCXVzLXdlc3QtMiJGMEQCIF8SG9RM19hSZagaNANGQYmo3FtXGcz6ARM8lCEQNpM9AiACs4xoUHUnzHW5VoVA8ecmlkkIA%2FXKIBC6BcyhO9Sy2Sr%2FAwhdEAAaDDYzNzQyMzE4MzgwNSIMTbZRiquJtdrOQAA%2FKtwD5Try8%2FIa2EnphfaUk9QtZSStqA0ToFOzqY7CwXd9k2Tn%2B8xEz2gTQYxwoEi845yqm0O%2F55gtIZQlvAbxzeQ7LayYPX8tcHHSJfS4VP0nHMzzXixtQJsMlVV23pQMhB8Ns%2Bi8yWc5A%2BYX9I8nLN0IapzVhfFIZ%2BnetIXOE3Yod61QVs%2BtpdeLC%2Ba9rCKDnfgRJkWnHL3Zvk9fn0UXmqgHP5ziqyXpmY5ekDzPM3%2BvLqZusN7%2BBWZxCDmJpZqrzoQcG3XVf4N1jVb1VIp%2FpSH7WiccNz4WaaS3xyKf6%2FZYOc0yWlsW%2F5bLseonV2q2QlsQWrAXenDRj3375egtyvUrBUW2fYpi5x3fgJQoxq9pDx5Gu454jZHzQAb3YPpH0pjZTnXMxWMiqRHoJ%2Ba6Hqj6VxXS%2FY%2BEkTiiE3V6ylA%2FZd00V2dBZcDLzbS%2Fus6h0MmlqXtln86oE%2BdUUjKOXhwOL8u9j0QXNvHVcDUHO55p9J9FJVDVKUd%2BFg6rer4v5c%2F%2BDzJfoesSEme72ZRYPOBpasu3vhQlts0QyLHRpZnT6kOxRzkhNWefVKzYhJVMBynfnzDkrSkiu2KpnYvBHYzaDFF9qWPqRI6rkIhkF3OZVIv%2Fx1aszUJ%2FFqSzEK4wiemwvgY6pgEBNs260JKs%2B4l8pGZGeQlVD6W9Lo1zaQVLoMIjwTq2BrfuHiNq%2FiYrx61c0khDdEor6JS9E4xIp3IhgF1l8nmZujBxNW2KHpy9Uc4PBBj733Fihhx%2FHLAzqxOdgj1%2F8Vw5hI4Ympkf%2BIur%2BdmglYsYSnMv%2FQUPEU%2BOoO92ZvireQ%2BsQspzYJwoBmTtyCL7m0ZDg1vTKl%2FTK6SWA1gTuVRY2ZydcwtO&X-Amz-Signature=51d5ce741fd004ead92c6b6c925cc2b765a3629944916008556c2530f1f88398&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/904b3c5a-88ac-4741-a78d-1f6db17fc6c5/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4663QESQDFG%2F20250307%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250307T140807Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEP3%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCICFaiQjIqhI2315EvoThhtujGlZNvUPiTa4AqxyKipO2AiEAp9cXg%2F6CzD0ieAmAexWKDllOye467C%2BD%2F%2BGqf61UwdIq%2FwMIRhAAGgw2Mzc0MjMxODM4MDUiDOAl0zwqyivJarp5VCrcA2e%2BZtLNp4rqoelXAyW9uOIJuHI92KVr2USSuO9ctTJobLIsz6IyQh1OIisoTjPA%2FwpYjjqzG9oPg0Lz6se0luPARinAXTlSnxBpFK%2F6pvZcsqRgi%2BYXTCLefJL8AUFY%2BRqo58XtKj8F9jfngsDRQ70NYxWv923WCednGnjE4bbHeSAZN8tMvx2bwiGh1EEnJ4h8PS7%2BeJzsPd8qwESio2AtPcxyvkRP%2Bp%2F89Srv9TCCJGr2m5zaIzYGxBzShMBCcsHh%2B%2F0XiX1adx9WCCPAjY4m%2FZAN9uz471Xq8divYZccOFvePQMb8DhPbwvLRAaTXGx%2Fh9t28fdrjCq%2BVhljgXiXKay2GxzkhKszpojMMbMAFi7OgtYev1q7r4pn9LZip6LzSLtfuksVBf0CxboiTBqkbeynY9rE%2BvKuNCWAm0x6vhjRQmkt%2BoOc%2FSyS0Q8Vrxm6eDsHXePG68eSXG100vCUTP3AwHZ6HeKwhL9G%2FK3Uju%2FLke7oVjfmpCMU7Wt7UEAUn%2FBXIx9zaENnEI7kGBvd4PfEKrJs1%2BL7LVodr5n%2BLjexTLCmDLjlyW7ANU3dmw09NuWZ1OoUBYn1S2vQzWsR8QQ7rpcP61jumSP%2FmkHpbSUsPOmSnr2yJkf8MJ3fq74GOqUBZGDGeyBD8UzKSFQ9EC1W0t%2ByaFnLuUik5cElIRlmPYkBaF%2Brm96895iu7q7hWE5x2mtd%2BsWr7D3e%2BobLQt9r%2BNSoAuo9bd0gVxVopWOIhqUtO5c19m56Oh1EbuGCIat28%2BVpOfYy1WZ58XR62HVeLOZGJuUS1s8teeu8Wwkj2W%2BJ9bPbPiIcsWE87I0fHd1gIoLENlfP9w%2FGY7hmmMHyEwcpfjtB&X-Amz-Signature=c42296c627694a8fbaf9a91dbb76946241e6802ecc0b94093723a70a2e6088d6&X-Amz-SignedHeaders=host&x-id=GetObject)
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/904b3c5a-88ac-4741-a78d-1f6db17fc6c5/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466WZ7AQQAK%2F20250308%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250308T140346Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEBQaCXVzLXdlc3QtMiJGMEQCIF8SG9RM19hSZagaNANGQYmo3FtXGcz6ARM8lCEQNpM9AiACs4xoUHUnzHW5VoVA8ecmlkkIA%2FXKIBC6BcyhO9Sy2Sr%2FAwhdEAAaDDYzNzQyMzE4MzgwNSIMTbZRiquJtdrOQAA%2FKtwD5Try8%2FIa2EnphfaUk9QtZSStqA0ToFOzqY7CwXd9k2Tn%2B8xEz2gTQYxwoEi845yqm0O%2F55gtIZQlvAbxzeQ7LayYPX8tcHHSJfS4VP0nHMzzXixtQJsMlVV23pQMhB8Ns%2Bi8yWc5A%2BYX9I8nLN0IapzVhfFIZ%2BnetIXOE3Yod61QVs%2BtpdeLC%2Ba9rCKDnfgRJkWnHL3Zvk9fn0UXmqgHP5ziqyXpmY5ekDzPM3%2BvLqZusN7%2BBWZxCDmJpZqrzoQcG3XVf4N1jVb1VIp%2FpSH7WiccNz4WaaS3xyKf6%2FZYOc0yWlsW%2F5bLseonV2q2QlsQWrAXenDRj3375egtyvUrBUW2fYpi5x3fgJQoxq9pDx5Gu454jZHzQAb3YPpH0pjZTnXMxWMiqRHoJ%2Ba6Hqj6VxXS%2FY%2BEkTiiE3V6ylA%2FZd00V2dBZcDLzbS%2Fus6h0MmlqXtln86oE%2BdUUjKOXhwOL8u9j0QXNvHVcDUHO55p9J9FJVDVKUd%2BFg6rer4v5c%2F%2BDzJfoesSEme72ZRYPOBpasu3vhQlts0QyLHRpZnT6kOxRzkhNWefVKzYhJVMBynfnzDkrSkiu2KpnYvBHYzaDFF9qWPqRI6rkIhkF3OZVIv%2Fx1aszUJ%2FFqSzEK4wiemwvgY6pgEBNs260JKs%2B4l8pGZGeQlVD6W9Lo1zaQVLoMIjwTq2BrfuHiNq%2FiYrx61c0khDdEor6JS9E4xIp3IhgF1l8nmZujBxNW2KHpy9Uc4PBBj733Fihhx%2FHLAzqxOdgj1%2F8Vw5hI4Ympkf%2BIur%2BdmglYsYSnMv%2FQUPEU%2BOoO92ZvireQ%2BsQspzYJwoBmTtyCL7m0ZDg1vTKl%2FTK6SWA1gTuVRY2ZydcwtO&X-Amz-Signature=9c9112cd2bcb111825c07f34c96bdb0339bb43413ced3e9bf4950abdbe963870&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 1. 주어진 명세서가지고 Pod 생성. 기본적으로 blue 배경이 보여짐. 주어진 command 라인 arguments를 green으로 바꿈.
 Pod 이름 - webapp-green
@@ -193,10 +193,10 @@ kubectl run webapp-green --image=kodekloud/webapp-color -- --color green
 ```
 
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/95d73da8-076e-4fd5-9512-26ae91309514/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4663QESQDFG%2F20250307%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250307T140807Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEP3%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCICFaiQjIqhI2315EvoThhtujGlZNvUPiTa4AqxyKipO2AiEAp9cXg%2F6CzD0ieAmAexWKDllOye467C%2BD%2F%2BGqf61UwdIq%2FwMIRhAAGgw2Mzc0MjMxODM4MDUiDOAl0zwqyivJarp5VCrcA2e%2BZtLNp4rqoelXAyW9uOIJuHI92KVr2USSuO9ctTJobLIsz6IyQh1OIisoTjPA%2FwpYjjqzG9oPg0Lz6se0luPARinAXTlSnxBpFK%2F6pvZcsqRgi%2BYXTCLefJL8AUFY%2BRqo58XtKj8F9jfngsDRQ70NYxWv923WCednGnjE4bbHeSAZN8tMvx2bwiGh1EEnJ4h8PS7%2BeJzsPd8qwESio2AtPcxyvkRP%2Bp%2F89Srv9TCCJGr2m5zaIzYGxBzShMBCcsHh%2B%2F0XiX1adx9WCCPAjY4m%2FZAN9uz471Xq8divYZccOFvePQMb8DhPbwvLRAaTXGx%2Fh9t28fdrjCq%2BVhljgXiXKay2GxzkhKszpojMMbMAFi7OgtYev1q7r4pn9LZip6LzSLtfuksVBf0CxboiTBqkbeynY9rE%2BvKuNCWAm0x6vhjRQmkt%2BoOc%2FSyS0Q8Vrxm6eDsHXePG68eSXG100vCUTP3AwHZ6HeKwhL9G%2FK3Uju%2FLke7oVjfmpCMU7Wt7UEAUn%2FBXIx9zaENnEI7kGBvd4PfEKrJs1%2BL7LVodr5n%2BLjexTLCmDLjlyW7ANU3dmw09NuWZ1OoUBYn1S2vQzWsR8QQ7rpcP61jumSP%2FmkHpbSUsPOmSnr2yJkf8MJ3fq74GOqUBZGDGeyBD8UzKSFQ9EC1W0t%2ByaFnLuUik5cElIRlmPYkBaF%2Brm96895iu7q7hWE5x2mtd%2BsWr7D3e%2BobLQt9r%2BNSoAuo9bd0gVxVopWOIhqUtO5c19m56Oh1EbuGCIat28%2BVpOfYy1WZ58XR62HVeLOZGJuUS1s8teeu8Wwkj2W%2BJ9bPbPiIcsWE87I0fHd1gIoLENlfP9w%2FGY7hmmMHyEwcpfjtB&X-Amz-Signature=bfccab85abb336197a68ca1b5e244d522430b96ae72e8255559ed39e10f466de&X-Amz-SignedHeaders=host&x-id=GetObject)
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/95d73da8-076e-4fd5-9512-26ae91309514/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466WZ7AQQAK%2F20250308%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250308T140346Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEBQaCXVzLXdlc3QtMiJGMEQCIF8SG9RM19hSZagaNANGQYmo3FtXGcz6ARM8lCEQNpM9AiACs4xoUHUnzHW5VoVA8ecmlkkIA%2FXKIBC6BcyhO9Sy2Sr%2FAwhdEAAaDDYzNzQyMzE4MzgwNSIMTbZRiquJtdrOQAA%2FKtwD5Try8%2FIa2EnphfaUk9QtZSStqA0ToFOzqY7CwXd9k2Tn%2B8xEz2gTQYxwoEi845yqm0O%2F55gtIZQlvAbxzeQ7LayYPX8tcHHSJfS4VP0nHMzzXixtQJsMlVV23pQMhB8Ns%2Bi8yWc5A%2BYX9I8nLN0IapzVhfFIZ%2BnetIXOE3Yod61QVs%2BtpdeLC%2Ba9rCKDnfgRJkWnHL3Zvk9fn0UXmqgHP5ziqyXpmY5ekDzPM3%2BvLqZusN7%2BBWZxCDmJpZqrzoQcG3XVf4N1jVb1VIp%2FpSH7WiccNz4WaaS3xyKf6%2FZYOc0yWlsW%2F5bLseonV2q2QlsQWrAXenDRj3375egtyvUrBUW2fYpi5x3fgJQoxq9pDx5Gu454jZHzQAb3YPpH0pjZTnXMxWMiqRHoJ%2Ba6Hqj6VxXS%2FY%2BEkTiiE3V6ylA%2FZd00V2dBZcDLzbS%2Fus6h0MmlqXtln86oE%2BdUUjKOXhwOL8u9j0QXNvHVcDUHO55p9J9FJVDVKUd%2BFg6rer4v5c%2F%2BDzJfoesSEme72ZRYPOBpasu3vhQlts0QyLHRpZnT6kOxRzkhNWefVKzYhJVMBynfnzDkrSkiu2KpnYvBHYzaDFF9qWPqRI6rkIhkF3OZVIv%2Fx1aszUJ%2FFqSzEK4wiemwvgY6pgEBNs260JKs%2B4l8pGZGeQlVD6W9Lo1zaQVLoMIjwTq2BrfuHiNq%2FiYrx61c0khDdEor6JS9E4xIp3IhgF1l8nmZujBxNW2KHpy9Uc4PBBj733Fihhx%2FHLAzqxOdgj1%2F8Vw5hI4Ympkf%2BIur%2BdmglYsYSnMv%2FQUPEU%2BOoO92ZvireQ%2BsQspzYJwoBmTtyCL7m0ZDg1vTKl%2FTK6SWA1gTuVRY2ZydcwtO&X-Amz-Signature=eae53f399eb30b052aca250ae8f9c228047a352446eedd2e93022d2db6a070df&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/1ec7b2df-e700-423a-a17c-9c153e2d04d0/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4663QESQDFG%2F20250307%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250307T140807Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEP3%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCICFaiQjIqhI2315EvoThhtujGlZNvUPiTa4AqxyKipO2AiEAp9cXg%2F6CzD0ieAmAexWKDllOye467C%2BD%2F%2BGqf61UwdIq%2FwMIRhAAGgw2Mzc0MjMxODM4MDUiDOAl0zwqyivJarp5VCrcA2e%2BZtLNp4rqoelXAyW9uOIJuHI92KVr2USSuO9ctTJobLIsz6IyQh1OIisoTjPA%2FwpYjjqzG9oPg0Lz6se0luPARinAXTlSnxBpFK%2F6pvZcsqRgi%2BYXTCLefJL8AUFY%2BRqo58XtKj8F9jfngsDRQ70NYxWv923WCednGnjE4bbHeSAZN8tMvx2bwiGh1EEnJ4h8PS7%2BeJzsPd8qwESio2AtPcxyvkRP%2Bp%2F89Srv9TCCJGr2m5zaIzYGxBzShMBCcsHh%2B%2F0XiX1adx9WCCPAjY4m%2FZAN9uz471Xq8divYZccOFvePQMb8DhPbwvLRAaTXGx%2Fh9t28fdrjCq%2BVhljgXiXKay2GxzkhKszpojMMbMAFi7OgtYev1q7r4pn9LZip6LzSLtfuksVBf0CxboiTBqkbeynY9rE%2BvKuNCWAm0x6vhjRQmkt%2BoOc%2FSyS0Q8Vrxm6eDsHXePG68eSXG100vCUTP3AwHZ6HeKwhL9G%2FK3Uju%2FLke7oVjfmpCMU7Wt7UEAUn%2FBXIx9zaENnEI7kGBvd4PfEKrJs1%2BL7LVodr5n%2BLjexTLCmDLjlyW7ANU3dmw09NuWZ1OoUBYn1S2vQzWsR8QQ7rpcP61jumSP%2FmkHpbSUsPOmSnr2yJkf8MJ3fq74GOqUBZGDGeyBD8UzKSFQ9EC1W0t%2ByaFnLuUik5cElIRlmPYkBaF%2Brm96895iu7q7hWE5x2mtd%2BsWr7D3e%2BobLQt9r%2BNSoAuo9bd0gVxVopWOIhqUtO5c19m56Oh1EbuGCIat28%2BVpOfYy1WZ58XR62HVeLOZGJuUS1s8teeu8Wwkj2W%2BJ9bPbPiIcsWE87I0fHd1gIoLENlfP9w%2FGY7hmmMHyEwcpfjtB&X-Amz-Signature=d13c506e1c4fd83b0dfd80c74016adec60f763229a7b6fa7b0bf1a6b0e6d9ed3&X-Amz-SignedHeaders=host&x-id=GetObject)
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/1ec7b2df-e700-423a-a17c-9c153e2d04d0/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466WZ7AQQAK%2F20250308%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250308T140346Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEBQaCXVzLXdlc3QtMiJGMEQCIF8SG9RM19hSZagaNANGQYmo3FtXGcz6ARM8lCEQNpM9AiACs4xoUHUnzHW5VoVA8ecmlkkIA%2FXKIBC6BcyhO9Sy2Sr%2FAwhdEAAaDDYzNzQyMzE4MzgwNSIMTbZRiquJtdrOQAA%2FKtwD5Try8%2FIa2EnphfaUk9QtZSStqA0ToFOzqY7CwXd9k2Tn%2B8xEz2gTQYxwoEi845yqm0O%2F55gtIZQlvAbxzeQ7LayYPX8tcHHSJfS4VP0nHMzzXixtQJsMlVV23pQMhB8Ns%2Bi8yWc5A%2BYX9I8nLN0IapzVhfFIZ%2BnetIXOE3Yod61QVs%2BtpdeLC%2Ba9rCKDnfgRJkWnHL3Zvk9fn0UXmqgHP5ziqyXpmY5ekDzPM3%2BvLqZusN7%2BBWZxCDmJpZqrzoQcG3XVf4N1jVb1VIp%2FpSH7WiccNz4WaaS3xyKf6%2FZYOc0yWlsW%2F5bLseonV2q2QlsQWrAXenDRj3375egtyvUrBUW2fYpi5x3fgJQoxq9pDx5Gu454jZHzQAb3YPpH0pjZTnXMxWMiqRHoJ%2Ba6Hqj6VxXS%2FY%2BEkTiiE3V6ylA%2FZd00V2dBZcDLzbS%2Fus6h0MmlqXtln86oE%2BdUUjKOXhwOL8u9j0QXNvHVcDUHO55p9J9FJVDVKUd%2BFg6rer4v5c%2F%2BDzJfoesSEme72ZRYPOBpasu3vhQlts0QyLHRpZnT6kOxRzkhNWefVKzYhJVMBynfnzDkrSkiu2KpnYvBHYzaDFF9qWPqRI6rkIhkF3OZVIv%2Fx1aszUJ%2FFqSzEK4wiemwvgY6pgEBNs260JKs%2B4l8pGZGeQlVD6W9Lo1zaQVLoMIjwTq2BrfuHiNq%2FiYrx61c0khDdEor6JS9E4xIp3IhgF1l8nmZujBxNW2KHpy9Uc4PBBj733Fihhx%2FHLAzqxOdgj1%2F8Vw5hI4Ympkf%2BIur%2BdmglYsYSnMv%2FQUPEU%2BOoO92ZvireQ%2BsQspzYJwoBmTtyCL7m0ZDg1vTKl%2FTK6SWA1gTuVRY2ZydcwtO&X-Amz-Signature=5017b445e7a9862c53f41e703eaaedab88ac3c86055f1aa49dc98351fc21ba04&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
 ## Configure Environment Variables in Applications
@@ -375,7 +375,7 @@ EncryptionConfiguration 파일은 /etc/kubernetes/manifest/enc에 저장 후 이
 ETCDCTL_API 를 다시 수행하면 EncryptionCongfiguration이 적용되어 아래 그림과 같이 암호화되어 나오는 것을 볼 수 있음.
 
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/0bf8add3-bd24-4223-9f63-0aea074c7073/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4664L7H6HBR%2F20250307%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250307T140808Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEP3%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDhW6NPNSSWLRTSUEKiBWBT%2BzwQSaFMYjqVNvMyDPdPoQIhAI%2BIF0HVaPgD6xu11Q8Nw4aAmn0z2qKsuVC89ILY%2B9FhKv8DCEYQABoMNjM3NDIzMTgzODA1IgwfV1Hn4MqSWexbE2sq3AOlJM4gdvsdH0Wc0JaLpjgBBkMALjeD8I9pgvw5DS3PRYdNLnpWNvycvWQnGm7d8gx0vyjVR4T%2BxDcT947z2%2BA5aO9n1x%2BmWOrzzFXDBrP6fxOhsUQLtkHixdfqYnvghzwZrDU6q%2BP0i979T%2BCtkrkMaqE4CS1flwJlG9XBJ2l6iMvaUUKWSDtUVJMi3jdmZ8zQ7DJ849qS1NiodnwGuwPD2c4xaLyiifk5KwsD5BFErrYNeOm6SMOiztkRL%2Bdj06freE%2B3uhFEyC4hd5vgqyODC8sOE4iAs5Ys7u5RxDH4xC6LOKWWpX%2F%2BoUbrYdNRj%2BczDYnTAAkM4qp8uOINirSeKV2L8fAtqXlcXV9w1wXP5gA%2FWYv5wtXiyqVIozoB5KAHOOBgd3JLcCUlBxPRj2AaGj%2Bu8tWTp0OfDw8y1fHPTlPfqDDBJGRED1ePuu9Y2mtNVvat%2FY5znMGseHDjwGblhZVNeSM1MAYen6ALVcT25fIcCI9cBqTiHMKUl8lTBvGFX%2FGeywe9UbVCRXOV9BHs8WwzVQcoEZD2tHHLo0F1uWNtiluVg%2BQX3mZJr9v5M9COp5JOqVpBMhf7qiv3HVLHOlp2UHyMvQKS7BAAM8LUvY13Ls0%2Bf5%2Fkm2m%2BxzDg36u%2BBjqkAU%2B5ZT3hNhT5A4oMvKY%2F6fcdMGtldRHAJYeKZpN7lVMYOhbxuWRO2RjHyrIE0Y7SZRRS3p0cvE0cJXK2t6Pvj0ZBQvqdpWpQwldNLOSTNpWcDAD%2BmwN8upLRHmhFYttNvnjkofzsAt%2BVeGN4ZfX3dmUlwM%2Fc1p1uzkJZ34WKLfYG48xoLzCsNE5Z52YhsxJOx6A4865rWMKYccMX7y%2FOEBoTgiCP&X-Amz-Signature=068d0356c97a9350c71e5469486ab00023bcd57fe40d789e042e92ddd56be945&X-Amz-SignedHeaders=host&x-id=GetObject)
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/0bf8add3-bd24-4223-9f63-0aea074c7073/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466244PO4VR%2F20250308%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250308T140346Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEBIaCXVzLXdlc3QtMiJGMEQCICha8VrXSzGnFZQR6U7QsRn3I%2Fg3jTUgfLn4RE78%2BRBJAiBkqDe4jVNBJz7D533T0%2FD%2B4yo%2F6FMkLKS1VykMYK1HEyr%2FAwhbEAAaDDYzNzQyMzE4MzgwNSIMI8AeQM%2Fd%2FIf8BSVAKtwD3URBhpbPV%2BNqL6JozUk4HSGls54z04Az%2BDjwzMU3%2B2%2F67pa69kkOhoJXbKqhwLMFM0GWQw6vLw4VkL%2FbDoyCZRuEIsoP4t93GPOra2bF2d6WM%2BK1AeNQv87ov4cR9pciuZ%2F8m6fXNcI7Uv3igObOm5J9TEACitcQaYPxW8J8el0GbVr2GDepYSQaZ0haP6zYJAflhZTcEiCvyljcPH%2BLkVF8fmXTOUF26f9U0Ctx%2F%2F4lyRyc8F5vVccfHFlvof%2Fopnclj8Hntx2kwW22eGnKixZfT6dPIjwZmZ3u1kyBp7rD9IT21QnUSTrAA3wPrsFHe26ly5wTf8S8BSmI4mAN8BamKsbE%2FG22NzToDtnBIvEwju1nLe9D5xbMlj6G6ybROB4d9Mu2SqmfSllEAGraEl5I93WexrbOYQLvvVA%2B0wUz%2Bl9mIYrOUiw6Du0x49ak24cOQYDMsiz8ofxUn%2F84UfXFYyBQWv4b93qiq%2B5w%2BG8wW2v4k4ahpnYmepsrMyWgZ142LXVhDKokvbrrP9XDMHSgUah0lkC%2FYgMY1Q92H34xJtG2oaumBtELWH4%2FaPDD1mHWDMFO%2FS8d1XyE%2Bmk%2FQ06wAQdq6qeqCDalmqWLQ8sKsv8%2BJu1GZgLRsHkwkbCwvgY6pgHBLRT6f0Jo28IiF2ccWzi7gQVg5CpOI06KPiVeIkXqChUIM5r%2Fw9PcxHntb3myxmAuzQlA3nJ4P7x7t68ozEPmKvsFc4VTBuc2AzHNpBnqu8srZ6jCA2g6cZZfl5tN9TEy2uTnSueRLE73hvlYCVoyB4lm1KsQw6veNhCUPXaS%2BSfm%2FpTvQyhb9ExpCJa66i0SNYfGbVJEG7%2BOo4FxyPXQCORpmJ43&X-Amz-Signature=73d8f41d77df5380798b3dd0b35d8fc56efd2bc262bd781949a0f2951f0e1f8e&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
 ## Multi Container Pods
@@ -399,33 +399,33 @@ Container 2 Name: gold
 Container 2 Image: redis
 crashloopbackoff 발생하면 lemon 컨테이너에 sleep 1000 추가
 
-	```yaml
-	apiVersion: v1
-	kind: Pod
-	metadata:
-	  name: yellow
-	  labels:
-	    app: yellow
-	spec:
-	  containers:
-	  - name: lemon
-	    image: busybox
-	  - name: gold
-	    image: redis
-	```
+    ```yaml
+    apiVersion: v1
+    kind: Pod
+    metadata:
+      name: yellow
+      labels:
+        app: yellow
+    spec:
+      containers:
+      - name: lemon
+        image: busybox
+      - name: gold
+        image: redis
+    ```
 
 4. elastic-stack namespace에 application logging stack이 배포되어있음. 관찰
 
-	```bash
-	kubectl get po -n elastic-stack
-	```
+    ```bash
+    kubectl get po -n elastic-stack
+    ```
 
 5. pod가 ready 상태이면 터미널 위 링크를 사용해 kibana UI 관찰. 로그로도 관찰 가능.
 kibana pod가 준비된 후 kibana UI가 준비되는데 몇 분 걸림.
 
-	```shell
-	kubectl logs kibana -n elastic-stack
-	```
+    ```shell
+    kubectl logs kibana -n elastic-stack
+    ```
 
 6. app 파드를 관찰하고 그 안에 있는 컨테이너 수
 7. /log/app.log파일로 로그 출력. 로그를 확인하고 로그인 시 문제가 발생하는 사용자 찾기.
@@ -438,14 +438,14 @@ Mount Path: /var/log/event-simulator/
 Existing Container Name: app
 Existing Container Image: kodekloud/event-simulator
 
-	```yaml
-	# 추가 내용
-	  - name: sidecar
-	    image: kodekloud/filebeat-configured
-	    volumeMounts:
-	    - mountPath: /var/log/evnet-simulator/
-	      name: log-volume
-	```
+    ```yaml
+    # 추가 내용
+      - name: sidecar
+        image: kodekloud/filebeat-configured
+        volumeMounts:
+        - mountPath: /var/log/evnet-simulator/
+          name: log-volume
+    ```
 
 9. Kibana  UI 확인. Discover 부분에서 로그가 보여야 함.
 
@@ -499,15 +499,15 @@ warm-up-2 →1200
 Pod: red
 initContainer Configured Correctly
 
-	```yaml
-	initContainers:
-		- image: busybox
-			name: init-container
-			command: ['sleep 20'] # or ["sleep", "20"]
-	```
+    ```yaml
+    initContainers:
+    	- image: busybox
+    		name: init-container
+    		command: ['sleep 20'] # or ["sleep", "20"]
+    ```
 
 
-	삭제하고 올릴 필요 없이 replace —force 명령어도 사용 가능. 실무에서는 사용하지 않는 편이 좋아 보임.
+    삭제하고 올릴 필요 없이 replace —force 명령어도 사용 가능. 실무에서는 사용하지 않는 편이 좋아 보임.
 
 9. 새 애플리케이션 orage가 배포됨. 문제가 있음. 이를 찾아서 해결.
 orange-container에서 문제 발생.
@@ -633,9 +633,9 @@ limit까지 생성되고 나머지는 pending 상태가 됨.
 2. /root/autoscale.yaml에 위치한 nginx deployment에 대한 autoscaling을 생성하기 위한 manifest 파일이 있음. manifest 파일을 보고 현재 replicas와 요구되는 replicas 찾기.
 최대 replicas 3과 CPU 사용률 80%를 가진 nginx-deployment에 대한 autoscaler 생성.
 
-	```bash
-	kubectl autoscale deploy nginx-deployment --max 3 --cpu-percent 80
-	```
+    ```bash
+    kubectl autoscale deploy nginx-deployment --max 3 --cpu-percent 80
+    ```
 
 3. Kubernetes에서 HPA의 주요 목적
 관찰된 CPU 사용률이나 다른 메트릭에 따라 파드의 스케일링을 자동화하기 위함.
@@ -651,14 +651,14 @@ Ther deployment does not habe any resource fields defined.
 kubectl get hpa —watch 사용.
 deployment manifest 파일 들여쓰기 수정
 
-	```bash
-	$ kubectl get hpa --watch
-	NAME               REFERENCE                     TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
-	nginx-deployment   Deployment/nginx-deployment   cpu: <unknown>/80%   1         3         3          2m57s
-	nginx-deployment   Deployment/nginx-deployment   cpu: <unknown>/80%   1         3         7          3m1s
-	nginx-deployment   Deployment/nginx-deployment   cpu: <unknown>/80%   1         3         3          3m16s
-	nginx-deployment   Deployment/nginx-deployment   cpu: 0%/80%          1         3         3          3m31s
-	```
+    ```bash
+    $ kubectl get hpa --watch
+    NAME               REFERENCE                     TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+    nginx-deployment   Deployment/nginx-deployment   cpu: <unknown>/80%   1         3         3          2m57s
+    nginx-deployment   Deployment/nginx-deployment   cpu: <unknown>/80%   1         3         7          3m1s
+    nginx-deployment   Deployment/nginx-deployment   cpu: <unknown>/80%   1         3         3          3m16s
+    nginx-deployment   Deployment/nginx-deployment   cpu: 0%/80%          1         3         3          3m31s
+    ```
 
 9. nginx-deployment에서 ScalingReplicaSet 이벤트는 HPA에서 무엇을 나타내는가?
 파드의 수 증가
@@ -757,7 +757,7 @@ VPA는 4가지 모드로 동작.
 - Recreate: 범위를 넘어가면 파드를 회복시킴.
 - Auto: 존재하는 파드를 권장된 수로 업데이트. Recreate와 비슷하게 동작. 그러나 In-place Update of Pod Resources가 가능하면 해당 모드 선호됨.
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/8e1b23d6-8186-45b4-902e-c67bb9d9369b/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466YTRCBI4Y%2F20250307%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250307T140809Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEP3%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQD6RBNT7kAjpX8yMJMV2fyMkh0Y6TtHDBjCTVZzrr505gIgdcx2hRAvAjwO7LWh6KijXfXCrM6FxLj27PtOvRUh8KAq%2FwMIRhAAGgw2Mzc0MjMxODM4MDUiDD%2FT3CG3bfQ%2FMaczfyrcA8ycFf%2FeI0KZ2EpTkRB49ZdNjdwGA1qI3kXrChrwa9x9BUeq4WWVKtwodbbfA6z6A%2BzGTPHiddmPTxAYYQuLrgh5hvA%2FiawREVHSyiPE1J0j7XuhNkInSYgG58CqPGRG%2F5yxZZhDSgKd9rVUXIHQNpaP6FY5BaR3YPD7wGPB13E7ax4l0zUT7E2SBXsQBciRATINU0iXhA3RP8wEMzk2DpIRWtr0YyHG%2F%2BZHZNMl9BzNjWXTAGNjnk4nWQyN%2BgP7vNnVIRAhI7WDe2oj7Nu12rQZZKUYBIYSFDtzYpPkLx21fZ%2FrOnD1MI8gGlUkSiNenlYxabeCPMv4qpMKncmsNyXgNB4zeIZ2owB1abLHnxKUemHiSXBTV1emehtx%2F1bEg%2B%2Fr2g2ylJ%2BzwSMDnToHST8lCS46U1XInoTrA3%2FJdgKohz3G4xDYaBI7HRkG05zO6Ft2U1Iz35xNaUTpYOOqAioy0smGlETGEwKvcbdWV9VRmli4OeBfwUrplRFSKO8siYxYES1qzxqNdufckAFx5Ug%2FLI8Z%2Fgf%2B2Mt8msZw%2BAaMAKIMN%2FAHWM7AgmwlHJ7OVeB0DUp3ImRHWlnjbiHDoXg4bbEuzdHrwwsjFhIPfDPDlahooggCDUZ8jlGqMNjfq74GOqUBlRBr%2FWLkDviUF1K%2B91sXZMVUeuLT%2F7aY7HVA2sqB17yXO5%2FhRPj1J4BxVUE6sQ6FBT2rWJu2UtCcsVhFVtlzg6CkXRdrDzAr9HXzKvb%2BWwFkWe5cjB%2BaWwH%2FhokcIa7cZ%2BTo0ODz8agXqQOIqJbvJEBIL%2BGvvlxKcZTDHKxgnCmC%2BLefMquwiToUchtjD7usvykEyRDFN3%2FWkvcZONKFk%2FC9t%2BoI&X-Amz-Signature=d2f72abe52ccf0ee7aa43c96523d6f63d56baae9a54eb030dcc55a0404c82136&X-Amz-SignedHeaders=host&x-id=GetObject)
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/8e1b23d6-8186-45b4-902e-c67bb9d9369b/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB46673XE7MVJ%2F20250308%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250308T140347Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEBEaCXVzLXdlc3QtMiJHMEUCIEhY9OD9HenT7tcfr%2BWeHLQokLS8MueT4hW57UJcA07EAiEAlkGg989Vsy15eigMmi1QVxUfj%2FFBa4Vg6coQKUEHkGUq%2FwMIWRAAGgw2Mzc0MjMxODM4MDUiDPHgmKVI1XMJhFWH8yrcA2%2Fkg1lqfUArllC9mCBMzP8lHql%2BDItiIBD%2F8LmV0dhBxQ94VMMc4BBBtaCNLAexol9JyzRpyWnGg9WChZ6K40ifq%2BhXsuqKDXJqBxiy4RewEADnu%2FoFgzwrVp2wfhZ3j2ioAQWdmQ4rd91HogHz%2BFvkoSmO7EacfB5WD%2BI1EY%2B44Txzp9XNixBoSzGs2L6mVueSePJkIz1O9YT18tfhMvnni3IUoDXz%2FEWkfwGx5iuzseKNvBwf%2BCMZhMHmdFWYIVP1N7dOUe3NhCbbmAhoHazZ1x%2B0wQKnA0jeNhPDnM3k4yVxscz4AmeJjFhKgo7fikiE1cK7eVrw7UvngyGEQu0TJsD9bYuo31LlTMkTef4nBoIDaQFwrV6Iw2NAKjmkW%2FTzaG2A5XEXTJjepRbopfC6rKF9cipwdHB2InIWQa6yEl6Ot6VtQsnqElnc84Yg0ppDhLowM9tCP4ZoZrHnmNzZu8Ew2e%2B3qeB9blOntAcsMzkKrVVjZ%2FzFhKEClN8p9Sx0O11wdJ1yGOdghcJ2pVQcAzebBKUUHQ%2Byx%2Fm5ipwXPDnhNhAdZ39Axgm9aX26R0H7F%2F4PyOW%2FZYVTfcbQe9nUiI3RtGwJXKV035PtblGf2TAw19RZ8opqCF5XMI%2F9r74GOqUBXEDo2T3ACY1dgJubAHJUr88twjN41hJlTcmx9GjCpC%2BPrcQXfqbmG0u9PWdsMz3mKvNSSOmR%2Bgbedgb%2BBYicOMKBgAwFFUfig6jNLfX59%2FggM%2BOvat4HNbbLLiG85YUuq1JAM%2BrYXynQlqfv4u3B%2FxERsQPDgbGQ32kf1rh8Z7A4%2FO6ucRYrVFgY9d9h1uCQ5DgsxuiJtNl4x8U2NXYg6oPUMTve&X-Amz-Signature=2b906601dc3d8bf4cda3e8eafe080940013952c40f64c93d0eb3fca3250bfedd&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
 | 특징                      | VPA                                                           | HPA                                         |
@@ -781,11 +781,11 @@ VPA는 4가지 모드로 동작.
 1. VPA Custom Resource Definitions 설치. VPA Role-Based Access Contorl(RBAC) 설치
 2. 레파지토리 클론. VPA 디렉토리로 이동. script 실행.
 
-	```bash
-	git clone https://github.com/kubernetes/autoscaler.git # root 디렉토리로 이동해서 git clone 
-	cd autoscaler/vertical-pod-autoscaler # vertical-pod-autoscaler 디렉토리로 이동.
-	./hack/vpa-up.sh # VPA를 배포하기 위해 제공된 스크립트 실행
-	```
+    ```bash
+    git clone https://github.com/kubernetes/autoscaler.git # root 디렉토리로 이동해서 git clone 
+    cd autoscaler/vertical-pod-autoscaler # vertical-pod-autoscaler 디렉토리로 이동.
+    ./hack/vpa-up.sh # VPA를 배포하기 위해 제공된 스크립트 실행
+    ```
 
 3. VPA 설정의 일부로 설치되는 VPA CRDs는 무엇인가?
 verticalpodautoscalercheckpoints.autoscaling.k8s.io&verticalpodautoscalers.autoscaling.k8s.io
@@ -798,9 +798,9 @@ cluster에 flask-app.yml 배포.
 vpa-updater 파드의 로그를 확인하고 flask-app deployment가 가진 잠재적인 문제를 확인.
 로그를 확인하면 다음과 같은 에러 메시지가 보임.
 
-	```bash
-	pods_eviction_restriction.go:226] **too few replicas** for **ReplicaSet** default/**flask-app-b6c9c4f78**
-	```
+    ```bash
+    pods_eviction_restriction.go:226] **too few replicas** for **ReplicaSet** default/**flask-app-b6c9c4f78**
+    ```
 
 
 ## Practice Test - Modifying CPU resources in VPA
@@ -816,26 +816,26 @@ vpa-updater 파드의 로그를 확인하고 flask-app deployment가 가진 잠�
 1. /root 디렉토리에 위치한 vpa-cpu-testing.yml 배포.
 2. Pod 리소스 사용량 관찰.
 
-	```bash
-	kubectl top pod
-	NAME                           CPU(cores)   MEMORY(bytes)   
-	flask-app-4-7dcd9549fc-6rpnr   1m           19Mi            
-	flask-app-4-7dcd9549fc-8gqjc   1m           19Mi
-	```
+    ```bash
+    kubectl top pod
+    NAME                           CPU(cores)   MEMORY(bytes)   
+    flask-app-4-7dcd9549fc-6rpnr   1m           19Mi            
+    flask-app-4-7dcd9549fc-8gqjc   1m           19Mi
+    ```
 
 3. /root디렉토리에 vpa-cpu.yml 파일 배포.
 kubectl get vpa로 실행 중인 cpu 사용량 확인.
 
-	```bash
-	kubectl get vpa
-	NAME        MODE   CPU   MEM   PROVIDED   AGE
-	flask-app   Off                           5s
-	```
+    ```bash
+    kubectl get vpa
+    NAME        MODE   CPU   MEM   PROVIDED   AGE
+    flask-app   Off                           5s
+    ```
 
 4. /root/load.sh 스크립트 실행함으로써 flask-app-4 deployment에 부하를 가함.
 5. flask-app VPA로부터 제안된 target CPU value 캡쳐하고 /root/target에 저장.
 
-	```bash
-	kubectl get vpa -o yaml >> target
-	```
+    ```bash
+    kubectl get vpa -o yaml >> target
+    ```
 
