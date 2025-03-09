@@ -470,7 +470,7 @@ etcd 서버는 자체 CA를 가질 수 있음. 그래서 kube-api server에서 �
     ```
 
 
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/feaa57d9-69a1-477b-90eb-075854919446/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466UIHP3T2L%2F20250308%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250308T140413Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEBUaCXVzLXdlc3QtMiJIMEYCIQCmEj2l%2BOIZNoasfpLBYdXvuCS1IlcZEDVWRr6wOXmu3wIhAPEhW6%2BRr5TUvHTEmXla%2FQv0x9zKL3on9o1gni3n2FSSKv8DCF4QABoMNjM3NDIzMTgzODA1IgwcT6VeNW54V0LGFcgq3AP7kWWY7hfjzUW3GPmbowUfBXxLBudoZVePBXBvc3EyKLYB4XvY5AYlrqzzfZmD%2Fae%2Bkga0ux5F6KDdpuzq%2BWct7lA18ZVhmMUkGGBK42QAROWw%2BrmnYe328i%2FiglsUYNtX%2BPwVQmYXeTXXMYIZAKntU%2ByfYaFojlpCt44THPCBwqCYrj0GeFuckJgQKRzEJDbAyooBL3KqvzhgD3KPAyGSB1HWaPRm1WCMbWbSH7cdNV2xcZsY5oVs%2BOoGJDQKJRA8MlkiluPE1aVlJx2qfSriKYXOJ2qQtqmwKo4HmzkkBjS90N1R41j6G1ZtWeM6x61KZaQzGSKyeCscO0G5%2BG2GH44AJzKGhn6UPr2AHPlGTdGnft7EDxSme9MaPPNClGyuIw5rEc0ow0jRfrHzTToFa%2FR%2Fj7LrcXlVT4V5DGSZOxWSZdtkBnBPkbnMi1Uc0H0GzyqLRb3o12LVLBNMpal%2Fay%2FtWTPmGZvIpVs0JqsIr9yob7agYbdCoJ5N%2F%2FM3c4Z0BUoHKuA8K3lwjK8iOgOh8N2iB4EmKaWIs40Y201o1D97f5ANAvT9vGX6sZym0oh2o1%2ButC1TEteohTFw81VPOvmoMt653veEN3J6KQJBcIYyoz6NXRE0ZKXAaTCEg7G%2BBjqkAdjSBdz1TBrUaPF4EqeB3jtWhE34X%2FQisVz1tDoKuJ0cPXA5MISjZVT%2BKYk05OU5JUbw3iEbtGSj3yzHxgV4wfk4%2FevCTz4qwPriZzD1SQ1vjXjL9FfRppw2z0VAY7jifZ5Ofz3rJSnOHRLlkkMPdkMUmudiqGvPfdVviSShAHGdt%2FYXxn%2FHaBv9lFUIQ4gxqLpSPXHhTDTMroZIUlk7H%2FPUC3Yn&X-Amz-Signature=cdf4b6c92f097cff8b860fe636ba3b0b06e52953a857cc1a69af22b01a379564&X-Amz-SignedHeaders=host&x-id=GetObject)
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/feaa57d9-69a1-477b-90eb-075854919446/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4663FYI2CFG%2F20250309%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250309T140437Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjECwaCXVzLXdlc3QtMiJHMEUCIQCwVpYqsg5YaDBXJGTEgvSQAZm6jXh4meuE61KQSV3qIQIgem98u45oq%2Fud940zmjFUxo7NXBlR3YZswR2CL%2Flb7qUq%2FwMIdRAAGgw2Mzc0MjMxODM4MDUiDAb3ItVWSFoe%2Fx8HYircA7YNMkyxSPwPHKs38LWAYrJ6eFOUt0dAAkcmhLgby50V6mmrDF7A0nxWkWYCDBjhg5BtpP2b4%2Bb6BlbupLcKv6isvc6bfn0fY%2FBRE%2FcIxQ5%2FizR7a9s7bjT2ejfc0%2F5nNx5%2BBlQOH9SH%2FQTjeE49XPStTD%2FsulKaWs6aaAPws5F%2FP%2BZvn6JysCzQbRikwspscdMOyFMshUryIGkXkNgGnT5QCJdjoTzhSogEQi3TghL4Q0eFvWWDPQGrI%2BE99R8a8txBQw2z2TK%2BfCgkUrbmEknTOagKvqp1s9NFMtE59n1urdeLZIwNvCq3L79jZrtWLvvqRgJKIjhz7SFN1%2F2vEoarKFoxiP5t6%2FfVNbrPAR2gsSpmAIX%2FXe3tTg5VTQX%2F8Uodk4eDvWKnZ9NelCmGkKMxNvbdye2W8SFdR%2BXChuQT2TltaaHDejcQuqpJmJ2FxKNA%2BV2bwVr%2FBExnMYC9%2BAUkZ%2B0L1%2BW1DlER0Z7x8N29EF5jk4fW8xyLuDL56smAlsstZERgg30qVUMcOHVs1la1mGAyZURQniBXGrfzjNh8s4Uh5u7fBLrAPt%2Fn5oPeadpejNzzB0Odp3oKDVwoyVn8LpIlE2MZT8yZ2op22hyRGNDPqJJKoik4G%2FIZMMOMtr4GOqUBVrXaXkZdNMrNHtHShw4d13706V80v%2BUxPlPbK4vZ44nMspvR3QAdA86AGWCfSMRVLSFEfNJ0zwcH5iq7LQMepj4rDrQBbVrE3c5RMjisjG191Leq1bqYwGh0AsvT855eJvOvt6cP1AlccBNxcib7cdJ7vHyKDgwtUBWCdIOAQLJpRvlTRzY5DoLVSkvJ9aX9J41QMmfd7dZ8wVO1fg%2FDO40DYz6D&X-Amz-Signature=c53f283a18e57fedf5a81f4ed63d4d7ead841ccafe2c10cc5678830938249f8f&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
 ## Certificates API
@@ -621,13 +621,300 @@ controller manager를 자세히 보면 CSR-Approving, CSR-Signing 등으로 불�
 ## KubeConfig
 
 
-## Persistent Key/Values Store
+API 서버에 의해 검증되어 사용자를 인증함. kubectl 명령어를 사용하면서 어떻게 할 수 있는가?
+
+
+`--server` , `--client-key` , `--client-certificate` , `--certificate-authority`옵션을 사용하여 정보를 똑같이 명시할 수 있음. → 매번 하는 것은 번거로운 작업.
+
+
+kubeconfig 라 불리는 configuration file로 정보를 옮김. 그리고 kubeconfig 옵션을 사용하여 파일을 명시.
+
+
+기본적으로 kubectl 도구는 사용자 홈 디렉토리 아래에 있음. `$HOME/.kube/config`디렉토리 아래에 config라고 지어진 파일은 찾음.
+
+
+만약 kubeconfig file이 없으면 kubectl 명령어에 파일 경로를 지정할 필요 없음.
+
+
+kubeconfig 파일은 특정 형식으로 되어 있음.
+
+
+config 파일은 세 부분을 가짐. clusters, users, contexts
+
+
+Clusters는 내가 접근할 수 있는 다양한 kubernetes 클러스터들.
+
+
+개발 환경, 테스트 환경, 프로덕션 환경, 다른 클라우드 제공 업체 등을 위한 다중 클러스터를 가짐. 
+
+
+Users는 이러한 클러스터에 접근할 수 있는 사용자 계정. 이러한 유저들은 클러스터마다 다른 권한을 가질 수 있음.
+
+
+Contexts는 이것들을 결합함. 어떤 사용자 계정을 사용하여 어떤 클러스터에 접근할지 정의.
+
+
+예를 들어, 프로덕션에서 admin  계정을 사용하여 프로덕션 클러스터에 접근하기 위한 context를 생성할 수 있음. 혹은 개발자의 자격 증명으로 Google에 설정한 클러스터에 액세스하여 내가 만든 애플리케이션 배포를 테스트하고 싶을 수 있음. → 클러스터에서 새로운 사용자를 만들거나 어떤 종류의  사용자 접근 권한을 설정하는 것이 아님.
+
+
+기존 권한을 가진 기존 사용자를 사용하여 어떤 클러스터에 접근할 사용자를 정의하고 있음. → 실행하는 모든 kubectl 명령에 사용자 인증서와 서버 주소를 지정할 필요가 없음.
+
+
+명령의 서버 사양은 클러스터 섹션으로 이동. 관리 사용자의 키와 인증서가 사용자 섹션에 들어감.
+
+
+kube playground cluster에 접근할 kube admin user를 사용하도록 명시한 컨텍스트 생성.
+
+
+kubeconfig 파일은 yaml 형식. 클러스터용, 컨텍스트용, 사용자용으로 세 부분이 있음. 각각 배열 형식. 같은 파일 내에 다중 클러스터, 사용자나 컨텍스트 명시 가능.
+
+
+객체를 만들 필요가 없음. kubectl 명령어에 의해 읽히고 필요한 값만 사용.
+
+
+[bookmark](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
+
+
+[bookmark](https://kubernetes.io/docs/tasks/access-application-cluster/configure-access-multiple-clusters/)
+
+
+각 클러스터에 여러 네임스페이스 구성될지도 모름 → 특정 네임스페이스로 바꾸기 위해 context를 구성할 수 있는가?
+
+
+```yaml
+contexts:
+- name:
+  context:
+    cluster:
+    user:
+    namespace:
+```
+
+
+인증서를 명시할 다른 방법이 있음. 첫 번째 방법은 경로로 지정한느 것. 두번째는 `certificate-authority` 필드를 사용하는 대신 `certificate-authority-data` 필드를 사용하고 base64로 인코딩한 값을 사용. 
+
+
+## Practice Test - KubeConfig
+
+1. 현재 환경에 위치한 default kubeconfig 파일은 어디에 있는가?
+
+    /root/.kube/config
+
+2. 기본 config 파일에 정의된 클러스터 수
+3. 기본 config 파일에 정의된 사용자 수
+4. 기본 config 파일에 정의된 context 수
+5. 현재 context에 구성된 사용자
+
+    ```yaml
+    contexts:
+    - context:
+        cluster: kubernetes
+        
+    user: kubernetes-admin
+    ```
+
+6. 현재 기본 kubeconfig 파일에서 정의된 클러스터의 이름은?
+
+    ```yaml
+    clusters:
+    - cluster:
+        certificate-authority-data: <Encoded Data>
+        server: <Server Address>
+      
+    name: kubernetes
+    ```
+
+7. my-kube-config라는 이름을 가진 새 kubeconfig 파일 생성. /root에 위치. 그 파일에 정의된 클러스터 수
+8. my-kube-config에 구성된 context 수
+9. `research` context에 구성된 사용자는?
+10. `aws-user` 를 위해 구성된 client-certificate 파일의 이름은?
+11. my-kube-config 파일에 설정한 현재 context는?
+
+    ```yaml
+    contexts:
+    - name: test-user@development
+      context:
+        cluster: development
+        user: test-user
+    
+    - name: aws-user@kubernetes-on-aws
+      context:
+        cluster: kubernetes-on-aws
+        user: aws-user
+    
+    - name: test-user@production
+      context:
+        cluster: production
+        user: test-user
+    
+    - name: research
+      context:
+        cluster: test-cluster-1
+        user: dev-user
+    ```
+
+12. `test-cluster-1`에 접근하기 위해 `dev-user`를 사용하고 싶음. 현재 context에 접근할 수 있도록 권한 설정.
+
+    올바른 context가 확인되면 `kubectl config use-context` 명령 사용.
+
+
+    ```bash
+    kubectl config --kubeconfig=my-kube-config use-context dev-user@test-cluster-1
+    ```
+
+13. kubectl 명령마다 kubeconfig file옵션을 명시하고 싶지 않음. default kubeconfig file로 my-kube-config 파일 설정. 기존의 ~/.kube/config를 덮어쓰지 않고 모든 부분을 지속. 재부팅 및 셀 세션에서 구성 변경 사항이 지속되는지 확인.
+
+    ```bash
+    vi ~/.bashrc
+    ➡️export KUBECONFIG=/root/my-kube-config 추가
+    source ~/.bashrc
+    ```
+
+14. `research`로 context를 설정한 채로 클러스터에 접근 시도. 문제 발생. 해결 하기
+
+    `kubectl get pods`를 실행하여 오류 찾기. 모든 사용자 인증서는 `/etc/kubernetes/pki/users`에 저장됨.
+
+
+    원인:
+
+
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/10644a35-55c2-4521-88c9-6839c45c9ad6/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466R55UAPAB%2F20250309%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250309T140444Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEC0aCXVzLXdlc3QtMiJIMEYCIQCwIrS%2F0KIpcVmqj1fVi26o26ZxD2rjb4%2F11y6eNmjr7AIhAN5sAN3x6qfDFua2zyQ4Oj%2FdGQNN%2BogQvK4nPNzCC3TTKv8DCHYQABoMNjM3NDIzMTgzODA1IgzOlzOH7TP6cIkvEjQq3AOOsrmM10h4Rma7zwCuPhTN5d377XsBMTIWzXKLxX6vzYHN7V%2FKIQTYDJNDnBfUsiOZvLEJNE53olRgJM06E7pPSFgnHmtXzAvV2gf6a7jnEQtX2inZnQTKItQrLgRQKbTQljfJFhZliqyfs%2BLCll5UGlEIA1HXYohQ9yRFiAg08AWvbQ6tPYFlvGsK%2FGheIcUpiNSsdNeMZHmDiiFQ6h9j%2FgYTUITib97av%2BPW8J0NMhw6oDZOFH%2BCEbU72%2Fc0dBO98liXvSh%2BmgStGrAlDhQ8OOVcveJ2qQ4SYTwOjqkuWgvppAWQoYbsnSInpbsheeJvdnmgGszpxge0TBK%2B2bObGgj58l5PUAVZNdfOBe3RVCkl1q1CSWRpJJujdhFgdW0LzIep0Gb%2BdEC5%2FSWEvMrfXuth7UDDz2YVLJG%2F7XhxL3A1h8Bw6eDq%2FuqK1HJipE0JEvqYfrE%2Bok7miCK1e%2FHQi60gIIzGZPEzqDbcyaRqeHrvFJ340YhuVNz9LFJhoKx%2BySJT2QwJ8dL1l1BDqactT%2F9wB4jzseBYjvrKoG2thcFC9nhSUFzVF7s05r%2BaE8af1SNjTQnHtRUxU5ND4GJUwThk5B3YwWZjT8Jqg%2BUb9bx4PtVr4J%2FGJ6QrfDCPkba%2BBjqkAb2kExaDLtVwReVmqcs7shUi%2FbaIpk2ohGceL2su3xa8KWO1M3cNm80S4022i6gt9lsJzmiFxiPrMP5ebxUZpXfvhHQM6Mf%2F5%2FxKhVMfgADYsfYvwCYixWeeRsyZnbD73BHEwjymQ6PuaYYJVJzwAMsvYaoYki%2FZbFPj34WxaiY8uC%2BL11ndn6AIATu%2BkoQW6DM2GHtr%2Fli9Afc0syI4UIdPjPjp&X-Amz-Signature=9b867152fbdc8599153af7fd93b3a5b77bd8f6aa52646c610ce70b50a1691f82&X-Amz-SignedHeaders=host&x-id=GetObject)
+
+
+    ```yaml
+    - name: dev-user
+      user:
+        client-certificate: /etc/kubernetes/pki/users/dev-user/developer-user.crt
+        client-key: /etc/kubernetes/pki/users/dev-user/dev-user.key
+       
+        ⬇️ 수정
+        
+    - name: dev-user
+      user:
+        client-certificate: /etc/kubernetes/pki/users/dev-user/dev-user.crt
+        client-key: /etc/kubernetes/pki/users/dev-user/dev-user.key
+    ```
 
 
 ## API Groups
 
 
+Kubernetes API는 목적에 따라 여러 그룹으로 그룹화됨. 예를 들어, API를 위한 그룹, health를 위한 그룹, metics과 log를 위한 그룹 등이 있음.
+
+
+version API는 클러스터의 버전 보는 데 사용됨.
+
+
+메트릭 및 상태 API는 클러스터의 상태를 모니터링하는 데 사용됨.
+
+
+로그는 third-party logging 애플리케이션과 통합하여 사용됨.
+
+
+API는 core group과 named group으로 분류됨.
+
+
+core group은 이름, 공간, pod, replication controller, 이벤트와 포인트, node, binding, pv, pvc, conflict map, secret, svc 등 모든 핵심 기능이 존재하는 곳.
+
+
+named group API는 더 체계적이고 앞으로 이러한 명명된 그룹을 통해 모든 새로운 기능이 제공. app, extension, networking, storage, authentication, authorizstion 등을 위한 그룹이 있음.
+
+
+앱 내에는 deployment, replica set, stateful set이 있음.
+
+
+networking 내에 network policy를 가짐.
+
+
+인증서는 CSR을 가짐.
+
+
+```bash
+curl http://localhost:6443 -k | grep "name"
+```
+
+
+경로 없이 포트 6443에서 Kube API 서버에 접속하면 사용 가능한 API 그룹이 나열됨. 그런 다음 명명된 API 그룹 내에서 지원되는 모든 리소스 그룹을 반환. 
+
+
+cURL을 통해 API에 직접 액세스하려면 인증 메커니즘을 지정하지 않았기 때문에 버전과 같은 특정 API를 제외하고는 액세스가 허용되지 않음.
+
+
+```bash
+curl http://localhost:6443 -k \
+--key admin.key \
+--cert admin.crt \
+--cacert ca.crt
+```
+
+
+인증서 파일을 명령어에 전달하여 API에 인증해야 함.
+
+
+kubectl proxy clinet로 시작하는 방법도 있음.
+
+
+kubectl proxy 명령은 8001 포트에서 프록시 서비스를 로컬로 실행하여 kube 구성 파일의 자격 증명과 인증서를 사용하여 클러스터에 액세스함. → curl에 명시할 필요 없음.
+
+
+kube proxy ≠ kubectl proxy
+
+
+kube proxy는 클러스터 내 여러 노드에서 pod와 서비스 간의 연결을 가능하게 하는 데 사용됨.
+
+
+반면에 kubectl proxy는 Kube API 서버에 접근하기 위해 kubectl 유틸리티로 생성된 ACTP proxy 서비스.
+
+
+kubernetes의 모든 리소스는 서로 다른 API 그룹으로 그룹화됨.
+
+
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/8dc7f1cd-62b8-488f-876e-bcde2373bb27/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466YNHYHFGT%2F20250309%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250309T140430Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEC0aCXVzLXdlc3QtMiJGMEQCIFFFavSbXgphQxrpQRrdV%2BY0imFTlC3UvIB5KEiFidlmAiAMsQRG7cM80AU6aofhFZXOd9tgirSugtZXS3K0%2FW%2F6fir%2FAwh2EAAaDDYzNzQyMzE4MzgwNSIMQ2fZqayHfPQlyZ4jKtwDao3%2Fe0jgXrtLu%2Fp%2F9AqsQi1BvdStBQ4ZIwE1DIgDJ39CLanjp8W8dHniUCCcNy4uMaMuoWMjo4NEn8T4AHHlPoUx7UDJEecYMzfLbKWyW3f0WLJwSXZfAtEH6j1qBa3qNDnZDCrDv4wyctwBuxnzXR7YKf2jdL%2FKNOtv3DDwQs14siuaaR%2Fkc9Jekc75vEcnKcUxhFKArIzabRUqQU7ZsyQGbRSfulnuYFgQJs7eAwdLwi78Me%2FTp6KhSI5e%2FYYb%2Fnwq715%2F13b3wRCQFE8g%2BBI8mHGoVCvQgoPIbV%2BsP1%2BVwUpYJtXtOjTY8ydIyPjHSQvubC%2F55gvSiCq49XKLdi1jDKPa76cbfz8x%2B%2Bn%2FtAW6BD6mePhNoY%2BjcjdQ3Z%2B31FOdZV0XjNDo2diEin3T%2FwxGpJNakfUzO7TY0p62RBVdqLyzRBb6RWY%2FlOOdqWeVIT0UhTj3h7LDbYT7ilj9KN8Vl5HyoZuM3UjEom2GKegKtKV7%2BDraHhUdOs7Ntsc0h%2BUSTz05vJo9WeT6VIUIsXgKC4%2Beot5ZSwY6No%2F7V80%2FmyuLDKKu9oWW32%2BUDe0AT5%2B%2F2G8mm%2Be%2B1YT94ODV%2FQBggoF0%2FeJjozPcbdxyafLE0MuzYdElIm%2Fis6cwj5G2vgY6pgHPybgsPckZYHgnmCzpa1fdBzfluBn%2Fk8gliWLGPJIDXCSgCMGGyDhZc8cQ8%2FZQmiZNCQ1DHq9DStCpTFipicdcfZaTdHtRdWfFKtQMYkfhJT13NqS3Ro97FU5TDNxTlwC7vks6L7Dnakyy08In8qzMcsloMie8qj98S6L%2BzFiqpoy%2Fp%2Fw2rmcraVvjtoPiq9XJeNvCl02b3nYejo7%2BxM0FCElRALLE&X-Amz-Signature=dfb21251229d604eebacba9b8ebfd50de077ce74ece585843adb9b270681be0b&X-Amz-SignedHeaders=host&x-id=GetObject)
+
+
 ## Authorization
+
+
+kubernetes가 지원하는 다양한 authorization 체계가 있음.
+
+- node authorization
+- attribute-based authorization
+- role-based authorization
+- webhook
+
+kubelet은 노드의 상태와 같은 노드 정보를 Kube API server에 보고한다. → 이러한 요청은 Node Authorizer에 의해 처리됨.
+
+
+시스템 노드 이름과 시스템 노드 그룹의 일부를 가진 사용자로부터 오는 요청은 노드 권한 부여자에 의해 승인됨. 이러한 권한이 부여되면 kubelet에 대한 권한이 필요.
+
+
+ABAC(Attribute-based authorization)는 사용자 또는 사용자 그룹을 일련의 권한과 연결하는 것. 각 파일에 각 사용자와 그룹에 대한 정책 정의 파일을 생성. 보안을 추가하거나 변경할 때마다 수동적으로 정책 파일을 수정하고 kube api server를 재시작해야 함. ABAC는 관리하기 어려움.
+
+
+RBAC(Role-based-access control)은 만들기 쉬움. 필요한 권한 세트를 가진 역할을 만든 다음 해당 역할에 연결. 접근 권한에 변경이 필요할 때마다 역할을 수정하면 즉시 반영됨. Kubernetes 클러스터 내에서 접근을 관하는 표준적인 접근 방식.
+
+
+모든 authorization 체계를 아웃소싱하고 싶다면?
+
+
+예를 들어, Open Policy Agent는 승인 제어 및 승인을 돕는 third-party 도구. Kubernetes가 사용자와 접근 요구 사항에 대한 정보를 가지고 Open Policy Agent에 API 호출을 하도록 함. Open Policy Agent가 사용자를 허용할지 여부를 결정하도록 할 수 있음.
+
+
+Always Allow와 Always Deny 모드가 있음. Always Allow는 승인 확인 없이 모든 요청을 승인함. Always Deny는 모든 요청 거절. 모드는 어디에 구성하는가? 기본적으로 무엇으로 작동하는가? 한 번에 여러 개를 가질 수 있는가? 여러 개의 인증이 구성되어 있는 경우 어떻게 작동하는가?
+
+
+Kube API 서버의 인증 모드 옵션을 사용하여 설정됨. 옵션을 명시하지 않으면 기본적으로 Always Allow로 동작. 여러 모드를 사용하고자 하는 경우 쉼표로 구분하여 됨. 여러 모드가 구성된 경우, 요청은 지정된 순서대로 각 모드를 사용하여 승인됨.
+
+
+```bash
+--authorization-mode=Node,RBAC,Webhook
+```
+
+
+NODE, RBAC, WEBHOOK 순으로 권한이 주어진 경우, 먼저 Node Authorizer에 의해 요청이 처리된다. Node Authorizer는 오직 node request만 처리하고 나머지는 deny한다. 모듈이 요청을 deny할 때마다 다음으로 넘어간다. role-based access control module은 확인하고 사용자 권한을 부여한다. 권한 부여가 완료되고 사용자는 요청된 객체에 접근 가능.
+
+
+따라서 요청을 거부할 때마다 체인의 다음 요청으로 이동하며, 모듈이 요청을 승인하는 즉시 더 이상 확인이 이루어지지 않고 사용자에게 권한이 부여됨.
 
 
 ## Role Based Access Controls(RBAC)
