@@ -470,7 +470,7 @@ etcd 서버는 자체 CA를 가질 수 있음. 그래서 kube-api server에서 �
     ```
 
 
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/feaa57d9-69a1-477b-90eb-075854919446/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4663FYI2CFG%2F20250309%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250309T140437Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjECwaCXVzLXdlc3QtMiJHMEUCIQCwVpYqsg5YaDBXJGTEgvSQAZm6jXh4meuE61KQSV3qIQIgem98u45oq%2Fud940zmjFUxo7NXBlR3YZswR2CL%2Flb7qUq%2FwMIdRAAGgw2Mzc0MjMxODM4MDUiDAb3ItVWSFoe%2Fx8HYircA7YNMkyxSPwPHKs38LWAYrJ6eFOUt0dAAkcmhLgby50V6mmrDF7A0nxWkWYCDBjhg5BtpP2b4%2Bb6BlbupLcKv6isvc6bfn0fY%2FBRE%2FcIxQ5%2FizR7a9s7bjT2ejfc0%2F5nNx5%2BBlQOH9SH%2FQTjeE49XPStTD%2FsulKaWs6aaAPws5F%2FP%2BZvn6JysCzQbRikwspscdMOyFMshUryIGkXkNgGnT5QCJdjoTzhSogEQi3TghL4Q0eFvWWDPQGrI%2BE99R8a8txBQw2z2TK%2BfCgkUrbmEknTOagKvqp1s9NFMtE59n1urdeLZIwNvCq3L79jZrtWLvvqRgJKIjhz7SFN1%2F2vEoarKFoxiP5t6%2FfVNbrPAR2gsSpmAIX%2FXe3tTg5VTQX%2F8Uodk4eDvWKnZ9NelCmGkKMxNvbdye2W8SFdR%2BXChuQT2TltaaHDejcQuqpJmJ2FxKNA%2BV2bwVr%2FBExnMYC9%2BAUkZ%2B0L1%2BW1DlER0Z7x8N29EF5jk4fW8xyLuDL56smAlsstZERgg30qVUMcOHVs1la1mGAyZURQniBXGrfzjNh8s4Uh5u7fBLrAPt%2Fn5oPeadpejNzzB0Odp3oKDVwoyVn8LpIlE2MZT8yZ2op22hyRGNDPqJJKoik4G%2FIZMMOMtr4GOqUBVrXaXkZdNMrNHtHShw4d13706V80v%2BUxPlPbK4vZ44nMspvR3QAdA86AGWCfSMRVLSFEfNJ0zwcH5iq7LQMepj4rDrQBbVrE3c5RMjisjG191Leq1bqYwGh0AsvT855eJvOvt6cP1AlccBNxcib7cdJ7vHyKDgwtUBWCdIOAQLJpRvlTRzY5DoLVSkvJ9aX9J41QMmfd7dZ8wVO1fg%2FDO40DYz6D&X-Amz-Signature=c53f283a18e57fedf5a81f4ed63d4d7ead841ccafe2c10cc5678830938249f8f&X-Amz-SignedHeaders=host&x-id=GetObject)
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/feaa57d9-69a1-477b-90eb-075854919446/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466QPRI653J%2F20250310%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250310T140935Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEUaCXVzLXdlc3QtMiJIMEYCIQDfKLNyfBI0pRAA%2B5GFyPveo59Bppl3K%2BVC65dSUoN4pgIhANo1o6GHzKYHcTOBzc8jJ4pbskBLRyjAPINZOpNmMXxFKogECI7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1Igzbsg%2BTu9X21QO5vqoq3AOjbhDscxYAouVJfdlfaQfAJYvqGh1n8vgcpayFX%2Bml7niGXHhuuFiSkqvjCt9J5EonBwdsH12sv9Np28gUojLEW55%2FDlcWahz2OFRAd8E1ZsNLOdEywtr0nnHASxLfAfVMfzNQ2NwUgg4p%2F4ZV6DZtbKG7Yd%2FgdoMad2rYC3MUQ99cFZOW0H2oS8SM26kojpWUqap2Z3m1NLFw3SHPn5vPLmSNca41m5NYOks9xnkN%2BblnIkEoKR8WEwCOJM2u6js%2BURQcZwx1toxTawly2RBazkJ3hyEorGZW8MBj4CGl0FK8Bf6AE39vzDuHMHvRjkIWIuPLuKdkddBsRv1CZqT0jaPLQM7MlftDn28j57P0Xjjt0%2FhOKtVSGDURIvMUyoo61STXXcUw2TzytMEI%2FYXwtDK4aGoYZvkgJ1cZqBbqC%2BomilK2n%2BN2vv2q%2F7N79U1k0WedZj5YQzK9BN1uHg5Wa9WB1ctNwat70IqXkdQh%2FLgoy6KgLZHQwAf922fBTvMTpc5ziGhpTc4vBrh1vMZmuGz3rOs81mZo4uAMdR1d6ICmfBZL9EHQX3Wh1dqRsTmPfORaY3X2b9k0tEuRomaqXrrUqYFQvjEaYPl%2Fh%2FMs59mf6OY8mJ3hEt9BGjD0ybu%2BBjqkAQ3MWssuoK3iLvxXBQWZrJbXyfqXm6Ns3db1BSe1Oz454F1omKVyqYtKkbD2Ui5HLwvvzppK5oBWgjfdpuz6PyVAgxyU46TnKxifTY08hdoi2tqV1yCwdZjy7SNJuR5y8bw72iJ40eC4QNr3jKV9X4DR6gKO3%2BcY%2FQva2D1l0RtxpJuD1wXAmFr5lC5Se90R0xIlx%2B0zrTKjJAObmCxVbGluOh%2BI&X-Amz-Signature=94a3505be3a9b4ad1399ae4c94c5da05a75886329f9e51b3fcf693f2ed4b1b6c&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
 ## Certificates API
@@ -778,7 +778,7 @@ contexts:
     원인:
 
 
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/10644a35-55c2-4521-88c9-6839c45c9ad6/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466R55UAPAB%2F20250309%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250309T140444Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEC0aCXVzLXdlc3QtMiJIMEYCIQCwIrS%2F0KIpcVmqj1fVi26o26ZxD2rjb4%2F11y6eNmjr7AIhAN5sAN3x6qfDFua2zyQ4Oj%2FdGQNN%2BogQvK4nPNzCC3TTKv8DCHYQABoMNjM3NDIzMTgzODA1IgzOlzOH7TP6cIkvEjQq3AOOsrmM10h4Rma7zwCuPhTN5d377XsBMTIWzXKLxX6vzYHN7V%2FKIQTYDJNDnBfUsiOZvLEJNE53olRgJM06E7pPSFgnHmtXzAvV2gf6a7jnEQtX2inZnQTKItQrLgRQKbTQljfJFhZliqyfs%2BLCll5UGlEIA1HXYohQ9yRFiAg08AWvbQ6tPYFlvGsK%2FGheIcUpiNSsdNeMZHmDiiFQ6h9j%2FgYTUITib97av%2BPW8J0NMhw6oDZOFH%2BCEbU72%2Fc0dBO98liXvSh%2BmgStGrAlDhQ8OOVcveJ2qQ4SYTwOjqkuWgvppAWQoYbsnSInpbsheeJvdnmgGszpxge0TBK%2B2bObGgj58l5PUAVZNdfOBe3RVCkl1q1CSWRpJJujdhFgdW0LzIep0Gb%2BdEC5%2FSWEvMrfXuth7UDDz2YVLJG%2F7XhxL3A1h8Bw6eDq%2FuqK1HJipE0JEvqYfrE%2Bok7miCK1e%2FHQi60gIIzGZPEzqDbcyaRqeHrvFJ340YhuVNz9LFJhoKx%2BySJT2QwJ8dL1l1BDqactT%2F9wB4jzseBYjvrKoG2thcFC9nhSUFzVF7s05r%2BaE8af1SNjTQnHtRUxU5ND4GJUwThk5B3YwWZjT8Jqg%2BUb9bx4PtVr4J%2FGJ6QrfDCPkba%2BBjqkAb2kExaDLtVwReVmqcs7shUi%2FbaIpk2ohGceL2su3xa8KWO1M3cNm80S4022i6gt9lsJzmiFxiPrMP5ebxUZpXfvhHQM6Mf%2F5%2FxKhVMfgADYsfYvwCYixWeeRsyZnbD73BHEwjymQ6PuaYYJVJzwAMsvYaoYki%2FZbFPj34WxaiY8uC%2BL11ndn6AIATu%2BkoQW6DM2GHtr%2Fli9Afc0syI4UIdPjPjp&X-Amz-Signature=9b867152fbdc8599153af7fd93b3a5b77bd8f6aa52646c610ce70b50a1691f82&X-Amz-SignedHeaders=host&x-id=GetObject)
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/10644a35-55c2-4521-88c9-6839c45c9ad6/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466ZGCLMIME%2F20250310%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250310T140941Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEUaCXVzLXdlc3QtMiJHMEUCIQCAnJZaEzTAfoCQhy3wSfzv1h344qcwdRnX%2FjmF2or5LQIgMVYfvVS2GnarbAqszoJrhu7IrAbrcErvE3WlN1mNpOwqiAQIjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDIXzYhTYXio3K63tvyrcA8F90JGSQRHo%2F4LVYYEX83isy7OK2WVY0h0saxyLcw%2BL59jPGJdzBmUhQpIVKL%2FyWAiWdC9H0fC24bSyRyid3aqYpedj9x4KctRG3Q7YB1kdufzpOR9%2FtPdXEwqzFPCw9wvbRLQVrNSHWXK7pNiQyzH1tHTEhLUltnpHrSvDMOaUdPNIdCqHvtr5MrQ9Ze9sAG9v5KqTe6wclxjXlViFRzk42Dicps2ORxW6tt%2Bx6nCi5L7qpsTMUBTAHP4A%2BTlIMoFV0aTUdlwKZEaDYf4Q8ah9U9A4CLi5Wrm0CjHj6Xqm0vDsp2PgWKYxzXvA6Enf8IfjrV%2FMohOeAg7DPfk017CSz2roVmu5rdUHVMHSAhdYHt7pEAB%2BVjdIUDmqQrrhNpnJ92LLBtaEIggA%2BMkgrW6nqKqJewnfd3SCu8lpw1yO2GLv2KwKbTeMUoOJoqsMPZ6WSF3DkTGWiLooU9%2BxkIXpxE99ambl8Z8z%2FazUFTDKPP25ACyk3TwFIFPj2r8XCJYHgEyG7%2FWKDIdVSSCHC7bdslRXd1QU9UbqolzfeNuOR7uuH7I7Sn47k8KRnZeeKixvbYwZ8DJvAKBdhCE0OHL6CLeedqSx53Keqd3R6HUHF4yCJpWxpmopMNNNMNDKu74GOqUB9IzeoVcxbRHAKSbzMfqJf6ymt5klhb4N8YIv761%2FBwwT%2B2XPMxe5IRO5WHimX3E4ryaDVnYwg20cY6fxmHPNHJAaARjygpNqUrrr0AZvdLKRLoEZOTNpmZ0EX6w%2FJotb5k8E2lQPoptphb9mIyf1MtjYmpXwzcM98GAL4A4rLEseMUeHghecU8JaJNj5Hzk6frbAW3Fhle2LevYHnaizzERBZyKx&X-Amz-Signature=a6225cc22be5d025141b5fe532d4429736bd0ea7194865f6704b0771318225b1&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
     ```yaml
@@ -869,7 +869,7 @@ kube proxy는 클러스터 내 여러 노드에서 pod와 서비스 간의 연�
 kubernetes의 모든 리소스는 서로 다른 API 그룹으로 그룹화됨.
 
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/8dc7f1cd-62b8-488f-876e-bcde2373bb27/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466YNHYHFGT%2F20250309%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250309T140430Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEC0aCXVzLXdlc3QtMiJGMEQCIFFFavSbXgphQxrpQRrdV%2BY0imFTlC3UvIB5KEiFidlmAiAMsQRG7cM80AU6aofhFZXOd9tgirSugtZXS3K0%2FW%2F6fir%2FAwh2EAAaDDYzNzQyMzE4MzgwNSIMQ2fZqayHfPQlyZ4jKtwDao3%2Fe0jgXrtLu%2Fp%2F9AqsQi1BvdStBQ4ZIwE1DIgDJ39CLanjp8W8dHniUCCcNy4uMaMuoWMjo4NEn8T4AHHlPoUx7UDJEecYMzfLbKWyW3f0WLJwSXZfAtEH6j1qBa3qNDnZDCrDv4wyctwBuxnzXR7YKf2jdL%2FKNOtv3DDwQs14siuaaR%2Fkc9Jekc75vEcnKcUxhFKArIzabRUqQU7ZsyQGbRSfulnuYFgQJs7eAwdLwi78Me%2FTp6KhSI5e%2FYYb%2Fnwq715%2F13b3wRCQFE8g%2BBI8mHGoVCvQgoPIbV%2BsP1%2BVwUpYJtXtOjTY8ydIyPjHSQvubC%2F55gvSiCq49XKLdi1jDKPa76cbfz8x%2B%2Bn%2FtAW6BD6mePhNoY%2BjcjdQ3Z%2B31FOdZV0XjNDo2diEin3T%2FwxGpJNakfUzO7TY0p62RBVdqLyzRBb6RWY%2FlOOdqWeVIT0UhTj3h7LDbYT7ilj9KN8Vl5HyoZuM3UjEom2GKegKtKV7%2BDraHhUdOs7Ntsc0h%2BUSTz05vJo9WeT6VIUIsXgKC4%2Beot5ZSwY6No%2F7V80%2FmyuLDKKu9oWW32%2BUDe0AT5%2B%2F2G8mm%2Be%2B1YT94ODV%2FQBggoF0%2FeJjozPcbdxyafLE0MuzYdElIm%2Fis6cwj5G2vgY6pgHPybgsPckZYHgnmCzpa1fdBzfluBn%2Fk8gliWLGPJIDXCSgCMGGyDhZc8cQ8%2FZQmiZNCQ1DHq9DStCpTFipicdcfZaTdHtRdWfFKtQMYkfhJT13NqS3Ro97FU5TDNxTlwC7vks6L7Dnakyy08In8qzMcsloMie8qj98S6L%2BzFiqpoy%2Fp%2Fw2rmcraVvjtoPiq9XJeNvCl02b3nYejo7%2BxM0FCElRALLE&X-Amz-Signature=dfb21251229d604eebacba9b8ebfd50de077ce74ece585843adb9b270681be0b&X-Amz-SignedHeaders=host&x-id=GetObject)
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/8dc7f1cd-62b8-488f-876e-bcde2373bb27/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4665CDPI7GH%2F20250310%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250310T140928Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEUaCXVzLXdlc3QtMiJHMEUCIEDMnwWqEEjNVVATkQhthlsOi2aOM1aNc5Auj0Dh3wDmAiEArsXurcGCYztw2FLmT4BVjEE4qpMurtmhe1PrPqgFWYUqiAQIjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDF3LflD%2BF9JodJSFiSrcA1qEdAmE3VP38GW%2FbXb47YDJSyK26ZRJNei2IpH2neNMriZEeth%2FhYsrLDZ9BaxVvDdTa%2FYQrWOMN7is0QF%2Balno7TjCOsIM0LgAW1qbLxcpv882Ny7wI0FmzRFW1%2BF5RZIJFrH0ht5bP2fTCL0WFf1pBBsPsYKzkzCGSzMPbInHI3%2BZkBYYJpvyEZVDMxqwy%2BLQxzxKskxk4P6YQLL1u7e%2BHAJ%2FhRi780aufuHW8RdZyRdpj2KyfyAF4zUFrJTspqzO0VlCiyK%2FtLr22H0tcjqyS9ZSGcYD5zlnVI9rg9fqkHDFqncqFM%2BQ04XBw3OsuHgP%2FeaePY%2BpDMZyLR7B2YooxLX8Crk0AhpDrVVdpYppeuR8DloHVqh47rvE%2B9S0DwAxORm9BxTZoZ8fSYAfiXVZm27byTxua7rueoO3qVm7dSDoSvNqw6dIjkJuGsOh0iqFEyB%2Fk1aImnG8S5uRfEdRiL5FtPhjcjkZmFehxBVLOw7o74cFOmTuEuCrN5ZC2QKaYwNG1vpgXOKgB%2Fyi1MHXJkkien2%2Boz4%2FmexRRUe4ufYJVpze%2B6zdZIfVu7lklcupma0zyZZvMr5CGj1kdNysJfXL%2FwYyZZKduTZ81rGvc1R2USmxi6S359yBMInKu74GOqUB4CQ%2FuGrVVnTc3gB%2BRslGI2Z18MLcZiucUrrNUIU7l3SzUWWwrvbjK20FRxnEUh1Ok2Ey043qTjqTe29L98%2FjcenOurwyKA64c%2B8YqrU9FUCiZxY701rh69udXVXmQSaxta6ClkAtwKevhQ%2FffCYJryTVK0YuOMXUJceXkGpG8JQVK2YT3llyRrNToVPNUaaYLISt9CW7UfO6x%2BUd2qUh6QwJIwzO&X-Amz-Signature=56b6d752f13d99d087b55b0206d3665aa65ac936c835be7b01b2c4009354b882&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
 ## Authorization
@@ -920,13 +920,261 @@ NODE, RBAC, WEBHOOK 순으로 권한이 주어진 경우, 먼저 Node Authorizer
 ## Role Based Access Controls(RBAC)
 
 
+Role 객체 생성. 
+
+
+API version에 rbac.authorization.k8s.io/v1, kind에 role을 설정하고 이름을 지은 후 rule을 명시하여 role 정의 파일 생성.
+
+
+rule 세가지 부분으로 나뉨. API Groups, resources, works.
+
+
+Core group에 대해 API group  부분으로 빈칸으로 남길 수 있음.
+
+
+접근 가능하도록 역할에 부여하고 싶은 resources를 작성.
+
+
+action은 list, get, create, delete 등 수행할 수 있는 action 정의. 
+
+
+RoleBinding 객체는 사용자에 역할을 연결.
+
+
+kind는 RoleBinding이고 두 부분으로 나뉨. subjnject 사용자 상세정보 명시.
+
+
+roleRef는 생성된 역할의 세부 정보 제공.
+
+
+```yaml
+roleRef:
+  kind: Role
+  name: developer
+  apiGroup: rbac.authorization.k8s.io
+```
+
+
+kubectl create를 사용해서 role binding 생성. role과 role binding은 namespace 범위에 속함. 그러므로 예를 들어 dev user는 지금 기본 네임스페이스에 있는 pod와 config map에 접근 가능. 다른 네임스페이스 내에 접근하도록 하고 싶으면 definition file을 작성하면서 metadata 내에 namespace 명시.
+
+
+생성된  role을 보려면 `kubectl get roles`를 실행.
+
+
+role binding을 보려면 `kubectl get role bindings` 실행
+
+
+role에 대한 자세한 정보를 보려면 `kubectl describe role <role 이름>`
+
+
+실행하면 리소스와 각 리소스에 대한 정보를 볼 수 있음.
+
+
+마찬가지로 role binding도 `kubectl describe role bindings`를 실행하면 존재하는 role binding에 대한 정보를 볼 수 있음.
+
+
+클러스터 내 특정 리소스에 접근할 수 있는지 확인하고 싶다면 어떻게 해야 하는가?
+
+
+`kubectl auth` `can-i` `create deployments` `deployment`를 생성할 수 있는지 확인
+
+
+ 예를 들어 사용자가 작업을 수행하기 위해 필요한 권한 세트를 생성하는 임무를 맡았다고 가정. 하지만 수행한 작업이 제대로 작동하는지 테스트하고 싶음. 그것 테스트하기 위해 권한을 부여 받을 필요가 없음. 대신 as user 옵션을 가지고 같은 명령어 사용 가능.
+
+
+ `kubectl auth can-i create deployments --as dev-user` 
+
+
+같은 네임스페이스 내에 Pod와 같은 리소스에 사용자가 접근하도록 할 수 있음. 한 단계 내려가서 특정 리소스에 단독으로 접근할 수 있도록 할 수 있음.
+
+
+예를 들어, blue, green, orange, purple, pink 5개 pod가 동일한 네임스페이스에 있음. 사용자가 pod에 접근할 수 있도록 하려고 함. 단 모든 파드는 아님.
+
+
+`resourceNames` field에 rule을 추가함으로써 orange와 blue pod에만 접근하도록 제한할 수 있음.
+
+
+## Practice Test - RBAC
+
+1. 환경을 점검하고 클러스터에 구성된 인증 모드를 식별.
+
+    kube-apiserver 설정을 확인.
+
+
+    ```yaml
+    - --authorization-mode=Node,RBAC
+    ```
+
+2. default 네임스페이스에 존재하는 role 수.
+3. 모든 네임스페이스에 존재하는 role 수.
+
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/cb6d8fc6-de37-49d4-ae22-27d35fd6cabf/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466Y4BPBHG6%2F20250310%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250310T140943Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEUaCXVzLXdlc3QtMiJIMEYCIQDBfAsZ%2BC1ylyXl4%2FHBtoV%2Fr9OIgqpztiiwWi%2BkcoiFmAIhAMnHkpAf7fpvZzwV9GVssmFLyB5vYkFpffTrOtvIDNaKKogECI7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1Igz2w%2BeKX52mn4Hn2OYq3AMY6MJksxcQjhUo%2BXlbvj8zgFybyOVUB2LBf6UND8l5DBa08CyaWOkQbU7e96VKXZNvNpX7TDMM0adSiz5hqsJwNwzYMe5WcXWZSoJnX1hnR1IFnQqoHps%2F0YtbSz%2BS%2F5AnYM5XzaojzRIktEeyqQFUU%2Bo0YXbiMAkfdkVrwXW3dDwB879SlcCBKDP%2FEZwr9SextN5XH6iRzhO9sIRgsfrDXfW2EhVDjWtqaTfBBedl2XS2Z9vGGffGv%2BNSt0mzS0slXDfzIECYr415vmeMHPb84yLVrB46%2B8ZVHYEZAmhGjkr7%2BSlJhCr2NFdk5uFdx3SGDXH3mQsuB8ANUG4gywobI9duV5K%2F%2F2mfzuwNzYakHhI2oQaSSCna66yiGlgcHqOiVC1AQkQ%2FikVuwA6LVwSlo7ovb2N8i1xbfmgpEcoLgxdvipZwlpyo8W54b%2FReZoj9PITcHTcL1lcOmxzDBPs1lZKn2KLguQfqv0A8Ph%2F6r7hJJp6SKcdECUbauxc1FfrmnGJJM2d9azE9TfGRCqaXk4R60vRM%2BsyF1E%2FPJUq3VZ6s9UNVkHokqbegc3M2F5s%2B9zLbMZYa5UxHq8ZfxyZWfmSl1HfUGrttpk35VJJW9STju%2BmGwzZ%2F8699MjDnybu%2BBjqkAaodmzJaSmi19vp%2F2rzxt4k0A09KHQ2NIy63c%2Bw94ufBtar5EM3y%2Bu0zngQ39A%2Bo0edHvRp6MO3Nq52DUTwFLaI2j17xLLK0zaK04JjIQ3c0TJLqyo6Rdap7J%2Fv8twpiY98GioaVlhHxOAzDJrbsMLg4qCzYNn6rdHizYuHGM%2BG5UwOKcvo1aafq4x7ZVdpsLJ6BLIHovklpfq8xlqPwmw2w4Zq9&X-Amz-Signature=e42bff897dfc7b8a6515cfc3d227dc1be338058e123aa47397cc983bb7528d46&X-Amz-SignedHeaders=host&x-id=GetObject)
+
+
+    ```bash
+    # wc -l 은 줄 수를 출력하므로 -1한 것이 답.
+    kubectl get roles --all-namespaces | wc -l
+    ```
+
+4. kube-system 네임스페이스에 kube-proxy role이 부여된 resource는 무엇인가?
+
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/8a815837-d7ea-41b3-a083-8df4c0eecdff/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466WZDWJTWZ%2F20250310%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250310T140943Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEUaCXVzLXdlc3QtMiJHMEUCIQDu0lg74iCVRAyynMhxyUCaAU9Ns7vj72AYpCcnRa5lfAIgEGa1EL7SuvDW2mC16on%2FgFCS4jC8cMCq%2BIER9Qvkga4qiAQIjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDPhlZ7ahCzsaO4cyyircAwGLw6f82lzWJo16uZW5NaV1YWoj0brGhAqqL22dZNEGHrn2eKSjM6Bl157mIK6O04WgFysrvinzEVzxkbEGpkQ2fNOCTKHmDGgNfo7jrw1pUp4tZ1GKNSiJWgl51QRnXJ0TzhB75VP9o1mMNMKpzU%2FIp6UR8MNvVl5sCHYwP1YJrDmUZYXguCjuNCMnMth7fodNHUIngvszLs%2FZbozkwTyPm%2Fy9IV1pBAW%2B1QU%2BBWrvhNeU4Z8xzQKVpFeSGc%2BLXaLrpDmKHl2KnFBqZUJpsW5UGvpYm2rKV5hZgOjwiJKDmN0WMynkZX1lBOVeAWY6RETQ8Yx%2FZBF9QkyAt4%2FfUPS3IOprS8WqOZOJzaafIw2%2FmCA8nX%2BzajrBqdpzdy7HSD5z%2FIed925X01Wuq4jakgl2Kt8U8azioTySV0LWwgbtx9C%2FzDrcrf%2FwVFUUFEI%2FwtFWhDL%2FmSRA%2B2M8bFGkhJultT8OKhBBj7d1ZvNtcQF4%2BV%2B3HKuPSA4ypIetH8cVzvBw0cc57x4KO7Kdu1mr1n5R7Iqg9Q4xccQVrkSo5abnhlVslgrdWJi2vzD4QpvkA2A939hgRnUDXmDYy%2B1Mv9XhNHmxjkGBwVtOHt0Z2nKAkQrzRk0dNgtczim%2BMIPKu74GOqUB8Ylp39QwQMhg9vFOMVyUj9JokXW7KId09TTPZBb4pWTQquIoZ71wjQoXGE5aTkTgdBFypw96I3He9JzmxSydaeBwHxx%2B8txGZ4DORB0CzLLSVBP%2B4JgI10H94JiKYrif1KfDpEf8uLP8yylJBM7b0M6GhmlHrC3lJcyv4jeZU2lWoqeOIVTHAeGyJEOMQ%2FKqtF76C4lo6jSqHfLzcN7w83XFSb2a&X-Amz-Signature=bbae58726a6d4e7af4c6dc645c69d55c45f02b1ed5b995644f7fa191932008ae&X-Amz-SignedHeaders=host&x-id=GetObject)
+
+5. configmap에 어떤 action을 할 수 있는가?
+6. 주어진 문장에서 옳은 것은?
+
+    kube-proxy role can get details of all configmap object by the name kube-proxy only
+
+
+    kube-proxy role은 kube-proxy 이름으로만 모든 configmap 객체의 세부 정보를 얻을 수 있음.
+
+7. kube-proxy role이 어느 계정에 할당되는가?
+
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/54e0a2d5-09b0-4613-9a26-fb1465ea0001/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4665UT3MOJV%2F20250310%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250310T140945Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEUaCXVzLXdlc3QtMiJIMEYCIQDF74Qx37aajH5vIB4aERtTehhPDltt1o80PAAPsgbFQgIhAJU6CUysdGV0DYymG2RVvbOzdSdYCDuQqKBGAfo3EsY7KogECI7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1IgwB4WWnAPhlp4aKaewq3AOhRAJN80pgZVycl%2B0cJLEOz4qQl4Ov2dUrFML%2FMz4u3fjncpdZtHA06%2BffE7wF1NRsTS0jtw48VXLGtB1uoA%2Bfli3ixe9MjWgeq9bPujdbZvRYoJW3kVMJLpd8%2F6KkBrhwTIIVYGbrA71x2k%2F3wDnufa9rnOn%2BNiYF34EPJN2hE6XwWEaOtjBhCS6n0fVgc8oTESiY4Wt91ohTHPEz4rHEpp8JKBp1fQezBxHiL9E4ti1Dt6QpWH%2FBWHHXxOaxwRp42i4%2FrWu7yd5oS5ZiupqF7jHe5kcwbllVq0IAnH8LlSfXgjHC6fNvcrpBar1d6mkKehKV4PpWo6NLy6u5WiC9T%2B6g1lWS2cT1%2Fif83RR9ma4bZT62w6iXiCjKvcEaatXoKlfQHLQqYxboyBadUKjF3v%2Bh%2B0jDEoaYEgiWtGyGzVPYvx9PHqcvcp1r3UCO0%2FWNPV9qkc%2FBWE1SLkZ1Rj%2Bgwwsgrb2S2nXAhAetmRf283K1ifmdkC9fRjx2PgbnqxXnkqKchZ%2FgztaqR3kcsG0OivfYwWBf4FPy2MnxRg00cXNJpK3QolBGv8qwep%2FAPLkCHNqPmhb%2F0CK9gu%2FzMw1K4wACHaMBqFYckh4DKTzfzzFijdF1QsVVFsxMyjCkyru%2BBjqkAaeslLei7PuKQsgfG3i7FuovFsPIXBuk5Nqi%2FwZqS14cuOUxTBgQ0KUqqrveyVthp6SWWELQt8qsT4xarI7chVjYSd55ZO5J3xU3mKAahpvEJo0sgalsa7JDGAu2toev5GvxLVUE3pDq24yq%2BgUg8h6MYO77KBgdLA1k%2Blb42%2BVj2ZmOBa51momwCbUpPLP3%2BwHPCF9KEDW%2FV9Ktm9ElMIA9PunH&X-Amz-Signature=338a047eb875ab777d62faca3ca2a0f85c3aa7599e9053d0b6839b6ae28d08b5&X-Amz-SignedHeaders=host&x-id=GetObject)
+
+8. dev-user 사용자 생성. User의 세부 정보가 kubeconfig에 추가됨. user에 부여된 권한 관찰. default 네임스페이스에 list pods를 할 수 있는지 확인.
+
+    ```bash
+    kubectl auth can-i get pods --as dev-user
+    ```
+
+
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/0b1c42ae-2023-4508-a739-bcaee8156d7d/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4664WIGSF6G%2F20250310%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250310T140946Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEUaCXVzLXdlc3QtMiJGMEQCIHWYvJur1IRoNgPot%2B0llGg%2Bel4G0J4lu3AxcV1PgALpAiA%2BS28SqRFecCbBvGMQkSJ%2FP80yLvUX9vzn%2FrcgeGYt5SqIBAiO%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMtYiid1UfKKuf2jDPKtwDQpCaI%2FyYjkwBZPwjKFUoKFiIxs0ujv6tPv99aQ06XGv5mVcLatsQIdB15mYJXmaTRsHBKlq%2BXLuhQ7o6RvLEuZ4iovkErz1904Wvdlssni5SfwMCAYm6CHffAoY9DXhuryo%2BlbaWwIosJZl1Ev4RtGgWeL6rv%2BBHlrKSQFlVC%2Fnk0kpK93Dz5ZDBpArzU8CN6hfcaUAeuXnQNm4D8p%2Fdxcp%2Fdbf7Z9BDmSky258JqzImmwchg%2FqZfK7AWp87vlzPHzv8WUaszqDdjhLEH6hD2sxs1fMM6TaJAGkhZSe5pkMyCYhyXlaE83bvbylQQFgBDXc398tKTFlbIVj8Dl9qYksrHs3WCZCzmgn1Bms1OsQofKxyWynSyEX7jUCxj7bOWuKkJqiwUuBXLfooJpYnJGmiu2RfMAXte8ab3MmkuAZaxmkRufuxee7I2yJiOXUvAJroDUjXCqyYBx%2B0udvIcu0OdyuPATYfIax%2FG%2BSCRMZL4EYYez8yOnyS5RPbesotVy5mmV0a420Mq4%2FLbUPkJaa2LA4F%2FPHhYW3WRWs9ifsi8WPXhdOHRbKWQ6%2FsgxJou14ljnU%2BjR4IvSSPivp6n7fhDtXcmlE3cAy9gI4JpjWXVgtvgwMiMJlRNS0w4Mm7vgY6pgHjAjGGAmVFXjCevIh7ygBKHYiRJOhqe5z5MTR2pqMZW2j4SqQLRrZdE8uMvsWL2Ll9AqoSZqT5itO7%2BIK7gEnlu5meVBjBHIvGhLdq7JiIqvH1jA%2FI7SzTavwgM6dsBfU92tNu%2FNdqYPrmvHi8EFogRLHCUQj%2Bn%2FH2j4ApL40qN%2BmEV66sVEalg4YIlZp1KeE5IVdOl8St1CeYNuISS3Du8%2BPsp6SB&X-Amz-Signature=091bd29f73c5cd7313d29323dc53f17f22a6e5e86197881eea7ad85f3daf1626&X-Amz-SignedHeaders=host&x-id=GetObject)
+
+9. default namespace에서 Pod를 create, list와 delete를 할 수 있도록 dev-user에 필요한 role과 role binding 생성.
+
+    Role: developer
+
+
+    Role Resources: pods
+
+
+    Role Actions: list
+
+
+    Role Actions: create
+
+
+    Role Actions: delete
+
+
+    RoleBinding: dev-user-binding
+
+
+    RoleBinding: Bound to dev-user
+
+
+    ```yaml
+    apiVersion: rbac.authorization.k8s.io/v1
+    kind: Role
+    metadata:
+      name: developer
+      namespace: default
+    rules:
+    - apiGroups: [""] # "" indicates the core API group
+      resources: ["pods"]
+      verbs: ["create", "delete", "list"]
+    ```
+
+
+    ```bash
+    kubectl create role developer --verb=create,delete,list --resource=pods
+    ```
+
+
+    ```yaml
+    apiVersion: rbac.authorization.k8s.io/v1
+    # This role binding allows "jane" to read pods in the "default" namespace.
+    # You need to already have a Role named "pod-reader" in that namespace.
+    kind: RoleBinding
+    metadata:
+      name: dev-user-binding
+      namespace: default
+    subjects:
+    # You can specify more than one "subject"
+    - kind: User
+      name: dev-user # "name" is case sensitive
+      apiGroup: rbac.authorization.k8s.io
+    roleRef:
+      # "roleRef" specifies the binding to a Role / ClusterRole
+      kind: Role #this must be Role or ClusterRole
+      name: developer # this must match the name of the Role or ClusterRole you wish to bind to
+      apiGroup: rbac.authorization.k8s.io
+    ```
+
+
+    ```bash
+    kubectl create rolebinding dev-user-binding --role=developer --user=dev-user
+    ```
+
+10. dev-user를 위해 blue 네임스페이스에 새로운 역할과 역할 바인딩 세트가 생성. 그러나 developer는 blue 네임스페이스에서 dark-blue-app pod의 세부 정보를 얻을 수 없음.
+
+    문제를 조사하고 해결. 필요한 역할과 역할 바인딩을 만들었지만 뭔가 잘못된 것 같음.
+
+
+    ```bash
+    kubectl edit role developer -n blue
+    ```
+
+
+    ```yaml
+    rules:
+    - apiGroups:
+      - ""
+      resourceNames: blue-app ➡️ dark-blue-app 으로 수정
+    ```
+
+11. dev-user에 blue 네임스페이스에서 deployments를 생성하도록 권한 부여.
+
+    api group에 “apps”에 대해 추가하는 것 기억하기.
+
+
+    ```bash
+    kubectl edit role developer -n blue
+    ```
+
+
+    ```yaml
+    rules:
+    - apiGroups:
+      - ""
+      resourceNames: dark-blue-app
+      resources:
+      - pods
+      verbs:
+      - get
+      - watch
+      - create
+      - delete
+    # 추가
+    - apiGroups:
+      - "apps"
+      resources:
+      - deployment
+      verbs:
+      - get
+      - watch
+      - create
+      - delete
+    ```
+
+
 ## Cluster Roles and Role Bindings
+
+
+## Practice Test - Cluster Roles and Role Bindings
 
 
 ## Service Accounts
 
 
+## Practice Test -  Service Accounts
+
+
 ## Image Security
+
+
+## Practice Test - Image Security
 
 
 ## Pre-requisite - Security in Docker
@@ -935,13 +1183,19 @@ NODE, RBAC, WEBHOOK 순으로 권한이 주어진 경우, 먼저 Node Authorizer
 ## Security Contexts
 
 
+## Practice Test - Security Contexts
+
+
 ## Network Policy
 
 
 ## Developing network policies
 
 
-## Kubectx and kubens - Command line Utilities
+## Practice Test - Network Policy
+
+
+## Kubectx and Kubens - Command line Utilities
 
 
 ## Custom Resource Definition(CRD)
