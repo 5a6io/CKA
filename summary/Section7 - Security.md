@@ -470,7 +470,7 @@ etcd 서버는 자체 CA를 가질 수 있음. 그래서 kube-api server에서 �
     ```
 
 
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/feaa57d9-69a1-477b-90eb-075854919446/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466QPRI653J%2F20250310%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250310T140935Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEUaCXVzLXdlc3QtMiJIMEYCIQDfKLNyfBI0pRAA%2B5GFyPveo59Bppl3K%2BVC65dSUoN4pgIhANo1o6GHzKYHcTOBzc8jJ4pbskBLRyjAPINZOpNmMXxFKogECI7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1Igzbsg%2BTu9X21QO5vqoq3AOjbhDscxYAouVJfdlfaQfAJYvqGh1n8vgcpayFX%2Bml7niGXHhuuFiSkqvjCt9J5EonBwdsH12sv9Np28gUojLEW55%2FDlcWahz2OFRAd8E1ZsNLOdEywtr0nnHASxLfAfVMfzNQ2NwUgg4p%2F4ZV6DZtbKG7Yd%2FgdoMad2rYC3MUQ99cFZOW0H2oS8SM26kojpWUqap2Z3m1NLFw3SHPn5vPLmSNca41m5NYOks9xnkN%2BblnIkEoKR8WEwCOJM2u6js%2BURQcZwx1toxTawly2RBazkJ3hyEorGZW8MBj4CGl0FK8Bf6AE39vzDuHMHvRjkIWIuPLuKdkddBsRv1CZqT0jaPLQM7MlftDn28j57P0Xjjt0%2FhOKtVSGDURIvMUyoo61STXXcUw2TzytMEI%2FYXwtDK4aGoYZvkgJ1cZqBbqC%2BomilK2n%2BN2vv2q%2F7N79U1k0WedZj5YQzK9BN1uHg5Wa9WB1ctNwat70IqXkdQh%2FLgoy6KgLZHQwAf922fBTvMTpc5ziGhpTc4vBrh1vMZmuGz3rOs81mZo4uAMdR1d6ICmfBZL9EHQX3Wh1dqRsTmPfORaY3X2b9k0tEuRomaqXrrUqYFQvjEaYPl%2Fh%2FMs59mf6OY8mJ3hEt9BGjD0ybu%2BBjqkAQ3MWssuoK3iLvxXBQWZrJbXyfqXm6Ns3db1BSe1Oz454F1omKVyqYtKkbD2Ui5HLwvvzppK5oBWgjfdpuz6PyVAgxyU46TnKxifTY08hdoi2tqV1yCwdZjy7SNJuR5y8bw72iJ40eC4QNr3jKV9X4DR6gKO3%2BcY%2FQva2D1l0RtxpJuD1wXAmFr5lC5Se90R0xIlx%2B0zrTKjJAObmCxVbGluOh%2BI&X-Amz-Signature=94a3505be3a9b4ad1399ae4c94c5da05a75886329f9e51b3fcf693f2ed4b1b6c&X-Amz-SignedHeaders=host&x-id=GetObject)
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/feaa57d9-69a1-477b-90eb-075854919446/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4664WUQB5HN%2F20250311%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250311T141023Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEF0aCXVzLXdlc3QtMiJHMEUCIQDsPZQ4WOL2%2BhfnLbSh2dZ8SRzrkFUlQuLtZv1b3TopIwIgdBlHqaqKOB5265kGHA0yPNAuk91IfWuKd4YSJTuc5L4qiAQIpv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDJK1TkCXi%2FiVewcOdSrcAzJrJbgorATV3mix67%2BMxJLSZDL2tawyzvS%2Bu%2BiEND55GV%2FbTMyBJG1s%2F%2Fi6onOZ6n2OfQ6psrix6S4xNy1dWITy1AAX3PIJO%2FVzK586UOUVt55Oos3GATijuD%2FiwY2BX%2BBOr9Je6EXvgkrB38okLWG2CBVbRPwteqaD%2BCLBg8g0GCuKqBtMRhZDiDTTTVEKxDIIB8J7ZPHaldCakQ3AKN8Lxl27HOpEEbz8i%2B4QFS7MCNvU4Mh7tKg4c8%2Bv2t4hYilI3cNAVAOT6vH7Gvxs4VvLZzawqZLW6DvGY40u4vMFmSsiV9n2CmVBx%2Fv%2F2UK0cLGNTNWWbhzuBnc2M7BSN2%2FjI1LX5oViAA1ai6%2B5nujYH55m3JyxbaI8Qy1yF1BvbSyfGJu%2F8zuBcM8C7qDKdXaOOZZPGmjX150qGUWTPYPF6%2BQL8TqE91%2FYNm9GlMi9OyMySB2gGECzpHlaVd%2BWqbzFZT7I7FMc4CFfIuEFHZwpGg533kVpQt4wOOB15uKcO5w4AMURmZCBRP%2FH0%2BzoRjh%2FoxVaSHRt%2BgRC%2FNfn76ultZC2dzMqQ%2BinpgXCEWmALwsKlaZI00eWxZgyw%2Fp7W90b%2FCXIN7c26TAAFuIWFj%2FbqOehvPBSutwDzNYqMPTqwL4GOqUB9e969C6x1WVD8rsAI1jar3NnQkuuld3Bhu1X7BigAVod7u%2BnozJkksvzTQNanGkmUef8pap%2FAXJMbmqwjqoQv3Zs50Gly0tUB2MWN0LYRCFo0nGB7YStWcUXsroMLQI3TUlnlrsOcYd6WS2EJLgL93rslALsqpeWZ7acaG%2BUprTEtEdiItWSpgF7smm56VdfTeKPs9zBEC3o%2BHW7oQFYMBzS7%2Fvw&X-Amz-Signature=3491024ecb94ea4e57f0eb784757418c6a0ba127566236c73f892ed2ab2414f4&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
 ## Certificates API
@@ -778,7 +778,7 @@ contexts:
     원인:
 
 
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/10644a35-55c2-4521-88c9-6839c45c9ad6/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466ZGCLMIME%2F20250310%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250310T140941Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEUaCXVzLXdlc3QtMiJHMEUCIQCAnJZaEzTAfoCQhy3wSfzv1h344qcwdRnX%2FjmF2or5LQIgMVYfvVS2GnarbAqszoJrhu7IrAbrcErvE3WlN1mNpOwqiAQIjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDIXzYhTYXio3K63tvyrcA8F90JGSQRHo%2F4LVYYEX83isy7OK2WVY0h0saxyLcw%2BL59jPGJdzBmUhQpIVKL%2FyWAiWdC9H0fC24bSyRyid3aqYpedj9x4KctRG3Q7YB1kdufzpOR9%2FtPdXEwqzFPCw9wvbRLQVrNSHWXK7pNiQyzH1tHTEhLUltnpHrSvDMOaUdPNIdCqHvtr5MrQ9Ze9sAG9v5KqTe6wclxjXlViFRzk42Dicps2ORxW6tt%2Bx6nCi5L7qpsTMUBTAHP4A%2BTlIMoFV0aTUdlwKZEaDYf4Q8ah9U9A4CLi5Wrm0CjHj6Xqm0vDsp2PgWKYxzXvA6Enf8IfjrV%2FMohOeAg7DPfk017CSz2roVmu5rdUHVMHSAhdYHt7pEAB%2BVjdIUDmqQrrhNpnJ92LLBtaEIggA%2BMkgrW6nqKqJewnfd3SCu8lpw1yO2GLv2KwKbTeMUoOJoqsMPZ6WSF3DkTGWiLooU9%2BxkIXpxE99ambl8Z8z%2FazUFTDKPP25ACyk3TwFIFPj2r8XCJYHgEyG7%2FWKDIdVSSCHC7bdslRXd1QU9UbqolzfeNuOR7uuH7I7Sn47k8KRnZeeKixvbYwZ8DJvAKBdhCE0OHL6CLeedqSx53Keqd3R6HUHF4yCJpWxpmopMNNNMNDKu74GOqUB9IzeoVcxbRHAKSbzMfqJf6ymt5klhb4N8YIv761%2FBwwT%2B2XPMxe5IRO5WHimX3E4ryaDVnYwg20cY6fxmHPNHJAaARjygpNqUrrr0AZvdLKRLoEZOTNpmZ0EX6w%2FJotb5k8E2lQPoptphb9mIyf1MtjYmpXwzcM98GAL4A4rLEseMUeHghecU8JaJNj5Hzk6frbAW3Fhle2LevYHnaizzERBZyKx&X-Amz-Signature=a6225cc22be5d025141b5fe532d4429736bd0ea7194865f6704b0771318225b1&X-Amz-SignedHeaders=host&x-id=GetObject)
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/10644a35-55c2-4521-88c9-6839c45c9ad6/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466WGQI56OV%2F20250311%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250311T141030Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEF0aCXVzLXdlc3QtMiJHMEUCIA4rDrIt%2F1PXU0DudplJJDtYdYnElYli3skH9hy3cyKYAiEAkt2A4wJnTbtXOe2Hny8VvY0SDLys%2BbSxprK9BzO%2BmtQqiAQIpv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDF7tw4%2FoWnpjBJorFyrcA92MsdWZTdOobTCCZt2rk1cDtKrLBnHaq7vkDL4pPvRLuGxgnmmgfrKOb1%2BtpLSs510rcejp7cARc%2B1IbtsLd7cdge%2BVgHOn8HwOlIUd7BA7Z9g06zhrnwL7vAyOid2wM2NpyIZIRn1Mz%2Fyty51iEbtMFRYUTfpDFQeQ9MyCmKXvJZn767vubdrOXzstSkTPsinArPC5w4PnmXWighpVuEKJCiS1Fyn%2Fng8D2KWDxoJ83r6NrA5W6cjc40h%2FJCgPzAsYXnFHtGDJcDxZqkNzq0YevtT25MrdLPdhZMueH9QLec6JZ7rozcR6xWl2nxmEiYO0cYBGUSnsVSORjC%2BTNZCf6CDnYf5jvUIPndbr%2B%2BPaBuu9LFoYNyg6uXS5TeIvno%2BynsQfkUDxtbb4aL1NGx%2FxXKbnBc0%2BpKb2ELpZ2gr%2B1HJqJgzEpbdZQ83w8tmTm4PpJ2EGXfJhhpkI1FKBJ2IBZHPxa30%2FY9xXlFX2Kz6Hb0wWXmpoI8EOJLdYn9yAD5DtBYtyKCFwk4dGkMUks7SOUYkgcjb7INDBRaV8mmcR4YUye%2B7A970aOoSPV7VkRxK%2FpLiDVu%2FMueufpN1tkrAHzLqbRdvlmDwEN7GwS4vwP%2F6%2FOFo%2BOtiz840tMNXqwL4GOqUBsBmPLitBavnxc%2Fj5xagQFrG48XmeVGwzpsvo2wCjfVpT07XP9E4Wx9R9kakreTCLp8eW%2FBKIXagwz34Dj4oH9a0YxHcYpo%2BlhnilwIRw3M6mkxjvgaZ%2BskdaqeBBj4DFP8ISsgIT%2F%2F1duaj5wjzoI4jNHLKlZ5msj4NomuW%2FcfXadHCulShbJzk%2BzY696AjrXoKhYvSdIS3JwcA11PmAn5J3G8rN&X-Amz-Signature=a15cb7219900ddf1df8fe66264debf3c1cac86a80e3117d7871ed980cbcdcf7d&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
     ```yaml
@@ -869,7 +869,7 @@ kube proxy는 클러스터 내 여러 노드에서 pod와 서비스 간의 연�
 kubernetes의 모든 리소스는 서로 다른 API 그룹으로 그룹화됨.
 
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/8dc7f1cd-62b8-488f-876e-bcde2373bb27/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4665CDPI7GH%2F20250310%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250310T140928Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEUaCXVzLXdlc3QtMiJHMEUCIEDMnwWqEEjNVVATkQhthlsOi2aOM1aNc5Auj0Dh3wDmAiEArsXurcGCYztw2FLmT4BVjEE4qpMurtmhe1PrPqgFWYUqiAQIjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDF3LflD%2BF9JodJSFiSrcA1qEdAmE3VP38GW%2FbXb47YDJSyK26ZRJNei2IpH2neNMriZEeth%2FhYsrLDZ9BaxVvDdTa%2FYQrWOMN7is0QF%2Balno7TjCOsIM0LgAW1qbLxcpv882Ny7wI0FmzRFW1%2BF5RZIJFrH0ht5bP2fTCL0WFf1pBBsPsYKzkzCGSzMPbInHI3%2BZkBYYJpvyEZVDMxqwy%2BLQxzxKskxk4P6YQLL1u7e%2BHAJ%2FhRi780aufuHW8RdZyRdpj2KyfyAF4zUFrJTspqzO0VlCiyK%2FtLr22H0tcjqyS9ZSGcYD5zlnVI9rg9fqkHDFqncqFM%2BQ04XBw3OsuHgP%2FeaePY%2BpDMZyLR7B2YooxLX8Crk0AhpDrVVdpYppeuR8DloHVqh47rvE%2B9S0DwAxORm9BxTZoZ8fSYAfiXVZm27byTxua7rueoO3qVm7dSDoSvNqw6dIjkJuGsOh0iqFEyB%2Fk1aImnG8S5uRfEdRiL5FtPhjcjkZmFehxBVLOw7o74cFOmTuEuCrN5ZC2QKaYwNG1vpgXOKgB%2Fyi1MHXJkkien2%2Boz4%2FmexRRUe4ufYJVpze%2B6zdZIfVu7lklcupma0zyZZvMr5CGj1kdNysJfXL%2FwYyZZKduTZ81rGvc1R2USmxi6S359yBMInKu74GOqUB4CQ%2FuGrVVnTc3gB%2BRslGI2Z18MLcZiucUrrNUIU7l3SzUWWwrvbjK20FRxnEUh1Ok2Ey043qTjqTe29L98%2FjcenOurwyKA64c%2B8YqrU9FUCiZxY701rh69udXVXmQSaxta6ClkAtwKevhQ%2FffCYJryTVK0YuOMXUJceXkGpG8JQVK2YT3llyRrNToVPNUaaYLISt9CW7UfO6x%2BUd2qUh6QwJIwzO&X-Amz-Signature=56b6d752f13d99d087b55b0206d3665aa65ac936c835be7b01b2c4009354b882&X-Amz-SignedHeaders=host&x-id=GetObject)
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/8dc7f1cd-62b8-488f-876e-bcde2373bb27/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466X7BKB4GH%2F20250311%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250311T141013Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEF0aCXVzLXdlc3QtMiJIMEYCIQCBE5U2YhfB5z9v78Jq7Q8yFIPJ3vLsQoIEBxrMrvNg3QIhAOY%2BzvnpZhocWVHZa4CnVks43lFP79uEHiqhDcX0rC7MKogECKb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1IgzPHKOuk1eIbCqhkDYq3AMMHRUSYj6IBBOw1Zm1v%2FiVOIuzrmmfay0DM22S9x6UbY8s%2BGhmv03p2hyogGJlZ8Ng8tJr4A%2FAPopy6%2Bi7D9hXyMJCsGo1ai3eIJ6PAYBsnRdZRDymZq2%2BqXcnpWMVSpPlE%2F2y4mY9DHmrWp68PBPfIzE%2FwnJc4%2FsgzQ8IHc5WjhYWKzLdIS1FhN7rggjn8lpb6VmSzPWjrFe%2F85LOmUBzZnTJKOFqSf7kkn2c81HrU1C%2F4rS5Ckgbhofr7CpUVJYO9en6Mv0mVwmgN6SfIZO5R1JWF8T24bUvlmFXVlagLGdXXj9YIryPfsZp7pzS2KrDKoKwKjTQ0peBYg3yAoLVJ8TwfDqjWvYS1gTYqp6wi8tG%2F4LDPiWg0RCSn3cgOoGAshkzXpxXUgssuWUh2bJ9OpvqAKqlltTR37LvnhOQrJlVbeGrq6YKs4FmfDHsrwlufghrTIfMo5sT4j%2B9VXXkMiqUgqMzEZ7rV%2FavlHCdbuBjEwNmn9L8Pld%2F5uZfXTDxCpLtPxrOwT3FPlIQwdmZ8SGrC2quZT1o5QrW90LKCTzA9ygSbbuaZGNPT2ooDeqUMrBN0Hmx%2BKg7kbBQt52KwkiOtqXi0CeZpdTtjtz8MS2DEt0xzV2BZocXVzDa68C%2BBjqkAUQYKtumZUFFJZmVbxAd87hPgeGBLREqzVeVZZ5aWUgehXTmFmmt8RftpRQ7yRweFl3TBt5SlPCcVzaclfxv52UDAJvZrSyY8jfyOK3HVh92640rxPUHkkP1pqsN696BnJR5sT3sGpordBuMkaL8bEf0KIYaXfCgS6u7q2Rvlh8xY4iFLxptSOpxQz%2FUxLk9d8mtjDYrJfFSwhZLzcb1%2FqoPwZl3&X-Amz-Signature=5a75e2b19b179d1d98929ac8125f72e62a15a153a77a4fb70fbdd5ddaf20f68b&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
 ## Authorization
@@ -1008,7 +1008,7 @@ role에 대한 자세한 정보를 보려면 `kubectl describe role <role 이름
 2. default 네임스페이스에 존재하는 role 수.
 3. 모든 네임스페이스에 존재하는 role 수.
 
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/cb6d8fc6-de37-49d4-ae22-27d35fd6cabf/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466Y4BPBHG6%2F20250310%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250310T140943Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEUaCXVzLXdlc3QtMiJIMEYCIQDBfAsZ%2BC1ylyXl4%2FHBtoV%2Fr9OIgqpztiiwWi%2BkcoiFmAIhAMnHkpAf7fpvZzwV9GVssmFLyB5vYkFpffTrOtvIDNaKKogECI7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1Igz2w%2BeKX52mn4Hn2OYq3AMY6MJksxcQjhUo%2BXlbvj8zgFybyOVUB2LBf6UND8l5DBa08CyaWOkQbU7e96VKXZNvNpX7TDMM0adSiz5hqsJwNwzYMe5WcXWZSoJnX1hnR1IFnQqoHps%2F0YtbSz%2BS%2F5AnYM5XzaojzRIktEeyqQFUU%2Bo0YXbiMAkfdkVrwXW3dDwB879SlcCBKDP%2FEZwr9SextN5XH6iRzhO9sIRgsfrDXfW2EhVDjWtqaTfBBedl2XS2Z9vGGffGv%2BNSt0mzS0slXDfzIECYr415vmeMHPb84yLVrB46%2B8ZVHYEZAmhGjkr7%2BSlJhCr2NFdk5uFdx3SGDXH3mQsuB8ANUG4gywobI9duV5K%2F%2F2mfzuwNzYakHhI2oQaSSCna66yiGlgcHqOiVC1AQkQ%2FikVuwA6LVwSlo7ovb2N8i1xbfmgpEcoLgxdvipZwlpyo8W54b%2FReZoj9PITcHTcL1lcOmxzDBPs1lZKn2KLguQfqv0A8Ph%2F6r7hJJp6SKcdECUbauxc1FfrmnGJJM2d9azE9TfGRCqaXk4R60vRM%2BsyF1E%2FPJUq3VZ6s9UNVkHokqbegc3M2F5s%2B9zLbMZYa5UxHq8ZfxyZWfmSl1HfUGrttpk35VJJW9STju%2BmGwzZ%2F8699MjDnybu%2BBjqkAaodmzJaSmi19vp%2F2rzxt4k0A09KHQ2NIy63c%2Bw94ufBtar5EM3y%2Bu0zngQ39A%2Bo0edHvRp6MO3Nq52DUTwFLaI2j17xLLK0zaK04JjIQ3c0TJLqyo6Rdap7J%2Fv8twpiY98GioaVlhHxOAzDJrbsMLg4qCzYNn6rdHizYuHGM%2BG5UwOKcvo1aafq4x7ZVdpsLJ6BLIHovklpfq8xlqPwmw2w4Zq9&X-Amz-Signature=e42bff897dfc7b8a6515cfc3d227dc1be338058e123aa47397cc983bb7528d46&X-Amz-SignedHeaders=host&x-id=GetObject)
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/cb6d8fc6-de37-49d4-ae22-27d35fd6cabf/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466QLWPHALO%2F20250311%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250311T141031Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEF0aCXVzLXdlc3QtMiJHMEUCICSbJY2NAmlTNIT%2Bg9oU491rIzW7DlOz21XxL1gEo5jRAiEAqNiXxxOaJZ5IehmltlCwobRTaY4Q3ds3s5Uuusc90NsqiAQIpv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDCRQrTLDacM%2Fq2fjsircA6Dm7IdQLmBBB7VOXgXINrma02TEwXmZDlhujYuP6hWy%2BagVJ7WgpaNL%2B89mecA4zhEMbzq0rkvG4dN3ugneXfxt4ZuKE8Gf3PYOkXhx5a9W65AS94v%2FQ1WN4kfKriyGTce18PXZcH2o2GmIt0ayNOVszWcuDw0irGylcyjdK4i4Lg4dSajAbTENQBNPxbonAieIxVlkTivnZmcjTzzh%2BVe6qWVcpt2l5Fsm%2FGTsZMv1rdmZYkcXEkD0ELlY1I%2Fft27CaE8x87vaPH9tEJ%2BF%2F11X76wuNo1siZpHuyaeiNHdPnqAtYlGF4JKe1e5peTgIkrfBPqrIUtrr2vbisNETlNeOFpF5cmAnaQG%2FSGywf5b%2FvGo4c8lSNFdJaSYbxbEI7l6AG6Sfl0JWj6z9XErzbSUdKlUwIBATHUOBFQDMtoY0LAD4tMqe%2F1mUXZdfKfaGBfw%2BHwa1YzqWkO06xfi9xf%2B549GNHkbP5fumNzrPOKUizlqUkrc5pfLeIOdBiqwiPynmbzvsFVgFDBrq34tHvLNNwn%2F2VGJUQ5G8B8x2tPSBw0pgo9cvnLKmYEazcztbBup0JK%2FyKkk1bIUhJHawb02Xcg2WBiYyk7tuordVFZguZ1aalkrhqC64ixzMI3rwL4GOqUBonKJu0jQpOhQZS%2B5ltw%2B5cFJOBvwuH1tnrZemuQTHkdmLQavQOfJl1iSGlAhqRIIc%2FsRgqrk7cs35ldT7Uz81g3jYf7YckzT92w2uF3JoJB2KRw7VHTUO2jjcigovshlgEXNdrPwkhmuGT0SZNmEcOXwac261kkqtW4h583DZnmKYC7dHI8%2FdoJPl5HWC%2BfCI%2Fe99MjRPRMtxYnfxdrrkzT2geic&X-Amz-Signature=f3b6ca8985d6fef2cffc89ca7930e819714e62b882bbc58a7deda5c8ec6e5eac&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
     ```bash
@@ -1018,7 +1018,7 @@ role에 대한 자세한 정보를 보려면 `kubectl describe role <role 이름
 
 4. kube-system 네임스페이스에 kube-proxy role이 부여된 resource는 무엇인가?
 
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/8a815837-d7ea-41b3-a083-8df4c0eecdff/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466WZDWJTWZ%2F20250310%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250310T140943Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEUaCXVzLXdlc3QtMiJHMEUCIQDu0lg74iCVRAyynMhxyUCaAU9Ns7vj72AYpCcnRa5lfAIgEGa1EL7SuvDW2mC16on%2FgFCS4jC8cMCq%2BIER9Qvkga4qiAQIjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDPhlZ7ahCzsaO4cyyircAwGLw6f82lzWJo16uZW5NaV1YWoj0brGhAqqL22dZNEGHrn2eKSjM6Bl157mIK6O04WgFysrvinzEVzxkbEGpkQ2fNOCTKHmDGgNfo7jrw1pUp4tZ1GKNSiJWgl51QRnXJ0TzhB75VP9o1mMNMKpzU%2FIp6UR8MNvVl5sCHYwP1YJrDmUZYXguCjuNCMnMth7fodNHUIngvszLs%2FZbozkwTyPm%2Fy9IV1pBAW%2B1QU%2BBWrvhNeU4Z8xzQKVpFeSGc%2BLXaLrpDmKHl2KnFBqZUJpsW5UGvpYm2rKV5hZgOjwiJKDmN0WMynkZX1lBOVeAWY6RETQ8Yx%2FZBF9QkyAt4%2FfUPS3IOprS8WqOZOJzaafIw2%2FmCA8nX%2BzajrBqdpzdy7HSD5z%2FIed925X01Wuq4jakgl2Kt8U8azioTySV0LWwgbtx9C%2FzDrcrf%2FwVFUUFEI%2FwtFWhDL%2FmSRA%2B2M8bFGkhJultT8OKhBBj7d1ZvNtcQF4%2BV%2B3HKuPSA4ypIetH8cVzvBw0cc57x4KO7Kdu1mr1n5R7Iqg9Q4xccQVrkSo5abnhlVslgrdWJi2vzD4QpvkA2A939hgRnUDXmDYy%2B1Mv9XhNHmxjkGBwVtOHt0Z2nKAkQrzRk0dNgtczim%2BMIPKu74GOqUB8Ylp39QwQMhg9vFOMVyUj9JokXW7KId09TTPZBb4pWTQquIoZ71wjQoXGE5aTkTgdBFypw96I3He9JzmxSydaeBwHxx%2B8txGZ4DORB0CzLLSVBP%2B4JgI10H94JiKYrif1KfDpEf8uLP8yylJBM7b0M6GhmlHrC3lJcyv4jeZU2lWoqeOIVTHAeGyJEOMQ%2FKqtF76C4lo6jSqHfLzcN7w83XFSb2a&X-Amz-Signature=bbae58726a6d4e7af4c6dc645c69d55c45f02b1ed5b995644f7fa191932008ae&X-Amz-SignedHeaders=host&x-id=GetObject)
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/8a815837-d7ea-41b3-a083-8df4c0eecdff/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466QLVQXZZH%2F20250311%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250311T141031Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEF0aCXVzLXdlc3QtMiJIMEYCIQDrbx4Nd%2BxQ7vGSqYCok3LDI0mQ%2FW%2Bk9rjwhg51OIH2VQIhAL0eX5gO0MErTlqVoSs%2BQ6okMSAZ9NgP0RrT%2B5p%2BRwZmKogECKb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1IgwID5VtPCZLR7vHdDgq3AMvr9r4qTNi%2FMfcwkiPDnuevZhiLZqsWFIEbIU4B%2F3VFHqv%2BydYRsgwGpfQtuBHJ6xBR7Mh2wdf8E7kZBfBDS7WpTD40a8a%2Fulk4fwlTeRsvWDZplftf5FwvNa%2FnnR1bexDyD1a%2FnXTmDoNg0JFlxQ2xSI%2FEJRgtm2649wY4%2Fhdc9%2FbwHIn0J2MOvcFHJX0O8SG%2BUvNFU7UvJj0d6YtUBwVNaq2TFT3hgmbCvs6cAes0IDqGX5vQi0J%2F2FZmpnz0F6azBgA9B6c5Z1oVvyAT6DKxeN%2BQ9AOK80BADhesOeL8LHCOE4jKdzAQBYDz9%2FK3BRDDZMZfEeQ8%2BD8SSBzYy%2BESv2dZDAZJjZQjyZwt%2B%2Fj5RcucBBSUeC6S02MTsj3O8NgWmxXKfvWZJok%2FPDGotP4ZkpAts878NQkyDDjaQUJH90sxKNhIqI7ABnYDWlIx5kOu%2FG2HY38XBg7ZvMzlJWEQrl4FVoMdv6Pt3M6uQu9l5R5Wr6sfHzDQ4pQN%2BlYbgToWJq27vARhByXu7xNaPeES4pPBiSFKEqB5BIBlxryIFD2y1S0dUB17dzOO0ThEvKXMN3FvivAgX1IDkJSaPx%2FxakYNxI0d5CWAy0dle%2FQ20eWXZjJdcnOphH4mTC768C%2BBjqkAT1FGc7hxqGHMSJBSfwh7EGYcDs39LNTEHFQkm3OfiEVkwCUVOlkI49XOD4qapzgXnUGx0Xvr9hGpnRVupvaDHL52229ybNwOJwQzsVXi2m9BYlpWsQZkQh8CJ0zhCr1ErnEVx0n5WiqVOAtBnlk%2BtA9mlorHvoKmLYo6anNHnaDwAQXpcgrFRx4jEqJxSmZEUQYjFITjVwmHxp%2FknoDdPbb1H71&X-Amz-Signature=eb9e98188075385e07c01615f619ccb117309d69dca21f1685b80e7e98905772&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 5. configmap에 어떤 action을 할 수 있는가?
 6. 주어진 문장에서 옳은 것은?
@@ -1030,7 +1030,7 @@ role에 대한 자세한 정보를 보려면 `kubectl describe role <role 이름
 
 7. kube-proxy role이 어느 계정에 할당되는가?
 
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/54e0a2d5-09b0-4613-9a26-fb1465ea0001/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4665UT3MOJV%2F20250310%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250310T140945Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEUaCXVzLXdlc3QtMiJIMEYCIQDF74Qx37aajH5vIB4aERtTehhPDltt1o80PAAPsgbFQgIhAJU6CUysdGV0DYymG2RVvbOzdSdYCDuQqKBGAfo3EsY7KogECI7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1IgwB4WWnAPhlp4aKaewq3AOhRAJN80pgZVycl%2B0cJLEOz4qQl4Ov2dUrFML%2FMz4u3fjncpdZtHA06%2BffE7wF1NRsTS0jtw48VXLGtB1uoA%2Bfli3ixe9MjWgeq9bPujdbZvRYoJW3kVMJLpd8%2F6KkBrhwTIIVYGbrA71x2k%2F3wDnufa9rnOn%2BNiYF34EPJN2hE6XwWEaOtjBhCS6n0fVgc8oTESiY4Wt91ohTHPEz4rHEpp8JKBp1fQezBxHiL9E4ti1Dt6QpWH%2FBWHHXxOaxwRp42i4%2FrWu7yd5oS5ZiupqF7jHe5kcwbllVq0IAnH8LlSfXgjHC6fNvcrpBar1d6mkKehKV4PpWo6NLy6u5WiC9T%2B6g1lWS2cT1%2Fif83RR9ma4bZT62w6iXiCjKvcEaatXoKlfQHLQqYxboyBadUKjF3v%2Bh%2B0jDEoaYEgiWtGyGzVPYvx9PHqcvcp1r3UCO0%2FWNPV9qkc%2FBWE1SLkZ1Rj%2Bgwwsgrb2S2nXAhAetmRf283K1ifmdkC9fRjx2PgbnqxXnkqKchZ%2FgztaqR3kcsG0OivfYwWBf4FPy2MnxRg00cXNJpK3QolBGv8qwep%2FAPLkCHNqPmhb%2F0CK9gu%2FzMw1K4wACHaMBqFYckh4DKTzfzzFijdF1QsVVFsxMyjCkyru%2BBjqkAaeslLei7PuKQsgfG3i7FuovFsPIXBuk5Nqi%2FwZqS14cuOUxTBgQ0KUqqrveyVthp6SWWELQt8qsT4xarI7chVjYSd55ZO5J3xU3mKAahpvEJo0sgalsa7JDGAu2toev5GvxLVUE3pDq24yq%2BgUg8h6MYO77KBgdLA1k%2Blb42%2BVj2ZmOBa51momwCbUpPLP3%2BwHPCF9KEDW%2FV9Ktm9ElMIA9PunH&X-Amz-Signature=338a047eb875ab777d62faca3ca2a0f85c3aa7599e9053d0b6839b6ae28d08b5&X-Amz-SignedHeaders=host&x-id=GetObject)
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/54e0a2d5-09b0-4613-9a26-fb1465ea0001/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466WDXRJCSY%2F20250311%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250311T141033Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEF0aCXVzLXdlc3QtMiJHMEUCIQCo5TY%2FmsgZD20C8zMXs6DGTE24b6R9rvnmzD8em1cHCwIgbvr8in8eLij1GgtSymbIJz4r7quhzbTB3Y4E6ug%2F6BwqiAQIpv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDHuC6oi94%2FvCW%2FgoFyrcA4DVIInBjuiXWEMHfGp0P97UTlMNyxsFk0fW4t%2FEbFiYU3DFHrt2ANGx%2FKT%2FAPl%2Bpg4ULS1qJwmspNZkOV%2BMcTsAmtxz149TaZWUZCHBhDEpr8RFS9W4VoGmduna2WGw8DBAuGPBsmGyjlzTQEn0JSgdoedimm04TQhGk6gzBjo0pIjB40ehmQegPD3Uups2Ffrn5ZLXPbqV9K2xE%2B2VBUsvE0L3CclW0ZoLt009RI9PKSmijH33vcTdb0bOcrWYjLUvyWR87kitwl5%2FQ2iZwexuM0Y%2Fh%2BCqhQGSwiS%2BMVjl66%2FATOSVvuWnxUU15rnoEVUUsV9Tqa06WBVGW0WHE3C3jttTFFG5TiLRAGCkW54tLklti1T5BezbEnNXsZxB2%2BWmRTHl7GIEu4Z%2FGF7GZXiuTZ9nX9dyNZyzKEosHxIegvaM5cSmRgendo6%2BDMrMeahPgvPjTNzBcywrvfFHCyvxe89pz3OUfSvElygwwIlKlW7sm4rZjNGcW6QHs%2BgRbl1D6U8x5SErbY7MAsVm6WkeiOdwSOTRwCQauD6020zapOM5EeSd6fXt0eEaFzaEMNYm3sJnK3Ol%2BJpV2NE9dzzwN1PJwkjQWTj05TPBENFS%2BUW%2FGbyQUDBfJ0TmMNrrwL4GOqUB2aVALG4POs%2FlmyK2HTODUWSK6k3XCMZ2uqViJEgXYM9bFawdBSbKkOCvCrcwir%2BqLYES4BdfOvDZGdP4XKh0uHINqMAtxJrfjnRhBNAdZ5vt1N2uT%2BJ9XWvyGheJzKhai2QrjV5u3ojCvVVTsN%2FwAiHVwXpVH2BsQ8%2FuNVkpjFJQjdHUrXB9IQypXH%2FaYgENJAaEEJiH7tTI6%2BdZoh3kBXuuXxKo&X-Amz-Signature=330a455ecc52ec520eb931a701c4dab2607573f6bc79157935b43c5a2352293b&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 8. dev-user 사용자 생성. User의 세부 정보가 kubeconfig에 추가됨. user에 부여된 권한 관찰. default 네임스페이스에 list pods를 할 수 있는지 확인.
 
@@ -1039,7 +1039,7 @@ role에 대한 자세한 정보를 보려면 `kubectl describe role <role 이름
     ```
 
 
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/0b1c42ae-2023-4508-a739-bcaee8156d7d/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4664WIGSF6G%2F20250310%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250310T140946Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEUaCXVzLXdlc3QtMiJGMEQCIHWYvJur1IRoNgPot%2B0llGg%2Bel4G0J4lu3AxcV1PgALpAiA%2BS28SqRFecCbBvGMQkSJ%2FP80yLvUX9vzn%2FrcgeGYt5SqIBAiO%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMtYiid1UfKKuf2jDPKtwDQpCaI%2FyYjkwBZPwjKFUoKFiIxs0ujv6tPv99aQ06XGv5mVcLatsQIdB15mYJXmaTRsHBKlq%2BXLuhQ7o6RvLEuZ4iovkErz1904Wvdlssni5SfwMCAYm6CHffAoY9DXhuryo%2BlbaWwIosJZl1Ev4RtGgWeL6rv%2BBHlrKSQFlVC%2Fnk0kpK93Dz5ZDBpArzU8CN6hfcaUAeuXnQNm4D8p%2Fdxcp%2Fdbf7Z9BDmSky258JqzImmwchg%2FqZfK7AWp87vlzPHzv8WUaszqDdjhLEH6hD2sxs1fMM6TaJAGkhZSe5pkMyCYhyXlaE83bvbylQQFgBDXc398tKTFlbIVj8Dl9qYksrHs3WCZCzmgn1Bms1OsQofKxyWynSyEX7jUCxj7bOWuKkJqiwUuBXLfooJpYnJGmiu2RfMAXte8ab3MmkuAZaxmkRufuxee7I2yJiOXUvAJroDUjXCqyYBx%2B0udvIcu0OdyuPATYfIax%2FG%2BSCRMZL4EYYez8yOnyS5RPbesotVy5mmV0a420Mq4%2FLbUPkJaa2LA4F%2FPHhYW3WRWs9ifsi8WPXhdOHRbKWQ6%2FsgxJou14ljnU%2BjR4IvSSPivp6n7fhDtXcmlE3cAy9gI4JpjWXVgtvgwMiMJlRNS0w4Mm7vgY6pgHjAjGGAmVFXjCevIh7ygBKHYiRJOhqe5z5MTR2pqMZW2j4SqQLRrZdE8uMvsWL2Ll9AqoSZqT5itO7%2BIK7gEnlu5meVBjBHIvGhLdq7JiIqvH1jA%2FI7SzTavwgM6dsBfU92tNu%2FNdqYPrmvHi8EFogRLHCUQj%2Bn%2FH2j4ApL40qN%2BmEV66sVEalg4YIlZp1KeE5IVdOl8St1CeYNuISS3Du8%2BPsp6SB&X-Amz-Signature=091bd29f73c5cd7313d29323dc53f17f22a6e5e86197881eea7ad85f3daf1626&X-Amz-SignedHeaders=host&x-id=GetObject)
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/0b1c42ae-2023-4508-a739-bcaee8156d7d/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466XZWUFBDA%2F20250311%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250311T141033Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEF0aCXVzLXdlc3QtMiJIMEYCIQDN%2FAPP5gzbC7ZEY%2F29ArE5GJ5RNImPf%2FCE2yBOVB6USgIhAJBt249lY2Z422JS1Uywp%2FPtThIDc9i8mvA02BINPjCXKogECKb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1Igyp99TVLBxLa8%2BpVSkq3ANVYxterhI%2FMhsCYM0HcilTMWWQK4pyv9OxWYpRhpiuyInsNFVHgtlGiphECYylpZ5xcHgJOS%2FWIFKR%2FWNFuyUtpxSnhFjYleK1pKqKkSAERr9DnVTQlkO3LJ98krpWZHd80l5Xi7%2BTz4dXBbz9qQuYUJdY52ejcwIDkf3XLXxnmhTvUpLa22cUCsu7%2BOyObbprO5I9CujEEFn8WwG35bpd7xSalVd9TmUwODawqRSOVIpcXLQX%2FcmCOrnespW99jWvjwmJz9YtvitnKfl6T4WSv75ZZtoFopRdXZEmTx5Xy7vCBJhsgs5Gh7pfHfQi4HWht79JpBwwOcNvr2JyoguzubAt53SNKTjpg%2FZjeBuSf7G0CpZZKWBBa6Lulw%2BnJBcTbNfYe3h8fCHtvLQp6PBN8Nav7u1siA8ke6ZoGKwT8g%2FW5wiQmxdf6zqEj%2FQguVIPfRPxCO%2B8xxIJkw81Uq8rXbu9Q9WFUbaqT7UqXrgrSTGUizZnZnqg8qEqAf3zP2QoKqcsMNh393jGY49OKj1dpfrV8S3J1QVN2FdJtewtp0cI1oKULpJ%2BBu0bkC0s730dzwOh%2Feeh4azCsCoGcIHs2pXdOQ0rAPgRvA9FGRdaKi6YMv%2FfSpS9Nkx%2F0DDo6sC%2BBjqkAdJpuk6cKDAGo4zCVHIbcjGWFfQtf0RNV7PRWbM8SI%2B43G479i9XzI6VoECXEPskNEVwrsKyjVDw5ocbOFdePjgWXGiNHkdCqUQUUzGN6yX%2Bj2i74qI%2FVP%2BEYcGBmd%2Bd%2BnTZgtQrz%2FKT1re3kONjcThh8Fm28HQkhxCLgx6MHjkCLqQovh6c%2Fi9KH3116hT1MCDkD4GKdCnWWjSkVu9nuDEqnxwv&X-Amz-Signature=697f522cb5f0a8bfb079317c14ac01b5307afde393cbd4bf947c9d5207417e9b&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 9. default namespace에서 Pod를 create, list와 delete를 할 수 있도록 dev-user에 필요한 role과 role binding 생성.
 
@@ -1162,10 +1162,145 @@ role에 대한 자세한 정보를 보려면 `kubectl describe role <role 이름
 ## Cluster Roles and Role Bindings
 
 
+리소스는 네임스페이스와 클러스터 범위로  분류됨.
+
+
+namespaced ➡️ pods, replicasets, jobs, deployments, services, secrets, roles, rolebindings, configmaps, pvc
+
+
+cluster scoped ➡️ nodes, pv, clusterroles, clusterrolebindings, certificatesigningrequests, namespaces
+
+
+role과 rolebinding은 namespace에 생성됨.
+
+
+네임스페이스를 명시하지 않으면 기본 네임스페이스에 생성됨.
+
+
+보고, 지우고, 업데이트하려면 올바른 네임스페이스를 명시해야 함.
+
+
+클러스터 범위의 리소스들은 네임스페이스를 명시하지 않음.
+
+
+`kubectl api-resources --namespaced=true` , `kubectl api-resources --namespace=fasle` 
+
+
+node나 pv같은 클러스터 범위의 리소스의 경우 어떻게 사용자에게 권한을 부여하는가?
+
+
+cluster role은 role과 같음. cluster admin role은 cluster 관리자 권한을 제공하기 위해 만들 수 있음. 유사하게 storage 관리자 role은 pv와 pvc를 만들도록 storage admin 권한을 부여하기 위해 생성.
+
+
+cluster role binding role과 사용자를 연결하기 위한 객체.
+
+
 ## Practice Test - Cluster Roles and Role Bindings
+
+1. 클러스터에 정의된 clusterrole의 수
+2. 클러스터에 존재하는 clusterrolebinding 수
+3. cluster-admin cluster role은 어떤 네임스페이스의 일부인가?
+
+    Cluster Roles are cluster wide and not part of any namespace
+
+4. cluster-admin role은 무슨 user/group에 바인딩 되었는가?
+
+    ```yaml
+    kubectl describe clusterrolebinding cluster-admin
+    
+    Name:         cluster-admin
+    Labels:       kubernetes.io/bootstrapping=rbac-defaults
+    Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+    Role:
+      Kind:  ClusterRole
+      Name:  cluster-admin
+    Subjects:
+      Kind   Name            Namespace
+      ----   ----            ---------
+      Group  system:masters
+    ```
+
+5. cluster-admin role에 부여된 권한의 레벨은?
+
+    ```yaml
+    kubectl describe clusterrole cluster-admin
+    Name:         cluster-admin
+    Labels:       kubernetes.io/bootstrapping=rbac-defaults
+    Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+    PolicyRule:
+      Resources  Non-Resource URLs  Resource Names  Verbs
+      ---------  -----------------  --------------  -----
+      *.*        []                 []              [*]
+                 [*]                []              [*]
+    ```
+
+
+    Perform any action on any resource in the cluster
+
+6. michelle이라는 새 유저가 팀에 합류. 클러스터에서 node에만 집중할 것. node에 접근할 수 있도록 cluster role과 cluster role binding 생성.
+
+    ```bash
+    kubectl create clusterrole node-admin --resource=nodes --verb="*"
+    
+    kubectl create clusterrolebinding node-admin-binding --clusterrole=node-admin --user=michelle
+    ```
+
+7. michelle은 이제 storage도 담당. storage에 접근할 수 있도록 clusterrole과 clusterrolebinding 생성.
+
+    ClusterRole: storage-admin
+
+
+    Resource: persistentvolumes
+
+
+    Resource: storageclasses
+
+
+    ClusterRoleBinding: michelle-storage-admin
+
+
+    ClusterRoleBinding Subject: michelle
+
+
+    ClusterRoleBinding Role: storage-admin
+
+
+    ```bash
+    kubectl create clusterrole storage-admin --resource=persistenvolumes,storageclasses --verb="*"
+    
+    kubectl create clusterrolebinding michelle-storage-admin --clusterrole=storage-admin --user=michelle
+    ```
 
 
 ## Service Accounts
+
+
+service account는 authentication, authorization, role-based access controle 등 다른 보안과 연결되어 있음.
+
+
+kubernetes에는 두 가지의 account가 있음.
+
+- user account - 사람. 관리 업무를 수행하기 위해 클러스터에 접근하는 관리자나 애플리케이션 배포 등 클러스터에 접근하는 개발자
+- service account - 기계. kubernetes 클러스터와 상호 작용하기 위해 사용하는 계정.
+
+```bash
+kubectl create serviceaccount <NAME>
+```
+
+
+service account를 만들면 자동적으로 token이 생성됨.
+
+
+service account 토큰은 외부 애플리케이션이 Kubernetes API를 인증할 때 사용해야 하는 것. 그러나 secret 객체에 저장됨.
+
+
+service account를 생성했을 때 먼저 service account  객체가 생성되고 service account에 대한 토큰이 만들어짐. 그리고 secret 객체가 만들어지고 secret 객체 내부에 토큰이 저장됨. secret 객체는 service account와 연결됨.
+
+
+토큰을 보면 kubectl describe secret을 실행함으로써 secret객체를 볼 수 있음.
+
+
+토큰은 bearer token을 사용.
 
 
 ## Practice Test -  Service Accounts
