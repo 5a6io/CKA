@@ -470,7 +470,7 @@ etcd 서버는 자체 CA를 가질 수 있음. 그래서 kube-api server에서 �
     ```
 
 
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/feaa57d9-69a1-477b-90eb-075854919446/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4664WUQB5HN%2F20250311%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250311T141023Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEF0aCXVzLXdlc3QtMiJHMEUCIQDsPZQ4WOL2%2BhfnLbSh2dZ8SRzrkFUlQuLtZv1b3TopIwIgdBlHqaqKOB5265kGHA0yPNAuk91IfWuKd4YSJTuc5L4qiAQIpv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDJK1TkCXi%2FiVewcOdSrcAzJrJbgorATV3mix67%2BMxJLSZDL2tawyzvS%2Bu%2BiEND55GV%2FbTMyBJG1s%2F%2Fi6onOZ6n2OfQ6psrix6S4xNy1dWITy1AAX3PIJO%2FVzK586UOUVt55Oos3GATijuD%2FiwY2BX%2BBOr9Je6EXvgkrB38okLWG2CBVbRPwteqaD%2BCLBg8g0GCuKqBtMRhZDiDTTTVEKxDIIB8J7ZPHaldCakQ3AKN8Lxl27HOpEEbz8i%2B4QFS7MCNvU4Mh7tKg4c8%2Bv2t4hYilI3cNAVAOT6vH7Gvxs4VvLZzawqZLW6DvGY40u4vMFmSsiV9n2CmVBx%2Fv%2F2UK0cLGNTNWWbhzuBnc2M7BSN2%2FjI1LX5oViAA1ai6%2B5nujYH55m3JyxbaI8Qy1yF1BvbSyfGJu%2F8zuBcM8C7qDKdXaOOZZPGmjX150qGUWTPYPF6%2BQL8TqE91%2FYNm9GlMi9OyMySB2gGECzpHlaVd%2BWqbzFZT7I7FMc4CFfIuEFHZwpGg533kVpQt4wOOB15uKcO5w4AMURmZCBRP%2FH0%2BzoRjh%2FoxVaSHRt%2BgRC%2FNfn76ultZC2dzMqQ%2BinpgXCEWmALwsKlaZI00eWxZgyw%2Fp7W90b%2FCXIN7c26TAAFuIWFj%2FbqOehvPBSutwDzNYqMPTqwL4GOqUB9e969C6x1WVD8rsAI1jar3NnQkuuld3Bhu1X7BigAVod7u%2BnozJkksvzTQNanGkmUef8pap%2FAXJMbmqwjqoQv3Zs50Gly0tUB2MWN0LYRCFo0nGB7YStWcUXsroMLQI3TUlnlrsOcYd6WS2EJLgL93rslALsqpeWZ7acaG%2BUprTEtEdiItWSpgF7smm56VdfTeKPs9zBEC3o%2BHW7oQFYMBzS7%2Fvw&X-Amz-Signature=3491024ecb94ea4e57f0eb784757418c6a0ba127566236c73f892ed2ab2414f4&X-Amz-SignedHeaders=host&x-id=GetObject)
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/feaa57d9-69a1-477b-90eb-075854919446/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466UQ7FEGKQ%2F20250312%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250312T140939Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEHYaCXVzLXdlc3QtMiJGMEQCIA5pJbU4f3y7Rwk1Y3HTHra21%2BUjIiQA3q2aJZuZufX8AiAKHaGXoTlSfLSYiTqYs8nlsHFdvy6RTj1evP%2FvCtkwxyqIBAi%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMItJX%2B0pJlqoOpYZGKtwDaZcXpLuDhwyWW1wgVp3yPHLINmoN%2FyVuho75nvEyQ2VO7WM3JhdF2R3vSdsPvoWmlnl%2FB6ku73xDkKf2JJq%2Fbxa7znDB8wEgV9ctJX5612egCucaYklOlX5gEI67CE7QdFkqI4TMkK0PrOx1ezXFcb1wwB7hZw0VqAzR2I%2BLlDK86H%2FmXjXI%2F9mlXBEkv%2B1VqDwKht63weh%2Bk2xcLHeTmYRt6PpMNEtRMxIZdrahbCmWMaOoATXtFG7K774Nvov92ytp8HY7C2RIKEidIivzQasVmEJPx0xtTrK%2Fx8vj1VbZjSsc3b2jaEDI2UhGCvf35GIAHqVXSCaMwQn4T3vVHWLpYMO%2FFIcSCkiHv1QGvzKVk2Khb%2B7Intm8ncdBgTeJzVtBfmf8EURWNmngAObJKVsOwb58G7d9NbS2JnQjQW5r4wn6qH%2BY%2F7OOyFOrG0%2BSx%2BThnP2OUQHKbVGgL1Md%2F%2BtSV0TUo0jBqy9gUnN9SZ7%2FMARlABOrJmcX3dU2Y%2BdorMcJsuFpGBrtJYRmZY5b7JXE316f7xKFuGeiCjaqijGteiQugESiKaqsORHB9HyGWZo25QH7IJ1%2BIEkuSHJ6pjGMcs2EU5nq0EmgwRR2y8hpTsG%2BZsr2GdN9MzYw%2FJ%2FGvgY6pgGRl%2FHvzzHtIMbcOTQSTkn7WtQO586f7apYT5poaD7L0EU55I3E3Xcs8S1DdErcUCkaoI6hThiBPCWaHOBHjjJ9s3ZmoTgEGRJ6K8u7XENhPj77kf46exrwP03HKk95Yf%2Bq8t1AAxSPWGWi6iA900DgfKlf6uzko1lHoJwxKkgGQBqn2qOVHbABCE3s4VVzkS715vXyqkERtiRjkkY%2BS5VpJKaXVv7c&X-Amz-Signature=774f8c9f122785d7c41259c75023d1e9915f11affff4adcac4eb72ee33915dd3&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
 ## Certificates API
@@ -778,7 +778,7 @@ contexts:
     원인:
 
 
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/10644a35-55c2-4521-88c9-6839c45c9ad6/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466WGQI56OV%2F20250311%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250311T141030Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEF0aCXVzLXdlc3QtMiJHMEUCIA4rDrIt%2F1PXU0DudplJJDtYdYnElYli3skH9hy3cyKYAiEAkt2A4wJnTbtXOe2Hny8VvY0SDLys%2BbSxprK9BzO%2BmtQqiAQIpv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDF7tw4%2FoWnpjBJorFyrcA92MsdWZTdOobTCCZt2rk1cDtKrLBnHaq7vkDL4pPvRLuGxgnmmgfrKOb1%2BtpLSs510rcejp7cARc%2B1IbtsLd7cdge%2BVgHOn8HwOlIUd7BA7Z9g06zhrnwL7vAyOid2wM2NpyIZIRn1Mz%2Fyty51iEbtMFRYUTfpDFQeQ9MyCmKXvJZn767vubdrOXzstSkTPsinArPC5w4PnmXWighpVuEKJCiS1Fyn%2Fng8D2KWDxoJ83r6NrA5W6cjc40h%2FJCgPzAsYXnFHtGDJcDxZqkNzq0YevtT25MrdLPdhZMueH9QLec6JZ7rozcR6xWl2nxmEiYO0cYBGUSnsVSORjC%2BTNZCf6CDnYf5jvUIPndbr%2B%2BPaBuu9LFoYNyg6uXS5TeIvno%2BynsQfkUDxtbb4aL1NGx%2FxXKbnBc0%2BpKb2ELpZ2gr%2B1HJqJgzEpbdZQ83w8tmTm4PpJ2EGXfJhhpkI1FKBJ2IBZHPxa30%2FY9xXlFX2Kz6Hb0wWXmpoI8EOJLdYn9yAD5DtBYtyKCFwk4dGkMUks7SOUYkgcjb7INDBRaV8mmcR4YUye%2B7A970aOoSPV7VkRxK%2FpLiDVu%2FMueufpN1tkrAHzLqbRdvlmDwEN7GwS4vwP%2F6%2FOFo%2BOtiz840tMNXqwL4GOqUBsBmPLitBavnxc%2Fj5xagQFrG48XmeVGwzpsvo2wCjfVpT07XP9E4Wx9R9kakreTCLp8eW%2FBKIXagwz34Dj4oH9a0YxHcYpo%2BlhnilwIRw3M6mkxjvgaZ%2BskdaqeBBj4DFP8ISsgIT%2F%2F1duaj5wjzoI4jNHLKlZ5msj4NomuW%2FcfXadHCulShbJzk%2BzY696AjrXoKhYvSdIS3JwcA11PmAn5J3G8rN&X-Amz-Signature=a15cb7219900ddf1df8fe66264debf3c1cac86a80e3117d7871ed980cbcdcf7d&X-Amz-SignedHeaders=host&x-id=GetObject)
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/10644a35-55c2-4521-88c9-6839c45c9ad6/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466QQ6A4PEE%2F20250312%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250312T140952Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEHYaCXVzLXdlc3QtMiJHMEUCIF3eb0TTRikQLGiIZaSdGD1uCwkOXSJFB5365Xqhy9P4AiEAjTXIBCJpVSBt0yCSvH3Rdv3SBEKj%2F8NTs%2BMbrSrCQcYqiAQIv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDKJKaOFbTr8SLJ6s1yrcA%2BkYw8zj8mH%2FJYHBkRLkTAUPD%2Fg%2FWFDTYrsyF3fcWrXILzYZyfRnL4u5VEsApVXlO01Iqh1gAs50LrAUonKoo6fq0Dtkx9edB1dJi3RW4%2BDi14ukTkMjM%2BP10jyLVetHQ04Fdg8NuvPPgePwYzK6rBy6KJ4MLpf6N%2BfW6M5rIAdHU8nYgenyB0GyG5pBKnuqym%2Bb7w8FKcS0p%2BTzpYUNqiy%2FKmFtAkWq1WoNvxLkbQqpvBYIbGkRq3qETPQa1XlJ0Y%2BYLq5DhkLlEN4AGPGCE5PEfUPM%2FY%2B%2Ft2KbGP%2B6s0MHng9ilX88wYiwlelD9qvhCmNH4yJl9ZhdxS5e%2BBxedDj4s8jU%2BPshvvZDYBcU7lEIZSolTia6ktf4pnEfhW0%2BKzqbRDDHyoLC68jP9zA7Ylcoe%2F5TNrI2Kg8ZWwlnZ158c8AX4GoV%2FRnwJwQ%2FQ6vO09oHgUwBlRAEujsMN6yFHaOB%2FDnWWBN2yjai9OfDXYkmYcTtrG1tvL5hbcM2%2FGe9MIDT9JNoc7UMxh2kYMD8Bi5lECZb5mez4M3zcLx0NrkusJSPnIsJb6xK4cmcjjLodbz9I48NHixgmpQ8og0D%2BRfb37KlcgOya7kn6PuUIOdbvLtjdVSb1xU1TakwMPiexr4GOqUBkc5KMQyF%2F%2Fazxk7hwoFcYJXHU38oHqG7WgCOTaKvnmJ6OwwOoCPo%2FBeI9Lavuus7VbUeRakVxR%2FIavz8uv3sZPasLTiCxJc%2FTaBPy2ATpwror4yWEiMbW9y1O4vOgn7p0XQB9ZhzQ09e4Mi2QJ3YSZFU1EEfXNodGAswVOQeBQo%2BUkoFSyJQOs59Q2tN9sEbyfO1p8DqH9kdEiHXYpx5YnxbEw2x&X-Amz-Signature=0ec1d88e7ae28b0ff1edeacf6c3c019a58ee3d6f2de454ac464ebd9a3c1388d7&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
     ```yaml
@@ -869,7 +869,7 @@ kube proxy는 클러스터 내 여러 노드에서 pod와 서비스 간의 연�
 kubernetes의 모든 리소스는 서로 다른 API 그룹으로 그룹화됨.
 
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/8dc7f1cd-62b8-488f-876e-bcde2373bb27/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466X7BKB4GH%2F20250311%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250311T141013Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEF0aCXVzLXdlc3QtMiJIMEYCIQCBE5U2YhfB5z9v78Jq7Q8yFIPJ3vLsQoIEBxrMrvNg3QIhAOY%2BzvnpZhocWVHZa4CnVks43lFP79uEHiqhDcX0rC7MKogECKb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1IgzPHKOuk1eIbCqhkDYq3AMMHRUSYj6IBBOw1Zm1v%2FiVOIuzrmmfay0DM22S9x6UbY8s%2BGhmv03p2hyogGJlZ8Ng8tJr4A%2FAPopy6%2Bi7D9hXyMJCsGo1ai3eIJ6PAYBsnRdZRDymZq2%2BqXcnpWMVSpPlE%2F2y4mY9DHmrWp68PBPfIzE%2FwnJc4%2FsgzQ8IHc5WjhYWKzLdIS1FhN7rggjn8lpb6VmSzPWjrFe%2F85LOmUBzZnTJKOFqSf7kkn2c81HrU1C%2F4rS5Ckgbhofr7CpUVJYO9en6Mv0mVwmgN6SfIZO5R1JWF8T24bUvlmFXVlagLGdXXj9YIryPfsZp7pzS2KrDKoKwKjTQ0peBYg3yAoLVJ8TwfDqjWvYS1gTYqp6wi8tG%2F4LDPiWg0RCSn3cgOoGAshkzXpxXUgssuWUh2bJ9OpvqAKqlltTR37LvnhOQrJlVbeGrq6YKs4FmfDHsrwlufghrTIfMo5sT4j%2B9VXXkMiqUgqMzEZ7rV%2FavlHCdbuBjEwNmn9L8Pld%2F5uZfXTDxCpLtPxrOwT3FPlIQwdmZ8SGrC2quZT1o5QrW90LKCTzA9ygSbbuaZGNPT2ooDeqUMrBN0Hmx%2BKg7kbBQt52KwkiOtqXi0CeZpdTtjtz8MS2DEt0xzV2BZocXVzDa68C%2BBjqkAUQYKtumZUFFJZmVbxAd87hPgeGBLREqzVeVZZ5aWUgehXTmFmmt8RftpRQ7yRweFl3TBt5SlPCcVzaclfxv52UDAJvZrSyY8jfyOK3HVh92640rxPUHkkP1pqsN696BnJR5sT3sGpordBuMkaL8bEf0KIYaXfCgS6u7q2Rvlh8xY4iFLxptSOpxQz%2FUxLk9d8mtjDYrJfFSwhZLzcb1%2FqoPwZl3&X-Amz-Signature=5a75e2b19b179d1d98929ac8125f72e62a15a153a77a4fb70fbdd5ddaf20f68b&X-Amz-SignedHeaders=host&x-id=GetObject)
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/8dc7f1cd-62b8-488f-876e-bcde2373bb27/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4666FSYGK2N%2F20250312%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250312T140925Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEHYaCXVzLXdlc3QtMiJIMEYCIQDZycPMVRA43jM8l5T0NuEvre1Jc4Nklzsliq3RG06tiAIhAIKqtXVPAWWa3uBPoYm01r7ZVAWKsu3gDiy2ZfB%2Fl5Z6KogECL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1IgxA8RXJ2uZSEoO3v9Iq3APRgh3w0oAmCA76s%2F6KVWg80qXrr8Sw3BH7yZNMT3q3Mhq7RcQlmAIsex5JU%2BzYXw7D9e5AN4Xw%2FgZNQZLIInQcm5EZi7Ctgsw3KiZyReZhvAUlyqNsmgUIS1KvO%2Fkp9zWwAyA71liI9RMSfPrJ8ZKPfcfMUl7gjf1B0BXq%2F6v2hGDxNYfY0KrDt2%2FV%2FtrxgVKaMPcEkA48E7jRlAxBVLa4MjKIoJS02soDWr1arKafKsomNhwM1bb2SK%2F5tQ8S8yi4CGIANiSTRnNTJGUxSPicLDIT5ui9eAKhFTkSEu9NkawdXMttq4mBjbSVlnrPW8mfCHR2jalmCSvPIpovpD0fR1uso2I8iGEFi6NNSRD21Qb5jt%2BrHrqFiUnkt%2BFHcHHe3NgzahoL621%2BhcUU2zANCe23315%2Fe8EI6CavE6I2W5FkB9xEauzVNro0K7ewQK06hMR8%2FlX8Yq8hNWvLrtRFLZJ%2BuY5cUkh2yYsJesofM6xl9ZynVQGao3APuWmwzxu1LIVwSMzEIpQ4DX4jGJav6F0dpZnpSvhDdAYFqDlZ3R%2FI5rv93DYm8lD%2FyGtRq8pt%2Bv%2FOeY12yTM425wdknc4AKkGEHJ%2B7%2BV1D2P%2FGllJALp52qwWm92V5F8YCjCzn8a%2BBjqkAegWuOA2lVIecbaz5KXv8ZxD0ykzO1dbybyX%2FuhnyGGprEvKKG6YTaLhyWXPECXeySv6pAJVJ37VwgZ3lVlHamGrjNmIjdUhAmaF9IYHba039UpBZotTRMY4Y%2BS1DO8r9dbErcqNVugwr8%2FBoVpHJs1E2ur1IsxHilDoplSYiZefwsFdvKUP5fP5MZ38efsEQlszOnvWI%2BCNdFjxjELtM1%2F5N0zp&X-Amz-Signature=b0c1773cb897cdeab96c012d2317d271f81d742ab317a85797b5b5658c6f2994&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
 ## Authorization
@@ -1008,7 +1008,7 @@ role에 대한 자세한 정보를 보려면 `kubectl describe role <role 이름
 2. default 네임스페이스에 존재하는 role 수.
 3. 모든 네임스페이스에 존재하는 role 수.
 
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/cb6d8fc6-de37-49d4-ae22-27d35fd6cabf/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466QLWPHALO%2F20250311%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250311T141031Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEF0aCXVzLXdlc3QtMiJHMEUCICSbJY2NAmlTNIT%2Bg9oU491rIzW7DlOz21XxL1gEo5jRAiEAqNiXxxOaJZ5IehmltlCwobRTaY4Q3ds3s5Uuusc90NsqiAQIpv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDCRQrTLDacM%2Fq2fjsircA6Dm7IdQLmBBB7VOXgXINrma02TEwXmZDlhujYuP6hWy%2BagVJ7WgpaNL%2B89mecA4zhEMbzq0rkvG4dN3ugneXfxt4ZuKE8Gf3PYOkXhx5a9W65AS94v%2FQ1WN4kfKriyGTce18PXZcH2o2GmIt0ayNOVszWcuDw0irGylcyjdK4i4Lg4dSajAbTENQBNPxbonAieIxVlkTivnZmcjTzzh%2BVe6qWVcpt2l5Fsm%2FGTsZMv1rdmZYkcXEkD0ELlY1I%2Fft27CaE8x87vaPH9tEJ%2BF%2F11X76wuNo1siZpHuyaeiNHdPnqAtYlGF4JKe1e5peTgIkrfBPqrIUtrr2vbisNETlNeOFpF5cmAnaQG%2FSGywf5b%2FvGo4c8lSNFdJaSYbxbEI7l6AG6Sfl0JWj6z9XErzbSUdKlUwIBATHUOBFQDMtoY0LAD4tMqe%2F1mUXZdfKfaGBfw%2BHwa1YzqWkO06xfi9xf%2B549GNHkbP5fumNzrPOKUizlqUkrc5pfLeIOdBiqwiPynmbzvsFVgFDBrq34tHvLNNwn%2F2VGJUQ5G8B8x2tPSBw0pgo9cvnLKmYEazcztbBup0JK%2FyKkk1bIUhJHawb02Xcg2WBiYyk7tuordVFZguZ1aalkrhqC64ixzMI3rwL4GOqUBonKJu0jQpOhQZS%2B5ltw%2B5cFJOBvwuH1tnrZemuQTHkdmLQavQOfJl1iSGlAhqRIIc%2FsRgqrk7cs35ldT7Uz81g3jYf7YckzT92w2uF3JoJB2KRw7VHTUO2jjcigovshlgEXNdrPwkhmuGT0SZNmEcOXwac261kkqtW4h583DZnmKYC7dHI8%2FdoJPl5HWC%2BfCI%2Fe99MjRPRMtxYnfxdrrkzT2geic&X-Amz-Signature=f3b6ca8985d6fef2cffc89ca7930e819714e62b882bbc58a7deda5c8ec6e5eac&X-Amz-SignedHeaders=host&x-id=GetObject)
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/cb6d8fc6-de37-49d4-ae22-27d35fd6cabf/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4666SILH27M%2F20250312%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250312T140952Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEHYaCXVzLXdlc3QtMiJHMEUCIQCzdcpa1taniQiuFMSPveNnrltCXYDSagT%2FAWc1rPUESgIgHPPl9J3RTl7aIyU%2FCrFYVnF4ysBf8p68DWMPww3q238qiAQIv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDIao9VPRlRt7sIkTWCrcA6LgAw85R7G6%2FOkGEzm1HCkezXuSGpbH3V6C6E%2BvIsN4DqAk4oXk%2FjGGgYsKUmakKB4UYZr7Y7xY7WvbCGuEdhVZ%2FW0%2ByMbhRuCGFVARDJ33U44aAAiXcVRyCLgdlOepLumr453XxrpsrR8KXS%2FbxIO6FThpLJtLDRb3l%2Bpsgut2POofBqzrkIE4c%2FKbf%2F98Bwg0fkdDO2jxNb1Hco%2BOA4P0hydwx1JAwswYvYVHMgIDKTdEVYTicSfPC6iAXj3iS9kITTngaQRjoX6ArgKdHttbMQ1W%2BWDTMDz%2FZvRwNdErYq6GWQeIrjI%2FOSIAKlUVH45%2BWwII3UuJDHoIvMsVaOafJgmQZgPiG8zqpYt9nbDo%2F2BQfCzRAmf9%2B6T6J7qyRrC0I5IQFXLmSFZCC%2FmLkOhhifpkFQPvSnLvatLGNWoQBGgtcIaCOin%2B6%2FHyoJn%2B5VudhaWlrU7u%2Fx4uQtwrKXe1xcSZtuOtZ%2F0bqoL5TXdy1ikQ6ZbH%2BmbYjleX2RyLwhyN4LUoL5cXQmoLTmO%2BoAln3lWfXI5JBZqejPU24XU%2BCM6vxl25GFfbwkcbFOLk%2Fr0%2BNRF0sOTm%2FTqKXjN7q7N9VCgb5k8Nc1wCZ6eYl4tLXM8QmlvEkwzn7nj3MPufxr4GOqUBCsXkP7tq2SDr3OHZX1pdX%2FmUUXOLvQ00lMqNWQ4EiHMmv7wJcZrE%2BD9vW9WhcRZoYytHoT3rx19gv9tGBanmGAn%2BIsGMhLy9U08OP9SugDtpi07PP6TsHrfrvGxhtp7sWucaa7K0MymG3ioisrgs56LMOno8oAcf5RbWGGdEPAicITgIWG5884YZU%2BDgwDZQ4ZJdunhZQxmZS10Q60y7ENtdXXmb&X-Amz-Signature=111ba40a7863990f1cae272d09bd231f2701972ba3b5351166b037bab8f3bad5&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
     ```bash
@@ -1018,7 +1018,7 @@ role에 대한 자세한 정보를 보려면 `kubectl describe role <role 이름
 
 4. kube-system 네임스페이스에 kube-proxy role이 부여된 resource는 무엇인가?
 
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/8a815837-d7ea-41b3-a083-8df4c0eecdff/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466QLVQXZZH%2F20250311%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250311T141031Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEF0aCXVzLXdlc3QtMiJIMEYCIQDrbx4Nd%2BxQ7vGSqYCok3LDI0mQ%2FW%2Bk9rjwhg51OIH2VQIhAL0eX5gO0MErTlqVoSs%2BQ6okMSAZ9NgP0RrT%2B5p%2BRwZmKogECKb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1IgwID5VtPCZLR7vHdDgq3AMvr9r4qTNi%2FMfcwkiPDnuevZhiLZqsWFIEbIU4B%2F3VFHqv%2BydYRsgwGpfQtuBHJ6xBR7Mh2wdf8E7kZBfBDS7WpTD40a8a%2Fulk4fwlTeRsvWDZplftf5FwvNa%2FnnR1bexDyD1a%2FnXTmDoNg0JFlxQ2xSI%2FEJRgtm2649wY4%2Fhdc9%2FbwHIn0J2MOvcFHJX0O8SG%2BUvNFU7UvJj0d6YtUBwVNaq2TFT3hgmbCvs6cAes0IDqGX5vQi0J%2F2FZmpnz0F6azBgA9B6c5Z1oVvyAT6DKxeN%2BQ9AOK80BADhesOeL8LHCOE4jKdzAQBYDz9%2FK3BRDDZMZfEeQ8%2BD8SSBzYy%2BESv2dZDAZJjZQjyZwt%2B%2Fj5RcucBBSUeC6S02MTsj3O8NgWmxXKfvWZJok%2FPDGotP4ZkpAts878NQkyDDjaQUJH90sxKNhIqI7ABnYDWlIx5kOu%2FG2HY38XBg7ZvMzlJWEQrl4FVoMdv6Pt3M6uQu9l5R5Wr6sfHzDQ4pQN%2BlYbgToWJq27vARhByXu7xNaPeES4pPBiSFKEqB5BIBlxryIFD2y1S0dUB17dzOO0ThEvKXMN3FvivAgX1IDkJSaPx%2FxakYNxI0d5CWAy0dle%2FQ20eWXZjJdcnOphH4mTC768C%2BBjqkAT1FGc7hxqGHMSJBSfwh7EGYcDs39LNTEHFQkm3OfiEVkwCUVOlkI49XOD4qapzgXnUGx0Xvr9hGpnRVupvaDHL52229ybNwOJwQzsVXi2m9BYlpWsQZkQh8CJ0zhCr1ErnEVx0n5WiqVOAtBnlk%2BtA9mlorHvoKmLYo6anNHnaDwAQXpcgrFRx4jEqJxSmZEUQYjFITjVwmHxp%2FknoDdPbb1H71&X-Amz-Signature=eb9e98188075385e07c01615f619ccb117309d69dca21f1685b80e7e98905772&X-Amz-SignedHeaders=host&x-id=GetObject)
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/8a815837-d7ea-41b3-a083-8df4c0eecdff/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466V7RAXSPS%2F20250312%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250312T140953Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEHYaCXVzLXdlc3QtMiJIMEYCIQDF9AxfjuET3TF8PuD4Ap6Bi%2FSG6KeUQbmzVI24YuKkwAIhAJ3gSugh6mQttgxTXIJW8dJrh8F8tiu2Fjn3xDqMkwvaKogECL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1IgwCR41EjH6sh7fPPOQq3AMYJwLXGAznEyQAg0%2FsOQ%2BDhQMpn22pn4fpO49mQiA83L2vY7IJAg5UvkKwoGYN7Kuvx23JpxU9sXS9tfvzirMfY7CrOk96ZPKdVhrULmh0csVPNy%2Fe8WJOLOKwT3GT87ncvs3hi47uLAWnriCFrMen%2BbObruwXuK6M%2FTrHxaXTtzTbMBJUjUf41bRfx9NzLX9IdpHtPaIRiEXfrcJbOi1y9wcB8XmmRozKaT7IkZOBgj%2Fw86pseTj0mKlm3ftZ1zQVoOtVu85cuu%2Bic7kW6bqChQNtJckl1RMijQUFeaTFBGgJLSsav5I1lr6JbAkNmxU5Vyu23yGQ6369znA0yD0o4ViKzLuF4P0eP6EIIeOM%2B89isPNwd5wkSvENCkv4lZoeSxBfElF5%2FShAPfja118GOVJxMZUsWx1wC7WDeHB%2Bn395FD63p34ZI79BZg8JonGR2DSmz%2FlvTd6o80nbs%2F4g%2BEgM9amf01n4akWY1iLzVOQa6KYIKKQn788ZLATXyAYAlYX6Tmd64YeJ9%2B6vayMqLSIUou8vZL8Lsdpuei4zc5yvPu68q%2FoKWSBkacRJvgRu2C9D7%2Fe9nT44GhoEeXCwjysv6BbJ3DTmc1imyuEptiUxBEyuoS9A49Eu9DD5n8a%2BBjqkAQvE0air6mPAEECOKifx28aWJcp82GWQSSSkkOLnlIThn65EkbQPrj%2BgqSbKkmmQSZjXcqstYX%2B%2FZ0p5ulGC0tWPP5PtjRG93eylw7N%2BPeSbErw%2Fi1lEbwp%2FSTlHXc80n3i9AuFzH5uIdnP4Jrr8glfeASVb4ulSEkw5%2Fhdp%2FSPsHF10JK3QE80%2BpEgh%2B88ejnaOxXLDyFoEzyjI8ooW1jCuY6VH&X-Amz-Signature=5ff40e01a4f90023e6190ffa1f9844192d7a498bacbc8e29fe4e07266c593ba3&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 5. configmap에 어떤 action을 할 수 있는가?
 6. 주어진 문장에서 옳은 것은?
@@ -1030,7 +1030,7 @@ role에 대한 자세한 정보를 보려면 `kubectl describe role <role 이름
 
 7. kube-proxy role이 어느 계정에 할당되는가?
 
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/54e0a2d5-09b0-4613-9a26-fb1465ea0001/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466WDXRJCSY%2F20250311%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250311T141033Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEF0aCXVzLXdlc3QtMiJHMEUCIQCo5TY%2FmsgZD20C8zMXs6DGTE24b6R9rvnmzD8em1cHCwIgbvr8in8eLij1GgtSymbIJz4r7quhzbTB3Y4E6ug%2F6BwqiAQIpv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDHuC6oi94%2FvCW%2FgoFyrcA4DVIInBjuiXWEMHfGp0P97UTlMNyxsFk0fW4t%2FEbFiYU3DFHrt2ANGx%2FKT%2FAPl%2Bpg4ULS1qJwmspNZkOV%2BMcTsAmtxz149TaZWUZCHBhDEpr8RFS9W4VoGmduna2WGw8DBAuGPBsmGyjlzTQEn0JSgdoedimm04TQhGk6gzBjo0pIjB40ehmQegPD3Uups2Ffrn5ZLXPbqV9K2xE%2B2VBUsvE0L3CclW0ZoLt009RI9PKSmijH33vcTdb0bOcrWYjLUvyWR87kitwl5%2FQ2iZwexuM0Y%2Fh%2BCqhQGSwiS%2BMVjl66%2FATOSVvuWnxUU15rnoEVUUsV9Tqa06WBVGW0WHE3C3jttTFFG5TiLRAGCkW54tLklti1T5BezbEnNXsZxB2%2BWmRTHl7GIEu4Z%2FGF7GZXiuTZ9nX9dyNZyzKEosHxIegvaM5cSmRgendo6%2BDMrMeahPgvPjTNzBcywrvfFHCyvxe89pz3OUfSvElygwwIlKlW7sm4rZjNGcW6QHs%2BgRbl1D6U8x5SErbY7MAsVm6WkeiOdwSOTRwCQauD6020zapOM5EeSd6fXt0eEaFzaEMNYm3sJnK3Ol%2BJpV2NE9dzzwN1PJwkjQWTj05TPBENFS%2BUW%2FGbyQUDBfJ0TmMNrrwL4GOqUB2aVALG4POs%2FlmyK2HTODUWSK6k3XCMZ2uqViJEgXYM9bFawdBSbKkOCvCrcwir%2BqLYES4BdfOvDZGdP4XKh0uHINqMAtxJrfjnRhBNAdZ5vt1N2uT%2BJ9XWvyGheJzKhai2QrjV5u3ojCvVVTsN%2FwAiHVwXpVH2BsQ8%2FuNVkpjFJQjdHUrXB9IQypXH%2FaYgENJAaEEJiH7tTI6%2BdZoh3kBXuuXxKo&X-Amz-Signature=330a455ecc52ec520eb931a701c4dab2607573f6bc79157935b43c5a2352293b&X-Amz-SignedHeaders=host&x-id=GetObject)
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/54e0a2d5-09b0-4613-9a26-fb1465ea0001/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466YEEOG3ZN%2F20250312%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250312T140953Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEHYaCXVzLXdlc3QtMiJHMEUCIQCpsStggW1XdPiC%2B9Gu8rLDyIV1%2BSdxNrvCt7BaI2paJgIgd%2BwPfQK5F%2FXkfXmIkuUWrTBkSjGNTsRwP%2BqGZUktZe4qiAQIv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDOKodjSos%2FiE8DsVLircA7GcBbJqeFLdKdsyy2kEjP7FVeYVtE%2FT1buMDahoKiXE1rJJ6g%2BFIHXI95vkC1R1rmEnVqnV7hv5gngIANUovuMJnO5ZVGZrl06CSg922asjR5%2Bx1VOOKIKOAgwWIgDJfroMgBKvwFn%2FMeOfpdaWbt5YwDom3tLsXaYm759uQ6orS5%2BF50KlRWB7ka22gOHpLk10ATnX%2FzfZDBJB6AkJ%2FuBsN0Rug8ZNP6lCjYnND%2BIf0142zsVoKcz7eCIiSMa4lEWNmijxK5aU%2Fku0%2BljA2fclL5fHFyNnKR6qkowMlA%2BVNxJRyS%2F%2BPUJrTsBlA5nTL1JZQpoSYTPIyMGoZmws7pwS2mZ4%2F3vJF%2FZNjgSmJBeGfXOgQGXCSpLdsaSvN5712jt3nOiUpZ8176s4GisEsaLjf9a1Aukfr%2BOIfxKo9XrFV6UneOn8oq34Xb%2F410GrF%2BVEISoqTZRYlCF4opSWeq28wG1o8DzMHslwCv7Cv7vzY4gv6uENj%2FK85edWgTY8Oyuu6%2FTU8WSWJdwlv9dKctvWgG7gyPGlBeYksfrjritvCfFcnPOTObcFIR60pFwgKIgRocjcp8g2FsroK6ICpNstnACae3jKS9gz93arxTAhSAXtN4jxU0D79jcVMMCfxr4GOqUBDlgau1RY%2B1MHgQtE7uLr8WujbwhBOR490m%2BkbAph28Aa3kgxrVzwgeVADc1GZXptbHpG%2BBmYLsffz1%2Bzl0ulGcG3wGueXr3TgRbGvMeI%2FU2e8AsUvCiF77HG%2B%2FI9GU8C4mkdMl9Dxosy6VUjflhSx0JJJWA9eNJUazjfWVewKRiWa4gNHNB%2BhMc6cSjNn9jI8DFyihZ7lXSDyDIbl63LGrw%2FF5xP&X-Amz-Signature=1aa4e706fb12ebc535f8dff522fc5d1616fd81eb33027c2145847ec224256ac6&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 8. dev-user 사용자 생성. User의 세부 정보가 kubeconfig에 추가됨. user에 부여된 권한 관찰. default 네임스페이스에 list pods를 할 수 있는지 확인.
 
@@ -1039,7 +1039,7 @@ role에 대한 자세한 정보를 보려면 `kubectl describe role <role 이름
     ```
 
 
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/0b1c42ae-2023-4508-a739-bcaee8156d7d/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466XZWUFBDA%2F20250311%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250311T141033Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEF0aCXVzLXdlc3QtMiJIMEYCIQDN%2FAPP5gzbC7ZEY%2F29ArE5GJ5RNImPf%2FCE2yBOVB6USgIhAJBt249lY2Z422JS1Uywp%2FPtThIDc9i8mvA02BINPjCXKogECKb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1Igyp99TVLBxLa8%2BpVSkq3ANVYxterhI%2FMhsCYM0HcilTMWWQK4pyv9OxWYpRhpiuyInsNFVHgtlGiphECYylpZ5xcHgJOS%2FWIFKR%2FWNFuyUtpxSnhFjYleK1pKqKkSAERr9DnVTQlkO3LJ98krpWZHd80l5Xi7%2BTz4dXBbz9qQuYUJdY52ejcwIDkf3XLXxnmhTvUpLa22cUCsu7%2BOyObbprO5I9CujEEFn8WwG35bpd7xSalVd9TmUwODawqRSOVIpcXLQX%2FcmCOrnespW99jWvjwmJz9YtvitnKfl6T4WSv75ZZtoFopRdXZEmTx5Xy7vCBJhsgs5Gh7pfHfQi4HWht79JpBwwOcNvr2JyoguzubAt53SNKTjpg%2FZjeBuSf7G0CpZZKWBBa6Lulw%2BnJBcTbNfYe3h8fCHtvLQp6PBN8Nav7u1siA8ke6ZoGKwT8g%2FW5wiQmxdf6zqEj%2FQguVIPfRPxCO%2B8xxIJkw81Uq8rXbu9Q9WFUbaqT7UqXrgrSTGUizZnZnqg8qEqAf3zP2QoKqcsMNh393jGY49OKj1dpfrV8S3J1QVN2FdJtewtp0cI1oKULpJ%2BBu0bkC0s730dzwOh%2Feeh4azCsCoGcIHs2pXdOQ0rAPgRvA9FGRdaKi6YMv%2FfSpS9Nkx%2F0DDo6sC%2BBjqkAdJpuk6cKDAGo4zCVHIbcjGWFfQtf0RNV7PRWbM8SI%2B43G479i9XzI6VoECXEPskNEVwrsKyjVDw5ocbOFdePjgWXGiNHkdCqUQUUzGN6yX%2Bj2i74qI%2FVP%2BEYcGBmd%2Bd%2BnTZgtQrz%2FKT1re3kONjcThh8Fm28HQkhxCLgx6MHjkCLqQovh6c%2Fi9KH3116hT1MCDkD4GKdCnWWjSkVu9nuDEqnxwv&X-Amz-Signature=697f522cb5f0a8bfb079317c14ac01b5307afde393cbd4bf947c9d5207417e9b&X-Amz-SignedHeaders=host&x-id=GetObject)
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/0b1c42ae-2023-4508-a739-bcaee8156d7d/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4662VKLB4WV%2F20250312%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250312T140955Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEHYaCXVzLXdlc3QtMiJGMEQCICIKTal3vD%2FNiXCLh7Yte3TEFq4iv5gX6JwwydFJfNNcAiAtvX5wgBB3DEyDZ2omrc72cGR9PNxcWao%2Fky234NNSHSqIBAi%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIM3gJF05KRWWlVdlFoKtwDFRk4xYNekbwNv3T7tcP%2BhiaZS%2Bv1bOynpu8cclteOffPKDlE9nFr4nI8W3FFUCu3BzPF3mfj3mu5F8Q%2B6zZ4MU6ekssf%2BUdjOp8s8wtTNpqvgODSMc%2BE6jWNGivgV8t%2FIOGMUt04epFCUQalROzsRY1kmD%2Fgbn829OKlCkeHwH2IGu%2BUvhR5fsr%2B18y5G7GmJ8JShE42YVSOFFGScpR63g4O%2BhOASa0GzUvoDd9uPZm82CFf4L1fN47Sik1LJUVcLbEENqt%2FWwWjYz7%2FaMNOQTNQUv6GXCwRcNwci6JfjwTZ5PdvE0QrWiBzNr8XiVXKthSlveKJK62lB5xWiqJbxbTAa6ISgEphLXIJKD2w50UDY%2BtNfWqNHUhVA7eI2Rt76Rq%2BNXOlZAFI8w6TDHkWwaQJAQU6Vr%2BOfURqer72hGySvkvUuN5nydcpGz%2F0iIanlNjNs8x%2FUrER58VTTOUArHaPUWvmn4Org63Vw58TSV7%2FeUwL22L6c8s%2F46D3KLbt9HHtDMpo%2FoWDdgAOAOtIrW%2FR1nA8T1CRJDzc%2FBTTtRj33oB5thGyrp16rzhovUrp3yfH%2FFBHaoAMKC86tkwoRt1Fxh5SgVx%2FX13XcXM1V5fcQuOUaQ2nG2qxh%2BMwpZ%2FGvgY6pgF8GCBH%2FB6yil7C8BtetL1vuDpVMW2A2YxxJSvtGzI9kGA7YcUUIN0JOdv%2FOpDvZWQyqn64E%2B0ToCmMBVNyBnmG6ScUnxDbDDKiPgXbQ7a9EGp6%2BF6RyJAnBjKBtVA210MxOTIZ3zQLtaG%2FnbZkGZE6b2vqqhqIQ4HRDIYd0W%2B82%2FKQTkSN%2B61lfpZvDg9%2Fmbm1jHRrYZ%2B99qaA9uYBm4hQFuSCqZgo&X-Amz-Signature=ba581c3294be1b46de08420db0fec909bc2e9b799e9d77270c4454ad392def0e&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 9. default namespace에서 Pod를 create, list와 delete를 할 수 있도록 dev-user에 필요한 role과 role binding 생성.
 
@@ -1300,13 +1300,179 @@ service account를 생성했을 때 먼저 service account  객체가 생성되�
 토큰을 보면 kubectl describe secret을 실행함으로써 secret객체를 볼 수 있음.
 
 
-토큰은 bearer token을 사용.
+이 토큰은 Kubernetes API에 위험 호출을 할 때 authentication bearer token으로 사용 가능.
+
+
+예를 들어, curl을 사용하여 Kubernetes API risk call을 할 때 authorization header로 bearer token을 제공할 수도 있음. 맞춤 대시보드 애플리케이션의 경위, 토큰을 복사하여 필드에 붙여넣어 대시보드 애플리케이션을 인증. 
+
+
+어떻게 service account를 만들고 사용하는가?
+→ rbac 체계를 사용하여 service account를 만들고 올바른 권한을 할당할 수 있음. 그리고 service account token을 내보내고 Kubernetes API를 인증하기 위해 third party 애플리케이션을 구성하기 위해 사용 가능.
+
+
+third party 애플리케이션이 쿠버네티스 클러스터 자체에 호스팅한다면?
+
+
+예를  드렁, 커스텀 쿠버네티스 대시보드 애플리케이션이나 프로메테우스 애플리케이션을 쿠버네티스 클러스터 자체에 배포할 수 있음.
+
+
+이런 경우, service account token을 내보내고 그것을 사용하도록 third party 애플리케이션을 구성하는 전체 과정은 third party 애플리케이션을 호스팅하여 pod 내부 볼륨으로 service token secret을 자동적으로 마운팅함으로써 간단하게 만들 수 있음.
+
+
+Kubernetes API에 접근하기 위한 토큰은 이미 pod 내부에 위치함. 그리고 애플리케이션이 쉽게 읽을 수 있음. 수동적으로 줄 필요❌
+
+
+기본적으로 존재하는 service account가 있음.
+
+
+쿠버네티스에서 모든 네임스페이스에 대해 default라는 service account가 자동적으로 생성됨.
+
+
+pod가 생성될 때마다 service acount와 token이 자동적으로  volume으로 pod에 마운트됨.
+
+
+대시보드 이미지를 사용하여 pod definition file이 있다고 가정.
+
+
+definitinon file에 secret이나 volume 마운트가 명시되지 않음.
+
+
+그러나 pod가 생성될 때 kubectl describe pod를 실행하여 세부정보를 모면 볼륨이 자동적으로 default token 이라는 이름을 가진 secret으로부터 생성될 것을 볼 수 있음.
+
+
+secret token은 /var/run/secrets/kubernetes.io/serviceaccount에서 마운트됨. pod 내부에서 ls 를 실행하면 세 개의 파일로 마운트된 secret을 볼 수 있음.
+
+
+실제 토큰이 있는 것은 파일의 명명된 토큰.
+
+
+file 내용을 보면 Kubernetse API를 위해 사용되는 토큰을 볼 수 있을 것.
+
+
+기본 service account는 제한적임. 기본적인 Kubernetes API 쿼리만 실행하도록 허락함. 
+
+
+다른 service account을 사용하려면 service account 필드를 포함하도록 pod definition file을 수정하고 새 service account를 지정.
+
+
+기존 pod의 service account를 수정할 수 없음. 삭제하고 재생성해야 함. 그러나 deployment의 경우 pod definition file을 변경하면 배포를 위한 새로운 롤아웃이 자동으로 실행되므로 service account를 수정할 수 있음. 그래서 올바른 service account를 가지는 새 파드를 삭제하고 재생하도록 관리함.
+
+
+pod spec 부분에서 `automountServiceAccountToken` 필드에 false를 설정함으로써 자동적으로 service account가 마운트되지 않도록 할 수 있음.
+
+
+1.24 버전부터 service account를 생성할 때, 더 이상 자동적으로 secret이나 token access secret을 생성하지 않음. 필요하다면 service account에 대한 token을 생성하기 위해 service account의 이름을 뒤에 붙여서 kubectl create token을 실행해야 함.
+
+
+정의된 만료기한이 있음. limit을 명시하지 않으면 기본 1시간.
+
+
+1.24 이후 버전에도 만료기한이 없는 토큰을 이전 방식의 secret을 만들고 싶다면 metadata 부분의 annotation 내에 지정된 service account 이름의 kubernetes.io/service-account-token으로 secret 객체를 만들면 됨.
+
+
+> secret 객체, service account token을 사용하기 보다  request API를 권장. 만료되지 않는 service account token과 달리 더 안전하고 lifetime이 제한되어 있기 때문.
 
 
 ## Practice Test -  Service Accounts
 
+1. 기본 네임스페이스에 존재하는 service account 수
+2. 기본 service account가 사용하는 secret token은?
+
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/b19a7bed-8e3c-4bd2-9f67-86fba0324a8e/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466SMGWM42L%2F20250312%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250312T140958Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEHYaCXVzLXdlc3QtMiJIMEYCIQCTU%2FEUyqZZesnWDPkN1hOCzUmQtuKHQHi0TecOZEbM4gIhAOI57%2BNQ47D07yPXA4pWv7FIH%2BfdoRWHmx88lgvl0Nu%2BKogECL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1Igzz49ts8AAJu%2Buo7JUq3APeXBUxfQQRyYPhZzG0Z5kzqD3xe44r2oxShbN6SPNxBY5x34pcAe4FhMd7HG10%2Fdzh9aTDuND9x%2BXKuhCJzapfXtKzL5b3pSvntv%2BvcMirnqTZak%2BjwvktvEjD25IRfpgrt1LWc4VNwx7yqdJxHdtJTxP%2BfUB8ypMN9J2ugH5Ge6NyO%2BJPX5IeYqcb5COngPQvvSdaobBZTqEGQSnRFdfuEBa%2FyVdGlyRswozbmj12Ohx7%2Bjt2DJkryUqcHpZOm5os7maWMqVUwYJqcxGNYtd%2FDpEHng33EbKq%2FxU36c0kzqT8P1plv%2BOUvQMs1LVbqlc02ER48oMn8RTxlX%2BEfYYU86QVpK6HxJ5Wax%2Bq%2FgFkJyaMtH5u8fXjY2RFzS8Ruf2tX665e9CV7BO%2BOqG0FVB%2B%2FQJXAUAs6H3a4SR1EARJ3aEeL4PcORvGiokOyczp6YYSFDdPHIenEPNoy95aFRXIVtqNz0k5A7P8S9cmqB7nKPXeZYWBvYhBicq3EwWPjaxfOBNZazvAe%2Ff%2F3%2Fazd%2ByVAGzNdit1F17%2BwBkVtitV49hSry5xKQ%2Fm%2FAe%2FH5bVTVO%2F4KjqfFAPTTUGBhZ%2BHxeBVXPXs5H9Ii%2BFZOSeqYq0fpLLaV3iCjUA6p%2BK1zC%2Fn8a%2BBjqkAV%2FiV9cuTJCk7xxkpewuFL9F%2BhXAN3GKJrXZGqAWQrq27AGDCEHAg98sJrLkkttHykTYuQCaNGZqYh3d37RT9ABrUquSD7Mumw1G%2F9%2BCXUamYepvJvccsZAFmecMFNAplPc6sRf7dbFZk91HmSUlwlrtYJIhidUbIlPPfx0yQf2BT9y23u9Lee%2Bb8WRP1Xt5BJ6ynDBK3g0fHZzKcO%2F0I4k9S7%2B1&X-Amz-Signature=5e0463bde39a1f004bbf40ee410e89e760f72da458a9d005ce974977d025bef3&X-Amz-SignedHeaders=host&x-id=GetObject)
+
+3. dashboard application 배포. deployment 관찰. deployment가 사용하는 이미지는?
+4. dashboard 상태는? 성공적으로 로드된 pod 세부 정보를 갖고 있는가?
+
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/21e35c7e-f93c-495a-8768-11ef51201564/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466QBE6WQN2%2F20250312%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250312T140958Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEHYaCXVzLXdlc3QtMiJHMEUCIE3SaweLyrZTgcVENNMzBrwxMsKrM1fRvC%2FqME1cDk%2BqAiEAtKtv2QfaiRSc0WYs1fq1xWevqQrz8Lc9iCrZyX%2BiWxQqiAQIv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDOgbnXHZnXCZZN%2FyPSrcAx5gl3oviTJBvVSO%2BhSjt%2FPplb4wpVJSUIyFHH9nPE01kvHPsV2vG6D%2FTQ8YkBJLMCC7l3Ztr7tFjSFFYyu0UDkBnh%2FDk%2BNlsysd6EcGaQ8y35lCouaRCpHcSwbd1kCf0rGGjUI4e22Lz%2F%2FdV9B%2BhyWp%2FGcj%2F9YpbKzraXUEF6C0VvXCMdP%2FOVU2o2UAQLVQY8ErY%2B%2FEaCJwLZyFYymKLOFI1a8188E72GdN13XTBAScUHRLKRIggh3huik%2F6GYRqeTRMpxH0ursawABvgVbrH%2FfxMWpKfki%2BIis7NglfohxO%2B%2B7gu%2FvrXFVmu%2BhQNergKxIcz6FC2OWwIF1Oq6fDYLj89kJ34txRaHtmIvpx53IpvLDooDD843Du537YJI8ni%2Fxc1nrSatkruDOjQWUXumcpv5D3DczjVRj5UycfIRS%2F4zTv0NotQp6%2Fa5rBz1vdVXYKCwmvt23SDacEYICh0tk%2F4EOJt4WEf9iHiyOApXAXjJDew4rp1JAHsGdEeEbeEj%2B6Ixy3YsdgeuKifMIEl7n%2F0a7frkeZqZpX3QqRHKk8ijTZhQqCBB0wagwgh2rVaAtxPHJUZiElWtjhW32bIL6EH2%2BeOwlvYflClULuMUnxqObQNMwk7%2FCUs1PMJufxr4GOqUBJdybu7qJwDVAc9Eo%2FuJ3vWbyUMT%2BxuWBrMBmjtDDZs4OCB7VJr%2BogeXZ7uO1KhQfaBtozjWvN6MPuGL%2BStrxOlhPz3dItLIma%2BFJAUgzbUF8LUxx%2FBlTqWyxd4toYiSFSCd19ZKAFYDhPsPtlDADnNzAfv7B%2F8%2FVAuc8H5Py0j8kt9UjAtAq%2FPWaEjrhPETU1Ukn1ea%2F7PxUmiBfDnDDjaQKH2A2&X-Amz-Signature=77bbd268876bc4fc38bee05f3d089d6ff0101239a0dea51a34ffe3201c419d31&X-Amz-SignedHeaders=host&x-id=GetObject)
+
+5. dashboard application은 어떤 유형의 계정을 사용하여 Kubernetes API를 쿼리하는가?
+
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/7d4a5407-3552-4911-b8e4-141dbefd74f0/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466TYXFWMHS%2F20250312%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250312T140958Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEHYaCXVzLXdlc3QtMiJIMEYCIQCEgdYHL36c79D8mEjO6%2BtLSEWlfQTxA9UdKlO9N3YYzwIhAMYTFjLQf%2BJjA5p91aWIe1BapoUPlAbk3inUgw70MmFZKogECL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1IgzYlMZFVh4l9PsF6lQq3ANdbssE%2FErd6wHXRNXiHJxnFIb0uvqRDEQnKHhyeOZEzoxUUBd9z30UpmOF8BJ3VdCK8PjHiPeS0VGJyyyE12l%2Fksr3EVS0qm1a33gxbaZ7PNXWeLKAV8BMOUbxPJDhVooLLW7jt6a8UMujV72Os5XmRs2BvaMKXy%2FrG0kPYFEVZCSmSmkcrxcM18vpXofNkbYyyh%2B2Ydx6RGFnjakNAdMi617tRLc5A8AeYpe%2BL1NZNoDdsYZ1DyD1nx2LosRb3pMIORghOE8eaanND88KMNmY4foBDZ%2FBq5PxFt%2B4r%2BFyH7mBgCg1%2F4FbFsyfJs%2BPxPxIStgzSNODf7QG9BLvZhbtdmfQG5W9uk3nfbCnvMrxybsZNhywt%2BU%2FiGIaHsOiqvoR%2Fd0CndqRZYT7%2BbPnCvZj5C0f5%2BqqgeW6VWhg6j2Q0UqVgoVblT1SQjUy1r%2B9fBApXuQdcrmQQ%2F4Ip43Xu9%2BCPV4Y8wRmoeZp8NSPZvxcYePJeuLDawdZHHK%2B%2Biz8Aijvh3RZrqzvUG8WEiZv6McefYsaJAnaqrFumwacBaQ0fuV1rmeVwZgbfPiPY6Vf8ra4er8nFa1t29xaKjfW27KRnceGTyuQfl1IgDKG8%2FQnyDK%2BGehYl8ANVISELDDmnsa%2BBjqkAXMxJVlnrLmctcyP04kn5tU1pDg9h8Wgq0hINJ7NzbR7KwW7tuBwYhR4%2F1q81pFrQ5mA3dj56KEOhVP4QwoKSs8McX55QVwULSjmTH9YwXo5MnMLk7nYux2%2FPqMRH5dDsOWG8UFkhn5iE3vS552m5vWU5Of%2B%2B5w18nOo%2F2Logcli70ncuKYm%2Bx%2BhFDxKZ%2BZqLNtdt%2FN7PXPzGwKQFPNaO%2FIvDqs%2B&X-Amz-Signature=75b9cb45529465421bfdff891bda6338c32416bfefd69af2959e9b01a2d9e628&X-Amz-SignedHeaders=host&x-id=GetObject)
+
+6. Kubernetes API를 쿼리하는데 Dashboard application이 사용하는 account는?
+7. Dashboard application pod를 관찰하고 그것 위에 마운트된 service account 확인하기
+8. pod 내에서 사용 가능한 service account 인증서는 어디에 위치했는가?
+
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/90031244-a1cf-4874-8238-fe8c3798d305/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB46663MSVS5J%2F20250312%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250312T140959Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEHYaCXVzLXdlc3QtMiJHMEUCIAGeRlswJh%2FbW%2FaUrAhtppf0FENiYgjWbega64GpU5hmAiEAmjanQFeiX4FOFXAgQFX%2FT2HJl%2F%2FIFc4BTtfsN39LwK0qiAQIv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDNSPeNrmPEyiYntx6CrcA8ki%2FgMNBnQSp7VxXNO3h7DHkYzMkItxxBMDTR8qAEHEzPsO9qUVpNRJexwqNpzEyUmE9s7KzjuBncFfyzoAJlubXVciK9wDSWGHHq9BQzyLWovy6APvS7Vgp9A%2F1%2BragA0fPu3e3CLx7YE5PJdboxY0b8paaKbMwdxt9MdEJlUpASi9DbtWSvchyB3bqHMb9MpzKkmlsZRBAdl99doMc%2F5J%2B84vo7HkKOx4876C7gp4OBfL0ubSvzyZOotQ%2BNtGPCPUjMXvyXDowCsw1hr2Uy55ZrN6KybEriPss71IZUtH6QcS543P4cttwVvVRsnnDuMkDEcp2Zx6VbxOoRmNtQxf1PV9hsbQIHgkSPxc7Dj9XRE1XGZNfNZC0bXdUkWyc%2BU6YmXH7aP63c6kEML6%2F%2Fdz9v2Qzu3wr5tmnI32sPZT6NMZgYIno2wqK5Tc9qjk0WJdGBY1C5iswv%2F919%2BX5Lo%2FvR3%2BRTFjKz01gi7Dy4ChHE7uioMVjlCs0UdhLUu54P9UK%2Fy6ktlpvbmeOz3ZdZcTvRHgtAVRGoG%2FXsTB%2BoMTDFerNSxq%2B1LgNTEpHoi%2FpLhRsDBkVmT%2Fhjnle%2F0kJf8ZAooFyL8OQjRqN5cA9sbPdKOqGcIGSOOXiFw6MI2fxr4GOqUB5oZjwVgB23REnRJ3A8DE9NQx65Qa27UVVO18H8%2Bzw8c%2Ba3VhRAE30iAeDnyGbdVL1FPMtnx25ScE%2BpfzCzsZMoa7zOAXUwdSsQAxdmk9iK6Fs3f%2FjDkPV6NCJUUWG%2BXz46fPpTnl4BVbED9sR3eBvM2SARzx3k19i9yGHAmd6KyaUTzFye0dMfeJma4iLCj6OZz27r5Lh7fBvP6CdwfkZp9zKKGq&X-Amz-Signature=3d47d4e9105eb1b549c4e2d130879a1ff2e47f5e707007384cd3ac339d0b099f&X-Amz-SignedHeaders=host&x-id=GetObject)
+
+9. 애플리케이션은 Kubernetes에 인증하기  위한 생성된 올바른 권한을 가진 service account 필요함. default service account는 제한된 접근을 가짐. `dashboard-sa` 라는 이름을 가진 service account 생성.
+
+    ```bash
+    kubectl create serviceaccount dashboard-sa
+    ```
+
+10. dashboard application의 UI에서 access token 넣기. 새롭게 생성된 service account에 대한 authorization token 생성하고 생성된 token을 복사해서 UI의 token 필드에 token 붙여넣기
+
+    ```bash
+    kubectl create token dashboard-sa
+    ```
+
+
+    dashboard-sa service account에 대한 token이  생성됨.
+
+
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/6b5ccc86-02be-4794-98b8-6ddf6a01cd07/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466Y5REFXAQ%2F20250312%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250312T140959Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEHYaCXVzLXdlc3QtMiJHMEUCIQD4yDWDsxzfNS%2BEyivhyXATN9f1duwOoTfHk%2B7qJwJI8gIgaoxvO9GkuAqzeHToiaVIUam6up4W6cZhUnSycHwbcKkqiAQIv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDCky8TJjE8yi35HhsyrcAyAJb0L8TS48Vjvejry8mo4AHiailq2MWUU%2FbVIuju8fnOnykJ23RiVy29VKDIY0iTcpmGKQiWzUZZQu0VJTzdPBJFuAipgpg70Oy2j6A%2BB94WxeSpzHthzhROASXsUg1hipXQuWZpG3lSVUOwWKO5K5j3TEr7CRQ%2BlvG%2FO3LZnEfLD99QwzBjknsO0dDBsb7lmATaWDc0Mp72hb6Km%2FnCH%2B9sSxhspp9csB7PZqULazFe5AKQ0WMeJdGtY0wxtBgQLTbkYBAcadiy2s84%2FIRuZjzHmBSqSaoRY1UN%2FvQ6onMYWkvN%2BHGi45%2BNAUpghAYqzgdy5rKTsI1R%2BWRzNWLUkxvveUioCa474oLMg8U6RBwy04HtpL0N0GYJ%2F7MOpkcDKZgKsArFcC%2BwtJ8m%2BCTawWpmDeMPBswRbMfbJCSDmrgUiOuc83JRFhWq%2FWmvUyvau5RQOjY5lt3VTl2OCo%2BmvtCjCPgstZerPf3BHT2YOtHj91LGb3qZA6764jVrlrFYlpJDhXHDkA%2BmpWPC3oP0LwAjWhS6%2FCYwoT4ThWJcK%2FCP02eNZcW2CKVitbI%2Bc9mr0ItzGEZuw2zP%2BNcASaj0YLsrWLHL4Ix0iiafVEN%2BP8TEHt8YqC0ikBHpQ6MPufxr4GOqUBV3UrJXL9We2krWuDc9ZJq9f68NxCa7a%2B%2B6RtBDltv%2B2xhxCXMYjHZZ1ctOAz%2BVWfv8S1MpUM7Cdi%2FIcWVbtMQRYMD7LFS0wJt0zqk5%2B7nw0I074siXt4uyUrOqwEMNHnKvGjNWYbabIJpXhRCwZJCAqCBSBCZBgj6OwAfftJDNn3hZAiqeW95Oterzkh4s1kV0Ifnz5hPqSrket5ZioOQS6AnGWf&X-Amz-Signature=b6b1c6509a392b44122f7e0287b9440af17cdab3c1d54d1dc35e8738a23c3a61&X-Amz-SignedHeaders=host&x-id=GetObject)
+
+11. 매번 token을 복사 붙여넣기 할 필요 없음. dashboard application은 secret mount 위치로부터 token을 읽도록 프로그래밍됨. 그러나 현재 default service account가 마운트됨. 새롭게 생성된 service account를 사용하여 deployment 업데이트
+
+    ```yaml
+    kubectl edit deployment web-dashboard
+    
+    template: 
+      metadata: 
+      ...
+      spec:
+        serviceAccountName: dashboard-sa # 추가
+      ...
+    ```
+
+
+    ```bash
+    kubectl set serviceaccount deployment web-dashboard dashboard-sa
+    ```
+
+
+    dashboard yaml 파일 수정 또는 kubectl set으로 가능.
+
+12. dashboard application UI를 refresh하고 자동적으로 나열된 Pods가 표시되어야 함. 이번에는 토큰을 수동적으로 입력할 필요 없음.
+
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/03b8d9a1-823a-4f5a-aab8-e9a63822e005/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466RXJQ2CYO%2F20250312%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250312T141000Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEHYaCXVzLXdlc3QtMiJGMEQCIAz9O9Ih56sgNc2sKFHXu8hr%2B07wXSj4E1NHfTEiO9YHAiAsKAodimLF0RtYRBYyag9SG323w%2BLqCkJ9vVDkn%2FasQCqIBAi%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMMqzh6nEUi6Sh71hXKtwDYPDWtLwJQ4QhxO6A5wOYwyi3KHqyEfvwE%2BaD33xyxI67IdVu45m4zpm69CGvVnChBWAbW%2FE8X8eQUOQsanVtZW3D%2Bu5y8HGIIdAW%2Fi5W2Sprco9yWMJzJ7Oyd7%2BpvWbpStD5GYgiAUteQuwhi9MoGsdf3yZsQK%2Faq9uKNe3VtA7845qgTe0QlIrqdAqToLvTQfuHnYCDDUP%2B3PhwZQp5M0JG5AEeOCwnvFEiRzW%2Fh%2BnuK3ZPjVC1Bw89z4hlqDFDYfUOrtCougGtLxsozsLTTwFnr4mHCQ%2FcqhxWQFZWneF6eQncQy0aqXsN9QnKiZsK2UyjZ7uiz7ZxY5kyKvqd6ETRL0e9mEOoU2akmX9%2Fogp5LPDZCEWMwphIIjv2skLytG7RVPYYxQjs7fTEg1UpNA7oa5%2F942H5B8zKtIbeEeBpVtesUgNWxumnRRLqdy6BHXRD9tzcPlIytKgHiBG3HTxdJFlS7K3TkrTVksWbhPE3RLxgewJHEs2nI1q8hRFI%2FiMVyapJFlBDIzrG8IEAvY3oDUSuji7XMDHGxvVaKPuSdBALgtV06Erx1IOWaw6xGpCLIxZSo1M8AIobIA65eoh3U5LLFFS50GfKQfQNY0ZCreqLqHGu8Ek6ynAwj6DGvgY6pgEgixvMPeZUJfriik6M5SjfrnYwfxZ0pQM4TRZOqy44kJ1cqWlSVNYSFZgrYaDdozNhxCPvmM6U3SV%2Fd4ZyxI7j2RMey%2FePJabvy6eTuQrjBq6bl9a2aitJmuYSvUFdPgXGgqU0IHsP9grTMLfLChSrUwo9UKl%2F4TNvl5%2FVLkphQ8OcXeBn%2BQ2fd0MV2yg2oN%2Bsu6xh5SzhVhwQXrbTwbkgEcJY85Cz&X-Amz-Signature=4b4880c0e986edcb9e0d5ddcd8dabc1904e08a66a754f1a993bf4ea285685a2d&X-Amz-SignedHeaders=host&x-id=GetObject)
+
 
 ## Image Security
+
+
+맨 앞에는 사용자나 계정 이름을 나타냄. 그러므로 라이브러리를 추측할 수 있기 때문에 user나 account 이름을 명시하면 안 됨.
+
+
+라이브러리는 도커 공식 이미지가 저장된 default account의 이름.
+
+
+계정을 만들고 그 아래에 저장소나 이미지를 만든다면, 비슷한 패턴을 사용할 것. 
+
+
+라이브러리 대신 회사 이름이나 이름을 사용할 것.
+
+
+위치를 명시하지 않으면 Docker Hub라는 docker default registry로 추측되는 곳에서 이미지를 가져옴. DNS 이름은 docker.io. 그 registry는 모든 이미지가 저장된 곳.
+
+
+새 이미지를 생성하거나 업데이트할 때마다 registry에서 이미지를 넣고 registry에서 그것을 가져와 매번 애플리케이션을 배포.
+
+
+많은 registry가 있음. google의 registry는 gcr.io. 클러스터에서 종단 간 테스트를 수행하는 데 사용되는 것과 같은 많은 Kubernetes 관련 이미지가 저장되어 있음. 이것들은 모두 누구나 다운로드하고 접근할 수 있는 공개적으로 접근 가능한 이미지. 사내에 애플리케이션이 내장되어 있어 대중에게 공개 되어서는 안 되는 경우, 내부 사설 레지스트리를 호스팅하는 것이 좋은 해결책이 될 수 있음.
+
+
+많은 cloud service provider들이 기본적으로 private registry를 제공.
+
+
+이러한 솔루션 중 어느 것이든, 도커 허브의 레지스트리든, 구글의 레지스트리든, 내부 개인 레지스트리든, 저장소를 비공개로 설정하여 자격 증명 집합을 사용하여 접근할 수 있도록 할 수 있음.
+
+
+도커 관점에서 개인 이미지를 사용하여 컨테이너를 실행하려면 docker login 명령어를 실행하여 private registry로 로그인해야 함. 인증서 입력. 성공하면 개인 레지스트리에서 이미지를 사용하여 애플리케이션 실행. pod 정의 파일에 개인 레지스트리의 이미지를 사용하려면 이미지 이름을 개인 레지스트리의 전체 경로로 대체.
+
+
+어떻게 인증을 실행해야 하는가? 어
 
 
 ## Practice Test - Image Security

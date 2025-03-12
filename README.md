@@ -65,10 +65,6 @@
 <td></td>
 </tr>
 <tr>
-<td>Section14 - End to End Tests on a Kubernetes Cluster</td>
-<td></td>
-</tr>
-<tr>
 <td>Section15 - Troubleshooting</td>
 <td></td>
 </tr>
@@ -82,10 +78,6 @@
 </tr>
 <tr>
 <td>Section18 - Mock Exams</td>
-<td></td>
-</tr>
-<tr>
-<td>Section19 - Course Conclusion</td>
 <td></td>
 </tr>
 </tbody>
