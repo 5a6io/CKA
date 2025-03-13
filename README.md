@@ -76,9 +76,5 @@
 <td>Section17 - Lightning Labs</td>
 <td></td>
 </tr>
-<tr>
-<td>Section18 - Mock Exams</td>
-<td></td>
-</tr>
 </tbody>
 </table>
