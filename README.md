@@ -38,7 +38,7 @@
 </tr>
 <tr>
 <td>Section7 - Security</td>
-<td></td>
+<td>:white_check_mark:</td>
 </tr>
 <tr>
 <td>Section8 - Storage</td>
@@ -70,10 +70,6 @@
 </tr>
 <tr>
 <td>Section16 - Other Topics</td>
-<td></td>
-</tr>
-<tr>
-<td>Section17 - Lightning Labs</td>
 <td></td>
 </tr>
 </tbody>
