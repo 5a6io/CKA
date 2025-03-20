@@ -120,10 +120,124 @@ azure file storage, google compute persistent disks, cluster fs, netapp, res-ray
 다른 컨테이너 실행 시간(예: RKT 및 CRI-O)이 도입됨에 따라, Kubernetes 소스 코드에 의존하지 않고 서로 다른 컨테이너 실행 시간으로 작업할 수 있도록 개방하고 지원을 확장하는 것이 중요해짐. → 컨테이너 런타임 인터페이스가 생김. → 컨테이너 런타임 인터페이스는 Kubernetes와 같은 오케스트레이션 솔루션이 Docker와 같은 컨테이너 런타임과 어떻게 통신하는지를 정의하는 표준.
 
 
+새로운 컨테이너 런타임 인터페이스가 개발되면 그것들은 단순히 CRI 표준을 따를 수 있으며,  새로운 컨테이너 런타임은 Kubernetes 팀의 개발자들과 함께 작업하거나  Kubernetes와 함께 작동할 것.
+
+
+컨테이너 스토리지 인터페이스는 다중 스토리지 솔루션을 지원하도록 개발됨.
+
+
+CSI를 사용하면 Kubernetes와 사용할 수 있는 자신의 스토리지 드라이버를 직접 작성할 수 있음.
+
+
+Portworx, Amazon EBS, Azure Disk, Dell EMC Isilon, PowerMax, Unity, XtremIO, NetApp, Nutanix, HPE, Hitachi, Pure Storage → 자체 CSI 드라이버를 가짐.
+
+
+CSI는 Kubernetes 특정 표준이 아님. 범용 표준으로 설계됨. 구현되면 지원되는 플러그인을 가진 모든 스토리지 공급업체와 함께 모든 컨테이너 오케스트레이션 도구를 작동시킬 수 있음.
+
+
+현재 Kubernets, Cloud Foundry, Mesos가 CSI에 합류.
+
+
+CSI 특징
+
+- SHOULD call to provision an new volume
+- SHOULD call to delete a volume
+- SHOULD call to place a workload that uses the volume onto a node.
+- SHOULD provision a new volume on the storage
+- SHOULD decommission a volume
+- SHOULD make the volume available on a node
+
+일련의  RPCs, 즉 remote procedure calls → 컨테이너 오케스트레이터라고 불리는 것. 이러한 것들은 storage drviers로 구현돼야 함.
+
+
+Pod가 생성되고 볼륨을 요구할 때, Kubernetes의 경우 컨테이너 오케스트레이터는 생성 volume RPC를 요청한다. 그리고 volume 이름과 같은 세부  정보를 넘긴다.
+
+
+스토리지 드라이버는 RPC를 구현해야 하고 요청을 다루고 storage 배열에 새 볼륨을 프로비저닝하고 수행 결과를 반환해야 한다.
+
+
+유사하게 컨테이너 오케스트레이터는 volume을 지울 때 삭제 볼륨 RPC를 요청해야 한다. 그리고 스토리지 드라이버는 해당 호출이 이루어질 때 볼륨을 배열에서 해제하도록 코드를 구현해야 한다.
+
+
+그리고 명세서에는 발신자가 보내야 할 매개변수, 솔루션이 받아야 할 것, 그리고 교환해야 할 오류 코드가 정확히 명시되어 있다.
+
+
 ## Volumes
 
 
+Kubernetes도 Docker에서처럼 동작.
+
+
+랜덤 숫자는 컨테이너 내부의 /opt /mount에 쓰이게 되며, 이는 실제로 호스트이 /data 디렉토리라는 볼륨에 있음.
+
+
+Pod가 삭제될 때, 랜덤 번호를 가진 파일은 여전히 호스트에 남아있음.
+
+
+다중 노드 클러스터의 겨우 추천하지  않음. → Pod가 모든 노드에서 /data 디렉토리를 사용하며, 모든 노드가 동일한 데이터를 가질 것이라고 예상되기 때문.
+
+
+다른 서버를 가지기 때문에 실제로 같지는 않음. 같은 종류의 외부의 복제 클러스터 스토리지 솔루션을 구성하지 않는다면.
+
+
+Kubernetes는 여러 종류의 다른 스토리지 솔루션을 지원. NFS, GlusterFS, Flocker, Fiber Channel, Ceph FS, SCALEIO나 AWS EBS, Azure Desk, File, Google Persistent Desk와 같은 퍼블릭 클라우드 솔루션과 같은.
+
+
+예를 들어, AWS EBS로 volume을 구성한다면 hostPath 필드 대신
+
+
+```yaml
+volumes:
+- name: data-volume
+  
+awsElasticBlockStore:
+
+    
+volumeID: <volume-id>
+
+    
+fsType: ext4
+```
+
+
 ## Persistent Volumes
+
+
+많은 사용자가 많은 Pod를 대규모 환경에서는 사용자가 각 Pod에 대해 매번 스토리지를 구성해야 함.
+
+
+어떤 스토리지 솔루션을 사용하든, Pod를 배포하는 사용자는 자신의 환경에 있는 모든 Pod 정의 파일에 그것을 설정해야 함. 변경사항이 있을 때마다 사용자는 모든 pod에서 변경사항을 작성해야 함. → 스토리지를 더 중앙 집중식으로 관리하고 싶음. 관리자가 대용량 스토리지 풀을 생성한 다음 필요에 따라 사용자가 조각을 분할할 수 있도록 구성하고 싶음. → Persistent Volmes이 도움이 될 수 있는 부분.
+
+
+Persistent Volume은 클러스터에 애플리케이션을 배포하는 사용자가 사용할 수 있도록 관리자가 구성한 클러스터 전체의 스토리지 볼륨 풀임.
+
+
+PVC를 사용하여 풀에서 저장소를 선택할 수 있음.
+
+> Persistent Volume 생성.
+
+```yaml
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-vol1
+spec:
+  accessModes:
+    - ReadWriteOnce
+  capacity:
+    storage: 1Gi
+  hostPath:
+    path: /tmp/data
+```
+
+
+accessModes는 호스트에 어떻게 볼륨을 마운트할 것인지 정의. 지원되는 값은 ReadOnlyMany, ReadWriteOnce, ReadWriteMany가 있음.
+
+
+capacity는 Persistent Volume에 예약된 스토리지의 크기를 명시.
+
+
+volumeType은 노드의 로컬 디렉토리에서 스토리지를 사용하는 hostPath 옵션을 가지고 시작할 것. → 프로덕션 환경에서는 이 옵션 사용❌. hostPath 대신 지원되는 스토리지  솔루션 중 한 가지를 사용.
 
 
 ## Persistent Volume Claims
