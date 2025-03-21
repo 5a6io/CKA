@@ -243,11 +243,392 @@ volumeType은 노드의 로컬 디렉토리에서 스토리지를 사용하는 h
 ## Persistent Volume Claims
 
 
+관리자는 일련의 persistent volumes  생성. 사용자는 스토리지를 사용하기 위해 Persistent volume claims 생성.
+
+
+일단 persistent volume claims가 생성되면 kubenetes는 볼륨에 설정된 요청 및 속성에 따라 persistent volume을 클레임에 바인딩함.
+
+
+모든 persistent volume claim은 단일 persistent volume에 바인딩함.
+
+
+바인딩 과정 동안 kubernetes는 claim으로 요청된 충분한 용량을 가진 persistent volume을 찾을려고 함. access mode, volume mode, storage class 등 과 같은.
+
+
+단일 claim에 대응하는 것이 여러 개 있고 정확하게 특정 volume만 사용 싶다면 올바른 볼륨을 바인딩하기 위해 라벨과 selector를 사용할 수  있음.
+
+
+마지막으로, 다른 모든 기준이 일치하면 더 작은 클레임이 더 큰 볼륨에 묶일 수 있으며, 더 나은 옵션은 없다는 점에 유의.
+
+
+볼륨과 클레임은 일대일 관계 → 다른 클레임은 볼륨에 남은 용량 활용❌.
+
+
+사용 가능한 볼륨이 없으면 클러스터에 사용 가능한 볼륨이 만들어질 때까지 pvc는 pending 상태.
+
+
+이용 가능한 새 볼륨이 생기면 자동적으로 새 이용 가능한 볼륨에 바인딩됨.
+
+> PVC 생성
+
+```yaml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: myclaim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 500Mi
+```
+
+
+`kubectl get pvc` 를 하면 pending 상태로 보임. 이전에 생성된 볼륨과 access mode로  일치. 용량은 500MB 요규 그러나 볼륨은 1GB로 구성됨. 다른 볼륨이 없으므로 PVC는 PV에 바인딩됨. 다시 `kubectl get pvc` 를 하면 pv-vol1에 바인딩된 것을 알 수 있음.
+
+
+pvc를 지웠을 때 기존 pv는 어떻게 되는가? 볼륨을 어떻게 할지 설정할 수 있음. 기본적으로 `persistentVolumeReclaimPolicy: Retain` 으로 설정됨. → 관리자가 수동적으로 지울 때까지 남겨두는 것을 의미. →다른 클레임으로 재사용할 수 없도록 함.
+
+
+`persistentVolumeReclaimPolicy: Delete` 를 사용하여 자동적으로 지울 수도 있음. 클레임이 지워지자마자 볼륨 삭제. → 엔드 스토리지 장치에서 스토리지를 확보할 수 있음.
+
+
+`persistentVolumeReclaimPolicy: Recycle` 도 사용할 수 있음. → 데이터 볼륨의 데이터는 다른 클레임에 노출되기 전에 제거됨.
+
+
+### Pod 에서 PVC 사용
+
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mypod
+spec:
+  containers:
+    - name: myfrontend
+      image: nginx
+      volumeMounts:
+      - mountPath: "/var/www/html"
+        name: mypd
+  
+volumes:
+
+    
+- name: mypd
+
+      
+persistentVolumeClaim:
+
+        
+claimName: myclaim
+```
+
+
 ## Practice Test - Persistent Volumes and Persistent Volume Claims
 
+
+Pod가 배포되어있음. Pod 관찰하기.
+
+
+애플리케이션은 /log/app.log 위치에 log 저장. `kubectl exec webapp -- cat /log/app.log` 로 log 확인. 
+
+
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/82778cab-7cc7-4f36-b3a8-064410ac5353/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4667NJT7JEV%2F20250321%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250321T140936Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEE4aCXVzLXdlc3QtMiJHMEUCIHXod0JAv7Q48G3Sb91Ak8jlG6%2B6CHdkKxqGPVJ2P789AiEA4py5a%2BZLh2p6CXOB0emylsmsQFolL3sJ7p37JrJLxhcqiAQIp%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDK7wc9SW%2B7qUtY0bOircAwdLrjbTIabqh9lqDP40npqu4TOZzd7NNystBWXUuIzhWprpx4f8n7k4TampfYh%2F0ppc9HJa3xr%2FzQGNo89d06KoaP3t4v3x2TGAqahkk6zXrI3kXbC5XIMp2J%2Bgxx3yZiQtEe43lvSKSoUeeX0Z14G0cCynAd5f60JIjfkpl8E2T3bTEPbyZRod04%2BGbb01aasHZv5vdun1bZlerRDYLrlMWvdogVbX1p9iGkJuNHgXdxaWoTNwsbEcfZHhbLyoY1jNuUknrrU6PvukFuizn2GKyEEFe4o4e9agY7F4pstmKixQQNHVrPDsIs1bl%2FEEA1eLoh5PPs0ehPN9RuVHsMncuP2wPpQnL%2FHxZdsEAuRYD%2F5TWiXniwHv%2BGWwfgTLpj8rlGwfytkXnsSaF%2FLa2an0KuAopDQldefjOG0jwyQEzx%2BdohxPqcQZn%2B9DRYut0WZ3xVj189nGzjcgOWQEHEYvywuxKJOCmi1HPMP816U6jfmRKp2tRMDhaMCSeJ%2BXfgxZvHs7cP9YO4EjEMIYAuLjYpRIH2kEPY5xK4Ea9WExzOEvLkfKSqwFZZ5EIygX%2BB8MPzVtzGeYo3s8lF7fwEAJY%2BKchqOh3uhyh43LULuS5cEGlH0Dv1l81SxHMIza9b4GOqUBS93HOhkQMziXJJE6yEsC6hBjgpf%2Bv3cWgKD8br18CPABZmXgpbFqzfn%2BuVeQkHo%2BsqaVIkP%2FfcsMClNthlwnjrz8tkSfd4L9tf0PiMMSdSDrHfm1AIeNETbtos8BgI%2Bagm0H5sF%2FaxFhi60gttgoiqZZ8nGKWNWloy6ZzUljVasU9b3VFGDrH8F%2BHt3Be3Prjuqinku2jHAywn%2BiGkDsQY%2BeE2r9&X-Amz-Signature=cc4407e4434d8acddcd2803b879002af5edf131e3291aad98bc3c026373f679b&X-Amz-SignedHeaders=host&x-id=GetObject)
+
+1. Pod가 지워졌다면 위와 같은 로그 확인 가능? No
+2. host에 /var/log/webapp에 로그를 저장하기 위한 volume 구성.
+
+    Name: webapp
+
+
+    Image Name: kodekloud/event-simulator
+
+
+    Volume HostPath: /var/log/webapp
+
+
+    Volume Mount: /log
+
+
+    ```yaml
+    k edit po webapp
+    containers:
+      - name: webapp
+        volumeMounts:
+          - name: webapp-log
+            mounthPath: /log
+    volumes:
+      - name: web-log
+        hostPath:
+          path: /var/log/webapp
+          type: Directory # 이 부분은 선택.
+    # 위 내용 추가
+    ```
+
+
+    `kubectl apply -f <임시 파일명>` 으로 하면 경고문 출력되면서 적용❌. `kubectl replace -f <임시 파일명> --force` 하면 기존 Pod 삭제되면서 바뀜.
+
+3. 아래 요구사항을 가지고 Persistent Volume 생성.
+
+    Volume Name: pv-log
+
+
+    Storage: 100Mi
+
+
+    Access Modes: ReadWriteMany
+
+
+    Host Path: /pv/log
+
+
+    Reclaim Policy: Retain
+
+
+    ```yaml
+    apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      name: pv-log
+    spec:
+      accessModes:
+        - ReadWriteMany
+      capacity:
+        storage: 100Mi
+      hostPath:
+        path: /pv/log
+    ```
+
+
+    기본적으로 Retain으로 설정되므로 명시하지 않음.
+
+4. 애플리케이션에서 스토리지를 사용할 수 있도록 하자. 아래 요구사항 가지고 PersistentVolumeClaim 생성.
+
+    Persistent Volume Claim: claim-log-1
+
+
+    Storage Request: 50Mi
+
+
+    Access Modes: ReadWriteOnce
+
+
+    ```yaml
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    metadata:
+      name: claim-log-1
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: 50Mi
+    ```
+
+5. PVC의 상태는? Pending
+6. PV의 상태는? Available
+7. 클레임이 사용 가능한 PV에 바인딩되지 않는 이유는?
+
+    Access Modes Mismatch
+
+8. PV에 바인딩할 수 있도록 클레임의 Access Mode 업데이트
+
+    ```yaml
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    metadata:
+      name: claim-log-1
+    spec:
+      accessModes:
+        - ReadWriteOnce ➡️ ReadWriteMany #로 변경
+      resources:
+        requests:
+          storage: 50Mi
+    ```
+
+
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/ba52ad7a-cb36-4531-b51e-dec5c1529098/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466W3EUKF3E%2F20250321%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250321T140939Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEE4aCXVzLXdlc3QtMiJHMEUCIGE7kiUj4s5wK%2FGxzT1cKG6IQMUplZUaxw2Lr418j0dHAiEA1r0pj2TlppweSuAV%2BxAtiHn9MXtge364SRe%2BvmF1MrcqiAQIp%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDB6tz7FoRGmiahA6gSrcA4JpvyK11%2F9PRf0SdJrnZwNAFhwtpJV%2FNU9HSknxXThLy2rtYda%2BbYC5Ly6LjccxbKrQH9gcEZWBu6DNY3RmhnaMp9AcHx1S5GGQmklBsf7o%2FCv3%2F1vKsY6sG9T%2F365OsnxkzXrahyKI5GAgUV51dRAeY3OhLRAFBq0D6AVYEKGOILc%2BEUHFif1ExbjYyD2bdiZ26G1IqjWps%2F5PDncnwvA2aTxfvyM8Twg7%2FaXqOO0ZJ3MU5rhfgH87Bb8ECeEunD00iheJIS1biFebxq8YZ9AgQv2kdfzoCb3cZO%2BmiTkNIaKzc5UbxTl3uLtPcjV0tbXSi9tGWamkVRnj3IaLyZUh7LcwKhH2hiIxs2vFZlsqIQ2c%2Bc8gb0alRyhFbvJVZXyhvG9P7LLxKWsOjKPPX39iN8XFLj2HI24kR4vPoi7cdikGU0rvOBIfsQg1Q629qMxm%2FYwR56H0TXvzyqXgD7Vm2PAVXjQVH0VISWioDp8Qh46%2BCfIpWzqLjMqIHEYhyPNboj3VDzE6xUzcB6%2FkzYHofueDK6hN9UF3f1a%2FI6KdAvOdmYBYB%2Bx8yXQzbIdWQdJIqlnZJc1R4ES4fmP8iPLc9U3pAZPb9qI3RQ3pyF%2FjdCW%2FQxevGwF5QlvTMO7Z9b4GOqUBFlxQxlkB0xqmFbQr0DB7GCyWzSXiOH8LlorklWF129xz9w9J%2FWI8R3lOpMJItlEL9hcPKo5f4cEIcKSt6BJL6b2rmn3xuJ8kNRi%2BRNx4evjZQjnfjkhhNppmbuYv4qtpFldCNiHbkwgHuBmzRDi14bept9h81dwPYtgbLwirFqpXEGEYvvCkdfRwLSNrrpUT9fiGo4vUuIHk%2BjtciT6vo%2Bqpru83&X-Amz-Signature=3aacf0f5f3e4155aa694df064abf8fa3b7d77017531a1cc7130f0d6b9e0eaf9a&X-Amz-SignedHeaders=host&x-id=GetObject)
+
+9. 50Mi를 요구. PVC가 이용 가능한 용량은? 100Mi
+10. PVC로 스토리지를 사용하도록 webapp Pod 업데이트.
+> 기존
+
+```yaml
+volumes:
+  - name: web-log
+    hostPath:
+      path: /var/log/webapp
+```
+
+> 변경
+
+```yaml
+volumes:
+    - name: webapp-log
+      persistentVolumeClaim:
+        claimName: claim-log-1
+```
+
+
+`kubectl replace -f webapp.yaml --force` 로 적용.
+
+1. pv-log에 설정된 Reclaim Policy는? Retain
+2. PVC가 삭제되면 PV는 무슨 일이 일어나는가?
+
+    The PV is not deleted but not available
+
+3. PVC를 지우고 무슨 일이 일어나는지 관찰.
+
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/743f11a7-597e-4eae-81c9-c74638efb734/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4663X5EDK5X%2F20250321%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250321T140940Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEE4aCXVzLXdlc3QtMiJHMEUCIQDvI2NvYhWKRETTtwckAZ2oTJ9pP%2BamrSOyY5XC12SQ5QIgKgLjHmEZlvIbXm%2FWYtwZN796NJVKdMsVxyFdwRK2q3wqiAQIp%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDNAGjjUzAAiRfFMaSircA1t936W24eGmLFIUDN3wf9sStGAkArfIaQIRQYYfrC3yl7oAB4ull16OqphDt6VzWm4ZOJSynOdksBE%2Beyy6B%2F0%2BLMC8adQt6wds1fmZe2xE%2BRkPJeEcs6KnfdzrPxVwHTycuIQ6ehQJCTmrLzLrOob2nFAEcA%2Fr%2F8CponI3zTf4s7WJuUY2R9j7r4RZ3ds5h5fUZz1zbdGSffi1cEwV%2BJwtDQWGNFA1FSFFwA2q0p0pSd6fImualyXonw2jCCOLCR%2FFvYe3xRsHVQG6PS7beyRzlw4TdZsiarXi5d5CirSqjn31wUffLCBwtV9otVD20JYeS41j6d3ayNtaILh35D4q%2BLONGpbvfiwcCuq5AJQMwnmonL2hfzMo4dT%2Fj2cRTF897zM93PqmUDlA5C6xTpzu9ojjciw9HvHJSkO1sy7NunH7uxaoV8kXoVlPAhA4ufX59RQKnmgfnNxpNM3n8up7itlHR2k3EpsRKAZJlbkekMfoEXFNLZFqxZXPPXmuEvn5gcBkVa9TK5%2FRSViu9ApDoW44JQzOmdn79KefDmkCtZzhCn%2Br4caV5GLXOW1%2F%2BuV%2BRLiTlzzVndamDCz9P%2B37p%2B%2FUdyCaFUkmkD3QjjyEBPJRaTmJxQrlBl8wMJPa9b4GOqUBHyTyk%2Bru3jD4QPkifvEEJE9uDNZWA2LbHE8O1yDYr12Mckrz9k6vpJ1qFf%2BIU8rLFEusSNq2JbzsUCq%2FSMzY64%2FjCh6%2Bm488y98ZpkkP0pzlRiCRQcAUijqC%2FttrlgWR6uELG4ThrYPaDtpBd5Fn0r4sODftecyjjBjqZqfsoVX2CNlHfssXH9dDs%2BSx9f6j5ReL6VnFyxuoJ5NH3qFtwvDzH5Kj&X-Amz-Signature=1a178a2507f0e95f9ccef67b3b2cc6861e7f5f245a5f0e4be9303a71f68d15bb&X-Amz-SignedHeaders=host&x-id=GetObject)
+
+4. 왜 PVC 상태가 Terminating인가?
+
+    The PVC is being used by a POD
+
+5. webapp POD를 삭제. 일단 삭제하고 Pod가 완전히 끝날 때까지 기다리기
+6. 현재 PVC 상태는? Deleted
+7. 현재 PV 상태는? Released
 
 ## Storage Class
 
 
+Google Cloud Persistent Disk로 PV 생성. 문제는 PV가 생성되기 전에 Google Cloud에 디스크를 생성해야 됨. 애플리케이션에 저장이 필요할 때마다 먼저 Google Cloud에서 디스크를 수동으로 프로비저닝한 다음, 생성한 디스크의 이름과 동일한 이름을 사용하여 Persistent Volume의 정의 파일을 수동으로 만들어야 함. → 정적 프로비저닝 볼륨이라 함.
+
+
+애플리케이션이 요구할 때 자동으로 프로비저닝 한다면 storage calss가 제공되면 좋을 듯. Storage Class를 사용하여 Google Cloud의 스토리지를 자동으로 프로비저닝할 수 있도록 Google Storage 같은 프로비저너 정의 가능. 그리고 claim을 만들어 pod에 부착. → 동적 볼륨 프로비저닝이라 함.
+
+> Storage Class 생성
+
+```yaml
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: google-storage
+provisioner: kubernetes.io/gcd-pd
+```
+
+
+스토리지에 대한 PVC를 사용 중인 Pod가 있음. PVC가 PV에 결합된 상태. 
+
+
+Storage Class가 생겼기 때문에 더 이상 PV 정의가 필요지 않음. → Storage Class가 생성되면 PV와 관련된 모든 저장 장치가 자동으로 생성됨.
+
+
+정의한 storage class를 사용하도록 PVC에 storageClassName을 명시하면 됨. 이제 PVC는 어떤 Storage Class를 사용하는지 알고 있음.
+
+
+다음에 PVC를 생성할 때, Storage Class는 정의된 Provisioner를 사용하여 GCP에서 필요한 크기의 새 디스크를 프로비저닝한 다음 Persistent Volume을 생성하고 해당 볼륨을 PVC에 바인딩함.
+
+
+PV는 여전히 만들어지지만 더 이상 수동적으로 만들 필요가 없음. Storage Class에 의해 자동으로 만들어짐.
+
+
+AWS EBS, Azure File, Azure Disk, CephFS, Portworx, SCALEIO 등등 여러 Provisioner가 있음. 이런 provisioner를 가지고 추가적인 파라미터를 넘길 수 있음. replication type 등. 이런 파라미터는 사용하려는 provisioner를 더 구체화함.
+
+
+Google Persistent Disk에 대해 type을 명시할  수 있음. standard, SSD. replication mode도 명시할 수 있음. none, regional PD.
+
+
+그러므로 다른 유형의 디스크를 사용하여 다른 Storage Class를 만들 수 있음.
+
+
 ## Practice Test - Storage Class
+
+1. 현재 클러스터에 존재하는 Storage Class 수는? 1
+2. 지금은 클러스터에 존재하는 Storage Class 수가 몇 개인가? 3
+3. dynamic volume provisioning을 지원하지 않는 Storage Class 이름은?
+
+    local-storage
+
+4. 그 storage class가 사용 중인 volume binding mode는?
+
+    WaitForFirstConsumer
+
+5. portworx-io-priority-high라는 storage clas에서 사용 중인 provision는?
+
+    portworx-volume
+
+6. local-pv 라는 persistent volume이 사용하는 persistent volume claim이 있는가?
+
+    NO
+
+7. local-pv에 바인딩하고자 local-pvc라는 PersistentVolumeClaim 생성.
+
+    PVC: local-pvc
+
+
+    Correct Access Mode?
+
+
+    Correct StorageClass Used?
+
+
+    PVC requests volume size = 500Mi?
+
+
+    ```yaml
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    metadata:
+      name: local-pvc
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      storageClassName: local-storage
+      resources:
+        requests:
+          storage: 500Mi
+    ```
+
+8. 새로 생성된 PVC 상태는? Pending
+9. local-pv 라는 볼륨에 claim하도록 유효한 요청에도 불구하고 Pending 상태인 이유는?
+
+    A Pod consuming the volume is not scheduled
+
+
+local-storage라는 Storage Class는 WaitForFirstConsumer로 설정된volumeBindingMode를 사용 중. PVC를 사용하는 Pod가 생성될 때까지 PV의 바인딩과 프로비저닝은 지연됨.
+
+1. nginx:alpine 이라는 이미지를 가진 nginx Pod 생성. Pod는 local-pvc를 사용해야 하고 /var/www/html에 볼륨을 마운트해야 함.
+
+    ```yaml
+    apiVersion: v1
+    kind: Pod
+    metadata:
+      name: nginx
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:alpine
+          volumeMounts:
+            - name: local-pv 
+              mountPath: /var/www/html
+      volumes:
+        - name: local-pv
+          persistentVolumeClaim:
+            claimName: local-pvc
+    ```
+
+
+    `kubectl run nginx --image nginx:alpine --dry-run client -o yaml > nginx.yaml` 사용해서 빠르게 yaml 파일 생성하기
+
+2. 현재 local-pvc라는 PVC 상태는? Bound
+3. 주어진 요구사항을 가지는 delayed-volume-sc라는 Storage Class 생성.
+
+    provisioner: kubernetes.io/no-provisioner
+
+
+    volumeBindingMode: WaitForConsumer
+
+
+    ```yaml
+    apiVersion: storage.k8s.io/v1
+    kind: StorageClass
+    metadata:
+      name: delayed-volume-sc
+    provisioner: kubernetes.io/no-provisioner
+    volumeBindingMode: WaitForFirstConsumer
+    ```
 

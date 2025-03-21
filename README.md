@@ -42,7 +42,7 @@
 </tr>
 <tr>
 <td>Section8 - Storage</td>
-<td></td>
+<td>:white_check_mark:</td>
 </tr>
 <tr>
 <td>Section9 - Networking</td>
