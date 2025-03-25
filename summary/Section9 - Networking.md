@@ -448,21 +448,232 @@ iptables -t nat -A PREROUTING --dport 80 --to-destination 192.168.15.2:80 -j DNA
 
 ## Prerequisite - Docker Networking
 
+
+다양한 네트워킹 옵션 중에서 선택 가능.
+
 > NONE
 
+도커 컨테이너는 어떤 네트워크도 연결되지 않음. 외부로 나갈 수 없고, 외부에서도 내부로 도달❌.
+
+
+여러 컨테이너에 있는 경우 네트워크가 되지 않고 모두 생성되므로 외부와 대화❌.
+
+> Host Network
+
+호스트와 컨테이너 사이 네트워크 분리가 없음.
+
+
+컨테이너에서 80포트로 애플리케이션을 배포하면 다른 추가 포트 맵핑 없이 호스트의 80포트로 이용 가능.
+
+
+동일한 포트에서 동일한 컨테이너의 다른 인스턴스를 실행하려고 하면 호스트 네트워킹을 공유하기 때문에 작동❌. 두 프로세스가 동시에 동일한 포트 사용❌.
+
+> Bridge
+
+내부 사설망이 도커 호스트와 컨테이너에 생성됨. 172.17.0.0을 기본 주소로 가짐.이 네트워크로 연결된 각 장치는 이 네트워크에서 자신의 사설망 주소를 얻음.
+
+
+도커가 호스트에 설치될 때 기본적으로 브릿지라 불리는 사설망이 생성됨. `docker network ls` 명령어로 볼 수 있음. 이제, 도커는 Bridge라는 이름으로 네트워크를 부르지만, 호스트에서는 Docker0라는 이름으로 생성됨. `ip link` 출력으로 볼 수 있음.
+
+
+도커는 내부적으로 ip link add 명령어를 실행.
+
+
+인터페이스, 즉 네트워크는 현재 내려가있음.
+
+
+브릿지 네트워크는 호스트에서 인터페이스 같지만 호스트 내 컨테이너나 네임스페이스에서 스위치같음.
+
+
+호스트의 Docker0는 172.17.0.1을 할당. 컨테이너를 생성할 때  도커는 이것에 대한 네트워크 네임스페이스를 생성.
+
+
+도커 컨테이너에 어떻게 브릿지를 연결하는가? 도커 호스트에서 `ip link` 명령어를 실행하면 Docker0, 로컬 브릿지에 붙어있느 인터페이스의 끝을 볼 수 있음. 이번에는 `-n <namespace>`를 가지고 동일한 명령어를 실행하면 컨테이너 네임스페이스 내 인터페이스의 다른 끝이 나열됨.
+
+
 ## Prerequisite - CNI
+
+
+CNI는 컨테이너 런타임 환경에서 네트워킹 문제를 해결하기 위해 프로그램을 개발하는 방법을 정의하는 일련의 표준.
+
+
+그 프로그램들은 플러그인이라고 불림. 이 경우, Bridge 프로그램은 CNI를 위한 플러그인임.
+
+
+CNI는 플러그인을 개발하는 방법과 컨테이너 실행 시간을 호출하는 방법을 정의. CNI는 컨테이너 실행 시간과 플러그인에 대한 일련의 책임을 정의.
+
+> Container Network Interface
+- Container Runtime must create network namespace
+- Identify network the container must attach to
+- Container Runtime to invoke Network Plugin (bridge) when container is added.
+- Container Runtime to invoke Network Plugin (bridge) when container is deleted.
+- JSON format of the Network Configuration
+- Must support command line arguments ADD/DEL/CHECK
+- Must support parameters container id, network ns etc..
+- Must manage IP address assignment to Pods
+- Must return results in a specific format
+
+모든 실행 시간은 모든 플러그인과 함께 작동할 수 있어야 함.
+
+
+모든 컨테이너 런타임은 CNI 표준을 구현하므로 플러그인이 함께 작동할 수 있음. 그러나 도커는 CNI를 구현하지 않음.
+
+
+도커는 CNI와 유사하지만 몇 가지 차이점이 있는 컨테이너 네트워킹 문제를 해결하기 위한 또 다른 표준인 컨테이너 네트워크 모델을 의미하는 CNM이라는 자체 표준 세트를 가지고 있음.
+
+
+차임점으로 인해 이러한 플러그인은 기본적으로 Docker와 통합되지 않으므로 Docker 컨테이너를 실행하고 CNI를 사용할 네트워크 플러그인을 지정할 수 없음.
 
 
 ## Cluster Networking
 
 
+쿠버네티스 클러스터는 마스터와 워커 노드로 구성됨. 각 노드는 적어도 네트워크에 연결된 하나의 인터페이스를 가짐. 각 인터페이스는 구성된 주소를 가져야 함. 호스트는 유일한 호스트 이름 뿐만 아니라 유일한 MAC 주소를 가져야 함. 특히, 기존 VM에서 복제하여 VM을 만드는 경우 유의.
+
+
+[https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#check-required-ports](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#check-required-ports)
+
+
+[https://kubernetes.io/docs/reference/networking/ports-and-protocols/](https://kubernetes.io/docs/reference/networking/ports-and-protocols/)
+
+
 ## Practice Test - Explore Kubernetes Environment
+
+1. 클러스터 노드 수
+2. controlplane의 내부 IP 주소는?
+
+    ```bash
+    kubectl get no -o wide
+    # INTERNAL_IP 확인.
+    ```
+
+3. controlplane 노드에 클러스터 연결을 위해 구성된 네트워크 인터페이스는?
+
+    ```bash
+    ip addr or ip link
+    ```
+
+4. controlplane 노드에서 인터페이스의 MAC 주소는?
+
+    ```bash
+    ip addr show eth0
+    ```
+
+5. node01에 할당된 IP 주소는?
+
+    ```bash
+    kubectl get no -o wide
+    # INTERNAL-IP 확인.
+    ```
+
+6. node01에 할당된 MAC 주소는?
+
+    ```bash
+    ssh node01
+    ip addr or ip link
+    ```
+
+7. container runtime으로 Containered 사용. controlplane에서 Containered로 생성된 interface/bridge는 무엇인가?
+
+    ```bash
+    ip addr or ip link
+    
+    ip addr show type bridge # 리눅스 호스트에서 브릿지 인터페이스가 뭔지 모르겠다면
+    ```
+
+8. cni0 인터페이스의 상태는?
+9. controlplane 노드에서 google로 ping을 보내면 어디서 경로를 가져오는가? 기본 게이트웨이의 IP 주소는?
+
+    ```bash
+    ip route
+    ```
+
+10. controlplane 노드에서 kube-scheduler가 수신하는 포트는? 10259
+
+    ```bash
+    netstat -npl | grep -i scheduler
+    ```
+
+11. ETCD는 두 포트에서 수신 중임. 클라이언트 연결이 설정된 것은? 2379
+
+    ```bash
+    netstat -npa | grep -i etcd
+    netstat -npa | grep -i etcd | grep -i 2379 | wc -l
+    netstat -npa | grep -i etcd | grep -i 2380 | wc -l
+    ```
+
+
+    2379는 모든 controlplane 구성 요소가 ETCD와 연결하는 포트. 2380은 ETCD 간 연결만을 위한 것. 다중 노드에 경우 이렇지 않음.
 
 
 ## Pod Networking
 
+> Network Model
+- Every POD should have an IP Address.
+- Every POD should be able to communicate with every other POD in the same node.
+- Every POD should be able to communicate with every other POD on other nodes without NAT.
+
+IP 주소가 무엇인지, 어떤 범위 또는 서브넷에 속하는지는 중요하지 않음.
+
+
+IP 주소를 자동으로 할당하고 노드의 포드와 다른 노드의 포드 간 연결을 설정하는 솔루션을 구현할 수 있다면 충분.
+
+
+Kubernetes에서 Pod가 생성될 때 자동적으로 스크립트를 어떻게 실행하는가?  CNI가 중간자 역할을 하는 이유임. CNI가 우리에게 스크립트가 이렇게 되어야 한다고 말해줌. 따라서 CNI 기준을 충족하기 위해 스크립트를 조금 수정해야 함. 네트워크에 컨테이너를 추가하는 추가 섹션과 네트워크에서 컨테이너 인터페이스르 ㄹ삭제하고 IP 주소를 해제하는 삭제 섹션 등을 포함해야 함.
+
+
+```shell
+ADD)
+  # Create veth pair
+  # Attach veth pair
+  # Assign IP Address
+  # Bring Up Interface
+  ip -n <namespace> link set ....
+  
+DEL)
+  # Delete veth pair
+  ip link del ....
+```
+
+
+이제 스크립트가 준비됨. 각 노드의 컨테이너 런타임은 컨테이너를 생성하는 역할을 함. 컨테이너가 생성될 때마다 컨테이너 런타임은 실행될 때 명령줄 인수로 전달된 CNI 구성을 살펴보고 스크립트의 이름을 식별함. 그런 다 cni/bin 디렉토리를 찾아 스크립트를 찾고, 추가 명령어와 컨테이너의 이름 및 네임스페이스 ID를 사용하여 스크립트를 실행한 다음 나머지는 스크립트가 처리.
+
+
+```bash
+/etc/cni/net.d/net-script.conflist
+/opt/cni/bin/net-script.sh
+./net-script.sh add <container> <namespace>
+```
+
 
 ## CNI in kubernetes
+
+
+CNI에 따르면, 컨테이너 런타임의 경우 Kubernetes는 컨테이너 네트워크 네임스페이스를 생성하고, 적절한 네트워크 플러그인을 호출하여 네임스페이스를 식별하고 올바른 네트워크에 연결하는 역할을 함. 그렇다면 Kubernetes에 사용할 CNI 플러그인을 어디에 지정해야 하는가? 컨테이너를 생성한 후 적절한 네트워크 플러그인을 호출해야 하므로, 해당 구성 요소는 컨테이너를 생성하는 Kubernetes 내의 구성 요소에 의해 호출되어야 함.
+
+
+컨테이너 런타임을 어떻게 구성하여 특정 플러그인을 사용할 수 있을까? 우선, 네트워크 플러그인은 모두 디렉토리 /opt/cni/bin에 설치됨. 그래서 컨테이너 런타임에서 플러그인을 찾음. 그러나 어떤 플러그인을 사용하고 어떻게 사용할지는 디렉토리  /etc/cni/net.d에 구성되어 있을 수 있음. 이 디렉토리에는 각 플러그인을 구성하는 여러 구성 파일이 있을 수 있음. cni/bin 디렉토리를 보면 bridge, DHCP, flannel 등의 모든 지원되는 CNI 플러그인을 실행파일로 가지고 있음을 알 수 있음. cni/config 디렉토리에는 일련의 구성 파일이 있음. 여기서 컨테이너 런타임이 어떤 플러그인을 사용해야 하는지 찾음. 이 경우 Bridge 구성 파일을 찾음. 여기에 여러 파일이 있는 경우, 브리지 구성 파일을 알파벳 순서대로 선택. bridge conf 파일을 보면 다음과 같이 보임.
+
+
+```json
+{
+    "cniVersion": "0.2.0",
+    "name": "mynet",
+    "type": "bridge",
+    "isGateway": true,
+    "isMasq": true,
+    "ipam": {
+        "type": "host-local",
+        "subnet": "10.22.0.0/16",
+        "routes": [
+            {  "dst": "0.0.0.0/0"  }
+        ]
+    }
+}
+```
+
+
+플러그인 구성 파일의 CNI 표준에 의해 정의된 형식. ipam 섹션은 Pod 및 필요한 경로에 할당될 IP 주소의 서브넷 범위를 지정. host-local 유형은 IP 주소가 이 호스트에서 로컬로 관리됨을 나타냄. DHCP 서버와 달리 원격으로 유지 관리하는 이 유형은 외부 DHCP 서버를 구성하기 위해 DHCP로 설정할 수도 있음.
 
 
 ## CNI weave
