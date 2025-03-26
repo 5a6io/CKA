@@ -679,22 +679,236 @@ CNI에 따르면, 컨테이너 런타임의 경우 Kubernetes는 컨테이너 �
 ## CNI weave
 
 
+100개의 노드를 가진 대규모 환경, 각 노드에 100개의 파드가 있는 경우 이러한 경우에는 라우팅 테이블이 실용적이지 않음. 라우팅 테이블은 많은 개체를 지원하지 못함.
+
+
+weave CNI 플러그인이 클러스터에 배포되는 경우 각 노드에 에이전트 또는 서비스를 배포. 노드, 네트워크, Pod에 관한 정보를 교환하기 위해 서로 소통. 각 에이전트나 피어는 전체 설정의 토폴로지를 저장. 그렇게 하면 다른 노드의 Pod와 IP를 알 수 있음.
+
+
+weave는 weave에 노드와 네임의 자체 브리지를 생성한 다음 각 네트워크에 IP 주소를 할당. 각 노드에 할당한 IP 주소의 정확한 범위를 파악할 수 있음.
+
+
+예를 들어, weave bridge와 도커가 만든 도커 브리지에 pod를 연결할 수 있음. 패킷이 목적지에 도달하는 경로는 컨테이너에 구성된 경로에 따라 달라짐. weave는 pod가 에이전트에게 도달하도록 올바른 경로를 설정하고 다른 Pod를 처리함. 이제 패킷이 한 파드에서 다른 노드로 전송될 때, weave는 패킷을 가로채서 별도의 네트워크에 있음을 식별한 다음, 이 패킷을 새로운 소스와 목적지가 있는 새로운 패킷으로 캡슐화하여 네트워크를 통해 전송함. 반대편에 도착하며 다른 weave 에이전트가 패킷을 가져와 캡슐화를 해제하고 패킷을 올바른 pod로 라우팅함.
+
+
+kubenetes 클러스터에 weave를 어떻게 배포하는가? weave와 weave pod는 클러스터의 각 노드에 서비스나 데몬으로 수동 배포될 수 있음. kubenetes가 이미 설정되어 있는 경우 클러스터에 pod로 배포하는 것이 더 쉬운 방법.
+
+
+**`kubectl apply -f https://github.com/weaveworks/weave/releases/download/v2.8.1/weave-daemonset-k8s.yaml`** 로 클러스터에 weave를 배포할 수 있음. 이렇게 하면 클러스터에 weave가 필요한 모든 구성 요소가 배포됨. 가장 중요한 것은 weave peer가 데몬 셋으로 배포된다는 점. weave cluster에 완벽하게 작동. 
+
+
+kubeadm tool과 weave 플러그인과 클러스터를 배포한다면 weave peer가 각 노드에 pod로 배포되는 것을 알 수 있음.
+
+
 ## Practice Test - Explore CNI
+
+1. kubelet 서비스를 관찰하고 kubenetes에 대해 설정된 컨테이너 런타임 엔드포인트 값을 확인.
+
+    ```bash
+    ps aux | grep kubelet | grep --color container-runtime-endpoint
+    root        4108  0.0  0.1 2932012 96340 ?       Ssl  05:03   0:10 /usr/bin/kubelet --bootstrap-kubeconfig=/etc/kubernetes/bootstrap-kubelet.conf --kubeconfig=/etc/kubernetes/kubelet.conf --config=/var/lib/kubelet/config.yaml 
+    --container-runtime-endpoint=unix:///var/run/containerd/containerd.sock
+     --pod-infra-container-image=registry.k8s.io/pause:3.10
+    ```
+
+2. 모든 CNI 지원 플러그인 바이너리로 구성된 경로는 무엇인가?
+
+    /opt/cni/bin
+
+3. 다음 중 이 호스트에서 사용 가능한 CNI 플러그인 목록에서 사용할  수 없는 플러그인은?
+
+    cisco
+
+4. Kubernetes 클러스터에 사용되도록 구성된 CNI 플러그인은?
+
+    ```bash
+    ls /etc/cni/net.d
+    10-flannel.conflist
+    ```
+
+5. 컨테이너와 관련된 네임스페이스가 생성된 후 kubelet에서 실행되는 바이너리 실행 파일은 무엇인가?
+
+    ```bash
+    cat /etc/cni/net.d/10-flannel.conflist 
+    {
+      "name": "cbr0",
+      "cniVersion": "0.3.1",
+      "plugins": [
+        {
+          
+    "type": "flannel"
+    ,
+          "delegate": {
+            "hairpinMode": true,
+            "isDefaultGateway": true
+          }
+        },
+        {
+          "type": "portmap",
+          "capabilities": {
+            "portMappings": true
+          }
+        }
+      ]
+    }
+    ```
 
 
 ## Practice Test - Deploy Network Solution
+
+1. 클러스터에 weave-net POD 네트워킹 솔루션을 설치할 것. 먼저 설정을 점검. 기본 네임스페이스에 app이라는 애플리케이션을 배포. Pod 상태는? NotRunning
+2. Pod가 실행 중이지 않은 이유는?
+
+    No Network Configured
+
+
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/3718d691-5c81-44a9-9521-842342f0196f/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4662MMIGACN%2F20250326%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250326T141159Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMX%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQD6ADaq1DJjYfgx0NMFVAYgkRWuEpkwE6vy6%2BOpEknsYAIhAOMpQ6gJv%2FqvcjgWvC2Yj%2Flq%2FEdFbueheMHvq5eaXuiTKv8DCC4QABoMNjM3NDIzMTgzODA1Igzn5ZxTEttQfVRxTKAq3AOtTiJby84wgYo9shiGiuNFVrvw46vs6VK6%2B7qApEre0JBZBwj3wM3V9Lque%2F1COTFJ4%2BaudqtSK0wnAEQCTldNJih0On9I9AXaRMvP6fbOxwVTN%2FEjwr5%2FSLaNsdpIPkxJbf%2FyiE9g6VwV1FHWHYYUGu5uTLmEWh9khrsq6uOJPb2jppNmM%2FM8NiTz86sAHJou1%2BAVYPktZ2uw%2FbF4vFQbIOYbK5LGDeMkxw4QJfA6h61Hh1OHiYezr3NOldMelV6B3OXtB3wQglTmMeue6QK3%2FkkGmDTgpIolSwzGw9FB6kQcG4G5wilqkq4gcSES%2FDDO7k97FGtGPb0XXqOh557uRbPgqdjGEff81q6B%2FqTHNQ9bOJBl7IFa4s3tK9FMaBJl5jqVUyPwwP8Xoa6vWgvzV6NFXIbaCz8BJkEMcR9Z41mQ05YoimNj4HnVjqTYmKzdefxZv046s8Gb5R0GOh5HwdaesCVvA0Z%2FMg2qSYtFwbv%2BTXzbB5ZsGu%2Bl9m7aVafXp5YxzNlXeFSMw9alYfJxFhq5WJpGB8lumkkX34gKRgz2XltFoqvOULZA9y1cjp30K7cjz6TYaKg6Gt5jtoNif1GfIBzVay4NxTqGCnLe%2Bi6k5G4ZWsYaz8QYcjD5%2BY%2B%2FBjqkAazMpSQPSVWEfOUUHgBThaGe55zCk0%2B6XQwn8L%2FDs3E8uJYjdBYC%2FVjxCS4XnyP8MNF%2FWeBgWXJB3y6t6pTSYUxzGIdsxJJ4%2Fkcpa1WbtPVknT%2FAs%2BrMn3fAHfNdNiROH%2FoNcwpxuMnia1CUtsyT71HPdo4l1u%2Boxe2PyTnduNdz3SdT5wuS0ge6oI05Q%2FewsMqbucC%2FllBfIlPylQ2rW2s9Emqs&X-Amz-Signature=dd47cd7ae361e3c128dcccaead11a2b6ea4cb9e83591dd287b5114812b5bba6c&X-Amz-SignedHeaders=host&x-id=GetObject)
+
+3. 클러스터에 weave-net 네트워킹 솔루션 배포.
+
+    NOTE: /root/weave 디렉토리 아래에 weave manifest 파일이 이미 제공되어있음.
+
+
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/f065065c-fca7-4750-ae70-9982763ddb7e/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4667EFJRYIH%2F20250326%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250326T141159Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMX%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDWVtwEh18Tv4qjhlWymevH9gZqR%2BQbGjNwiVF1caeJLwIhAIh1AYvMiz4K8dP0AM5q4tCPkCs%2FCQ8ZdhfpWXJgETfrKv8DCC4QABoMNjM3NDIzMTgzODA1IgxYuJxoTB0BBKgHKyQq3APtBy0aTvK7nFrUzI8rXr5EcHDRLSrbonu%2FSkTLdnocKH2%2FNU2ZWuCwHE5jVt2KvEfV%2FQPg1atETYVuggI8fj8Qcb6iDklva6O79gUfV10E6xPBJHcjwBzE8nndynsTYZPwsLkUMjIweZqPRefE%2BF0sDlX3vNZlyhcKO6kn%2BvnLTKu4X3EjBbvBCdniLTNw%2FnGAGiFSWUWMVCBmJK2TMIbe11dVFoA16kFPpY%2FEGi%2BmbXxxEHXE83%2BnDQVl%2F1DFtjQXMmj%2BE2FMF16OVMKGJDIT1jduTYkVPftIGNg4rGnTusHRWFaa%2FQT6aScnN61U%2BOGQen%2BNUopHS7FO1EgUoAsXISXBIsZ0%2BdFJplr%2BcKEbnfOV9jvmo7z8M8SlcKMTfkX%2FWfea23CqV%2Fz%2FsxBoS%2FmB9Fnpe8EurlqiilLc44c0c6XEJfxCWmzJ7isNdA3sY1BN1dZWCnr5NZU7uMJKlMu6Hw6giTfoRz5n4ME%2Bk9p%2FLA1xK03lDKm8fnU%2B7XmkZj%2BO%2BOdLu0v0iKZt5FREdVg4Z6LZoiPt3dBpK9xYNtv9fGK%2FU03jNoE0Xcpkj%2B1goJK4hqxvwVemeVC5Y8Gko61uYYDjQXkQVmiZZNFsggqtbU4rSC%2BwV6hSBNnaBjC6%2FI%2B%2FBjqkAf7XMtCygGBk4BVqg2yHA3czNu4Zjg7xJqumtq%2BQ%2FvdYYShsMMeLQ0A%2B2gUNvu87W7fz0I4Fwpu4ckNUma%2FKiiZpJRYp4n5dPzGetGmOreD7bguyrxWirE89QsKOxv2k1kGOuM0CedogP6G4MWIvvCLSlw1h5cGju%2FPsYa3FwS%2FoNC90G2pLDNa8iXhjCLzfDyvdz2HYYXzNFBfxVpADbakKymNO&X-Amz-Signature=64f9bc8d13d82f1b364f3be2e184491d5794a0459b3c3e6aa86c06158c84b3d0&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
 ## IP Address Management -  Weave
 
 
+네트워크 솔루션 제공업체에 IP를 할당하는 것은 CNI 플러그인의 책임.
+
+
+컨테이너 네트워크 네임스페이스에 IP를 할당하는 섹션이 있음. 이러한 IP는 어떻게 관리하는가?
+
+
+Kubernetes는 우리가 어떻게 하든 신경 쓰지 않음. 중복 IP를 할당하지 않고 제대로 관리하기만 하면 됨.
+
+
+그리고 쉽게 할 수 있는 방법은 IP 목록을 파일에 저장하고 이 파일을 제대로 관리하기 위해 스크립트에 필요한 코드가 있는지 확인하는 것. 이 파일은 각 호스트에 배치되며 해당 노드의 IP 부분을 관리.
+
+
+스크립트를 직접 코딩하는 대신, CNI에는 이 작업을 아웃소싱할 수 있는 두 개의 플러그인이 내장되어 있음.
+
+
+이 경우, 각 호스트에서 IP 주소를 로컬로 관리하기 위해 우리가 따랐던 접근 방식을 구현하는 플러그인이 호스트 로컬 플러그인임. 그러나 여전히 스크립트에서 해당 플러그인을 호출하거나 다양한 종류의 플러그인을 지원하도록 스크립트를 동적으로 만들 수 있음.
+
+
+CNI 구성 파일에는 IPAM이라는 부분이 있어 사용할 플러그인 유형, 서브넷 및 경로를 지정 가능. 이러한 세부 정보는 스크립트에서 읽을 수 있으며, 매번 호스트 로컬을 사용하도록 하드 코딩하는 대신 적절한 플러그인을 호출할 수 있음. 네트워크 솔루션 업체마다 다르게 처리.
+
+
+weaveworks가 어떻게 IP 주소를 관리하는지 보자.
+
+
+기본적으로 weave는 전체 네트워크에 10.32.0.0/12 IP 범위를 할당. 네트워크 IP는 10.32.0.1에서 10.47.255.254 범위로 주어짐. pod에서 사용할 수 있는 대략 100만 개 IP. 이 범위에서 peer들은 IP 주소를 균등하게 나누고 각 노드에 하나의 부분을 할당하기로 결정함. 이 노드에 생성된 pod들은 이 범위 내의 IP를 가지게 될 것. 이러한 범위는 클러스터에 weave 플러그인을 배포할 때 추가 옵션을 설정할 수 있음.
+
+
 ## Practice Test - Networking Weave
+
+1. 클러스터의 노드 수.
+2. 이 클러스터에 사용되는 네트워킹 솔루션은?
+
+    ```bash
+    ls /etc/cni/net.d/
+    10-weave.conflist
+    ```
+
+3. 클러스터에 배포된 agent/peers 수.
+
+    ```bash
+    kubectl get -n kube-system pods
+    ```
+
+4. weave peers는 어떤 노드에 있는가?
+
+    ```bash
+    kubectl get -n kube-system pods -o wide
+    ```
+
+
+    One on every node
+
+5. 각 노드에 weave로 생성된 bridge network/interface의 이름은? weave
+
+    ```bash
+    ip addr or ip addr show type bridge
+    4: weave: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1376 qdisc noqueue state UP group default qlen 1000
+        link/ether 7a:00:e2:db:6b:2a brd ff:ff:ff:ff:ff:ff
+        inet 10.244.0.1/16 brd 10.244.255.255 scope global weave
+           valid_lft forever preferred_lft forever
+    ```
+
+6. weave로 구성된 POD IP 주소 범위는?
+
+    ```bash
+    kubectl get pods -n kube-system
+    
+    kubectl logs -n kube-system <weave pod name>
+    ```
+
+7. node01에 스케줄링된 POD에 구성된 기본 게이트웨이는?
+
+    ```bash
+    kubectl run busybox --image=busybox --dry-run=client -o yaml -- sleep 1000 > busybox.yaml
+    
+    vi busybox.yaml #➡️ nodeName: node01 추가.
+    
+    kubectl apply -f busybox.yaml
+    
+    kubectl exec busybox -- ip route
+    default via 
+    10.244.192.0
+     dev eth0
+    10.244.0.0/16 dev eth0 scope link  src 10.244.192.1
+    ```
 
 
 ## Service Networking
 
 
+Cluster IP
+
+
+NodePort
+
+
 ## Practice Test - Service Networking
+
+1. cluster에서 노드의 네트워크 범위는?
+
+    ```bash
+    kubectl get nodes -o wide
+    NAME           STATUS   ROLES           AGE   VERSION   INTERNAL-IP    EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION   CONTAINER-RUNTIME
+    controlplane   Ready    control-plane   26m   v1.32.0   192.1.208.9    <none>        Ubuntu 22.04.5 LTS   5.4.0-1106-gcp   containerd://1.6.26
+    node01         Ready    <none>          26m   v1.32.0   192.1.208.11   <none>        Ubuntu 22.04.4 LTS   5.4.0-1106-gcp   containerd://1.6.26
+    
+    ip addr
+    ```
+
+
+    192.1.208.0/24
+
+2. 이 클러스터의 POD에 할당된 IP 주소 범위는?
+
+    ```bash
+    kubectl get all --all-namespaces
+    kubectl logs <weave-net name> -n kube-system
+    ```
+
+3. 클러스터 내 서비스에 할당된 IP 범위는? 10.96.0.0/12
+
+    ```bash
+    cat /etc/kubernetes/manifests/kube-apiserver.yaml   | grep cluster-ip-range
+        - --service-cluster-ip-range=10.96.0.0/12
+    ```
+
+4. 이 클러스터에 배포된 kube-proxy pod 수.
+5. kube-proxy에 구성된 proxy type.
+
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/d1fa7c4c-b3bb-4327-8825-a89908a088a0/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4666NRFSOI2%2F20250326%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250326T141204Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMX%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIAtTS6VyIDDLtyDpdlxzCOEVTWxxUzaFk%2Fci2FqpZG%2F%2FAiA9aL7UWxRe%2FMY6iNOZsZKvKTQQmHy72VJO4QdqUhFS2ir%2FAwguEAAaDDYzNzQyMzE4MzgwNSIM3yXp44BG2rjmyW22KtwDyoxd0R4rEKstjbWlBMutxNVg4xdsCl6u7At6NrEY6S%2BfBkjbfIbnABkCwRdC2PTP1k5qJtYwv1o52RaNH2XB9iXTkCSUmDWUYtlgj25BIcJ%2BR40Xd5CLhpWos4WRlPc5qkIDByLDrc9%2FA3qrUf0ODus11vX8kfmJvTZifOQiIiI6RQ%2BwQZ4Auf3ZT1zZtqOZHMrtA%2F3rj0%2Fl8fF6L4B11vRmHivZJJwP%2BwksOQupoi0w%2B81hTsUQK7NmzoRw9ETnHrNGlhRu4FTw1LSOrMAlw3O6%2B8IxuOPwnFCMezhWNuYTIr5ba%2BJpVGgculb9VtUlIbtlKEWf1ygFa7Pe16qPojhAiN%2F3OMbhN2PP3jybA1WL08aqd4Jufb5aUJXm4j3U4HcSmw5JCt3o3foimzmH4CtnVvoXkzHuUBP7WtmWEAUnlfmES7UyAUgpF%2BkLMifFI2WOw0ySdIh%2FcMkNyz%2FV4PG%2F8MpGpR0xml%2Fq8GqXCA5xnHqVnWUvPINAxLcNCwpk%2FMC3SPqG5kT0trim%2Fr165g%2F7n54lfNAss7cG48%2FnYuKi0keW5r%2BDCDII145Lm4pZcHh4BWJe7Ky1cnl8CeLiQK6V3zPlBFF8k%2FeaLQkWZMT7xcIjLPl6Xjm%2FUnkwmvyPvwY6pgHJnF%2BLKWiTRriD6U5GO7wPEqECwtQynWxbIRCPAYXzGFp6gpE3TwX9ay%2BqMwcCacbTKBPPx9JGueX0MP3r3oam60zNLK9201oIc1TAqmQDIfOM5%2Fe8rErigBrSJXtOWMqlAvDBz6J7pPbNZIgXicwlZD5gjKmXGvfw2r6Qwdf4ZeRbXjVkFbKyYEys6aVxGhcHFdn50AfRSqYMnSvBIPnOO0rCakFH&X-Amz-Signature=35a98c888a86b63cdca0f7155d25c64ff1e5a8f262219d4777b1a300644caec0&X-Amz-SignedHeaders=host&x-id=GetObject)
+
+6. 클러스터에서 모든 노드에 kube-proxy pod가 실행 중임을 어떻게 보장하는가? kube-proxy pod를 관찰하고 배포 방법을 확인.
+
+    using daemonset
 
 
 ## DNS in kubernetes
