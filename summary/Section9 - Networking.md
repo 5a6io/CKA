@@ -762,14 +762,14 @@ kubeadm tool과 weave 플러그인과 클러스터를 배포한다면 weave peer
     No Network Configured
 
 
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/3718d691-5c81-44a9-9521-842342f0196f/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466YAHEXFBP%2F20250327%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250327T141138Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEN7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQCuViHsnvxXE4SCe7tR3ursjJgkqDn3Fjx6NwkTqjQfwQIgI10%2FXNr0Ozk0wMPA8R5E4GfeKax6QIQVwVaYpK8RNT4q%2FwMIRxAAGgw2Mzc0MjMxODM4MDUiDJcWqNJY9eE8ny4EYyrcA9QKG%2B4zv0VSE7j96bqZjol%2B2u9NI83j1LBMhHR7IGx6kXcKc%2FctSSUv%2BYQTaXCtQQ3xZSL83QJecYHp9bcfHyMaadSqLU5h%2BL06XEZedwFGiMsdzK%2FeVYQpV%2FOPA7gM%2BLl6CJWnJpUD39gyeLy3wd8k1qUdcFmDiy621RCZYYk%2BJSvUJUpGDql7Xh9gBkSYKkrOgaKJ%2BWj4QmBWgdSohxZQba%2BRZqcjRcZus%2FWu5mQV6nHr0z79aTLv2ZDA8%2F7nc6%2FFWiChOFd5e%2FOdT8ueCWebRyxiwjp9f1ptDlA%2F%2F5c5R1XCOHWkC2lzI9juD7jhdTdSWyjwfa%2FruYN7NjWx2t6JQyULsTgyvlEdQKrEcRDdU4O%2Fn%2Bq0t%2FcXPNwepw%2FP3W5gohPRWFv%2FeT7wkXwJisoigMxnvPDGZw8207vxP0aSJgMj1p9VswgcnuH7tDyGMl36sVDV%2FZ3GmJJ5DnpT3srs17DKg1vvlMDm5pp3NbnPXM0iBrsBlGp2KPyftcdW3IiB7K5vjV8YotdMKyUPIkxN5GqeVS9q3m%2B7LdlY6y454ExVLJCJeG97iGn%2BNiFggkz4rDOj46T3BhyJM45%2BXntvL9PdCsgGKgWiBa3JqJOdHETqLMhoqY9BnizYMIGzlb8GOqUBddMHLhvKEm58G8zg9UIVd4fPzzL%2FGInSVg4kguTvxQS8GLHhkwf4GAopvtJLW8m6NZ5NLiEw8YAwxAlDV7N6DNeoDrtpiSThp3CvduxzuY3da6%2B5Bhx1r2kSYgWiQE2R4FwQEStvYN3qy%2B4vTNo5pyL8NmNZIzAwWikm2a5a1OaJZE2B223dU70a4tk3t7bbzYUi3vTS8uPyT70D3HrbEQDPiTzc&X-Amz-Signature=7c258ac5991ea8bd457a33d9525f1ef291f4de54301c384ac137a7f814584471&X-Amz-SignedHeaders=host&x-id=GetObject)
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/3718d691-5c81-44a9-9521-842342f0196f/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB46655K6KXGQ%2F20250328%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250328T141034Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDcsdHpC9TSuWQ0g9pWSUDilBI0p6a2Zf8WchHVUTlVpwIhANujTAFRzLTOuJrNv0Hs7pk4lLRUKqvTuGJA3IfJO2TuKv8DCF8QABoMNjM3NDIzMTgzODA1IgyuUxOlagzfIamK1D0q3AMcWo1aJfEvZQPtKmzyQsEdcr9WIrSJXr5mC%2B6jR4UBqukwtustab6x2SLOPlTpo4QAhYgZKDz1ou6y9vLVs%2FSD%2FY3wUKdRMwgboBq7hN%2F%2BLPcngCNQGTUa8%2Fz8CUsbk8ZtaBjUT7OBiozQjrJ3QDsFZnKGvUN5jb%2FwGL77%2FrhQHra93%2BVE9IkSwvx47RI%2F7xD2cYmwLjzd0zsb3Bk4KgWpek9luOA9pHHn7UYryR5wt3Z5tYV2WdgRn3sOXsXhEIK47qlPt0d%2BsYtZ9FxABVCUFtw14qisaUOempry1yIzBzRirKawd%2FP6vnjkg%2B7wgG2dZO2tLckRPFaF3PGCHLLrAGe11APQZkkHw7V2hLMMGxe5WebBsD6VEzqqfIg%2FFoz0Z7KWKrvauAl3DuxTxSndCHDRdHgc3bq%2BD4MU0jxgcW0bWtp0NYsTdlqETRk1K46f7R5O8TayiWYcT4ch%2BqaQ3jomE8E5jFsCo6cNB1sLK6%2BqbLK5zpa%2BDBlW%2FPUKp%2BtNgECRDk0sfhsmCfOl9TSFwQqkQOaHRGbc99G0qcqMnUS8XboIP2oiGBvrziUDqbZboRd5v8DFQnq09ZisFhaKeNY3KMgRoqSQvaji3uyJlczfqSCZwAdpYvwtDzDZ0Zq%2FBjqkASYjeDx2NJ8sWRm1u%2FT6Pb1y2gB3Y%2FdHwZ%2BYB82fZK7kNL5PYvxmrbUWS7hHw96xus1U%2Bloj3ylyUaoGpP4vNF8M68Obv7RgkzNVT%2BnhW10sM43ui1GUwMQP%2Bao3PXfrMKiXIoWbo0GC3Tv7VAieSbOSrUEIIfNbT66UPeNmRV0it4GtKAszdFm8wDcMdMdqCJBB2YTqH%2FM%2F3qR3sNRkX13oM6oC&X-Amz-Signature=e18c227ab550315a11b88b14c411129c324429d878a99fd92cc24a5061d6a9b9&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 3. 클러스터에 weave-net 네트워킹 솔루션 배포.
 
     NOTE: /root/weave 디렉토리 아래에 weave manifest 파일이 이미 제공되어있음.
 
 
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/f065065c-fca7-4750-ae70-9982763ddb7e/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB46666MBFYO2%2F20250327%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250327T141138Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEN7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIG0AFXYAkPOkyZpQkhJFRRkab3MBPDe%2FOmjBKC8XxD%2FMAiEAl0ftUdhrPz8LBsRjyJNPQ32WTK6wszEqSvB4Sdq7RPsq%2FwMIRxAAGgw2Mzc0MjMxODM4MDUiDOkZQ5BmnGa1Q8qAXCrcA0ynbrrIBHOg10RKtBe1sDwufDI5Sa6QBQufP0%2F8ozn04wnmpYXFgo%2BDu6fiE6TbkQMBDLhpcoC0L%2BL8ubVwCRBV0GvmJUYryZgy3gkwcsyQ0UZ2u%2F0y9miGOJdDbRJklMRJjWxdCVOF84flOyHmrbagABPb3jqZ8%2FKJfjQ2AOKgDNp6yfTbuK4mpFTkMVhJHMcv1wpmA0T1GNhory5tZqOVII0BxiH4fa61O%2FiMHLoGSHQaBD%2FFpDXBhJjWMoMD7mDxsZXdTSpOG%2BPr6%2FNr2yFE0XpD2Vv3nHlVt9GjKu5mvmJZlJFPAK1dMAzKAIbNpUOIvJ3ElmrtJ6BPZswqwHo0WlX31ug3WDeLV9lmtW8qlqPUKnVD1iGFuPU2CevF218AJ2WpYFIQ31l6%2BTqmf9bx6d6su1C16aysO5mlFn5haPKZKzoDGxIhjS1%2F0Xu9cbG%2FuXa93iue1ORHa69jzFsaH8A2aH6xOUgkruINZIc7zJgDrO3FD5hMEDcDK3lTyJdq7czbZzZ0tRRfTm0%2F9ipqoYCDAdUGbK130H7ND1caom0pYcX8%2BoOZr%2B4tIgtil8js8m8bRny%2BhPKfDAL8n%2F%2FNyF7z9ZZLFjENHaRBwtukhp%2B6e%2BjA7F%2BpN9BVMPGwlb8GOqUBddSGLDFeOQgMJbu4bKjSIg3dCbv%2BM3Am%2FxUd8gZvCsL9EkI9PPH8qoabKQDYMUv0Ek4ftTnRQePYqc%2B2mAosb%2B5vIDKADysJlp07z6uaizsbFbgw3EDFf3AHSZGJoADBKvDevGTeLamtZeJNATHxGTZ2InPTBCF7HrVI672ai9Ms22Vs%2Bfj%2FUVvdB1peR4%2BQaqF175VSUqMSVGC85UR29s3PjWNs&X-Amz-Signature=2171329a6048ee44c373bf1497020a0b7df50d6d2d8127768e1779d529f33365&X-Amz-SignedHeaders=host&x-id=GetObject)
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/f065065c-fca7-4750-ae70-9982763ddb7e/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466WPDDIJCO%2F20250328%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250328T141036Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCgKd%2FwDaRUKjjmNke3gH6w87VUwTJk4svj%2FgbJCaJmYwIhAOMzlkk%2Fr4Xo80LUf02ROX%2FyIeCARHsd6C4LE%2FWdnvfSKv8DCF8QABoMNjM3NDIzMTgzODA1Igy0f5agLyQCambtvpwq3AMuw0SE9AW0MvDyUTdGmvH7mLzuxBO4aOtGDRaGVQhECX%2BM%2BNsb%2B5MGP2YWXW4I2t8MCJZuahNv9VGh7ZbBl%2BcRS5R7YhLTKyY5xhXDst1yzcYYsVZQbx2VfZqGA7UIhs5WdSaTlv9jOZ1zSaAwQ8eMc7OKUGzsWO%2BRiN%2B4LFj%2Fy0c54Q5MVzVFR4I7fgrGU%2BnF5s2bX6b437WxcjVC8aiuxji3kMSBm4ZTIoCOZBDfltGMpxRa3Zr84TtEX6cugLZjc8N%2FfZ9ElPyjWNC9tDuakQS9nsugPDqF3pWXhnS4SP%2BCqM66YxIh59NJqmNwRYlHmbPabv7Fjedn95XZBa6pgLRnxYM2sItJ8x%2FWpMf1qZ2pyNiYjlhIttUy4OxmafIUX%2FLpOQJ2xMAr9jCzgOWmG4UZ3CXJ91O3Lpf7JaHkGWrNGuVK%2FVL85G1EWEGBqX0FEZhDBOTvrpp6%2BzeAr4Yeg7Xgh9SeU9ye6%2FFQLm2AyNoEVH%2BGXN6WooR%2FngGOvLAvzQ5NwawX%2B1Vf6KPDhnmkZl3HYfEqBGmjGdClxYHsxkisjMWq%2BmfIX59xo7%2BH88YHV3kWREkmv%2FmOv4hqH8CaAgAw0ghgnDLlZgDYRo%2FAXvx9gH0DapDI7KYZvDCF0pq%2FBjqkAYLw4mRvmCfQe1GGmjjbPlkxruGGL2ZLau%2B0AJ5vMMrtCeD4jF462dKaVSJz5DajF9a5A7HXlMMwS4Kq%2FFSdGjiPdgwo2RGWiul5%2FeAoclhbDvsF4dT2e%2F%2B9WGDT8acMRRmcC%2FQcdNLzvuih%2Bx%2FY%2FXsEIG822gAhXJb7xLiofcfFRwWiuMkxruPYTrmX3c6ZQgnpNRSU5DYhMVOWf9RczBdH%2B%2F1S&X-Amz-Signature=75990d48829805503aca31073d0fe6a3db649bad48d01b2cc7e415817f1666dd&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
 ## IP Address Management -  Weave
@@ -904,7 +904,7 @@ NodePort
 4. 이 클러스터에 배포된 kube-proxy pod 수.
 5. kube-proxy에 구성된 proxy type.
 
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/d1fa7c4c-b3bb-4327-8825-a89908a088a0/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466W2A4DOS5%2F20250327%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250327T141143Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEN7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQDoGkFsFS2nOXAuDmav%2F6cROKPZlyZj4hmInEBOwDsKSQIgQ3McE6Lk7%2FULLWNHskgYTfoX3tbjLkXIjPI3cbVhEhsq%2FwMIRxAAGgw2Mzc0MjMxODM4MDUiDCvlxhNqWoUBxYlSkCrcAzXNXRCE3vHsr%2BKMeUP%2BO0pm%2FvLRwqcDESHMn%2Bk5Sns3%2BeJ0TGPStprwn4bDM5PVLvhesKiPZ5gIvlTO7AFu5cxKckOxWad5%2FhXenAFdkEawAI%2Bvd0zQ8pqWp9KLAttp59AcjqwqnVfVGirccQe7Xlucbt05dIMqTFzGWP%2B3misKB%2FCp2b743mxKuFIRA8S3O6T%2FOHROChxX4q5zVkeB3KKReEsZyxw%2FJyomHh2wMeDZ5JxfcBMl5cg1wUSoLesTw3Dbwn5%2FYXRLYHk%2BQxpH8%2BwSQ8lV9YqVq2q2289urMj3INVEB%2F54%2FwDO2CjUUYlTb6B%2BDTqUdzSZnld%2BTWWX4mqzgIxyzpB9hg6qM0N8ZJpttu%2BZ6bdt6Sq3fychk6Hk77ZJ9crRRfNjNgEjKswC%2BC0QppvIeKn2oATpQOOE%2BXOmqgCrl7ARObkSf2TgHcVCuSiuvb%2BI9G7sR5PxSM93itui8HLHnjWfAReS1QX7hKELct98KD%2FCSMJ7kihAs6vHOjoIPiFY29YHWCEBzb%2BSTfXiMq0n67xUlRpvUnGneXmw1xPvEaXzMC4n3sj7FzHCXTQCaQ9MwDeSfp7hoBX9ZLXWL7nounH%2B%2BRw6%2B173AJbCm46P7LS6pxqVeoC1MIOxlb8GOqUBz0XDzOcZhKJDCNGXAzUCeftyaWbEJuG%2F1KASrhCjRHiFcRXznPdRh8lW8yoLOIA%2FE74cioEreMGYjf2eSSXbfSmdFpy%2B5d10rjJ1CsKVo2WiUSkZM8US%2BoiOay4J9dSC%2BXkvuGrv%2FZJ3Wis3rTalyM9K5qQjWRgvMztaUCvSKd9tkMTLcZshFV0fLokQFkGXvbNt2DYSYaZrV5oA7gWx7rYMdqcn&X-Amz-Signature=d213a4c166d81f3a0cee4beb71e80c88da7ae2014067adca3c6efd04e889f76c&X-Amz-SignedHeaders=host&x-id=GetObject)
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/d1fa7c4c-b3bb-4327-8825-a89908a088a0/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4664COARY74%2F20250328%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250328T141038Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQClm0uxC6ml2fMcKEkfnDQCho2y4U55TnJ4%2FX8p93l6IgIgIXeOgAaH289eBO4SI%2BF7RQv70R5w4W%2FbldlVZqhZwLYq%2FwMIXxAAGgw2Mzc0MjMxODM4MDUiDHuKKkCCg%2BaTMwrJ%2FyrcA04W%2BzptAcBraox%2BizY0B1YER80bEl7a39rxoZN%2F1bGoHErSAqvXfUaslVPeHcM5tfHDbWbPzGr2aCrUx3GBkJyOWVfoDCuhs9FXZwpySxM0gPrQIJG5idFqbfez33qdj7dz2Ydh991z0I8dmPAy93PzfXw25OEgOgq7a%2B9PX1RAnzEBDKUhcCqPyv6Uazo6wzFxWXP7rqRb7gyvQNSnhPBKYG8Yg%2BUKohtMz5IqvgXBYcpW9um8xRiqVXQthkypG%2FaLGZ2sZK7i4vZ2Ic6IyKW1eaeAsnTn%2BQeAZQWJUXmKomzs5824XUOU3QUVQkeSezoi3V%2BbjXjAoL7kjlEp3u1hovko%2BV8NCU8fkP%2FUZLtgaAUgHflhilayIWnLcsgIwTAi9bF7K%2FImqfDEQgbw81fY36VmSBQFGglPZFcwqOU5U6pH0c1hnoctAtczZ8IFoFV6hbbdatGTqYGWCY8LonJZqDhMPtP7kjDKJ%2FqBXNafUR1kmYSHROfL2tfFgVKCsMGxJQubWnNIFk6PzT8zHoN6C2JQx8YzFypAyGcUpJbwP5wxGO8%2BOK3mCgU338KF8j96QjNCNYA%2F0fiVdCriOr1vLmpH%2Bvgj4f%2FrMKQASXJkpBIbqun4ospc9wO8MKDRmr8GOqUBgOW0gdYQbynAWDhggs38A68WlYc9o%2FaRJ1m0d%2FbjCXIZpSa3mWW5QCF4RO27JWy78%2FiUYjsBPKdeJ08k5SJ4UlJD4OrQIkD16mF1mTu%2B2xZZ5dfv%2FwXq0VuWiVk3mXmlHGv17QQ9u1frWExNs%2BkBegu059VItJL51Eb2lA9%2FerPzXUXMwdRscnLZo9liknDDyzZMNr7c5T4Rdo1dHcWn8KBgS%2B6Z&X-Amz-Signature=aab5076afcc621101a60ffc66395320cff46d5f2c65eac969b29ba436a57ec72&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 6. 클러스터에서 모든 노드에 kube-proxy pod가 실행 중임을 어떻게 보장하는가? kube-proxy pod를 관찰하고 배포 방법을 확인.
 
@@ -914,10 +914,213 @@ NodePort
 ## DNS in kubernetes
 
 
+Kubernetes는 클러스터를 설정할 때 기본적으로 내장된 DNS 서버를 배포한다. Kubernetes를 수동으로 설정하면 혼자서 가능.
+
+
+Apps라는 이름을 가진 별도의 네임스페이스가 있다고 가정.
+
+
+기본 네밍스페이스에서 참조하려면 web-servce.apps라고 표시해야 함. 서비스의 마지막 이름은 네임스페이스의 이름. 각 네임스페이스마다 DNS server는 sub domain을 생성. 모든 서비스는 svc라는 또 다른 하위 도메인으로 함께 그룹화됨.
+
+
+네임스페이스의 모든 pod와 서비스는 네임스페이스의 하위 도메인 내에서 함께 그룹화됨.
+
+
+모든 서비스와 pod는 클러스터의 경로 도메인으로 그룹화되며, 기본적으로 클러스터는 cluster.local로 설정됨. 그러므로 web-service.apps.svc.cluster.local URL을 사용하여 서비스 접근 가능. 서비스에 대한 정식 도메인 이름.
+
+
+Pod는 기본적으로 record를 생성하지 않음. 그러나 명시적으로 사용 가능.
+
+
+일단 활성화되면 pod에 대해서도 레코드가 생성됨. pod 이름을 사용하지 않음. pod 마다 Kubernetes는 ‘-’를 가지고 IP 주소에서 ‘.’을 대체함으로써 이름을 생성. 네임스페이스는 똑같이 유지하고 type은 pod로 설정. root domain은 항상 cluster.local
+
+
+| Hostname    | Namespace | Type | Root          | IP Address    |
+| ----------- | --------- | ---- | ------------- | ------------- |
+| web-service | apps      | svc  | cluster.local | 10.107.37.188 |
+| 10-244-2-5  | apps      | pod  | cluster.local | 10.244.2.5    |
+| 10-244-1-5  | default   | pod  | cluster.local | 10.244.1.5    |
+
+
 ## CoreDNS in kubernetes
 
 
+IP 주소를 가진 두 pod가 주어짐.
+
+
+서로 통신하기 위해 각자 /etc/hosts 파일에 항목을 추가. 클러스터에 수천 수백개의 pod가 매번 생성되고 삭제될 때 적합하지 않음.
+
+
+이러한 항목을 중앙 DNS server로 이동. /etc/resolv.conf 파일에  항목을 추가함으로써 DNS server를 가리키도록 함.
+
+
+CoreDNS를 직접 배포할 때 실행했던 것과 동일한 실행 파일인 CoreDNS 실행 파일을 실행. CoreDNS는 구성 파일이 필요함. `Corefile`이라는 이름을 가진 파일 사용. `/etc/coredns`에 위치함.
+
+
+파일 안에 주황색으로 강조 표시된 여러 플러그인이 구성되어 있음. 플러그인은 오류 처리, 상태 보고, 모니터링 지표, 현금 등을 위해 구성됨. CoreDNS를 Kubernetes와 함께 ㅈ가동하게 만드는 플러그인은 Kubernetes 플러그인이며, 이 플러그인은 클러스터의 최상위 도메인 이름이 설정된 곳. 이 경우, cluster.local
+
+
+그러므로 CoreDNS server에 모든 레코드는 이 도메인 아래에 있음.
+
+
+Kubernetes 플러그인은 다중 선택지를 가짐. 여기서 볼 수 있는 pod 옵션은 클러스터에서 pod 레코드를 생성하는 역할을 함. DNS 서버가 해결할 수 있는 모든 레코드는 CoreDNS pod /etc/resolv.conf에 지정된 네임서버로 전달됨. /etc/resolv.conf 파일은 Kubernetes 노드의 네임서버를 사용하도록 설정. Corefile은 config map으로 pod에 전달됨. 이 구성을 수정할 필요가 있다면 configmap 객체를 수정할 수 있음.
+
+
+적절한 Kubernetes 플러그인을 사용하여 CoreDNS pod를 실행. Kubernets 클러스터에 새 pod나 서비스를 확인하고, pod나 서비스가 생길  때마다 데이터베이스에 추가. 그 다음 pod에 CoreDNS 서버를 가리키도록함. DNS 서버에 도달하기 위해 pod는 무슨 주소를 사용하는가? CoreDNS solution을 배포할 때 클러스터 내 다른 구성요소들에서도 사용할 수 있도록 서비스 생성. 서비스 이름은 기본적으로 KubeDNS라는 이름을 가짐. 서비스의 IP 주소는 pod에 nameserver로 구성됨. pod가 생성될 때 자동적으로 Kubernetes가 pod에 DNS 구성을 함. kubelet이 담당. kubelet의 config 파일을 보면 그 안에 DNS 서버와 도메인의 IP가 표시됨. Pod가 올바른 네임서버로 구성되면 이제 다른 파드와 서비스를 해결 가능. web-service, web-service.defualt, web-service.default.svc.cluster.local
+
+
+DNS 조회 또는 host web-service 명령을 사용하여 web-service를 수동으로 조회하려고 하면 정규화된 도메인 이름이 반환됨.
+
+
+그러나 조회❌. web-service를 언급. 어떻게 전체 이름을 찾는가? resolv.conf 파일은 `defualt.svc.clsuter.local`, `svc.cluster.local`, `cluster local` search 항목을 가짐. 이렇게 하면 서비스를 찾을 수 있음. 그러나 서비스에 대한 검색 항목만 있으므로 pod에 동일한 방식으로 도달 불가. 이를 위해서는 pod의 전체 FQDN을 지정해야 함.
+
+
 ## Practice Test - Explore DNS
+
+1. 클러스터에 구현된 DNS solution 찾기.
+
+    ```bash
+    k get po -n kube-system 
+    NAME                                   READY   STATUS    RESTARTS   AGE
+    coredns-7484cd47db-5zh4h               1/1     Running   0          17m
+    coredns-7484cd47db-sghbk               1/1     Running   0          17m
+    ```
+
+2. DNS server의 pod 수는?
+3. CoreDNS에 접근하기 위해 생성된 서비스의 이름은?
+
+    ```bash
+    k get svc -n kube-system 
+    NAME       TYPE        CLUSTER-IP    EXTERNAL-IP   PORT(S)                  AGE
+    kube-dns   ClusterIP   172.20.0.10   <none>        53/UDP,53/TCP,9153/TCP   20m
+    ```
+
+4. 서비스를 해결하기 위해 pod에 구성해야 하는 Core DNS 서버의 IP는?
+
+    172.20.0.10
+
+5. CoreDNS service를 구성하기 위한 구성 파일의 위치
+
+    /etc/coredns/Corefile
+
+6. CoreDNS pod로 Corefile을 어떻게 넘기는가?
+
+    Configured as a Configmap object
+
+7. Corefile에 생성된 ConfigMap 객체의 이름은?
+
+    ```bash
+    k get configmap -n kube-system 
+    NAME                                                   DATA   AGE
+    coredns                                                1      24m
+    ```
+
+8. kubernetes 클러스터에 구성된 root domain/zone은? cluster.local
+9. test 애플리케이션에서 hr wev server로 접근하기 위해 사용될 수 있는 이릉은?
+
+    web-service
+
+
+    ```bash
+    k exec test -- curl web-service
+      % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                     Dload  Upload   Total   Spent    Left  Speed
+    100    24    0    24    0     0  12000      0 --:--:-- --:--:-- --:--:-- 12000
+     This is the HR server!
+    ```
+
+10. test pod에서 hr 서비스에 접근하기 위해 사용할 수 없는 이름은? web-service.default.pod
+
+    ```bash
+    controlplane ~ ➜  k exec test -- curl web-service
+      % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                     Dload  Upload   Total   Spent    Left  Speed
+    100    24    0    24    0     0  12000      0 --:--:-- --:--:-- --:--:-- 12000
+     This is the HR server!
+    
+    controlplane ~ ➜  k exec test -- curl web-service.default.svc
+     This is the HR server!
+      % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                     Dload  Upload   Total   Spent    Left  Speed
+    100    24    0    24    0     0  12000      0 --:--:-- --:--:-- --:--:-- 12000
+    
+    controlplane ~ ➜  k exec test -- curl web-service.default
+      % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                     Dload  Upload   Total   Spent    Left  Speed
+      0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 This is the HR server!
+    100    24    0    24    0     0  24000      0 --:--:-- --:--:-- --:--:-- 24000
+    
+    controlplane ~ ➜  k exec test -- curl web-service.default.pod
+      % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                     Dload  Upload   Total   Spent    Left  Speed
+      0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0curl: (6) Could not resolve host: web-service.default.pod
+    command terminated with exit code 6
+    ```
+
+11. test 애플리케이션에서 payroll service에 접근하기 위해 아래에서 사용될 수 있는 이름은?
+
+    web-service.payroll
+
+12. test 애플리케이션에서 payroll 서비스에 접근하기 위해 아래에서 사용될 수 없는 이름은?
+
+    web-service.payroll.svc.cluster
+
+
+    ```bash
+    controlplane ~ ➜  k exec test -- curl web-service.payroll.svc
+      % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                     Dload  Upload   Total   Spent    Left  Speed
+    100    29    0    29    0     0  14500      0 --:--:-- --:--:-- --:--:-- 14500
+     This is the PayRoll server!
+    
+    controlplane ~ ➜  k exec test -- curl web-service.payroll.svc.cluster
+      % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                     Dload  Upload   Total   Spent    Left  Speed
+      0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0curl: (6) Could not resolve host: web-service.payroll.svc.cluster
+    command terminated with exit code 6
+    
+    controlplane ~ ✖ k exec test -- curl web-service.payroll
+      % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                     Dload  Upload   Total   Spent    Left  Speed
+      0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 This is the PayRoll server!
+    100    29    0    29    0     0  29000      0 --:--:-- --:--:-- --:--:-- 29000
+    
+    controlplane ~ ➜  k exec test -- curl web-service.payroll.svc.cluster.local
+      % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                     Dload  Upload   Total   Spent    Left  Speed
+    100    29    0    29    0     0   1611      0 --:--:-- --:--:-- --:--:--  1705
+     This is the PayRoll server!
+    ```
+
+13. mysql에 접근하는 web server `web app` 을 배포. 그러나 웹 서버가 데이터베이스 서버에 연결되지 않음. 문제 해결하기.
+
+    ```bash
+    controlplane ~ ➜  k edit deployments.apps webapp 
+    deployment.apps/webapp edited
+    
+    template:
+      spec:
+        containers:
+        - env:
+          - name: DB_Host
+            value: mysql ➡️ mysql.payroll 로 수정.
+    ```
+
+
+    webapp은 deployment로 배포되었으므로 deployment 수정.
+
+14. hr pod에서 mysql service를 nslookup하고 /root/CKA/nslookup.out 파일에 출력문 redirect
+
+    ```bash
+    controlplane ~ ➜  k exec hr -- nslookup mysql.payroll > CKA/nslookup.out
+    
+    controlplane ~ ➜  cat CKA/nslookup.out 
+    Server:         172.20.0.10
+    Address:        172.20.0.10#53
+    
+    Name:   mysql.payroll.svc.cluster.local
+    Address: 172.20.170.107
+    ```
 
 
 ## Ingress
