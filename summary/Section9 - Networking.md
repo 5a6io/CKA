@@ -762,14 +762,14 @@ kubeadm tool과 weave 플러그인과 클러스터를 배포한다면 weave peer
     No Network Configured
 
 
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/3718d691-5c81-44a9-9521-842342f0196f/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4664JXBZG54%2F20250329%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250329T140826Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEAwaCXVzLXdlc3QtMiJHMEUCICPSJtUeT81XFQrSCWKAHGeWusULcMEVN4n32tHH47fpAiEA9RReV99dKDzHf4enabCpRuTmvbOMwWLokm5CWHFxzF4q%2FwMIdRAAGgw2Mzc0MjMxODM4MDUiDHRO%2FfdB%2B92Dv6fHnircA%2BZRaWQd%2BQVghT7dkKVVf62dSsZ9oMXrNFG%2BBblFx9VE%2B%2FbYJuaT%2BYiFItTlA3BZLaYCbkZ5KX%2BlEiZMSQnVgw3Fp01gKTQJEJkvZHwzFjZzJ%2FFmCfCoow5e57sWYp3DvxHj%2F2nv8CHnLJ%2FqnTckKVvlIHqSHu4Fs9aqMtDF9lZDAKYP%2F4yg7ynE3LsMovq%2FwH5wkKB0HGFQ7oKY5vIf88tJWbS5z07wtNbFBc3F9pLwBYrdNZAZv%2BvTV9j0WDTj5A%2FteMpVf9brElEEfuV2JFcrFl5THnnhF7wL3pfjO0N%2B%2BFWPF3vJCaCsHWzsLQUglpTsefsmpcGp1cO%2F5rQ3GTzoNsaHSsbMN4NG3XfsI5OojeWzQPrhfueqZuF0MiIAJEA0Ln%2FtWqk1odemD2CAzHOtDP89ei02FOcY6JqKqDdokiia8ORF52eG690XPKfvk58IRep%2BxYFXcpiAqSqt0HryivdOUu4Vq9tNQwtnRsfu4WzEQkp3sO4jBNhoSn0U%2F8XKa96Lg6GmYxzhSbCL0YS%2BWfL0J1cjkWPpILoD7GUruA2zdnaMxdI8l6drRYW8ESXcA98Z1OdXpe2W3Hug6P07uWGJbqPafBTiu5Zb1DSgeSDOTjtcvzNfSxF4MKi1n78GOqUBv1n4AGqWeJMici3yV6jFVaEe%2FJ0y7ml%2FcWjoTQbDILV5AJFP0gF8B7nu5RJnqWAV6xiv0VArLBXnZabd6tAuKaGA4mrhnN%2Fwl9Pnj5VTleBcUyMIATy%2F5RtiHeQAafEvGuacpKsSp8n1fMTAjxQEslfsueClRgBrf%2FcgVI%2F13lXBo36wcC%2FwciSzVuRXhev%2Fwp8gbCLDIv7NnGoxchB1N5e9G6Wj&X-Amz-Signature=d3f02108147f7aa9c9f45003cb7008bec8cb3ae25edc9f77417bfe51a54fd2dc&X-Amz-SignedHeaders=host&x-id=GetObject)
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/3718d691-5c81-44a9-9521-842342f0196f/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466WR7LOU3H%2F20250330%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250330T140814Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjECYaCXVzLXdlc3QtMiJHMEUCIEfuTHDYUf2b38xTi3AVeg9x7PguyrjYSJNn0ZvkA4Q%2FAiEAn7gS3h1kj6MmoK%2Bml%2B2zQdT0yZP559B73Bb6jL6VDssqiAQIjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDEKIC9Rxn0%2FjfOHD1yrcAyTbX%2FhRHeRBnhq7Z1Kiauc4zrZW2zri3A8%2FoOTCDj4kNav%2FPSgVKRNhEZ2K3s5OCjJP9%2FsuyNklpAWJoUkjcc8hV5fyvenyBJz0RCGoxwkuwGSNUR%2BlharaAvfHO1wYqyyKBOSGRw8gnWbpuHSgHG%2FyIH0G3sqhfhuC2A3%2BZKr3J%2BhdTdwhnabbK9FcC3%2B1yAl4d2H9h1Y%2BKRVFuB2vaJHG5eDvpTcgirrTeNySLGep2nrrB19wKYezcJsSId6tZn535jOy61fE40MUpiT5bko8w7U06Pf%2BOTYHLNeOyUHbeSRT%2B4eWXMM01SO1Ol0hIkhUI1MMcmsAAAq%2FC6cTFYaApAZussdmNXBA5wYMVlxnI1vczmAG%2BQiWbQgJHybEFhanll0wkLH%2Fya5QoRdo%2Bt1asJqzmaMuaB%2FD6au9Eyo%2BHZYWAXmJKRf6iEHtz6FnbZZhehM%2FZR77SUkfh%2Bw%2BZ0paHxa%2FxqycRFG%2BHENnZqnVv2Uvym%2BRLs4jXaCSqny4jYAvjVGxUSvFGuEBb4BeDOPT%2F44cS%2F17wfY0QjYvW1Hg%2B0QgNJbEMRbLmZDHo%2Fdq%2BeIAm%2BmVOiBLjFzoVctnpIOPSFTc3QvGhfjcv62ZW8yst2d3M2O9mbWN1xpjMOKKpb8GOqUB1ePV6Fnp2idDH7HRUBW91fxJVJxHl8fbg1QSU9Ld9DERO7XxkjU8hDQK40YDJRVonu9UqnaB2rj8jTrKUpt7559xWAw1VwCAeat%2BlB95%2FqkrJb3Z5prjz2FE2Eg7I0KWU0caFuN9sqNXzQuWTCdDT9OPC1SXlakbmFMF0AGkjpYm17fK2U6H6yAERDqdEzVfOc5xCh8HQ4%2ByR2MoxZ7ClFs9OHQt&X-Amz-Signature=507651dab4f90084a24120e3bac2b311954610aee27a88881a5dbeb0a0133a6e&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 3. 클러스터에 weave-net 네트워킹 솔루션 배포.
 
     NOTE: /root/weave 디렉토리 아래에 weave manifest 파일이 이미 제공되어있음.
 
 
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/f065065c-fca7-4750-ae70-9982763ddb7e/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466Q3HNBTT7%2F20250329%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250329T140826Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEAwaCXVzLXdlc3QtMiJHMEUCIQD68C8SYx7wcQDq%2Ff6j2aY7pIXykr4Xfbx7ML1x%2B9tUzwIgSDzrig5RMN5Y4MI5SMqE4ctuEN6eZ%2Bu%2BYHhx%2F5P79q8q%2FwMIdRAAGgw2Mzc0MjMxODM4MDUiDOIeSCdEM3ZM8suHXSrcA%2F%2BwLwEi3oKjiUwhU%2FV2YQnsDOdEiklKT68AwIiQwLQxVBfTqY67fBScW1cfiBztOe9T7hSnW71vlTCe61o69PQmDUbQBKEuIcYqDX9s2Q3jcUkVp1kpkd0jgy20FbAztfvhyG9NUD84jPuFZkZxvGUYCss%2BdfA8WrixXUXofzJwIpOHZdLNi4M7U%2BtDoSfNybUVY65rin63CUDrx0z2A6D%2F%2FwOK6Ue6GEfOjo4mRLn%2B6N45ngDod4RVMDqTJJrUEOZitPanHEJE7n4l9I%2B%2FVF2ZqF9sH0yS%2FbIPvvusVRr1kYEdBBoxwJMxAypSnn%2BCs4gQjt%2BP7wE8eFrILfhy19Zp%2BbBf%2BkVveMQxxcnCW0Qi8DEtt0%2F990YHjx4M5EmlQxo5H1tyo83kB8i4XbF7Ox2NzPUm3ycrOzG65rkda%2FAs9nZcyqPFMouijxFrDJONCZEyxu%2B2M300p8qNRjtFIwc2JHUnqGo2BqQFfmCgXUJjoTM27UJ4AYTCub%2F%2BZ95BpvPZafWo05YdviDGtJ8j3cjKUlSjEJvxSNPWQiTkFXlKJimzPBhp0pGO0W9ZASeNfOx9sSdVWiH1JJ3bdh4jcidhKvOmy1EsqE%2F44hz7Zz%2FBD41RCheNRHONvIT6ML61n78GOqUBQmG2fEZqvXwG7%2B7Il64cy3BnsttedAv7hYONKvQELEfjSi9k6pZaFNQibcaWnq3Ij39TUYI5hslnvtJIDOrAXVWftsiK%2FeSLiS70eO7AKUw96lp1lzlss%2FGMe6RN2X8wCiw%2BglzwXJzX6sOU0Z9zyXDL4MGqN5x6FW5WGp4T3yUxWP4B%2FqdK3FS1IvUs4bEsG%2FA1xKCshPBkyS5K9WbWkPX8Ec8W&X-Amz-Signature=1ccb9bc21d24cf8ad314499468506416627bc8757bd5db97a8fc513bbc92587b&X-Amz-SignedHeaders=host&x-id=GetObject)
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/f065065c-fca7-4750-ae70-9982763ddb7e/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466XN3GSWRM%2F20250330%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250330T140814Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjECYaCXVzLXdlc3QtMiJIMEYCIQCws8kPh%2F0fHiR%2FL68ZpacGZZUaokV8GwHpsJbXnziBAwIhAIkvIL3rnjD6l74l7PqwWGUKifWEz3Z1CW4SvDFpV1ecKogECI7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1IgxRnQyFKoJz6XqamUQq3AMgYSpmcX61jfKkYvNylWvzoBbn6ptyU8GnTYU5IH%2F6kVDr0mqUU5nQDPz%2FF0H0W%2BqJDzmdqPhWQTu1cdHai%2BbJ0898L%2FaaMC1rY0dqPicm8fiogW%2FHcTYRccFRiEHOwTG%2BFfI0fZcMTIx7mYdpzkPKO4bajHsK8vO9lRfEgfHu6KRuWuC4U5nzYmY6roPogBUeoubzJAmAZ0i02qls3jzIdMmoTwS83AZdV5NXE2c0bT2Y0m2Sdepgs%2Bsr6etDJChqR%2B0nYBhwrDLi3L6quSljANrd4XuZmxJNDfU302YnJwgQ3d0N7L2NhxZOw8ibsLCPjVMYAsRFYzBhYfbYFp59XLpWKQmQSM7XiazVtMLKNzOCcCoVoam5qV0Sj%2FoTVd1EAJqtYK1x7%2BViJm9xgUYLfNSGU3QIvqBPeaQ3WOTj0mp6i4CVDwCJDaNMUCJfAB5gDX0HpWdsGWcCi8ne%2FYEVeEYS4ndSovtjDtjh2JwlMpXk%2By1LYMQB7xn72pIXJxtg%2B2P%2FPnCS66eSWFuw5CtiaZy1%2BYl7bTAwR9f9HDglWRuuRKeabcM4XXq9TrVDcC29RSotWt1JN%2FJzCJule6xKFrnpmKfyhBcn8oSn%2FZ%2ByANsthHf%2BWZF5tKul%2FDDjiqW%2FBjqkAePfzd8aWlhyJzYcUDyIZBcqsGmr%2FzSJjhVmjWYSG89WQuO9UsWEyodbtmEgKbiju1JPQEi%2BthL3vXpxFjL9jR6deFvdxVmG4zBnqnPjpCBxyMr8X73vMG7JTqLMY%2BcEec%2BoPMce%2FD6SKSaG7OsQG2wQGwqNBJP1UUV3BB0LsFrY1srEolcV%2FMls4j5CPtl4ojdDls71t2fHL%2BYRrdaB8dHpEjJN&X-Amz-Signature=28832a602daea42fcf03af9fbc77662b118cdcafd91746a579a336d1a5a57e33&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
 ## IP Address Management -  Weave
@@ -904,7 +904,7 @@ NodePort
 4. 이 클러스터에 배포된 kube-proxy pod 수.
 5. kube-proxy에 구성된 proxy type.
 
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/d1fa7c4c-b3bb-4327-8825-a89908a088a0/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB46644CNAL5X%2F20250329%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250329T140833Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEAwaCXVzLXdlc3QtMiJHMEUCIQCSj0EELsETOukfhCZeG2AaNMl66pPuK7YvkXwtUWQR0gIgMzmly15bYEb0yZF9y%2FGavn7yvPu3f9p40zEPUvqQT8Iq%2FwMIdRAAGgw2Mzc0MjMxODM4MDUiDPvopkBVcRQeyX%2FMjSrcA%2BCfp7HrCp5vTfm%2Bm3dyyDXsf1yOFqsVv3cSwlowLRM4%2B0DOPwcwIL8bCaYR1okEX7HKDncd2LXfesaGTj4rdCibBW%2FA2PKi7YjwKpC1%2FyM2RzivjBv4lvR9DUMO9DdGuLOGf4yU7v4fxeGXJu2apdl7CgY%2FTAo4fFn6XFrKXp2I7rcWHRba21aTfu9tryOHgLwue9dp7cFK7s%2F7%2F704p%2FVlNWW6ATc%2FDJuTgRp3zr77v1g8e8akNsGwr3KUp74hkqWhOp7nxoSmu66y8PYpXuoHO5tW6f3uhtul3sGY7IuaBD0mFK7U9tvu94PNjHf650pzQeUjzKE0ZoGkXAcUwrgNELfC7ImFjEYE1HY5%2FLb%2FnJ6tH6iS306kYNZcb%2BjWQca87TjVD%2BJ93h4Gxm3%2F%2BFEspD55%2F62zmBAlU4UIZlJ0XZJu5bv6qmLGWlRNOuX2sQyNmcMrn4f%2FvKQOsX81GfDG3D3NAGzhQ7zPxRojvgZBOzuKZsZhyvb6%2BQXgrx3bCn3me9GKKl9N01bQRgWyQIimyKuHp8CvGhZV5zQF2Ls4DLTkYHdUTd2xfAFRItn6OpUJg%2B8TPVkC%2F5NXmMcmgEQMB7aN7g%2Foini2uCLLi3KcNrs%2Bs3UktJvrM9maMJ21n78GOqUByVeDhjcNwScwFzKg7%2FlZ3Qh5H3OcNfTW5bUlJkvbAyLxxHXHrC3Dc5Ku4aaNWbfZ5zgoL%2F9ITlJDw6m%2FdMonnU5PivBm1IzONz0omkzCAeARD9TW0tMPThn3%2BoIMY1gNc0EuuUdMGpK38IMSQJZ1IBq9DlZb%2B6woxM5kEjDxL%2Fk7bAbdOXnXduHQZzI8T6RMxQfQkfpwMd8rlKuivPUO6JvU73AT&X-Amz-Signature=57696391e21207b1df760390413290e95391e0fb63fb067b9f4f010d3225401b&X-Amz-SignedHeaders=host&x-id=GetObject)
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/d1fa7c4c-b3bb-4327-8825-a89908a088a0/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466SUHPKYU6%2F20250330%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250330T140817Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjECYaCXVzLXdlc3QtMiJGMEQCID1QTzx4YawwlCYWXd7mx7JxRUpXDoZzm5ipOO8bxJYFAiB98Y9iZuxIa6KIUZ%2BcH%2F%2Flt1uUAXd8paENuly18nJ%2F5CqIBAiP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMUG3M1phjdeuvXXTCKtwD8aNOt17oy89%2BS3TThmVwddTF3Tjnwq0xtKcDsuh51VAn33iSsVaYh8y%2FqTyfC5a%2Fkn7vmRjbUNTB7Sv0u7Z6grFvARIKtzIiZSK2odccFunbim4Z15mQojD4w0EIQDzxB24JmW6KkGuJOUgQlPScBDNsqi%2B2QIjKYHF5e9w69TNdNJVEVS4fJCz2%2Fr%2BQrdIf7OaZSV1qiYSsE%2BZtrLivKepuv95eH5%2BnB7ZGGqnKAxh7w7t7yjVpFShP9fY6UFWw1awCfZFjcXi8OJnwb6EQJMl%2BlW4oERtxFqe%2Fk1%2F2FHYSsuVjbrl8GiA%2FUwUKcWIFLJrvcQFBUvQGjynD7mz7rZvvrotiDnBe8FJxdCpUXCs0AdqdI%2FfA1ap3djYo8oRjSjHKOZPGynLSfeazjpjqgXugxNgBWjgf%2Fhn3Z7vjPtp%2BaDrqmwlaPgvQOFKLh9wkCyje9X%2BlCLYP2ma3WL2O865lz7bYGkOOF%2BG%2BTTkwTGPqCxT5VCUyx4H3Wn9s58B9rKc3dGNCvYG200xpOTAXZ%2ByUHVGIfgVEJkw6UK646W%2F%2FTlNCha2P0FbpxRb0DSiEig%2FaePuYbKGn%2FSr2cp2VdMmmKIOL6PO2ptvcifyqqXqjRujVjr4ws0DanjIw0oulvwY6pgEQvJv6HvJ7W7qc6%2FNlZIORGGs0aLZSFTEjw%2BpseioJG5DvU00I4QgGO9PNOM48ia3sjU15mFRL0HYU9sUedciqTK5tl5GWwHZSOsQbn0qmwLoubKH9FVkcxRg93nxhPLhSwMfk%2FuHGzVXJV4deJlKWbXQS4HYmV6OIUqRPhjZhljsmBXB0SZRgzetYAivbbUO1uwvs2PFIm%2FJ9fgwWbCDORdlIjcyd&X-Amz-Signature=187946272e58a6a1227884b3aaa04dfc9d8ce75ad366266edbaea2cb8b394168&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 6. 클러스터에서 모든 노드에 kube-proxy pod가 실행 중임을 어떻게 보장하는가? kube-proxy pod를 관찰하고 배포 방법을 확인.
 
@@ -1139,6 +1139,33 @@ GCP같은 퍼블릭 클라우드 환경인 경우
 
 
 NodePort로 서비스를 생성하는 대신 LoadBalancer로 설정. Kubernetes는 NodePort로 했던 일을 계속 함. 이 외에도 네트워크 로드밸런서를 프로비저닝해달라는 요청을 보냄. 요청을 받으면 GCP는 모든 노드의 서비스 포트로 트래픽을 라우팅하고 해당 정보를 Kubernetes에 반환하도록 LoadBalancer를 자동으로 배포. 
+
+
+사용자가 입력한 URL을 기반으로 각 LoadBalancer 간의 트래픽을 어떻게 유도할 수 있을까?
+
+
+URL을 기반으로 트래픽을 다른 서비스로 리디렉션할 수 있는 또 다른 프록시 또는 LoadBalancer가 필요함.
+
+
+ingress controller에서 SSL 및 URL 기반 라우팅 구성의 모든 로드 밸런싱을 수행하게 됨.
+
+
+어떻게 동작하는가? 무엇인가? 어디에 있는가? 어떻게 볼 수 있고, 어떻게 구성할 수 있으며, 어떻게 부하 균형을 맞출 수 있는가? SSL은 어떻게 구현되는가?
+
+
+ingress없이 어떻게 할 것인가? 역방향 프록시나 Nginx, HAProxy, 또는 Traefik과 같은 로드 밸런싱 솔루션을 사용할 것.
+
+
+각 규칙 내에 다른 경로를 다룰 수 있음.
+
+
+세 번째 유형의 구성은 도메인 이름이나 호스트 이름을 사용하는 것입니다.입력을 위한 유사한 정의 파일을 만드는 것부터 시작합니다.이제 두 개의 도메인 이름이 생겼으니, 각 도메인마다 하나씩 두 개의 규칙을 만듭니다.도메인 이름으로 트래픽을 분할하려면 호스트 필드를 사용합니다.각 규칙의 호스트 필드는 요청 URL에 사용된 도메인 이름과 지정된 값을 일치시키고 트래픽을 적절한 백엔드로 라우팅합니다.
+
+
+각 규칙마다 백엔드 경로가 하나만 있어도 괜찮음. 이 도메인 이름들로부터의 모든 트래픽은 사용된 URL 경로에 관계없이 적절한 백엔드로 라우팅될 것. 각 URL을 처리하기 위해 여전히 여러 경로를 명세할 수 있음.
+
+
+호스트 이름 별 트래픽을 표시하기 위해 각 규칙마다 두 개의 규칙과 하나의 경로 지정을 사용.
 
 
 ## Practice Test - Ingress -1
