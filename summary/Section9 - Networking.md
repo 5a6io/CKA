@@ -762,14 +762,14 @@ kubeadm tool과 weave 플러그인과 클러스터를 배포한다면 weave peer
     No Network Configured
 
 
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/3718d691-5c81-44a9-9521-842342f0196f/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466WR7LOU3H%2F20250330%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250330T140814Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjECYaCXVzLXdlc3QtMiJHMEUCIEfuTHDYUf2b38xTi3AVeg9x7PguyrjYSJNn0ZvkA4Q%2FAiEAn7gS3h1kj6MmoK%2Bml%2B2zQdT0yZP559B73Bb6jL6VDssqiAQIjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDEKIC9Rxn0%2FjfOHD1yrcAyTbX%2FhRHeRBnhq7Z1Kiauc4zrZW2zri3A8%2FoOTCDj4kNav%2FPSgVKRNhEZ2K3s5OCjJP9%2FsuyNklpAWJoUkjcc8hV5fyvenyBJz0RCGoxwkuwGSNUR%2BlharaAvfHO1wYqyyKBOSGRw8gnWbpuHSgHG%2FyIH0G3sqhfhuC2A3%2BZKr3J%2BhdTdwhnabbK9FcC3%2B1yAl4d2H9h1Y%2BKRVFuB2vaJHG5eDvpTcgirrTeNySLGep2nrrB19wKYezcJsSId6tZn535jOy61fE40MUpiT5bko8w7U06Pf%2BOTYHLNeOyUHbeSRT%2B4eWXMM01SO1Ol0hIkhUI1MMcmsAAAq%2FC6cTFYaApAZussdmNXBA5wYMVlxnI1vczmAG%2BQiWbQgJHybEFhanll0wkLH%2Fya5QoRdo%2Bt1asJqzmaMuaB%2FD6au9Eyo%2BHZYWAXmJKRf6iEHtz6FnbZZhehM%2FZR77SUkfh%2Bw%2BZ0paHxa%2FxqycRFG%2BHENnZqnVv2Uvym%2BRLs4jXaCSqny4jYAvjVGxUSvFGuEBb4BeDOPT%2F44cS%2F17wfY0QjYvW1Hg%2B0QgNJbEMRbLmZDHo%2Fdq%2BeIAm%2BmVOiBLjFzoVctnpIOPSFTc3QvGhfjcv62ZW8yst2d3M2O9mbWN1xpjMOKKpb8GOqUB1ePV6Fnp2idDH7HRUBW91fxJVJxHl8fbg1QSU9Ld9DERO7XxkjU8hDQK40YDJRVonu9UqnaB2rj8jTrKUpt7559xWAw1VwCAeat%2BlB95%2FqkrJb3Z5prjz2FE2Eg7I0KWU0caFuN9sqNXzQuWTCdDT9OPC1SXlakbmFMF0AGkjpYm17fK2U6H6yAERDqdEzVfOc5xCh8HQ4%2ByR2MoxZ7ClFs9OHQt&X-Amz-Signature=507651dab4f90084a24120e3bac2b311954610aee27a88881a5dbeb0a0133a6e&X-Amz-SignedHeaders=host&x-id=GetObject)
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/3718d691-5c81-44a9-9521-842342f0196f/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4663Q36OUVG%2F20250331%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250331T141019Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjED0aCXVzLXdlc3QtMiJGMEQCIBI0VC1t7h1YbhS2z0VJ10ql9QC84wD9vGc14%2FpklH79AiAP9cDQ%2FiOIlHexFcC2xLgxgvyZtqY18YOeLijVe8spvSqIBAim%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMJGGVCfkV%2Fj1sF0qSKtwDgUQDI%2FQXqUdal57axnZmdI2xfYRjc5HxaqEZ1OZ6Q2NfkxOiQ5j8%2FOKGC8kG61icD1AW1vQtZTkkbSQbcZvXAnj6to%2BoxzM%2FYONqtswS%2FoViKFnZ9LhxoMZFx4qpGdTYwXaAD5cHP7nb2aIRi%2B%2FQKq%2Bz8QsTsZULjJtP3pvY2633EqKaLHCw60ur3%2BuGKTJK7S4DZjn7rbg6vPgyU%2FO%2FeC%2BJbHkBPqg1wFtRiRJsveZLeXetg5sksOCn0TwSZFdZ23wmfYGMyAN27bl80v4fdxFOogfI3uVlKA3V5J8zgOVIAg0wCnzsM8I%2FsQAZGSkm0sxTFrHfyB6stVSWSM0KA%2FsQDZm2TwXQ2Wq24h8xH2kncsd19biJQ%2BKa1W3L9IHgVApxoyXSSfx9WKwJ6DBZAtEiv33T6T8eWEcLektrvXg2plOOUfFSvEJN4z6u46527lIG9h%2BR%2FVQxbi7UHDBtoE3hIszQRh8WkD8Tjh9Ph0XZgek6bTKvdRrtBdZIJlpNt97lQj2hLhf6gdIlSX%2FHnywWyty64HToQ8LTyuyqWkkkXldfIk0VMHORcdehLyZDB93P%2FzohlHMRo3nU70XdHPb9gz9dFg4%2FLXjypMtQL4iTnG5BLUu2mMrhWUAwtaOqvwY6pgGnRVdV5cqXHDSlAcdGvGoG1MzLdseH2oDPG30KuTIaWcFe6Qu7oieN3vMKp%2FGHEWv1tfeZdIs%2FaGN7SsQ4%2Bc8njcX6ph32sKBGnMS382MTbGXD4g1bAKlRE3yvpOQVvcNRNehP7c7MjDJKiLwb80HBO6Ew0HkO1G4q7c2xdtHJdXsSc5xi2Fey37n6%2FAayZ0w3SWfvxyqnCBpoEzcZifcsCcXqp6d%2F&X-Amz-Signature=581dc771d4da61ceeff833cdad61d4208b27956929533f17b20040e3f57a50a7&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 3. 클러스터에 weave-net 네트워킹 솔루션 배포.
 
     NOTE: /root/weave 디렉토리 아래에 weave manifest 파일이 이미 제공되어있음.
 
 
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/f065065c-fca7-4750-ae70-9982763ddb7e/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466XN3GSWRM%2F20250330%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250330T140814Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjECYaCXVzLXdlc3QtMiJIMEYCIQCws8kPh%2F0fHiR%2FL68ZpacGZZUaokV8GwHpsJbXnziBAwIhAIkvIL3rnjD6l74l7PqwWGUKifWEz3Z1CW4SvDFpV1ecKogECI7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1IgxRnQyFKoJz6XqamUQq3AMgYSpmcX61jfKkYvNylWvzoBbn6ptyU8GnTYU5IH%2F6kVDr0mqUU5nQDPz%2FF0H0W%2BqJDzmdqPhWQTu1cdHai%2BbJ0898L%2FaaMC1rY0dqPicm8fiogW%2FHcTYRccFRiEHOwTG%2BFfI0fZcMTIx7mYdpzkPKO4bajHsK8vO9lRfEgfHu6KRuWuC4U5nzYmY6roPogBUeoubzJAmAZ0i02qls3jzIdMmoTwS83AZdV5NXE2c0bT2Y0m2Sdepgs%2Bsr6etDJChqR%2B0nYBhwrDLi3L6quSljANrd4XuZmxJNDfU302YnJwgQ3d0N7L2NhxZOw8ibsLCPjVMYAsRFYzBhYfbYFp59XLpWKQmQSM7XiazVtMLKNzOCcCoVoam5qV0Sj%2FoTVd1EAJqtYK1x7%2BViJm9xgUYLfNSGU3QIvqBPeaQ3WOTj0mp6i4CVDwCJDaNMUCJfAB5gDX0HpWdsGWcCi8ne%2FYEVeEYS4ndSovtjDtjh2JwlMpXk%2By1LYMQB7xn72pIXJxtg%2B2P%2FPnCS66eSWFuw5CtiaZy1%2BYl7bTAwR9f9HDglWRuuRKeabcM4XXq9TrVDcC29RSotWt1JN%2FJzCJule6xKFrnpmKfyhBcn8oSn%2FZ%2ByANsthHf%2BWZF5tKul%2FDDjiqW%2FBjqkAePfzd8aWlhyJzYcUDyIZBcqsGmr%2FzSJjhVmjWYSG89WQuO9UsWEyodbtmEgKbiju1JPQEi%2BthL3vXpxFjL9jR6deFvdxVmG4zBnqnPjpCBxyMr8X73vMG7JTqLMY%2BcEec%2BoPMce%2FD6SKSaG7OsQG2wQGwqNBJP1UUV3BB0LsFrY1srEolcV%2FMls4j5CPtl4ojdDls71t2fHL%2BYRrdaB8dHpEjJN&X-Amz-Signature=28832a602daea42fcf03af9fbc77662b118cdcafd91746a579a336d1a5a57e33&X-Amz-SignedHeaders=host&x-id=GetObject)
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/f065065c-fca7-4750-ae70-9982763ddb7e/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4663UZYTWRZ%2F20250331%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250331T141019Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjED0aCXVzLXdlc3QtMiJGMEQCIFuqaVkOXqKXGcgCLTWK9HvNJNUCZB0bkweg5lDZv70qAiAqMx1fjCB1LBO5ScaCfE%2Fj3z61kM%2BEu0sVNbbMCEMFICqIBAim%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMPEr4tFJGaw9TzXbQKtwDLkWV3xumzfoF3SG5e0ai2vEHSFFf7U0HXJ4%2BzCBpx%2BDIVK3c8k6muVPln0F6Wiu7dOolRtC1vRE6CalwqX0eCz7DfLym7u%2FUZSbrcncyWfCV7ykZdudxA7ZzjfSynMzks3DwsI%2F4J9g%2FjOlkPw21ao4WCjjt%2B1f5baoSZiwl%2B6Wz3ppKQvEcST53lxv1%2BEmGJN1NayzAIO1aU7cSE5H66PhcxFx6%2BVb%2FdUHyzK2gtJ19Ov9rG%2B7%2FpTgLb07pw5Je7V6S58UFW9iT%2FBZ%2FrvDuADKoIBKcx4HO%2Bb9LZieyLYt11tWWYOqOxi5nzYFgmVh%2BAnFXOLk0%2Fj4rO%2B%2BqhTfmiSCrmHe3w2fwNLptgsFHo%2FKzK%2FIYcaK6TQOq2%2BANDiDkN4LjzOLKF0JnyZlnBDJNcJ7G8UgdFF4RA2snB5VNNVha3h7R10mGf7Hj2bs7LWVgVGY2W8J507R%2BLszclnvGYHgsGCi%2BR7N3yAlIrU0SRahAoSSpUoKWkoaRrk9Uv91Y0dAxoKIO3IO7ZIRdgG58KAaGXZa4GUm6kGYED33gDkDUICSw46Q%2F0QAInQXJy6QekDYjE882T5mWJFHBBMB8UqxhowAdK4gplQfKWfM%2FCkcCeA61LyA20mDtUKgwtqKqvwY6pgETyYRoynZLmOlGx9exk8nkkmB0FUqz4d6AlwjHO%2BVO%2FgAySyrkzHJqNYvh44bGTIYf0Xv5UYRe5Wo9hVBHvPRo9vM0Y9x5BepW9sDQdlgXg6Fsp6Kf67n5U6toLuvfEscSlyveX2h3sr5gQytr9lANxR5KCNM%2FGLM%2FpooxnPNxN5%2BfG%2F2HAwXkTVORc2%2FCWGmYIrZoWfZpgp0YFINf93oALhL1GxrZ&X-Amz-Signature=30930d94847228aa2fd92ba84f7fc02510b6a084feffedfef62c2879cd4cc75f&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
 ## IP Address Management -  Weave
@@ -904,7 +904,7 @@ NodePort
 4. 이 클러스터에 배포된 kube-proxy pod 수.
 5. kube-proxy에 구성된 proxy type.
 
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/d1fa7c4c-b3bb-4327-8825-a89908a088a0/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466SUHPKYU6%2F20250330%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250330T140817Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjECYaCXVzLXdlc3QtMiJGMEQCID1QTzx4YawwlCYWXd7mx7JxRUpXDoZzm5ipOO8bxJYFAiB98Y9iZuxIa6KIUZ%2BcH%2F%2Flt1uUAXd8paENuly18nJ%2F5CqIBAiP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMUG3M1phjdeuvXXTCKtwD8aNOt17oy89%2BS3TThmVwddTF3Tjnwq0xtKcDsuh51VAn33iSsVaYh8y%2FqTyfC5a%2Fkn7vmRjbUNTB7Sv0u7Z6grFvARIKtzIiZSK2odccFunbim4Z15mQojD4w0EIQDzxB24JmW6KkGuJOUgQlPScBDNsqi%2B2QIjKYHF5e9w69TNdNJVEVS4fJCz2%2Fr%2BQrdIf7OaZSV1qiYSsE%2BZtrLivKepuv95eH5%2BnB7ZGGqnKAxh7w7t7yjVpFShP9fY6UFWw1awCfZFjcXi8OJnwb6EQJMl%2BlW4oERtxFqe%2Fk1%2F2FHYSsuVjbrl8GiA%2FUwUKcWIFLJrvcQFBUvQGjynD7mz7rZvvrotiDnBe8FJxdCpUXCs0AdqdI%2FfA1ap3djYo8oRjSjHKOZPGynLSfeazjpjqgXugxNgBWjgf%2Fhn3Z7vjPtp%2BaDrqmwlaPgvQOFKLh9wkCyje9X%2BlCLYP2ma3WL2O865lz7bYGkOOF%2BG%2BTTkwTGPqCxT5VCUyx4H3Wn9s58B9rKc3dGNCvYG200xpOTAXZ%2ByUHVGIfgVEJkw6UK646W%2F%2FTlNCha2P0FbpxRb0DSiEig%2FaePuYbKGn%2FSr2cp2VdMmmKIOL6PO2ptvcifyqqXqjRujVjr4ws0DanjIw0oulvwY6pgEQvJv6HvJ7W7qc6%2FNlZIORGGs0aLZSFTEjw%2BpseioJG5DvU00I4QgGO9PNOM48ia3sjU15mFRL0HYU9sUedciqTK5tl5GWwHZSOsQbn0qmwLoubKH9FVkcxRg93nxhPLhSwMfk%2FuHGzVXJV4deJlKWbXQS4HYmV6OIUqRPhjZhljsmBXB0SZRgzetYAivbbUO1uwvs2PFIm%2FJ9fgwWbCDORdlIjcyd&X-Amz-Signature=187946272e58a6a1227884b3aaa04dfc9d8ce75ad366266edbaea2cb8b394168&X-Amz-SignedHeaders=host&x-id=GetObject)
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/d1fa7c4c-b3bb-4327-8825-a89908a088a0/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466V2LA4P26%2F20250331%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250331T141020Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjED0aCXVzLXdlc3QtMiJHMEUCIF3zJejVrcVZfnd%2B7aW6oVIl%2FMGskLUcbMVz%2BJXq6eNiAiEAo9TiUIJGAEPIITLBq2wqHgPtc%2BJvrTfdUiyITzhEJz0qiAQIpv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDP2ZI38djkY4sGlHpyrcAz1J1TGTukrgsmoI%2FeUb%2B9dckQzfx0f%2FlvByLWwe71aMAybdg0AoZgD8u3RwYGWkqqCBLNNJ6L%2Bt13W9R6Wz6GjjoAIVJRrfWF9%2FQvd79LVJqn%2BdQzRIoTzXie2OQ8VvyaNYaIEjMI7igDJYSevVmV97QOnEvLO8rRucUD4cpjzuP0PfEAabY4XNmDu1wBjogVn3dwzsr1e%2BqIRGJQCcuYkI1uxxspBJx7IqDa6Mok3YXkiLK3pYIetwQ1ZPF3RGE57hgkp6MrWEFm8bA3n6s5LTkWk4OHlvwUTUYkgNtoMbcCCWW50a64aRqTX2gPFKIlN63k9V5%2FV0%2F2HJ9zLPj61BU0JbanhzIp9QkMwlC%2BmPQUl2nxq5NK0kvNRkV3pzBcahFxHqM36I1okyLdfRDmUs70tbtb7Q1KhXuv360xOUFPZeeEXjzQogPO%2FS5Q%2BLxdrnm7b0%2Bv03SZ3mP%2BPAaBFldiyy15Ba0dhonfDdByF9aLSFsLRl1gPi5KTZyfyDAkVseIY29zsppHPaPVwsksPbc3uV0mzTRr%2F5jY1AKCxQ6UagaX8stkrR6ERxWviwhaLoZgq8wTFpUkdrYdJWUZJY%2BKmz1%2F6kqCUIphsMWbyqXfp6Ies%2FBHYwJXNmMM6iqr8GOqUBYpr%2Fug09jfnyoqBAp5R9kaAKWH6VRp1zOLuNocPaWDibdoKxzW%2Fx9KTiPQl8oUZX6ZQPk5C3cLyXiRV3A19dUHEg6xjN3H%2FstDUeONGhxe2EIl6bGSiPGCVwwgjTWEG6lkCfsizcDiEL6eNj2syWlVadGFstAQ0yK4BFwXqNx%2F1OkmzLJp0QGTsNFyOPjngMEt7JCouj74b9Lqg7z6P0Qvs2gWQz&X-Amz-Signature=ddc51066e6fc9b9d94848b2ca8c34117d9eea3af6242c73852bb562b989f95c6&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 6. 클러스터에서 모든 노드에 kube-proxy pod가 실행 중임을 어떻게 보장하는가? kube-proxy pod를 관찰하고 배포 방법을 확인.
 
@@ -1168,14 +1168,347 @@ ingress없이 어떻게 할 것인가? 역방향 프록시나 Nginx, HAProxy, �
 호스트 이름 별 트래픽을 표시하기 위해 각 규칙마다 두 개의 규칙과 하나의 경로 지정을 사용.
 
 
-## Practice Test - Ingress -1
+## Practice Test - Ingress Networking-1
+
+1. Ingress Controller는 어느 네임스페이스에 배포되었는가? ingress-nginx
+
+    ```bash
+    controlplane ~ ➜  k get all --all-namespaces | grep -i ingress
+    ingress-nginx   pod/ingress-nginx-admission-create-gs69h        0/1     Completed   0          118s
+    ingress-nginx   pod/ingress-nginx-admission-patch-dnp5l         0/1     Completed   0          118s
+    ingress-nginx   pod/ingress-nginx-controller-6c4c749b95-ppnlp   1/1     Running     0          118s
+    ingress-nginx   service/ingress-nginx-controller             NodePort    172.20.142.88    <none>        80:30080/TCP,443:32103/TCP   119s
+    ingress-nginx   service/ingress-nginx-controller-admission   ClusterIP   172.20.117.97    <none>        443/TCP                      119s
+    ingress-nginx   deployment.apps/ingress-nginx-controller   1/1     1            1           118s
+    ingress-nginx   replicaset.apps/ingress-nginx-controller-6c4c749b95   1         1         1       118s
+    ingress-nginx   job.batch/ingress-nginx-admission-create   Complete   1/1           7s         118s
+    ingress-nginx   job.batch/ingress-nginx-admission-patch    Complete   1/1           7s         118s
+    ```
+
+2. Ingress Controller Deployment의 이름은? ingress-nginx-controller
+3. 애플리케이션이 배포된 네임스페이스는? app-space
+
+    ```bash
+    controlplane ~ ➜  k get all --all-namespaces | grep -i app
+    
+    app-space
+           pod/default-backend-569f95b877-q87hp            1/1     Running     0          4m59s
+    app-space       pod/webapp-video-7d6646445c-hgzcf               1/1     Running     0          4m59s
+    app-space       pod/webapp-wear-7cf6df9954-42c5v                1/1     Running     0          4m59s
+    app-space       service/default-backend-service              ClusterIP   172.20.32.151    <none>        80/TCP                       4m59s
+    app-space       service/video-service                        ClusterIP   172.20.29.187    <none>        8080/TCP                     4m59s
+    app-space       service/wear-service                         ClusterIP   172.20.107.182   <none>        8080/TCP                     4m59s
+    kube-flannel   daemonset.apps/kube-flannel-ds   1         1         1       1            1           <none>                   16m
+    kube-system    daemonset.apps/kube-proxy        1         1         1       1            1           kubernetes.io/os=linux   16m
+    app-space       deployment.apps/default-backend            1/1     1            1           4m59s
+    app-space       deployment.apps/webapp-video               1/1     1            1           4m59s
+    app-space       deployment.apps/webapp-wear                1/1     1            1           4m59s
+    ingress-nginx   deployment.apps/ingress-nginx-controller   1/1     1            1           4m57s
+    kube-system     deployment.apps/coredns                    2/2     2            2           16m
+    app-space       replicaset.apps/default-backend-569f95b877            1         1         1       4m59s
+    app-space       replicaset.apps/webapp-video-7d6646445c               1         1         1       4m59s
+    app-space       replicaset.apps/webapp-wear-7cf6df9954                1         1         1       4m59s
+    ingress-nginx   replicaset.apps/ingress-nginx-controller-6c4c749b95   1         1         1       4m57s
+    kube-system     replicaset.apps/coredns-7484cd47db                    2         2         2       16m
+    ```
+
+4. app-space에 배포된 애플리케이션 수.
+5. Ingress 자원이 배포된 네임스페이스는?
+
+    ```bash
+    controlplane ~ ➜  k get ingress --all-namespaces
+    NAMESPACE   NAME                 CLASS    HOSTS   ADDRESS         PORTS   AGE
+    
+    app-space
+       ingress-wear-watch   <none>   *       172.20.142.88   80      7m51s
+    ```
+
+6. Ingress 자원의 이름은? ingress-wear-watch
+7. Ingress Resource에 구성된 Host는?
+
+    ```bash
+    controlplane ~ ➜  k describe ingress -n app-space 
+    Name:             ingress-wear-watch
+    Labels:           <none>
+    Namespace:        app-space
+    Address:          172.20.142.88
+    Ingress Class:    <none>
+    Default backend:  <default>
+    Rules:
+      Host        Path  Backends
+      ----        ----  --------
+      
+    *   
+            
+                  /wear    wear-service:8080 (172.17.0.4:8080)
+                  /watch   video-service:8080 (172.17.0.5:8080)
+    Annotations:  nginx.ingress.kubernetes.io/rewrite-target: /
+                  nginx.ingress.kubernetes.io/ssl-redirect: false
+    Events:
+      Type    Reason  Age                    From                      Message
+      ----    ------  ----                   ----                      -------
+      Normal  Sync    8m37s (x2 over 8m37s)  nginx-ingress-controller  Scheduled for sync
+    ```
+
+8. ingress에 /wear 경로로 구성된 backend는? wear-service
+9. ingress에 비디오 스트리밍 애플리케이션이 이용 가능하도록 만든 경로는? /watch
+10. 요청이 ingress에서 구성된 경로 중 어느 것과도 일치하지 않는 경우, 요청은 어느 서비스로 전달되는가? default-backend-service
+11. 터미널 상단의 탭을 사용하여 ingress 서비스 확인. 보이는 페이지는? 404 Error Page
+12. 애플리케이션이 제공되는 URL을 변경해야 함. 비디오 애플리케이션을 /stream에서 사용할 수 있도록 하기
+
+    ```bash
+    controlplane ~ ➜  k edit ingress -n app-space
+    spec:
+      rules:
+      - http:
+          paths:
+          - backend:
+              service:
+                name: wear-service
+                port:
+                  number: 8080
+            path: /wear
+            pathType: Prefix
+          - backend:
+              service:
+                name: video-service
+                port:
+                  number: 8080
+            path: /watch # ➡️ /stream으로 변경
+            pathType: Prefix
+    ```
+
+13. 사용자가 ingress service에서 /eat URL을 보려고 함. 어느 페이지가 보이는가?  404 Error Page
+14. 사용자가 food delivery 애플리케이션을 이용할 수 있도록 ingress에 새 경로 추가.
+
+    ```bash
+    controlplane ~ ➜  k edit ingress -n app-space
+    - backend:
+              service:
+                name: food-service
+                port:
+                  number: 8080
+            path: /eat
+            pathType: Prefix
+    ```
+
+15. 새 payment 서비스 도입. 중요하기 때문에 그것만의 namespace에 새 애플리케이션 배포.
+
+    ```bash
+    controlplane ~ ➜  k get all -n critical-space 
+    NAME                              READY   STATUS    RESTARTS   AGE
+    pod/webapp-pay-7df499586f-mc5tl   1/1     Running   0          60s
+    
+    NAME                  TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
+    service/pay-service   ClusterIP   172.20.88.102   <none>        8282/TCP   60s
+    
+    NAME                         READY   UP-TO-DATE   AVAILABLE   AGE
+    deployment.apps/webapp-pay   1/1     1            1           60s
+    
+    NAME                                    DESIRED   CURRENT   READY   AGE
+    replicaset.apps/webapp-pay-7df499586f   1         1         1       60s
+    ```
+
+16. 새 애플리케이션의 deployment 이름은? webapp-pay
+17. /pay에 새 애플리케이션이 이용가능하도록 요청.
+
+    ```bash
+    controlplane ~ ➜  k get svc -n critical-space 
+    NAME          TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
+    pay-service   ClusterIP   172.20.88.102   <none>        8282/TCP   12m
+    
+    controlplane ~ ➜  k create ingress web-pay -n critical-space --rule=/pay=pay-service
+    :8282
+    ingress.networking.k8s.io/web-pay created
+    
+    controlplane ~ ➜  k edit ingress -n critical-space 
+    ingress.networking.k8s.io/web-pay edited
+    
+    controlplane ~ ➜  k get ingress -n critical-space 
+    NAME      CLASS    HOSTS   ADDRESS         PORTS   AGE
+    web-pay   <none>   host    172.20.142.88   80      2m17s
+    ```
 
 
-## Practice Test - Ingress -2
+    앱에 /pay 경로가 없어 404 페이지가 보임. 
+
+
+    ```bash
+    annotations:
+      nginx.ingress.kubernetes.io/rewrite-target: /
+    ```
+
+
+    위 annotation을 추가해야 함.
+
+
+## Practice Test - Ingress Networking -2
+
+1. ingress controller를 배포하자. 먼저, ingress-nginx 네임스페이스 생성.
+
+    ```bash
+    controlplane ~ ➜  k create ns ingress-nginx
+    namespace/ingress-nginx created
+    ```
+
+2. Nginx Ingress Controller는 Configmap 객체 요청. ingress-nginx 네임스페이스에 ingress-nginx-controller 이름을 가진 configmap 생성.
+
+    ```yaml
+    apiVersion: v1
+    kind: ConfigMap
+    metadata:
+      name: ingress-nginx-controller
+      namespace: ingress-nginx
+    data:
+    ```
+
+3. NGINX ingress controller는 두 service account를 요구. ingress-nginx 네임스페이스에 ingress-nginx와 ingress-nginx-admission 이름을 가진 service account 생성.
+
+    ```bash
+    controlplane ~ ➜  k create serviceaccount ingress-nginx -n ingress-nginx
+    serviceaccount/ingress-nginx created
+    
+    controlplane ~ ➜  k create serviceaccount ingress-nginx-admission -n ingress-nginx
+    serviceaccount/ingress-nginx-admission created
+    ```
+
+4. serviceaccount에 대해 role, rolebinding, clusterrole, clusterrolebinding이 생성됨. 이제 Ingress Controller 배포. 주어진 파일을 사용하여 Kubernetes 객체 생성.
+
+    deployment와 그것의 service가 ingress-controller.yaml에 주어짐. 몇몇 문제가 있으므로 수정.
+
+5. ingress 자원을 생성하여 ingress service에서 /wear와 /watch에서 애플리케이션을 사용할 수 있도록 함. 또한 `rewirte-target`  주석 필드 사용.
+
+    ```bash
+    controlplane ~ ➜  k create ingress service-ingress -n app-space --rule=/wear=wear-ser
+    vice:8080 --rule=/watch=video-service:8080 --annotation nginx.ingress.kubernetes.io/
+    rewrite-target=/
+    ingress.networking.k8s.io/service-ingress created
+    ```
 
 
 ## Introduction to Gateway API
 
 
+같은 Ingress 자원을 공유하는 두 서비스. 각 서비스가 서로 다른 팀이나 완전히 다른 조직이나 기업에 의해 관리된다면 어떠한가? 만약 wear-service가 팀 A에 의해 관리되고 video-service가 팀 B에 의해 관리된다면?
+
+
+이 경우, 기본 ingress 자원은 여전히 단일 리소스로, 한 번에 한 팀만 관리 가능. 그래서 멀티 테넌트 환경에서 ingress가 challenge를 제기할 수 있음. 동일한 ingress 자원을 처리할 때 조정이 필요하며 충돌이 발생 가능.
+
+
+ingress는 멀티 테넌시에 대한 충분한 지원이 부족. 또 다른 제한 사항은 규칙 구성 옵션. 입력은 호스트 매칭이나 경로 매칭과 같은 CTP 기반 규칙만 지원.
+
+
+TCP/UDP 라우팅, 트래픽 분할, 헤더 조작, 인증, 속도 제한 등은 현재 지원되지 않음. 모두 컨트롤러에 의해 구성됨. 이러한 구성은 주석을 사용하여 컨트롤러에 전달됨.
+
+
+따라서 CORS를 구성하는 등 다양한 입력 규칙에 지정된 실제 복잡한 주석을 볼 수 있음. 여기에는 NGINX 사양 구성이 있음. 두 번째 예에서는 trafik controller를 사용하고 있음. 그래서 여기에는 traefik과 관련된 몇 가지 구성이 있음. 이러한 구성이 각각  기본 컨트롤러인 NGINX와 Traeifk에 매우 구체적. 쿠버네티스도 이러한 설정에 대해 알지 못함. 그래서 옳고 그른지 확인 불가. 이러한 구성은 기본 컨트롤러로 전달될 뿐.
+
+
+따라서 동일한 사용 사례에 대해 컨트롤러마다 다른 구성이 있음. 그리고 이러한 구성은 이러한 특정 컨트롤러에서만 사용 가능.
+
+
+Gateway API는 7계층 라우팅과 4계층 라우팅에 초점을 맞춘 쿠버네티스 공식 프로젝트. 이 프로젝트는 service mesh api와 ingress load balancing의 다음 세대를 나타냄.
+
+
+게이트웨이 API는 세 개의 개별 페르소나에 의해 관리되는 세 개의 개별 객체를 도입.
+
+
+인프라 제공자는 gatewayclass를 구성. gatewayclass는 NGINX, Traefik 또는 기타 로드 밸런서와 같은 기본 네트워크 인프라를 정의. cluster operator는 gatewayclass 인스턴스인 gateway를 구성할 것.
+
+
+애플리케이션 개발자가 생성한 HTTPRoute가 있음. HTTP route만 가능한 ingress와 달리 TCP GRPC route 등 가짐.
+
+
+[Gateway API](https://kubernetes.io/docs/concepts/services-networking/gateway/)
+
+> Ingress vs Gateway API
+- TLS 설정
+
+    ```yaml
+    apiVersion: networking.k8s.io/v1
+    kind: Ingress
+    metadata:
+      name: secure-app
+      annotations:
+        nginx.ingress.kubernetes.io/ssl-redirect: "true"
+        nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    spec:
+      tls:
+      - hosts:
+        - secure.example.com
+        secretName: tls-secret
+    ```
+
+
+    ```yaml
+    apiVersion: gateway.networking.k8s.io/v1
+    kind: Gateway
+    metadata:
+      name: secure-gateway
+    spec:
+      gatewayClassName: example-gc
+      listeners:
+      - name: https
+        port: 443
+        protocol: HTTPS
+        tls:
+          mode: Terminate
+          certificateRefs:
+          - kind: Secret
+            name: tls-secret
+        allowRoutes:
+          kinds:
+          - kind: HTTPRoute
+    ```
+
+- Canary
+
+    ```yaml
+    apiVersion: networking.k8s.io/v1
+    kind: Ingress
+    metadata:
+      name: canary-ingress
+      annotations:
+        nginx.ingress.kubernetes.io/canary: "true"
+        nginx.ingress.kubernetes.io/canary-weight: "20"
+    spec:
+      rules:
+      - http:
+          paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: app-v2
+                port:
+                  number: 80
+    ```
+
+
+    ```yaml
+    apiVersion: gateway.networking.k8s.io/v1
+    kind: HTTPRoute
+    metadata:
+      name: split-traffic
+    spec:
+      parentRefs:
+      - name: app-gateway
+      rules:
+      - backendRefs:
+        - name: app-v1
+          port: 80
+          weight: 80
+        - name: app-v2
+          port: 80
+          weight: 20
+    ```
+
+
 ## Practice Test - Gateway API
 
+1. 쿠버네티스에서 Gateway를 정의하는 데 사용된 API resource는? Gateway
+2. Gateway에서 allowRoute 필드의 목적은?
+
+    To specify which namespaces can attach routes to the Gateway.
+
+3. Kubernetes Gateway API에서 지원되지 않는 protocol은?
