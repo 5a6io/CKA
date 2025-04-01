@@ -46,11 +46,11 @@
 </tr>
 <tr>
 <td>Section9 - Networking</td>
-<td></td>
+<td>:white_check_mark:</td>
 </tr>
 <tr>
 <td>Section10 - Design and Install a Kubernetes Cluster</td>
-<td></td>
+<td>:white_check_mark:</td>
 </tr>
 <tr>
 <td>Section11 - Install “Kubernetes the kubeadm way”</td>

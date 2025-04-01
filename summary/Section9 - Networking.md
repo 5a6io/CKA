@@ -762,14 +762,14 @@ kubeadm tool과 weave 플러그인과 클러스터를 배포한다면 weave peer
     No Network Configured
 
 
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/3718d691-5c81-44a9-9521-842342f0196f/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4663Q36OUVG%2F20250331%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250331T141019Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjED0aCXVzLXdlc3QtMiJGMEQCIBI0VC1t7h1YbhS2z0VJ10ql9QC84wD9vGc14%2FpklH79AiAP9cDQ%2FiOIlHexFcC2xLgxgvyZtqY18YOeLijVe8spvSqIBAim%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMJGGVCfkV%2Fj1sF0qSKtwDgUQDI%2FQXqUdal57axnZmdI2xfYRjc5HxaqEZ1OZ6Q2NfkxOiQ5j8%2FOKGC8kG61icD1AW1vQtZTkkbSQbcZvXAnj6to%2BoxzM%2FYONqtswS%2FoViKFnZ9LhxoMZFx4qpGdTYwXaAD5cHP7nb2aIRi%2B%2FQKq%2Bz8QsTsZULjJtP3pvY2633EqKaLHCw60ur3%2BuGKTJK7S4DZjn7rbg6vPgyU%2FO%2FeC%2BJbHkBPqg1wFtRiRJsveZLeXetg5sksOCn0TwSZFdZ23wmfYGMyAN27bl80v4fdxFOogfI3uVlKA3V5J8zgOVIAg0wCnzsM8I%2FsQAZGSkm0sxTFrHfyB6stVSWSM0KA%2FsQDZm2TwXQ2Wq24h8xH2kncsd19biJQ%2BKa1W3L9IHgVApxoyXSSfx9WKwJ6DBZAtEiv33T6T8eWEcLektrvXg2plOOUfFSvEJN4z6u46527lIG9h%2BR%2FVQxbi7UHDBtoE3hIszQRh8WkD8Tjh9Ph0XZgek6bTKvdRrtBdZIJlpNt97lQj2hLhf6gdIlSX%2FHnywWyty64HToQ8LTyuyqWkkkXldfIk0VMHORcdehLyZDB93P%2FzohlHMRo3nU70XdHPb9gz9dFg4%2FLXjypMtQL4iTnG5BLUu2mMrhWUAwtaOqvwY6pgGnRVdV5cqXHDSlAcdGvGoG1MzLdseH2oDPG30KuTIaWcFe6Qu7oieN3vMKp%2FGHEWv1tfeZdIs%2FaGN7SsQ4%2Bc8njcX6ph32sKBGnMS382MTbGXD4g1bAKlRE3yvpOQVvcNRNehP7c7MjDJKiLwb80HBO6Ew0HkO1G4q7c2xdtHJdXsSc5xi2Fey37n6%2FAayZ0w3SWfvxyqnCBpoEzcZifcsCcXqp6d%2F&X-Amz-Signature=581dc771d4da61ceeff833cdad61d4208b27956929533f17b20040e3f57a50a7&X-Amz-SignedHeaders=host&x-id=GetObject)
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/3718d691-5c81-44a9-9521-842342f0196f/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466V57D5VNL%2F20250401%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250401T141123Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEFYaCXVzLXdlc3QtMiJHMEUCIQDeLGiHDFGyzQRSFSAw0lcsppi3Dw9cCtKyE0DJ5K03BwIgCQoBxOYYvzY5EWQbnTQzLQI0Tj0%2BRicZfKXdhvQPAHcqiAQIvv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDCSJ49u%2FyQrvOlAZMCrcA%2BoWepHQkBQtPJySaHXaITX4SiZWMD8LCtR6a7Y%2BubIRITGj2o7HH1FrnC6FLWC%2Bbg5Mi84KzArX%2BRlssaBDVG308hBgWZp3ap3lGk8tWKU7v6YhjbD33dkB64USN1o2W%2FOyG0VsII5Vx03HycnjdxYb56tyLmCpFUAVanhkoVmzSGXNxRjTOYRemw3eK4VYzFbx9h6kMkUUAE6REA4K3Nczw8vRpg%2FCFkLFoKPN2PDrDyUQRTyRDIygUumtzmbZLEla%2Bda8p0Yyy9Il%2BbNhYyUoDGt1AuA3uVsTzQYzpjPX3M55paajpx06HVxWOLcM%2BGeYGZBZHYJV8sXM%2FaZMbmymP6xPiGlPtbxCfiy2cbAm97grrpJQ7MiKR1DOQLeMghHsgQhQtUCmFl1YPatKo8AlZz8Kb%2Bz10L%2F2IErw1DwNZ%2BV4zCVyQBmD1zxr7QNGupNKDJ2zq7kFRYngTloV033RNYYvkGBQuOezHtWm0oqit1SZxczddCAjifgXeKimurKtrKTQqg%2B1ChDz9ax9CoxY7yI2XPjh0oQhdb7n9DwkwoR1%2BX25iVKjOcAlprAOjlEuEJUdNzC6F%2BOr3AtaUfqivaRptnuT%2FhHu%2FJ9wRm13bAy4HFQ1d3C8GnLNMMXQr78GOqUBVkMvJl0jKD955RhP788OMbeYwkUMIhzvGlK4hHY9udajivQ4%2B6QUjaB4pyhtGLB%2FdaIYSr1%2Ft%2F7DaRaXV7hbsjPivDNig6pNcsfefB1Ai0kN%2BgoNZNs4IXQbb%2BW9Rc5NFsZbdzyymLdny9JDw%2FgfGVTvNMyRrb%2F2QIEU8gsmItQYld4U9dhlZQPT5DiDYdCVaWZTouJQBXp8lDsYPwu9nHktZNMM&X-Amz-Signature=cf2be5161cdde265546313cf7b7deba0e95d9a8dbe1602cc61265375628aa258&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 3. 클러스터에 weave-net 네트워킹 솔루션 배포.
 
     NOTE: /root/weave 디렉토리 아래에 weave manifest 파일이 이미 제공되어있음.
 
 
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/f065065c-fca7-4750-ae70-9982763ddb7e/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4663UZYTWRZ%2F20250331%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250331T141019Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjED0aCXVzLXdlc3QtMiJGMEQCIFuqaVkOXqKXGcgCLTWK9HvNJNUCZB0bkweg5lDZv70qAiAqMx1fjCB1LBO5ScaCfE%2Fj3z61kM%2BEu0sVNbbMCEMFICqIBAim%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMPEr4tFJGaw9TzXbQKtwDLkWV3xumzfoF3SG5e0ai2vEHSFFf7U0HXJ4%2BzCBpx%2BDIVK3c8k6muVPln0F6Wiu7dOolRtC1vRE6CalwqX0eCz7DfLym7u%2FUZSbrcncyWfCV7ykZdudxA7ZzjfSynMzks3DwsI%2F4J9g%2FjOlkPw21ao4WCjjt%2B1f5baoSZiwl%2B6Wz3ppKQvEcST53lxv1%2BEmGJN1NayzAIO1aU7cSE5H66PhcxFx6%2BVb%2FdUHyzK2gtJ19Ov9rG%2B7%2FpTgLb07pw5Je7V6S58UFW9iT%2FBZ%2FrvDuADKoIBKcx4HO%2Bb9LZieyLYt11tWWYOqOxi5nzYFgmVh%2BAnFXOLk0%2Fj4rO%2B%2BqhTfmiSCrmHe3w2fwNLptgsFHo%2FKzK%2FIYcaK6TQOq2%2BANDiDkN4LjzOLKF0JnyZlnBDJNcJ7G8UgdFF4RA2snB5VNNVha3h7R10mGf7Hj2bs7LWVgVGY2W8J507R%2BLszclnvGYHgsGCi%2BR7N3yAlIrU0SRahAoSSpUoKWkoaRrk9Uv91Y0dAxoKIO3IO7ZIRdgG58KAaGXZa4GUm6kGYED33gDkDUICSw46Q%2F0QAInQXJy6QekDYjE882T5mWJFHBBMB8UqxhowAdK4gplQfKWfM%2FCkcCeA61LyA20mDtUKgwtqKqvwY6pgETyYRoynZLmOlGx9exk8nkkmB0FUqz4d6AlwjHO%2BVO%2FgAySyrkzHJqNYvh44bGTIYf0Xv5UYRe5Wo9hVBHvPRo9vM0Y9x5BepW9sDQdlgXg6Fsp6Kf67n5U6toLuvfEscSlyveX2h3sr5gQytr9lANxR5KCNM%2FGLM%2FpooxnPNxN5%2BfG%2F2HAwXkTVORc2%2FCWGmYIrZoWfZpgp0YFINf93oALhL1GxrZ&X-Amz-Signature=30930d94847228aa2fd92ba84f7fc02510b6a084feffedfef62c2879cd4cc75f&X-Amz-SignedHeaders=host&x-id=GetObject)
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/f065065c-fca7-4750-ae70-9982763ddb7e/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466VWEH2QHP%2F20250401%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250401T141123Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEFYaCXVzLXdlc3QtMiJIMEYCIQCCgqLBW%2BbJ5oy2zJQB3aTd7hn6a0ijRQ%2FYbcYk3zSdswIhAMgzh%2FBpECd6nrwVXVgvW8KL272W5i0Mtn7UUYrGmYBzKogECL7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1IgzI7UN1ltJmQjGms5kq3AMsp7wQ4SitYOVxu0p7YL8tov6jxRZJzMqNIYT2VIZ0Godyr8a5P9Xk2sb7IpNp2fRuUlEU4MGNr3R%2FfzzNlJtiHEyWPzsvMpwP7WiTk0EfwzSxWF9ZjKvbJ7N7sjGCzrzlBUMZ8vk%2F1qNNbzXPGA82wVWLd%2Bux4eKOjrglYki8zK1s%2FFeXugrjBPT%2FHQ%2BaRwzjpJI0UqX%2FW15DUeXcGklZO9VIcv9eXv6sIAP%2BeLy2FQuiDh4WhWLsPNDkxs8dWjfm0Rn%2F5pAKKkLQ5ML7xPd9xNsqq6EyhYmFZQTli71OBMln1kkBPF66X6c3Fpe%2F%2BH3Obg3R2cFMpB0F13OUcB9ZwNLOHyFzKtdVYjs0n2vXGdT8nmDXZYfyfioGkkeuCsWetFFdjDjl223KnNU0uAlc%2BFOD7h0kWpwVEf44hX1CGtXpRqu0cONDMiUnKcKxDU2rrpOfGSVaCsJJIN%2BQ860RNc3htfpmTPixxRDG%2BfS6v9BjtZQahDpaxzUQda3cgMf5PUrWOU4FwaFJ4bdc7Km%2FW63b5qhB0j3I4BHZSaatkIMSO15G8HdBPvxVqx0KYH4W02gXFcM9Ueb6F1EZZPGtUNu939nBmms93snR3OBNE%2FDCCtBeCGvgOqySwTCv0K%2B%2FBjqkASs5sb58dQm3jHAyul6msRvvdWDSRug45OJKx9sigM4NjGvDP67Eun5KvsMes%2FII9afii1bCmroGu2nQO5U0TMSYDkP7%2FjPxw1ytNHIvrE78BwyUspkI06PJJgfalL%2FI0QuD2RksjdJBu8XJUH19%2F%2FCSwtglKFkJ7OfeREFyKtXkjK7oVuRMpPz%2BBwBZlj0X8hYydL%2F8UowivAs2J4rkehoiS6Op&X-Amz-Signature=d556c7cd655e1a8c2928a4995dbc9610b8ef405268b058dbe56f3dd6d32dabf4&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
 ## IP Address Management -  Weave
@@ -904,7 +904,7 @@ NodePort
 4. 이 클러스터에 배포된 kube-proxy pod 수.
 5. kube-proxy에 구성된 proxy type.
 
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/d1fa7c4c-b3bb-4327-8825-a89908a088a0/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466V2LA4P26%2F20250331%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250331T141020Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjED0aCXVzLXdlc3QtMiJHMEUCIF3zJejVrcVZfnd%2B7aW6oVIl%2FMGskLUcbMVz%2BJXq6eNiAiEAo9TiUIJGAEPIITLBq2wqHgPtc%2BJvrTfdUiyITzhEJz0qiAQIpv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDP2ZI38djkY4sGlHpyrcAz1J1TGTukrgsmoI%2FeUb%2B9dckQzfx0f%2FlvByLWwe71aMAybdg0AoZgD8u3RwYGWkqqCBLNNJ6L%2Bt13W9R6Wz6GjjoAIVJRrfWF9%2FQvd79LVJqn%2BdQzRIoTzXie2OQ8VvyaNYaIEjMI7igDJYSevVmV97QOnEvLO8rRucUD4cpjzuP0PfEAabY4XNmDu1wBjogVn3dwzsr1e%2BqIRGJQCcuYkI1uxxspBJx7IqDa6Mok3YXkiLK3pYIetwQ1ZPF3RGE57hgkp6MrWEFm8bA3n6s5LTkWk4OHlvwUTUYkgNtoMbcCCWW50a64aRqTX2gPFKIlN63k9V5%2FV0%2F2HJ9zLPj61BU0JbanhzIp9QkMwlC%2BmPQUl2nxq5NK0kvNRkV3pzBcahFxHqM36I1okyLdfRDmUs70tbtb7Q1KhXuv360xOUFPZeeEXjzQogPO%2FS5Q%2BLxdrnm7b0%2Bv03SZ3mP%2BPAaBFldiyy15Ba0dhonfDdByF9aLSFsLRl1gPi5KTZyfyDAkVseIY29zsppHPaPVwsksPbc3uV0mzTRr%2F5jY1AKCxQ6UagaX8stkrR6ERxWviwhaLoZgq8wTFpUkdrYdJWUZJY%2BKmz1%2F6kqCUIphsMWbyqXfp6Ies%2FBHYwJXNmMM6iqr8GOqUBYpr%2Fug09jfnyoqBAp5R9kaAKWH6VRp1zOLuNocPaWDibdoKxzW%2Fx9KTiPQl8oUZX6ZQPk5C3cLyXiRV3A19dUHEg6xjN3H%2FstDUeONGhxe2EIl6bGSiPGCVwwgjTWEG6lkCfsizcDiEL6eNj2syWlVadGFstAQ0yK4BFwXqNx%2F1OkmzLJp0QGTsNFyOPjngMEt7JCouj74b9Lqg7z6P0Qvs2gWQz&X-Amz-Signature=ddc51066e6fc9b9d94848b2ca8c34117d9eea3af6242c73852bb562b989f95c6&X-Amz-SignedHeaders=host&x-id=GetObject)
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/d1fa7c4c-b3bb-4327-8825-a89908a088a0/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4662EA4XVPE%2F20250401%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250401T141126Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEFYaCXVzLXdlc3QtMiJHMEUCIAJflMz1LPHgjUtoxpkGbU3aBXspw3G0552q8NjJa7KlAiEAz4N6OqwL18RvERZS%2FLfdTreHsnTKgIQRtIxP%2B90bz2sqiAQIvv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDFStyVU3jROplDZOJircA4p2zNoV0wWhu6G%2BLdMW8OIuPUJT1Zy8gGcj3u3donalfmj5rDHponjrU8VZjr0dEY%2BDbcvR2fg3IahllNtmIZKBrRgyWBfwGvjXi54o%2B3CJzRbNR%2B3u4NwhnINd0ousz324mPOxMdQisD7wcopUy3HFWb7NmOnX%2FYv8O5ZLWDpk2cGZP3XX2Job%2FavFnhMbbqf8H7cWm2B4k%2BiNFckiFGWDemZ1KMV5QYAcuhL%2BrG1B%2BJiJHQKVYK4g7uOcWCfGC%2Fp9b6Bby%2FEiYDm%2B2pRpUoEGwT%2BXMkMOBLV635y3yMjKHTme%2Fm4lkVM8%2BPodH7pl2hRIB%2BACgMLyDQmnnYlgW9D9pjy9pQKOv%2FmOgbCXzGkdQdxT3%2FOxwMwqvy3%2Bwx2dGS4SZuMYmdrXiw4QHuXR1Aqs2588Qn%2FXOnHHy2lvZYeEcN6li7kNBtmCy5OLaKgFtsJFbLbedxqtpe1hfN1PhIIF2OIm7H%2BMDeU0qV%2FKGF0fog1i9arZaYD4JqnSno1penxnSbl4CvlLR6PKHY9T0Gvjv60%2BB973Z0yiW5NqxKgsOKgFOvleoFfWA3k7j15Hh%2FB83vqLoKN8RsXIbBfR1TPIYdT2YpchSpyTWS6WGhPU%2FekcxNl9DZnNA0%2BbMK%2FQr78GOqUBG4lTRmuAFD2UjE8QuQpNWE84sGplo%2BuYhVboXngnb68x3qqPy1U1bqMYhDbrmES2Pqp4T3x3ylj5uOvYPE4%2B83%2FO3rRFxbLZYc5vUukrwS33sHRR5mNjdGXEVrHjr%2FcaJS4odEZLDQwN3RAAO7%2FknCwFaw7%2BCZYw9R9c%2B3gBwvhxRgMN7LhMjL92qong%2FDX%2FWCSNu9oKMtRhf6%2BuFS9apGbu9NDM&X-Amz-Signature=b01292b9fad1b1f0e3bd22b40c4f177ba4f8a5657a4ea20aa49a9aa0925a3ab5&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 6. 클러스터에서 모든 노드에 kube-proxy pod가 실행 중임을 어떻게 보장하는가? kube-proxy pod를 관찰하고 배포 방법을 확인.
 
@@ -1016,7 +1016,7 @@ DNS 조회 또는 host web-service 명령을 사용하여 web-service를 수동�
     ```
 
 8. kubernetes 클러스터에 구성된 root domain/zone은? cluster.local
-9. test 애플리케이션에서 hr wev server로 접근하기 위해 사용될 수 있는 이릉은?
+9. test 애플리케이션에서 hr web server로 접근하기 위해 사용될 수 있는 이릉은?
 
     web-service
 
@@ -1511,4 +1511,186 @@ Gateway API는 7계층 라우팅과 4계층 라우팅에 초점을 맞춘 쿠버
 
     To specify which namespaces can attach routes to the Gateway.
 
-3. Kubernetes Gateway API에서 지원되지 않는 protocol은?
+3. Kubernetes Gateway API에서 지원되지 않는 protocol은? ICMP
+4. Gateway와 GatewayClass는 어떻게 다른가?
+
+    GatewayClass defines how a Gateway is implemented by a controller.
+
+5. Ingress 보다 Gateway API를 사용하는 주요 장점은?
+
+    It supports more advanced routing and multi-protocol support.
+
+6. Gateway API를 사용하기 위해서 Controller는 필수. controller로 NGINX Gateway Fabric 설치할 것. 설치를 위해 아래 단계 따르기.
+    1. Install the Gateway API resources
+
+        ```bash
+        kubectl kustomize "https://github.com/nginx/nginx-gateway-fabric/config/crd/gateway-api/standard?ref=v1.5.1" | kubectl apply -f -
+        ```
+
+    2. Deploy the NGINX Gateway Fabric CRDs
+
+        ```bash
+        kubectl apply -f https://raw.githubusercontent.com/nginx/nginx-gateway-fabric/v1.6.1/deploy/crds.yaml
+        ```
+
+    3. Deploy NGINX Gateway Fabric
+
+        ```bash
+        kubectl apply -f https://raw.githubusercontent.com/nginx/nginx-gateway-fabric/v1.6.1/deploy/nodeport/deploy.yaml
+        ```
+
+    4. Verify the Deployment
+
+        ```bash
+        kubectl get pods -n nginx-gateway
+        ```
+
+    5. View the nignx-gateway service
+
+        ```bash
+        kubectl get svc -n nginx-gateway nginx-gateway -o yaml
+        ```
+
+    6. Update the nginx-gateway service to expose ports 30080 for HTTP and 30081 for HTTPS
+
+        ```bash
+        kubectl patch svc nginx-gateway -n nginx-gateway --type='json' -p='[
+          {"op": "replace", "path": "/spec/ports/0/nodePort", "value": 30080},
+          {"op": "replace", "path": "/spec/ports/1/nodePort", "value": 30081}
+        ]'
+        ```
+
+
+    ```bash
+    controlplane ~ ➜  kubectl kustomize "https://github.com/nginx/nginx-gateway-fabric/config/crd/gateway-api/standard?ref=v1.5.1" | kubectl apply -f -
+    customresourcedefinition.apiextensions.k8s.io/gatewayclasses.gateway.networking.k8s.io created
+    customresourcedefinition.apiextensions.k8s.io/gateways.gateway.networking.k8s.io created
+    customresourcedefinition.apiextensions.k8s.io/grpcroutes.gateway.networking.k8s.io created
+    customresourcedefinition.apiextensions.k8s.io/httproutes.gateway.networking.k8s.io created
+    customresourcedefinition.apiextensions.k8s.io/referencegrants.gateway.networking.k8s.io created
+    
+    controlplane ~ ➜  kubectl apply -f https://raw.githubusercontent.com/nginx/nginx-gateway-fabric/v1.6.1/deploy/crds.yaml
+    customresourcedefinition.apiextensions.k8s.io/clientsettingspolicies.gateway.nginx.org created
+    customresourcedefinition.apiextensions.k8s.io/nginxgateways.gateway.nginx.org created
+    customresourcedefinition.apiextensions.k8s.io/nginxproxies.gateway.nginx.org created
+    customresourcedefinition.apiextensions.k8s.io/observabilitypolicies.gateway.nginx.org created
+    customresourcedefinition.apiextensions.k8s.io/snippetsfilters.gateway.nginx.org created
+    customresourcedefinition.apiextensions.k8s.io/upstreamsettingspolicies.gateway.nginx.org created
+    
+    controlplane ~ ➜  kubectl apply -f https://raw.githubusercontent.com/nginx/nginx-gateway-fabric/v1.6.1/deploy/nodeport/deploy.yaml
+    namespace/nginx-gateway created
+    serviceaccount/nginx-gateway created
+    clusterrole.rbac.authorization.k8s.io/nginx-gateway created
+    clusterrolebinding.rbac.authorization.k8s.io/nginx-gateway created
+    configmap/nginx-includes-bootstrap created
+    service/nginx-gateway created
+    deployment.apps/nginx-gateway created
+    gatewayclass.gateway.networking.k8s.io/nginx created
+    nginxgateway.gateway.nginx.org/nginx-gateway-config created
+    
+    controlplane ~ ➜  kubectl get pods -n nginx-gateway
+    NAME                            READY   STATUS     RESTARTS   AGE
+    nginx-gateway-96f76cdcf-r8zzr   0/2     Init:0/1   0          3s
+    
+    controlplane ~ ➜  kubectl get svc -n nginx-gateway nginx-gateway -o yaml
+    apiVersion: v1
+    kind: Service
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"app.kubernetes.io/instance":"nginx-gateway","app.kubernetes.io/name":"nginx-gateway","app.kubernetes.io/version":"1.6.1"},"name":"nginx-gateway","namespace":"nginx-gateway"},"spec":{"externalTrafficPolicy":"Local","ports":[{"name":"http","port":80,"protocol":"TCP","targetPort":80},{"name":"https","port":443,"protocol":"TCP","targetPort":443}],"selector":{"app.kubernetes.io/instance":"nginx-gateway","app.kubernetes.io/name":"nginx-gateway"},"type":"NodePort"}}
+      creationTimestamp: "2025-03-31T14:30:52Z"
+      labels:
+        app.kubernetes.io/instance: nginx-gateway
+        app.kubernetes.io/name: nginx-gateway
+        app.kubernetes.io/version: 1.6.1
+      name: nginx-gateway
+      namespace: nginx-gateway
+      resourceVersion: "2727"
+      uid: 35e063e9-088f-4ea2-8aa6-a1295158c7cc
+    spec:
+      clusterIP: 172.20.100.227
+      clusterIPs:
+      - 172.20.100.227
+      externalTrafficPolicy: Local
+      internalTrafficPolicy: Cluster
+      ipFamilies:
+      - IPv4
+      ipFamilyPolicy: SingleStack
+      ports:
+      - name: http
+        nodePort: 31554
+        port: 80
+        protocol: TCP
+        targetPort: 80
+      - name: https
+        nodePort: 31737
+        port: 443
+        protocol: TCP
+        targetPort: 443
+      selector:
+        app.kubernetes.io/instance: nginx-gateway
+        app.kubernetes.io/name: nginx-gateway
+      sessionAffinity: None
+      type: NodePort
+    status:
+      loadBalancer: {}
+    
+    controlplane ~ ➜  kubectl patch svc nginx-gateway -n nginx-gateway --type='json' -p='[
+      {"op": "replace", "path": "/spec/ports/0/nodePort", "value": 30080},
+      {"op": "replace", "path": "/spec/ports/1/nodePort", "value": 30081}
+    ]'
+    service/nginx-gateway patched
+    ```
+
+7. 아래 요구사항에 따라 Kubernetes Gateway 리소스 생성.
+    1. **Name**: `nginx-gateway`
+    2. **Namespace**: `nginx-gateway`
+    3. **Gateway Class Name**: `nginx`
+    4. **Listeners**:
+        - **Protocol**: `HTTP`
+        - **Port**: `80`
+        - **Name**: `http`
+        - **Allowed Routes**: `All namespaces`
+
+    ```yaml
+    apiVersion: gateway.networking.k8s.io/v1
+    kind: Gateway
+    metadata:
+      name: nginx-gateway
+      namespace: nginx-gateway
+    spec:
+      gatewayClassName: nginx
+      listeners:
+      - name: http
+        protocol: HTTP
+        port: 80
+        allowedRoutes:
+          namespaces:
+            from: All
+    ```
+
+8. frontend-app이라는 pod와 frontend-svc라는 서비스가 기본 네임스페이스에 배포됨. frontend-route라는 HTTPRoute를 이용하여 ‘/’ 경로에서 서비스 노출.
+
+    ```yaml
+    apiVersion: gateway.networking.k8s.io/v1
+    kind: HTTPRoute
+    metadata:
+      name: frontend-route
+    spec:
+      parentRefs:
+      - name: nginx-gateway
+        namespace: nginx-gateway
+      rules:
+      - matches:
+        - path:
+            type: PathPrefix
+            value: /
+        backendRefs:
+        - name: frontend-svc
+          port: 80
+    ```
+
+
+    다른 네임스페이스에 있는 경우에는 namespace 항목을 추가하여 명시해주기.
+
