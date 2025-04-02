@@ -54,7 +54,7 @@
 </tr>
 <tr>
 <td>Section11 - Install “Kubernetes the kubeadm way”</td>
-<td></td>
+<td>:white_check_mark:</td>
 </tr>
 <tr>
 <td>Section12 - Helm Basics</td>
