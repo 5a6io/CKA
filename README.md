@@ -58,7 +58,7 @@
 </tr>
 <tr>
 <td>Section12 - Helm Basics</td>
-<td></td>
+<td>:white_check_mark:</td>
 </tr>
 <tr>
 <td>Section13 - Kustomize Basics</td>
