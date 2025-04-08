@@ -746,19 +746,1631 @@ images:
 ## Patches Intro
 
 
+`Kustomize patches` 는 Kubernetes configs를 수정하는 또 다른 방법 제공.
+
+
+common transformers와 달리 patches는 Kubernetes 리소스에서 하나 이상의 특정 섹션을 타겟팅하는 보다 "surgical" 접근 방식을 제공.
+
+
+patch를 생성하기 위해 3 파라미터가 제공되어야 함.
+
+- Operation Type: add/remove/replace
+- Target: 이 패치를 어떤 리소스에 적용해야 하는가
+    - Kind
+    - Version/Group
+    - Name
+    - Namespace
+    - labelSelector
+    - AnnotationSelector
+- Value: 교체되거나 추가될 값은 무엇인가? (추가/교체 작업에만 필요함)
+
+deployment에 컨테이너 리스트를 갖고 있고 또 다른 컨테이너를 추가하고 싶다면 add operation이 될 것.
+
+
+remove는 정반대.. 리스트에서 컨테이너를 지우고 싶거나 라벨을 지우고 싶음 → 무엇이든 제거 가능.
+
+
+replace는 제공된 값을 가져오고 다른 값으로 교체. 기본 구성의 replica count는 5. 실제로는 10을 원함. replica 값은 10이 됨.
+
+
+api-depl.oyaml파일이 있음. api-deployment라는 이름을 web-deployment라는 이름으로 교체하고 싶음.
+
+> api-depl.yaml
+
+```yaml
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+    
+name: api-deployment
+
+spec:
+   replicas: 1
+   selector:
+       matchLabels:
+           component: api
+   template:
+       metadata:
+           labels:
+               component: api
+       spec:
+           containers:
+               - name: nginx
+                 image: nginx
+```
+
+> kustomization.yaml
+
+```yaml
+patches:
+    - target:
+          
+kind: Deployment
+
+          
+name: api-deployment
+
+      
+      patch: |- # inline patch
+          - op: replace
+            
+path: /metadata/name
+
+            value: web-deployment
+```
+
+
+이번에는 replicas 값을 바꾸려고 함.
+
+> api-depl.yaml
+
+```yaml
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+    
+name: api-deployment
+
+
+spec:
+   replicas: 1
+
+   selector:
+       matchLabels:
+           component: api
+   template:
+       metadata:
+           labels:
+               component: api
+       spec:
+           containers:
+               - name: nginx
+                 image: nginx
+```
+
+> kustomization.yaml
+
+```yaml
+patches:
+    - target:
+          
+kind: Deployment
+
+          
+name: api-deployment
+
+      
+      patch: |- # inline patch
+          - op: replace
+            
+path: /spec/replicas
+
+            value: 5
+```
+
+
+위 방식은 JSON 6902 Patch임. 참고 사이트: https://datatracker.itef.org/doc/html/rfc6902
+
+
+patch를 정의하는 두번째 방식. strategic merge patch 방식을 사용하고 싶음.
+
+
+```yaml
+patches:
+    - patch: |-
+          apiVersion: apps/v1
+          kind: Deployment
+          metadata:
+              name: api-deployment
+          spec:
+              replicas: 5
+```
+
+
+기존 Kubernetes 구성과 꽤 비슷함. 
+
+
 ## Different Types of Patches
+
+
+inline 형식과 파일 분리 형식.
+
+
+patch가 많아지면 어수선해질 수 있음. 별도의 파일로 사용 가능.
+
+- Inline
+
+```yaml
+patches:
+    - patch: |-
+          apiVersion: apps/v1
+          kind: Deployment
+          metadata:
+              name: api-deployment
+          spec:
+              replicas: 5
+```
+
+- Separate File
+> kustomization.yaml
+
+```yaml
+patches:
+    - replica-patch..yaml
+```
+
+> replica-patch.yaml
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: api-deployment
+spec:
+    replicas: 5
+```
 
 
 ## Patches Dictionary
 
 
+Add Dictionary
+
+- JSON 6902
+
+```yaml
+apiVersion: apps/v1
+
+kind
+: Deployment
+
+
+metadata:
+    name: api-deployment
+spec:
+   replicas: 1
+   selector:
+       matchLabels:
+           component: api
+   template:
+       metadata:
+           labels:
+               component: api
+       spec:
+           containers:
+               - name: nginx
+                 image: nginx
+```
+
+
+```yaml
+patches:
+    - target:
+          kind: Deployment
+          name: api-deployment
+      patch: |-
+          - op: add
+            path: /spec/template/metadata/labels/org
+            value: KodeKloud
+```
+
+
+추가하고자 하는 라벨의 경로 작성 후 뒤에 키값을 붙임. 그리고 value 지정.
+
+
+```yaml
+apiVersion: apps/v1
+
+kind
+: Deployment
+
+
+metadata:
+    name: api-deployment
+spec:
+   replicas: 1
+   selector:
+       matchLabels:
+           component: api
+   template:
+       metadata:
+           labels:
+               component: api
+               org: KodeKloud
+       spec:
+           containers:
+               - name: nginx
+                 image: nginx
+```
+
+- strategic merge patch
+
+```yaml
+apiVersion: apps/v1
+
+kind
+: Deployment
+
+
+metadata:
+    name: api-deployment
+spec:
+   replicas: 1
+   selector:
+       matchLabels:
+           component: api
+   template:
+       metadata:
+           labels:
+               component: api
+       spec:
+           containers:
+               - name: nginx
+                 image: nginx
+```
+
+
+```yaml
+patches:
+    - label-patch..yaml
+```
+
+
+```yaml
+apiVersion: apps/v1
+
+kind
+: Deployment
+
+
+metadata:
+    name: api-deployment
+spec:
+   template:
+       metadata:
+           labels:
+               org: KodeKloud
+```
+
+
+추가하고자 하는 라벨만 작성.
+
+
+Remove Dictionary
+
+- JSON 6902
+
+```yaml
+apiVersion: apps/v1
+
+kind
+: Deployment
+
+
+metadata:
+    name: api-deployment
+spec:
+   replicas: 1
+   selector:
+       matchLabels:
+           component: api
+   template:
+       metadata:
+           labels:
+               component: api
+       spec:
+           containers:
+               - name: nginx
+                 image: nginx
+```
+
+
+```yaml
+patches:
+    - target:
+          kind: Deployment
+          name: api-deployment
+      patch: |-
+          - op: remove
+            path: /spec/template/metadata/labels/org
+```
+
+
+지우고자 하는 경로만 작성하면 됨.
+
+
+```yaml
+apiVersion: apps/v1
+
+kind
+: Deployment
+
+
+metadata:
+    name: api-deployment
+spec:
+   replicas: 1
+   selector:
+       matchLabels:
+           component: api
+   template:
+       metadata:
+           labels:
+               component: api
+       spec:
+           containers:
+               - name: nginx
+                 image: nginx
+```
+
+- strategic merge patch
+
+```yaml
+apiVersion: apps/v1
+
+kind
+: Deployment
+
+
+metadata:
+    name: api-deployment
+spec:
+   replicas: 1
+   selector:
+       matchLabels:
+           component: api
+   template:
+       metadata:
+           labels:
+               component: api
+               org: KodeKloud
+       spec:
+           containers:
+               - name: nginx
+                 image: nginx
+```
+
+
+```yaml
+patches:
+    - label-patch..yaml
+```
+
+
+```yaml
+apiVersion: apps/v1
+
+kind
+: Deployment
+
+
+metadata:
+    name: api-deployment
+spec:
+   template:
+       metadata:
+           labels:
+               org: null
+```
+
+
+값을 지운다는 의미에서 null로 지정하면 됨.
+
+
 ## Patches list
+
+
+예제의 경우는 컨테이너가 한 개이지만 하나 이상의 컨테이너를 가질 수 있음.
+
+
+특정 컨테이너의 이미지에서 이름을 어떻게 변경할 수 있는가?
+
+
+kustomization.yaml 파일ㅇ르 보면 특정 Kubernetes 객체를 대상으로 종류와 이름을 제공하는 타겟이 있음.
+
+
+Replace List
+
+- JSON 6902
+
+```yaml
+apiVersion: apps/v1
+
+kind
+: Deployment
+
+
+metadata:
+    name: api-deployment
+spec:
+   replicas: 1
+   selector:
+       matchLabels:
+           component: api
+   template:
+       metadata:
+           labels:
+               component: api
+       spec:
+           containers: # 리스트 형태
+               - name: nginx
+                 image: nginx
+```
+
+
+```yaml
+patches:
+    - target:
+          
+kind: Deployment
+          name: api-deployment
+
+      
+      patch: |- # inline patch
+          - op: replace
+            path: /spec/template/spec/containers/0
+            value:
+                name: haproxy
+                image: haproxy
+```
+
+
+```yaml
+apiVersion: apps/v1
+
+kind
+: Deployment
+
+
+metadata:
+    name: api-deployment
+spec:
+   replicas: 1
+   selector:
+       matchLabels:
+           component: api
+   template:
+       metadata:
+           labels:
+               component: api
+       spec:
+           containers: 
+               - name: haproxy
+                 image: haproxy
+```
+
+
+0은 무엇을 의미하는가? 바꾸고 싶은 컨테이너의 인덱스를 의미.
+
+
+하나 이상의 컨테이너를 가질 수 있고 인덱스는 리스트에서 업데이트하고 싶은 아이템을 나타냄.
+
+- strategic merge patch
+
+컨테이너의 이미지를 바꾸고 싶음.
+
+
+```yaml
+apiVersion: apps/v1
+
+kind
+: Deployment
+
+
+metadata:
+    name: api-deployment
+spec:
+   replicas: 1
+   selector:
+       matchLabels:
+           component: api
+   template:
+       metadata:
+           labels:
+               component: api
+       spec:
+           containers:
+               - name: nginx
+                 image: nginx
+```
+
+
+```yaml
+patches:
+    - label-patch.yaml
+```
+
+
+```yaml
+apiVersion: apps/v1
+
+kind
+: Deployment
+
+
+metadata:
+    name: api-deployment
+spec:
+   template:
+        spec:
+           containers:
+               - name: nginx
+                 image: haproxy
+```
+
+
+Add List
+
+- JSON 6902
+
+```yaml
+apiVersion: apps/v1
+
+kind
+: Deployment
+
+
+metadata:
+    name: api-deployment
+spec:
+   replicas: 1
+   selector:
+       matchLabels:
+           component: api
+   template:
+       metadata:
+           labels:
+               component: api
+       spec:
+           containers:
+               - name: nginx
+                 image: nginx
+```
+
+
+```yaml
+patches:
+    - target:
+          
+kind: Deployment
+          name: api-deployment
+
+      
+      patch: |- # inline patch
+          - op: add
+            path: /spec/template/spec/containers/-
+            value:
+                name: haproxy
+                image: haproxy
+```
+
+
+```yaml
+apiVersion: apps/v1
+
+kind
+: Deployment
+
+
+metadata:
+    name: api-deployment
+spec:
+   replicas: 1
+   selector:
+       matchLabels:
+           component: api
+   template:
+       metadata:
+           labels:
+               component: api
+       spec:
+           containers: 
+               - name: nginx
+                 image: nginx
+               - name: haproxy
+                 image: haproxy
+```
+
+
+추가할 때는 경로 뒤에 `-`를 붙임.
+
+
+우선 경로의 끝에서 목록에 컨테이너를 추가할 위치를 지정해야 함. `-` 는 리스트 끝에 추가한다는 의미.
+
+
+추가하고 싶은 곳에 대한 특정 인덱스를 명시할 수 있음. 첫 번째로 넣고 싶으면 0으로 지정하면 됨. 두번째로 만들고 싶으면 1로 지정하면 됨.
+
+- strategic merge patch
+
+```yaml
+apiVersion: apps/v1
+
+kind
+: Deployment
+
+
+metadata:
+    name: api-deployment
+spec:
+   replicas: 1
+   selector:
+       matchLabels:
+           component: api
+   template:
+       metadata:
+           labels:
+               component: api
+       spec:
+           containers:
+               - name: web
+                 image: nginx
+```
+
+
+```yaml
+patches:
+    - label-patch.yaml
+```
+
+
+```yaml
+apiVersion: apps/v1
+
+kind
+: Deployment
+
+
+metadata:
+    name: api-deployment
+spec:
+   template:
+        spec:
+           containers:
+               - name: haproxy
+                 image: haproxy
+```
+
+
+하나로 합쳐서 배열에 두 개의 컨테이너가 생김.
+
+
+Delete List
+
+- JSON 6902
+
+```yaml
+apiVersion: apps/v1
+
+kind
+: Deployment
+
+
+metadata:
+    name: api-deployment
+spec:
+   replicas: 1
+   selector:
+       matchLabels:
+           component: api
+   template:
+       metadata:
+           labels:
+               component: api
+       spec:
+           containers:
+               - name: web
+                 image: nginx
+               - name: database
+                 image: mongo
+```
+
+
+```yaml
+patches:
+    - target:
+          
+kind: Deployment
+          name: api-deployment
+
+      
+      patch: |- # inline patch
+          - op: remove
+            path: /spec/template/spec/containers/1
+```
+
+
+```yaml
+apiVersion: apps/v1
+
+kind
+: Deployment
+
+
+metadata:
+    name: api-deployment
+spec:
+   replicas: 1
+   selector:
+       matchLabels:
+           component: api
+   template:
+       metadata:
+           labels:
+               component: api
+       spec:
+           containers: 
+               - name: web
+                 image: nginx
+```
+
+
+지우고자 하는 컨테이너 인덱스 명시. remove operation이므로 value는 명시하지 않음.
+
+- strategic merge patch
+
+```yaml
+apiVersion: apps/v1
+
+kind
+: Deployment
+
+
+metadata:
+    name: api-deployment
+spec:
+   replicas: 1
+   selector:
+       matchLabels:
+           component: api
+   template:
+       metadata:
+           labels:
+               component: api
+       spec:
+           containers:
+               - name: web
+                 image: nginx
+               - name: database
+                 image: mong
+```
+
+
+```yaml
+patches:
+    - label-patch.yaml
+```
+
+
+```yaml
+apiVersion: apps/v1
+
+kind
+: Deployment
+
+
+metadata:
+    name: api-deployment
+spec:
+   template:
+        spec:
+           containers:
+               - 
+$patch: delete
+
+                 name: database
+```
+
+
+`$patch: delete` 로 지우겠다고 직접적으로 명시하고 삭제할 컨테이너를 지정.
+
+
+## Lab:Patches
+
+1. nginx pod는 얼마나 생성되는가? 3
+    > nginx-depl.yaml
+
+    ```yaml
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: nginx-deployment
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          component: nginx
+      template:
+        metadata:
+          labels:
+            component: nginx
+        spec:
+          containers:
+            - name: nginx
+              image: nginx
+    ```
+
+    > kustomization.yaml
+
+    ```yaml
+    patches:
+      - target:
+          kind: Deployment
+          name: nginx-deployment
+        patch: |-
+          - op: replace
+            path: /spec/replicas
+            value: 3
+    ```
+
+2. mongo deployment에 적용될 label들은 무엇인가? cluster=staging, component=mongo, feature=db
+    > kustomization.yaml
+
+    ```yaml
+    - target:
+          kind: Deployment
+          name: mongo-deployment
+        path: mongo-label-patch.yaml
+    ```
+
+    > mongo-label-patch.yaml
+
+    ```yaml
+    - op: add
+      path: /spec/template/metadata/labels/
+    cluster
+      value: staging
+    
+    
+    - op: add
+      path: /spec/template/metadata/labels/
+    feature
+      value: db
+    ```
+
+    > mongo-depl.yaml
+
+    ```yaml
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: mongo-deployment
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          component: mongo
+      template:
+        metadata:
+          labels:
+            
+    component: mongo
+    
+        spec:
+          containers:
+            - name: mongo
+              image: mongo
+    ```
+
+3. mongo-cluster-ip-service의 target port는? 30000
+    > mongo-service.yaml
+
+    ```yaml
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: mongo-cluster-ip-service
+    spec:
+      type: ClusterIP
+      selector:
+        component: mongo
+      ports:
+        - port: 27017
+          targetPort: 27017
+    ```
+
+    > kustomization.yaml
+
+    ```yaml
+    - target:
+          kind: Service
+          name: mongo-cluster-ip-service
+        patch: |-
+          - op: replace
+            path: /spec/ports/0/port
+            value: 30000
+    
+          - op: replace
+            path: /spec/ports/0/
+    targetPort
+            value: 30000
+    ```
+
+4. api pod의 컨테이너 수. 2
+    > api-depl.yaml
+
+    ```yaml
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: api-deployment
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          component: api
+      template:
+        metadata:
+          labels:
+            component: api
+        spec:
+          containers:
+            - 
+    name: nginx
+    
+              
+    image: nginx
+    ```
+
+    > kustomization.yaml
+
+    ```yaml
+    patches:
+      - path: mongo-patch.yaml
+      - path: api-patch.yaml
+    ```
+
+    > api-patch.yaml
+
+    ```yaml
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: api-deployment
+    spec:
+      template:
+        spec:
+          containers:
+            - 
+    name: memcached
+    
+              
+    image: memcached
+    ```
+
+5. mongo 컨테이너의 어느 경로에 mongo-volume이 마운트되었는가?
+    > kustomization.yaml
+
+    ```yaml
+    patches:
+      - path: mongo-patch.yaml
+      - path: api-patch.yaml
+    ```
+
+    > mongo-patch.yaml
+
+    ```yaml
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: mongo-deployment
+    spec:
+      template:
+        spec:
+          containers:
+            - name: mongo
+              volumeMounts:
+                - 
+    mountPath: /data/db
+    
+                  name: mongo-volume
+          volumes:
+            - name: mongo-volume
+              persistentVolumeClaim:
+                claimName: host-pvc
+    ```
+
+6. `memcached`컨테이너를 지우려는 `api-patch.yaml`에 strategic merge patch를 생성.
+    > api-patch.yaml
+
+    ```yaml
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: api-deployment
+    spec:
+      template:
+        spec:
+          containers:
+            - $patch: delete
+              name: memcached
+    ```
+
+7. mongo-deployment에서 `org: KodeKloud` 라벨을 지우기 위해 kustomization.yaml 파일에 inline json6902 patch 생성.
+
+    ```yaml
+    patches:
+      - target:
+          kind: Deployment
+          name: mongo-deployment
+        patch: |-
+          - op: remove
+            path: /spec/template/metadata/labels/org
+    ```
 
 
 ## Overlays
 
 
+kustomize는 base와 overlays를 가짐.
+
+
+dev 환경과 staging 환경, production 환경이 있다면 환경별로 특정 속성을 조정하고 싶을 수 있음. 여기서 Kustomize가 실제로 작동하게 됨. 그렇다면 이를 정확히 어떻게 달성할 수 있을까? 그건 오버레이라는 것과 관련이 있음.
+
+
+```bash
+k8s/
+├─ base/ #➡️ share or default configs across all environments
+│   ├─ kustomization.yaml
+│   ├─ nginx-depl.yaml
+│   ├─ redis-depl.yaml
+│   └─ service.yaml
+└─ overlays/ # ➡️ environment specific configuration that add or modify the base configs
+    ├─ dev/
+    │   ├─ config-map.yaml
+    │   └─ kustomization.yaml
+    ├─ prod/
+    │   ├─ config-map.yaml
+    │   └─ kustomization.yaml
+    └─ stg/
+        ├─ config-map.yaml
+        └─ kustomization.yaml
+```
+
+> base/kustomization.yaml
+
+```yaml
+resources:
+  - nginx-depl.yaml
+  - service.yaml
+  - redis-depl.yaml
+```
+
+> base/nginx-depl.yaml
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  replicas: 1
+```
+
+> dev/kustomization.yaml
+
+```yaml
+bases:
+  - ../../base
+
+patch: |-
+    - op: replace
+      path: /spec/replicas
+      value: 2
+```
+
+
+bases property를 가짐. 모든 기본 설정으로 기본 디렉토리에 어떻게 접근할 수 있는가? 해당 폴더에 대한 상대 경로만 제공하면 됨.
+
+
+환경 별로 patch를 제공하는 문제일 뿐.
+
+> prod/kustomization.yaml
+
+```yaml
+bases:
+  - ../../base
+
+patch: |-
+    - op: replace
+      path: /spec/replicas
+      value: 3
+```
+
+
+오버레이에는 patch만 있는 것이 아님.
+
+
+overlays 폴더에는 base 폴더에 정의되지 않은 새로운 구성이 있을 수 있음.
+
+
+이 경우 grafana-depl.yaml 이 있음. prod 환경에서 사용할 그라파나 deployment를 추가하려고 함.  다른 환경에서는 사용할 수 없음.
+
+> prod/kustomization.yaml
+
+```yaml
+bases:
+  - ../../base
+
+resources:
+  - grafana-depl.yaml
+
+patch: |-
+    - op: replace
+      path: /spec/replicas
+      value: 3
+```
+
+
+원하는 만큼 새로운 리소스를 추가할 수 있음. 기존 것만 수정할 필요는 없고, 새로운 것을 사용할 수 있음. kustomization.yaml에 resource 섹션 추가. 우리는 base, patch를 갖고 있으며 현재 폴더에 있는 자원을 가져옴.
+
+
+base 디렉토리와 하위 디렉토리가 일치할 필요는 없음.
+
+
+```bash
+k8s/
+├─ base/ 
+│   ├─ kustomization.yaml
+│   
+├─ db/
+│   │     ├─ db-depl.yaml
+│   │     ├─ db-service.yaml
+│   │     └─ kustomization.yaml
+
+
+│   └─ api/
+│            ├─ api-depl.yaml
+│            ├─ api-service.yaml
+│            └─ kustomization.yaml
+
+└─ overlays/
+        ├─ dev/
+        │   ├─ kustomization.yaml
+        │ 
+  ├─ db/
+        │   │     ├─ db-depl.yaml
+        │   │     ├─ db-service.yaml
+        │   │     └─ kustomization.yaml
+
+        │   
+└─ api/
+        │            ├─ api-depl.yaml
+        │            ├─ api-service.yaml
+        │            └─ kustomization.yaml
+
+        ├─ prod/
+                 ├─ kustomization.yaml
+                 ├─ db/
+                 │    ├─ db-depl.yaml
+                 │    ├─ db-service.yaml
+                 │    └─ kustomization.yaml
+                 └─ api/
+                         ├─ api-depl.yaml
+                         ├─ api-service.yaml
+                         └─ kustomization.yaml
+```
+
+
+완전히 분리 가능. 자신만의 패턴을 따를 수 있음. 리소스를 적절한 kusomization.yaml 파일로 제대로 가져오고 있는지 확인하기만 하면 됨.
+
+
 ## Lab:Overlay
+
+1. prod 환경에 애플리케이션을 배포할 때 API 배포에 사용되는 이미지 유형은 무엇인가?
+    > base/api-depl.yaml
+
+    ```yaml
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: api-deployment
+    spec:
+      replicas: 2
+      selector:
+        matchLabels:
+          component: api
+      template:
+        metadata:
+          labels:
+            component: api
+        spec:
+          containers:
+            - name: api
+              image: nginx
+              env:
+                - name: DB_CONNECTION
+                  value: db.kodekloud.com
+    ```
+
+    > overlays/prod/kustomization.yaml
+
+    ```yaml
+    bases:
+      - ../../base
+    
+    resources:
+      - redis-depl.yaml
+    
+    patches:
+      - api-patch.yaml
+    ```
+
+    > overlays/prod/api-patch.yaml
+
+    ```yaml
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: api-deployment
+    spec:
+      template:
+        spec:
+          containers:
+            - name: api
+              
+    image: memcached
+    ```
+
+2. API 배포를 위해 몇 개의 복제본을 prod에 배포할 예정인가?
+    > base/api-depl.yaml
+
+    ```yaml
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: api-deployment
+    spec:
+     
+     replicas: 2
+    
+      selector:
+        matchLabels:
+          component: api
+      template:
+        metadata:
+          labels:
+            component: api
+        spec:
+          containers:
+            - name: api
+              image: nginx
+              env:
+                - name: DB_CONNECTION
+                  value: db.kodekloud.com
+    ```
+
+3. 스테이징 환경에서 몽고 배포 컨테이너의 환경 변수 MONGO_INITDB_ROOT_PASSWARD의 값은 얼마인가?
+    > base/mongo-depl.yaml
+
+    ```yaml
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: mongo-deployment
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          component: mongo
+      template:
+        metadata:
+          labels:
+            component: mongo
+        spec:
+          containers:
+            - name: mongo
+              image: mongo
+              env:
+                - name: MONGO_INITDB_ROOT_USERNAME
+                  valueFrom:
+                    configMapKeyRef:
+                      name: db-creds
+                      key: username
+                - name: MONGO_INITDB_ROOT_PASSWORD
+                  valueFrom:
+                    configMapKeyRef:
+                      name: db-creds
+                      key: password
+    ```
+
+    > overlays/staging/kustomization.yaml
+
+    ```yaml
+    bases:
+      - ../../base
+    patches:
+      - configMap-patch.yaml
+    ```
+
+    > overlays/staging/configMap-patch.yaml
+
+    ```yaml
+    apiVersion: v1
+    kind: ConfigMap
+    metadata:
+      name: db-creds
+    data:
+      username: mongo
+      
+    password: superp@ssword123
+    ```
+
+4. prod환경에 total pods 수는? 2+2+1 = 5
+    > base/mongo-depl.yaml
+
+    ```yaml
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: mongo-deployment
+    spec:
+      
+    replicas: 1
+    
+      selector:
+        matchLabels:
+          component: mongo
+      template:
+        metadata:
+          labels:
+            component: mongo
+        spec:
+          containers:
+            - name: mongo
+              image: mongo
+              env:
+                - name: MONGO_INITDB_ROOT_USERNAME
+                  valueFrom:
+                    configMapKeyRef:
+                      name: db-creds
+                      key: username
+                - name: MONGO_INITDB_ROOT_PASSWORD
+                  valueFrom:
+                    configMapKeyRef:
+                      name: db-creds
+                      key: password
+    ```
+
+    > base/api-deployment.yaml
+
+    ```yaml
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: api-deployment
+    spec:
+      
+    replicas: 2
+    
+      selector:
+        matchLabels:
+          component: api
+      template:
+        metadata:
+          labels:
+            component: api
+        spec:
+          containers:
+            - name: api
+              image: nginx
+              env:
+                - name: DB_CONNECTION
+                  value: db.kodekloud.com
+    ```
+
+    > overlays/prod/kustomization.yaml
+
+    ```yaml
+    bases:
+      - ../../base
+    
+    resources:
+      - redis-depl.yaml
+    
+    patches:
+      - api-patch.yaml
+    ```
+
+    > overlays/prod/redis-depl.yaml
+
+    ```yaml
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: redis-deployment
+    spec:
+      
+    replicas: 2
+    
+      selector:
+        matchLabels:
+          component: redis
+      template:
+        metadata:
+          labels:
+            component: redis
+        spec:
+          containers:
+            - name: redis
+              image: redis
+    ```
+
+5. dev 환경에서 api-deployment의 nginx 컨테이너에는 몇 개의 환경 변수가 설정되어 있는가? 3
+    > base/api-deployment.yaml
+
+    ```yaml
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: api-deployment
+    spec:
+      replicas: 2
+      selector:
+        matchLabels:
+          component: api
+      template:
+        metadata:
+          labels:
+            component: api
+        spec:
+          containers:
+            - name: api
+              image: nginx
+              env:
+                
+    - name: DB_CONNECTION
+    
+                  value: db.kodekloud.com
+    ```
+
+    > overlays/dev/kustomization.yaml
+
+    ```yaml
+    bases:
+      - ../../base
+    
+    patches:
+      - api-patch.yaml
+    ```
+
+    > overlays/dev/api-patch.yaml
+
+    ```yaml
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: api-deployment
+    spec:
+      replicas: 2
+      selector:
+        matchLabels:
+          component: api
+      template:
+        metadata:
+          labels:
+            component: api
+        spec:
+          containers:
+            - name: api
+              image: nginx
+              env:
+                
+    - name: DB_USERNAME
+    
+                  valueFrom:
+                    configMapKeyRef:
+                      name: db-creds
+                      key: username
+                
+    - name: DB_PASSWORD
+    
+                  valueFrom:
+                    configMapKeyRef:
+                      name: db-creds
+                      key: password
+    ```
+
+6. api-deployment에서 API 이미지를 업데이트하여 QA 환경에서 caddy 도커 이미지를 사용. inline JSON6902 patch를 사용하여 이 작업을 수행.
+    > overlays/QA/kustomization.yaml
+
+    ```yaml
+    bases:
+      - ../../base
+    commonLabels:
+      environment: QA
+    
+    # 추가
+    patches:
+      - target:
+          kind: Deployment
+          name: api-deployment
+        patch: |-
+          - op: replace
+            path: /spec/template/spec/containers/0/image
+            value: caddy
+    ```
+
+
+    ```yaml
+    k apply -k k8s/overlays/QA
+    ```
+
+
+    > 💡 yaml파일 작성 시 `-` 유의.
+
+7. mysql database가 staging 환경에만 추가될 필요가 있음. mysql-depl.yaml이라는 파일에 mysql deployment 생성. mysql-deployment라는 이름으로 deployment 배포.
+
+    mysql 이미지를 사용하여 mysql  컨테이너의 replica 1 배포. 다음과 같이 환경변수 설정. 
+
+    - name: MYSQL_ROOT_PASSWORD
+    value: mypassword
+    > k8s/overlays/staging/mysql-depl.yaml
+
+    ```yaml
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: mysql-deployment
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          component: mysql
+      template:
+        metadata:
+          labels:
+            component: mysql
+        spec:
+          containers:
+            - name: mysql
+              image: mysql
+              env:
+              - name: MYSQL_ROOT_PASSWORD
+                value: mypassword
+    ```
+
+    > k8s/overlays/staging/kustomization.yaml
+
+    ```yaml
+    bases:
+      - ../../base
+    
+    # 추가
+    resources:
+      - mysql-depl.yaml
+      
+    commonLabels:
+      environment: staging
+    ```
+
+
+    ```yaml
+    k apply -k k8s/overlays/staging
+    ```
 
 
 ## Components
