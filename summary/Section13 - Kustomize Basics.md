@@ -1937,15 +1937,15 @@ k8s/
 │   ├─ kustomization.yaml
 │   
 ├─ db/
-│   │     ├─ db-depl.yaml
-│   │     ├─ db-service.yaml
-│   │     └─ kustomization.yaml
+│   │   ├─ db-depl.yaml
+│   │   ├─ db-service.yaml
+│   │   └─ kustomization.yaml
 
 
 │   └─ api/
-│            ├─ api-depl.yaml
-│            ├─ api-service.yaml
-│            └─ kustomization.yaml
+│       ├─ api-depl.yaml
+│       ├─ api-service.yaml
+│       └─ kustomization.yaml
 
 └─ overlays/
         ├─ dev/
@@ -1962,16 +1962,16 @@ k8s/
         │            ├─ api-service.yaml
         │            └─ kustomization.yaml
 
-        ├─ prod/
-                 ├─ kustomization.yaml
-                 ├─ db/
-                 │    ├─ db-depl.yaml
-                 │    ├─ db-service.yaml
-                 │    └─ kustomization.yaml
-                 └─ api/
-                         ├─ api-depl.yaml
-                         ├─ api-service.yaml
-                         └─ kustomization.yaml
+        └─ prod/
+           ├─ kustomization.yaml
+           ├─ db/
+           │  ├─ db-depl.yaml
+           │  ├─ db-service.yaml
+           │  └─ kustomization.yaml
+           └─ api/
+               ├─ api-depl.yaml
+               ├─ api-service.yaml
+               └─ kustomization.yaml
 ```
 
 
@@ -2375,6 +2375,227 @@ k8s/
 
 ## Components
 
+- Components provide the ability to define reusable pieces of configuration logic(resources + patches) that can be included in muliple overlays
+- Components are useful in situations where applications support multiple optional features that need to be enabled only in a subset of overlays
+
+component는 Kubernetes 구성의 재사용 블록.
+
+
+애플리케이션을 세 가지 다른 variation으로 배포할 수 있다고 가정. 프리미엄 고객을 위한 dev, premium, 그리고 애플리케이션을 셀프 호스팅하고자 하는 고객을 위한 sel hosted가 준비됨. 맞춤형 애플리케이션에서 세 가지 다른 오버레이를 나타낼 것. 세 가지 오버레이 모두에서 공유될 기본 구성을 위한 폴더를 가지고 있음.
+
+
+애플리케이션에 몇 가지 선택적 기능이 있다고 가정. 그 중 하나는 캐싱. premium과 self hosted만 캐싱이 활성화되어야 한다고 가정.
+
+
+postgres 같은 외부 데이터베이스 서비스를 원함. dev와 premium에서만 이용 가능.
+
+
+premium과 self hosted에서만 캐싱이 되길 원하므로 우리는 caching을 두 폴더에 넣음. 그러나 한 곳에서 변경이 발생하면 다른 것도 그것을 알아야 함. 그러므로 우리는 복사해야 붙여 넣음. → 이 방식을 피하고 싶음. 이것이 component를 만드는 이유.
+
+
+components라는 폴더를 만들어 그 안에 db와 caching 폴더를 개별적으로 생성.
+
+
+```yaml
+k8s/
+├─ base/ 
+│   ├─ kustomization.yaml
+│   └─ api-depl.yaml
+├─ components/
+│   ├─ caching/
+│   │   ├─ kustomization.yaml
+│   │   ├─ deployment-patch.yaml
+│   │   └─ redis-depl.yaml
+│   └─ db/
+│       ├─ kustomization.yaml
+│       ├─ deployment-patch.yaml
+│       └─ postgres-depl.yaml
+└─ overlays/
+        ├─ dev/
+        │   └─ kustomization.yaml
+        ├─ premium/
+        │   └─ kustomization.yaml
+        └─ prod/
+            └─ kustomization.yaml
+```
+
+> components/db/kustomization.yaml
+
+```yaml
+apiVersion: kustomize.config.k8s.io/v1alpha1
+kind: Component
+
+resources:
+  - postgres-depl.yaml
+
+secretGenerator:
+  - name: postgres-cred
+    literals:
+      - password=postgres123
+      
+patches:
+  - deployment-patch.yaml
+```
+
+
+dev에 database component를 가져오고 싶음. 어떻게  해야 하는가?
+
+> overlays/dev/kustomization.yaml
+
+```yaml
+bases:
+  - ../../base
+  
+components:
+  - ../../components/db
+```
+
 
 ## Lab:Components
+
+1. community overlay에서 무슨 components가 사용되는가?
+    > overlays/community/kustomization.yaml
+
+    ```yaml
+    bases:
+      - ../../base
+    
+    components:
+      - ../../components/auth
+    ```
+
+2. dev overlay에서 무슨 componets가 사용되는가?
+    > overlays/dev/kustomization.yaml
+
+    ```yaml
+    bases:
+      - ../../base
+    
+    components:
+      - ../../components/auth
+      - ../../components/db
+      - ../../components/logging
+    ```
+
+3. db component는 api-deployment에 몇 개의 환경 변수를 추가하는가? 2
+    > components/db/api-patch.yaml
+
+    ```yaml
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: api-deployment
+    spec:
+      template:
+        spec:
+          containers:
+            - name: api
+              env:
+                - name: DB_CONNECTION
+                  value: postgres-service
+                - name: DB_PASSWORD
+                  valueFrom:
+                    secretKeyRef:
+                      name: db-creds
+                      key: password
+    ```
+
+4. db component에서 생성된 secret generator의 이름은?
+    > components/db/kustomization.yaml
+
+    ```yaml
+    apiVersion: kustomize.config.k8s.io/v1alpha1
+    kind: Component
+    
+    resources:
+      - db-deployment.yaml
+      - db-service.yaml
+    
+    secretGenerator:
+      - name: db-creds
+        literals:
+          - password=password1
+    
+    patches:
+      - path: api-patch.yaml
+    ```
+
+5. 애플리케이션의 커뮤니티 에디션은 이제 logging component와 함께 제공되어야 함. community overlay에 logging component 추가.
+    > overlays/community/kustomization.yaml
+
+    ```yaml
+    bases:
+      - ../../base
+    
+    components:
+      - ../../components/auth
+    # 추가
+      - ../../components/logging
+    ```
+
+6. caching component가 생성될 필요가 있음. deployment와 service 구성을 가진 caching이라는 component 디렉토리가 있음.
+
+    kustomization.yaml 파일을 만들고 redis configuration을 가져옴으로써 component 생성 마치기.
+
+    > components/caching/kustomization.yaml
+
+    ```yaml
+    apiVersion: kustomize.config.k8s.io/v1alpha1
+    kind: Component
+    
+    resources:
+      - redis-depl.yaml
+      - redis-service.yaml
+    ```
+
+7. caching component에 대한 데이터베이스 설정을 통해 component는 redis 인스턴스에 도달하기 위해 컨테이너에 환경 변수를 추가하여 api-deployment 구성을 업데이트해야 함.
+
+    strategic merge patch를 만들고 다음 환경 변수 추가.
+
+    - Name: REDIS_CONNECTION
+    Value: redis-service
+    > components/caching/kustomization.yaml
+
+    ```yaml
+    apiVersion: kustomize.config.k8s.io/v1alpha1
+    kind: Component
+    
+    resources:
+      - redis-depl.yaml
+      - redis-service.yaml
+      
+    patches:
+      - path: api-patch.yaml
+    ```
+
+    > components/caching/api-patch.yaml
+
+    ```yaml
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: api-deployment
+    spec:
+      template:
+        spec:
+          containers:
+            - name: api
+              env:
+                - name: REDIS_CONNECTION
+                  value: redis-service
+    ```
+
+8. 애플리케이션의 enterpise 에디션에 caching component 추가.
+    > overlays/enterprise/kustomization.yaml
+
+    ```yaml
+    bases:
+      - ../../base
+    
+    components:
+      - ../../components/auth
+      - ../../components/db
+    # 추가
+      - ../../components/caching
+    ```
 

@@ -62,7 +62,7 @@
 </tr>
 <tr>
 <td>Section13 - Kustomize Basics</td>
-<td></td>
+<td>:white_check_mark:</td>
 </tr>
 <tr>
 <td>Section15 - Troubleshooting</td>
