@@ -66,7 +66,7 @@
 </tr>
 <tr>
 <td>Section15 - Troubleshooting</td>
-<td></td>
+<td>:white_check_mark:</td>
 </tr>
 <tr>
 <td>Section16 - Other Topics</td>

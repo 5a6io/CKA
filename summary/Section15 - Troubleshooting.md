@@ -32,10 +32,10 @@ graph BT
 1. 간단한 2 계층 응용프로그램은 alpha 네임스페이스에서 배포됨. 그린 웹 페이지를 표시해야 함. app 탭을 클릭하여 애플리케이션을 볼 수 있음. 현재 실패. 문제를 해결 및 수정.
 주어진 아키텍처에 고치기. 아래 아키텍처 다이어그램에서 주어진 이름과 포트 번호를 사용. 필요에 따라 개체를 편집하거나 삭제 또는 재생성.
 
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/589d7af2-3bdd-4c9c-a588-ac45518b06af/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466VTWSW74F%2F20250410%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250410T141322Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEC4aCXVzLXdlc3QtMiJGMEQCIDhJH1JwUYP9IMi4e%2FWEzrApEt3yuaxcCkfEEYKtHxxYAiA7ZVY0jDPZS8dmFrCXRPP8%2BJ0%2Bo%2FObAHK5xszSxVUcZyqIBAin%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMAGcw1YV5jSZ7GKYLKtwDwRgZ%2BsKGNWHMER47J92Bsc%2FJXllx5wOgxnR0FSaEzpSKgYlyV6GKMj%2FYDmGlIfTRBGZ5UTNlfFyYjJqihnIfzELSSrDzeUrNDCRKh52oNdDASnDKHGJlSlxrUBVRtjuOZdBS918aEH0TgqL1jE4tiFjRiyCRDZTovqM4j1nLLR3%2Blqr86Ln%2BksxJaBfdX%2BJJjDodU1cKe8nGkLTsVAMDvoEtCJ%2BZAzmxbORpZ1TpbOVRow%2FjlGxHyimpzrBfbQX%2FCRxdXIu3f%2ByDb1wsauN0JPchyeKkLcH%2BegcbMHPwfs9EZ1szYt8OoMTjPh%2By5768v8MfU4J3pI%2F0lQRMD2F9XPbEj04ZDee%2BmajnRFaWXZ6CHNGBY7%2BHn5hMsXopVDzHBcl2mqXK3p1nRUeu7Sd%2BYIoqaU6O1GrFYS3HJSc3t0yRxvFTvgWmvPX5wH3cDKSToWOrbXsFFAFrLwKebw6SPj9EqGL0Ydm5RQLJ6nGixyZYZjXe76NkLYJ8V8jxU2IQ%2F0HASQ6yJDQNYWhuv5l8EIPlJjoQ5B0Yit%2Bx1Bh8So67aFtI8Pkw1AYMV6atEwmsFoEGEQITrc4X4nqk%2Fu3hhu%2BTpyQ0VFk73tmB5XGK6u%2Fo8x%2F4OojehQtZA2Yw6p%2FfvwY6pgEz5eh77sF%2F4kHxzI8xi%2FUfjhcCkGeMNLc16gF4AH2XwalngfsUNLLGQk1fJz6EJREhtzOgXui9I4jkDtE5z%2Fs3oN6r%2FcHV%2BZYq53eg5EIxQdGMvLg1CvfAKJCsCznkbyz70vbQ8nYNz0aaRo0uNJ6PD6gIKwbwq4%2BXGzBOmhPbOxLXe7aFCu7s8ajdxIywFcpm7RcRusnYFOva5tbAKNFWIN7snVdI&X-Amz-Signature=4dffd33708b821769f7d40bdacb7b0fcf19577adb26b5e5171d0c40857ab44fe&X-Amz-SignedHeaders=host&x-id=GetObject)
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/589d7af2-3bdd-4c9c-a588-ac45518b06af/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466T63PKJVZ%2F20250411%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250411T141249Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEYaCXVzLXdlc3QtMiJIMEYCIQDClTEv%2B1tXkswU6Y3UjCog6w22np9HGorUoMB1AGcPsgIhAP%2BYxD08md8QgmIIPm%2B1DFxcOZ%2BjiUEFvPxAhyAOcn2lKogECL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1Igxi2k6tLWZ4Yh0frtIq3AMSdf8B3DgcJYvfmxfoWcCsWGYRU18nvxIMau2As2MchYZB89qhQadnuCwoes1shvGK7sjP61uvtq24WAysAXbb8zfJ3uh2Ubtsov8f3ca3xRCblaYABIpIsS528isqSZZpc7J6FVYvD%2Fj7mDehVG6DGPWkxcFpF0MdGgG7ct2BscvQl4ddh3iSDS%2FhvywnVgRkr6pzlEiqVJ7b7KZWhOm%2FWDrvhbVB82EGofR1YJGd8RCYPhAbknyz2CQgc08wDrXy%2F5wbR2MjZQYujb4APcabH61nCEZzSFXUyEwKK9L86hqDkSdoGNRPdTbJDCncWbmN24GAJsFHU74J8h0ytqwCjnM%2FVj7Fi%2FG0N4mjIMt6KsD7nK1f%2FD6MpA2GUtzXACXKMOHOFqan7k5WYr2gQQp8x6K9Yr%2B1hMDb92qxkyiIwSkr9EMcyprPhbm3maCoJSurqr7Wy503v72IkkLORBgv387ruj9LigDs1E3ytTC3%2BZwGDRPDvE3ggiZMAV%2FGOpVW9%2Fez8Hzs8VmY1up034NCnz7JlBbxJI9YFw%2B6HgFUNTh%2B020uvjGBJWfE5HUm1KbPgCtqmwFJyVEnWp1vGv%2FyLrXrbhyceU1kJvrmh6uPXQrhgMugAVZb1B%2BU7TCwteS%2FBjqkATAG4CyR7%2FiiGSoYWl%2FQdvHyX10DVGizp6XTqiM81%2BNWhvUn1xsOJl6oGmtvx6lEBdEDoVWcmkdMl5XW4KN54SvwfhPqigNxAhQ3rHNWvUzBiSLFrJSODFJZv2zJM5d2txkaLbYhFUT%2BuwXna%2BlifuznkyVgqamxyrZdUKQyeReGLYkLZvh4JTbnPCvWtO8yB1dM3D65crw8qac2%2BebUlgMhs0si&X-Amz-Signature=44e79a4b008ee3df27d0125426ce9fdd6d10e5f2d8e9a74a4aa7d68ab09b66a7&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/ae7912dd-e66e-487e-affc-c1bb880f3aaa/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466VTWSW74F%2F20250410%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250410T141322Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEC4aCXVzLXdlc3QtMiJGMEQCIDhJH1JwUYP9IMi4e%2FWEzrApEt3yuaxcCkfEEYKtHxxYAiA7ZVY0jDPZS8dmFrCXRPP8%2BJ0%2Bo%2FObAHK5xszSxVUcZyqIBAin%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMAGcw1YV5jSZ7GKYLKtwDwRgZ%2BsKGNWHMER47J92Bsc%2FJXllx5wOgxnR0FSaEzpSKgYlyV6GKMj%2FYDmGlIfTRBGZ5UTNlfFyYjJqihnIfzELSSrDzeUrNDCRKh52oNdDASnDKHGJlSlxrUBVRtjuOZdBS918aEH0TgqL1jE4tiFjRiyCRDZTovqM4j1nLLR3%2Blqr86Ln%2BksxJaBfdX%2BJJjDodU1cKe8nGkLTsVAMDvoEtCJ%2BZAzmxbORpZ1TpbOVRow%2FjlGxHyimpzrBfbQX%2FCRxdXIu3f%2ByDb1wsauN0JPchyeKkLcH%2BegcbMHPwfs9EZ1szYt8OoMTjPh%2By5768v8MfU4J3pI%2F0lQRMD2F9XPbEj04ZDee%2BmajnRFaWXZ6CHNGBY7%2BHn5hMsXopVDzHBcl2mqXK3p1nRUeu7Sd%2BYIoqaU6O1GrFYS3HJSc3t0yRxvFTvgWmvPX5wH3cDKSToWOrbXsFFAFrLwKebw6SPj9EqGL0Ydm5RQLJ6nGixyZYZjXe76NkLYJ8V8jxU2IQ%2F0HASQ6yJDQNYWhuv5l8EIPlJjoQ5B0Yit%2Bx1Bh8So67aFtI8Pkw1AYMV6atEwmsFoEGEQITrc4X4nqk%2Fu3hhu%2BTpyQ0VFk73tmB5XGK6u%2Fo8x%2F4OojehQtZA2Yw6p%2FfvwY6pgEz5eh77sF%2F4kHxzI8xi%2FUfjhcCkGeMNLc16gF4AH2XwalngfsUNLLGQk1fJz6EJREhtzOgXui9I4jkDtE5z%2Fs3oN6r%2FcHV%2BZYq53eg5EIxQdGMvLg1CvfAKJCsCznkbyz70vbQ8nYNz0aaRo0uNJ6PD6gIKwbwq4%2BXGzBOmhPbOxLXe7aFCu7s8ajdxIywFcpm7RcRusnYFOva5tbAKNFWIN7snVdI&X-Amz-Signature=5c94bfa86ddb594a957d6b49ca669a4bf91a5c73d216738d9d74e928b1eaf0f6&X-Amz-SignedHeaders=host&x-id=GetObject)
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/ae7912dd-e66e-487e-affc-c1bb880f3aaa/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466T63PKJVZ%2F20250411%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250411T141249Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEYaCXVzLXdlc3QtMiJIMEYCIQDClTEv%2B1tXkswU6Y3UjCog6w22np9HGorUoMB1AGcPsgIhAP%2BYxD08md8QgmIIPm%2B1DFxcOZ%2BjiUEFvPxAhyAOcn2lKogECL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1Igxi2k6tLWZ4Yh0frtIq3AMSdf8B3DgcJYvfmxfoWcCsWGYRU18nvxIMau2As2MchYZB89qhQadnuCwoes1shvGK7sjP61uvtq24WAysAXbb8zfJ3uh2Ubtsov8f3ca3xRCblaYABIpIsS528isqSZZpc7J6FVYvD%2Fj7mDehVG6DGPWkxcFpF0MdGgG7ct2BscvQl4ddh3iSDS%2FhvywnVgRkr6pzlEiqVJ7b7KZWhOm%2FWDrvhbVB82EGofR1YJGd8RCYPhAbknyz2CQgc08wDrXy%2F5wbR2MjZQYujb4APcabH61nCEZzSFXUyEwKK9L86hqDkSdoGNRPdTbJDCncWbmN24GAJsFHU74J8h0ytqwCjnM%2FVj7Fi%2FG0N4mjIMt6KsD7nK1f%2FD6MpA2GUtzXACXKMOHOFqan7k5WYr2gQQp8x6K9Yr%2B1hMDb92qxkyiIwSkr9EMcyprPhbm3maCoJSurqr7Wy503v72IkkLORBgv387ruj9LigDs1E3ytTC3%2BZwGDRPDvE3ggiZMAV%2FGOpVW9%2Fez8Hzs8VmY1up034NCnz7JlBbxJI9YFw%2B6HgFUNTh%2B020uvjGBJWfE5HUm1KbPgCtqmwFJyVEnWp1vGv%2FyLrXrbhyceU1kJvrmh6uPXQrhgMugAVZb1B%2BU7TCwteS%2FBjqkATAG4CyR7%2FiiGSoYWl%2FQdvHyX10DVGizp6XTqiM81%2BNWhvUn1xsOJl6oGmtvx6lEBdEDoVWcmkdMl5XW4KN54SvwfhPqigNxAhQ3rHNWvUzBiSLFrJSODFJZv2zJM5d2txkaLbYhFUT%2BuwXna%2BlifuznkyVgqamxyrZdUKQyeReGLYkLZvh4JTbnPCvWtO8yB1dM3D65crw8qac2%2BebUlgMhs0si&X-Amz-Signature=6821f7c7dd1f1696dd50bc2dffe8472b275c780b47e5086ae3f5cc5ceaa2d719&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
     ```bash
@@ -71,7 +71,7 @@ graph BT
 2. beta 네임스페이스에 같은 2-tier 애플리케이션이 배포됨. 그린 웹 페이지를 표시해야 함. app 탭을 클릭하여 애플리케이션을 볼 수 있음. 현재 실패. 문제를 해결 및 수정.
 주어진 아키텍처에 고치기. 아래 아키텍처 다이어그램에서 주어진 이름과 포트 번호를 사용. 필요에 따라 개체를 편집하거나 삭제 또는 재생성.
 
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/cd4ebe10-dd16-4e22-9b8d-e488b94023cb/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4665NMV7A4L%2F20250410%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250410T141322Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEC4aCXVzLXdlc3QtMiJHMEUCIChYhDzbyi0yTUHO8Dp3yAOrkzcY1y3DAYpdOLxHCDIYAiEAuvjNymDxJwv6NIKrVATI2nsn2%2Bt8vRPfh45Rqr4ewPAqiAQIp%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDCcYe365j9Zz7TqRkyrcA3ti6jP3IF0Uj9DMCWKC5D6grLMmmYwX6CS6sRSg7XR2do0jvktHGWxm80oA3h17xoLIlS%2FTO234IvcYzb0AKBHqR8ra%2B5shWW99BbhalVU0uGo8pUCIw8YPjq837VJTh5ez4hAEfW7CqB%2Fkba7836edCjPJYUNpcSYEHTFiB%2FAHphGc2DF83FdD7aW0y4TuTYC9Yn70217Kd4BzfEepWwppNOTbE8ifwkI8rVkYe5ae7lLGnBG6cQNLAnzX4Uy40I6xJpVMFWicUYDRRHRVb6QiL%2Fk2L%2B%2BXtqZtadY8yLcjmvQn8hAEFtBilQpjtvd2CDMQ6HB1g%2BnC0a3cgxCiumSGhybxtkFhOIEkPH9QjFxqxOHT3Y2LCdfSigMNMTiVAs6l1x%2Fgm5JuZyKIB2YI09KrWjBKbCCR2gjEy56FWLOHQ%2B4C1vDypx172K7xsd8a%2BYpihPj3J8kD46zhSZjvvagmPohCZupRrV3a8W2IC5ai11FIWJwomYiGJ1TS7zvvDGNQ628LPwvbipq2F3XAQkUx4k9MUr8pHS9gOcorsxhaZ7%2Bf1WJVjuYmvA3oyLPUUvhsxeNOK2FxJ%2FiMVZTPJJHDqNBumRMP8SIhR0RSPUoyGWwj3OJrD1sM1D0hMPSf378GOqUBuWVHZX7LmTNUgG8q4s5TGDjDDJHLWsnDJI1dW%2FXIeVSMOP0I9MDQ1SpGrejI%2BckdT%2B%2FLQTwV%2BWxP9HmpgOFEFXff7C2OLFBrIQyuPoZMH5uuA5gWXlkjKux%2Fi67B1MhDxcioWnv7eC6YFsMiRQGce38nBKOUtZOCPZyjvbbE%2FhgsFF9ob4RFBfK9VYTC%2BwAzrQT%2BUI6Hg0pJF9BCFEAVcLelTT7w&X-Amz-Signature=22c9c93315f2a5586f501b21407d256b445560a9498debf2e5193368431a6368&X-Amz-SignedHeaders=host&x-id=GetObject)
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/cd4ebe10-dd16-4e22-9b8d-e488b94023cb/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466S7EJO6XA%2F20250411%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250411T141250Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEYaCXVzLXdlc3QtMiJHMEUCIAHAscSZrFpCfAegy4063qL9Kn6GtL3bloW6k0kcEnBBAiEAskHtoNgKRWqtjodBd6zhSBuH2kLoE9kH0z6QytSe7H8qiAQIv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDDAHRNESySuIY6TCeircA1F0GkFu2vdujusZCpXOaY7hopW3GVWG5NXu2M6a12aiAgLUMIJ2ZBFiPtEMILkS%2B4fHg2z6UAzp4v4MJY3tF0VPfT54hQoh71iMfJqlbkF3e2Z4GGKJFXdaHDqkrVBQCetmWmAjWeFP1GYQ8webXTNHCX%2BCV8KRaLx4jaPt3BJqa9Iulax4JTuvS94qYH9gjJATGyRC6M9aG0ht5iPkamhXP5hmfzAgXNmNAVygnnhxGOnJ%2F6S%2BNIJAdIf9eR%2BJLKeDx1kpXQ5ZrKk1SKxFB2TJDipbbdsNdqgqi528z%2Bea73%2Fjyj5RAok0Xt7M06FAo4ttLQ8um%2Be2btDbS4LI0CGk%2F%2Fz3cRGSiWQzTwJ2utW4DntOc0UwYxsnM3nwPcbZKn2BNkjG206q2wzctjqStIGHP8FvBK9jqXOg1yNDvkhRk6mnxgejcMoIUNEBFaVlajAunWXWc7TXityYKCXN3upHmgdI1GCGDNmZ%2BpHK2DYoDanThB5nTQNNi%2F5uuZITm%2BsHqARpO%2B63OnpUMnEsLs%2BkIjY6WE7oYfO3ypm4R0wBpDk5ZtRMGGctv68sDgzCzB3TNXCsYMQN2DSplapzmW9IxEKPATw%2BUlMuYqZrY%2FSXC%2BznWJmh6YWv2i7CMJu15L8GOqUBq2VC2zmMdLoStVmznRGyOc3nBTgvyGURI2Kt2MyOqRW6Oi7R5aLwExUZpWKG9mC522%2FG9O3iAngHXqJ%2FPM75MvxqE9Z88TFIENg8ewFOo3nLeMNn5soSJyJTxTMPEG%2F0fcpX%2FoyUnM5CUMJ9G24xJ2H52yTWh16j%2BuUkphkIFNAqi8DxtVOSZG7PfjwigfsZZP0a0bjpDuTfPzXw2qMj1we2ZwCj&X-Amz-Signature=009a739a54b5b7925aabe38b6c7226f33b71ce970ec81aa2f4724a39f90bbd40&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
     ```bash
@@ -126,7 +126,7 @@ graph BT
 3. gamma namespace에 같은 2-tier 애플리케이션이 배포됨. 그린 웹 페이지를 표시해야 함. app 탭을 클릭하여 애플리케이션을 볼 수 있음. 현재 반응하지 않거나 실패. 문제를 해결 및 수정.
 주어진 아키텍처에 고치기. 아래 아키텍처 다이어그램에서 주어진 이름과 포트 번호를 사용. 필요에 따라 개체를 편집하거나 삭제 또는 재생성.
 
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/21708f85-5d81-4c4a-8d94-3feda2068e48/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4666H2SLA6I%2F20250410%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250410T141323Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEC4aCXVzLXdlc3QtMiJHMEUCIDM62bXFUD5s8%2F9rDfhJ%2FP%2FQbhPImfOv8sBMT%2F7ChBC0AiEAyn4eAerUFR%2FNFIgwTU1Y0Q6aGE8yBTnBjTKv4Uf0ZtYqiAQIp%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDAdoghIlncCbEwuA7ircA8%2BiNLJP4D7JY167FFJYABzdb0gd%2FreRTZwSvM6d3HdV56W7K92oJBbRS29qSUyb7GkQX53M9yuRnBYO2GvaQeckFDcLS5i3GKLqceVPKbujberVa8Eh7C9sNfioazR%2BS3U53SdgsLL%2BhLMaTfwvFFdQ36sWd1xkvtvSyX0wWVLk5RouTiWtoB6UuP51kpKwdsysP%2FKzcAqj9vFYYn5%2FpcEMO%2BaG8kufHMiMDYnz9r9CQWe7ZLXaC3PipKyUM4ng1EmNuxcQUV95EHmYaRg0BDIfBeT3s%2FhlRNfrkwSQaU0mchlz2OhzyiiCG%2BY1LQGWsSDUGQa0YkC6HdHsdTddhrIJUv9QqsPktt3ixa%2FTuNfemd7QTnoYViFj%2FInMUvqSlG5bBYOh2YcV8ACx%2FX6U9mfGaf6Dl%2BuPsNrgyy%2BZkEbf2jk%2FgFKV2tGVyCkDrfUO17qWTLcGpOjdk%2FhVjKr%2BRZaKiRivltfHaaCbQJFW2ru510oTavjkMksn2zEANGsSxeTiiYbJPhzmS3aQGB3L2yhsgxNamZsRW1sFtCuaN0CnRyUVigwPNVCmaC1D8ae6RAjSG7vC2W8%2BrYop6Nt9s2sswmfk14UoNUUhX5R9HR4%2BofrJ90o0oqdxpw%2FcMMGg378GOqUBmmSNpiyQ8Emi9loA%2FzqIa8paSQRMGSWAgOJ4zB2q1EdalewOFtw5pJjNGppl19IX%2B4dQXh5sMQes%2FrEdwCDHmmU07BTxgaodkBGvyCbOO5CA%2BpmOhjHqtjFbJpXqVKaM3YMlsDLXiYY2rZ4q7WpD9C5CAIFDjnBYyDRxY5YeB6rmrWqofjwPi2j9vlr%2BYppesGGC5Urwo3kAZFZwAznvG%2B6Yvz6x&X-Amz-Signature=9d327e588b067b97a441a9fc722529a664d911e2385547a18a33c66151893a3a&X-Amz-SignedHeaders=host&x-id=GetObject)
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/21708f85-5d81-4c4a-8d94-3feda2068e48/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4666SPK4L6Z%2F20250411%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250411T141250Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEYaCXVzLXdlc3QtMiJIMEYCIQDzpzYRgTDm7UaKHOBuTjKpX0cmyK%2FQgwNp5yvjD2Ve3gIhALpHG3d%2FE2y2MTHTdk%2F4kDhCGBfJFGQdIp%2BECYcPSNCMKogECL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1Igz9eauLEcEsrQA2wV4q3AP%2BJiNbQ%2B7cX1TkJG5%2FYd7qZZlBr7kzYP6q52IjzGg4DljiphzWsfbPJWkwZPBiLBl148i9uBtp8xwYv3gQEQnQ5iPhyLWBY1MG55w9C3UKdObaeaWbV9zwxS2kYv%2Btw%2BbovSxN0Wi%2FpiiqLNicXDfHyMJn4ZZe5jaDi4JiC2Nw8yh2bYNUaix0REF5os4miPFMrAxVmHIwX86BO7c2rm7a2e%2FbqvJAN1yRXvEsPYK2RfVsQMNF6qJDimLZgO3RCTLZUisHvUGZ7QwJfYgk5E4p30hVXgua84EowVJc1%2FnVicR9kZDOpn4RlXOPNnwaStWKVwMkr%2BIoDH9%2BL%2B%2BR9UHIn4K4yxXgC%2BaYl9k0qvwLsdH6CduCcnmHptllvzwMNCJYCZfUpvCs13Au5X8G%2FBS2U5i2mKeFPerqidlGipyJJIjLLzKBxSNEdZFgn3EPM9BYLM8PAudXt71htBcrHnWVPbvApEYS6M3%2BhYu0azF9s9jGCrBtEDjgNPuWpGE0XswG%2BwMKGmB%2BrCbYtnSYdThbPg7%2B%2FkYf9foJzd%2BP9pgIkkHFOBKhwhJQOvJuGaAbTqEdoSItu1U18v1Wl87Pdkik4MJ546g7NfZl1nc4ozQper1obJpcW6xnr6Gr%2FDCkteS%2FBjqkAcv0b6TZewo26Pwzf4GbRan5spil1sNnp7ZkHJB9SvRbRo6JGcgX%2BPaiLztR3wRd0yP6ou7qgxSUzmV18DhpI2JW%2Buplc9tbOASf9J04h4Ryo1m4x1bBg40%2BtH3pazUhup81lk9h%2BjRBUqMXqxZ2vAppB3Jv%2FuMHVCg1km%2Ftd%2F%2FYNX0Lt%2B%2BTyIRqm9cpPNkhAKS2vVLSb3H8HWi7xQQD64lNOPhL&X-Amz-Signature=38f62b3db08473549fa8acb6647acfd7f9067cd45ed6df894709c619faa060e1&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
     ```bash
@@ -184,7 +184,7 @@ graph BT
 4. delta 네임스페이스에 같은 2-tier 애플리케이션이 배포됨. 그린 웹 페이지를 표시해야 함. app 탭을 클릭하여 애플리케이션을 볼 수 있음. 현재 실패. 문제를 해결 및 수정.
 주어진 아키텍처에 고치기. 아래 아키텍처 다이어그램에서 주어진 이름과 포트 번호를 사용. 필요에 따라 개체를 편집하거나 삭제 또는 재생성.
 
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/e2c5b54a-2cdb-4456-a5eb-c53c3ebe8c58/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4662ACLEQCV%2F20250410%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250410T141323Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEC4aCXVzLXdlc3QtMiJIMEYCIQDalF3Huc%2F8a60O10LycdH%2FkaOUt%2F4zO48jhjBLpf9eaQIhANMuQXF3F90XVUQhiLqLCa00WwiVzqz0DDyMcGaXUFI4KogECKf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1IgzJIMdLGfV7xFeWglYq3AN5RWrHDUcG1SI2K3C%2BmHMbFd70nWGpzKFbUJ7eaOdmpTGFEkvUxa83KAgxP%2FQrz0zkJ6Wfs%2Ffg8sl0RPLjMksURClBam3ZfeY1mEwuiM0YMLLZZzjDei5fGXVPWYtIH5xORT2MhYDk1IuUu9ZI9rMW4jCDFZ4IDPNcepq2HzgK5AcUOXp3pWbVW1tuYMQaytGayHEET9A3PXfVB%2BA0fc1ZN0tHL3NrSB0RzX6ZR4TecrWuUFJ835oKtECkvq4rdGE7OwQNYqd38HBGhLFRb0KKjwumtxHO1FG6yHECGk5JZsyGLuSUV2FfmjNReUO0XBA6yGNxDWvRXbiqwNGLhzn%2FqV4l4JBpVmYdCnwazOrxKZ0bZcCGbWtSTyvf1JViEHDRIqUjLEOv9MVWjwdFQmhEmwceJ9piLre26ovTcxiGgOGHq2v6RXFvzii1y5Wn7BPxAj9s2YlfeabfFlEu5xRxqNR7mOyunWfTW8e%2Fmh%2Fs3rj5mbcgLyw%2F86s49uD4rrwyGm2yMUYCFQTt8%2BWCIIqW3%2Fi03DwuxjN9RygGe2RcrWBpQbC03cOTvQlDGtP%2FsuSRJXCo4NphLramoBDhbZH2tZ7c6BfN%2BTuZTURf1%2BnN7fftZAQ51cOUq%2B7JxDCooN%2B%2FBjqkARIg%2BHHqUyhT14xYJOBMmXnVYohyS0wBsvkg%2BixlTH70Hp3CXH4slCK9QwaxATmC6%2ByILRUAeS2r5tIqClRk77kmXgjcivraIkYWVpNLshN%2FnLx6iBPhODicWjHT9LZkm40vnNkM7tuKTjiPN2rPjRvQZHcwG%2BVCIzp0sNJ4TGIgSXSj9QSEvLdUuOGMOulXy868%2FTYoZKWAxXoN8JfArmm0WYwq&X-Amz-Signature=f5e39121cfcf6b1b4332be28d8f811f2a15e6ea77d738483c4209d755b561b89&X-Amz-SignedHeaders=host&x-id=GetObject)
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/e2c5b54a-2cdb-4456-a5eb-c53c3ebe8c58/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4666ULA4F5G%2F20250411%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250411T141250Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEYaCXVzLXdlc3QtMiJIMEYCIQDTFyyOmOMDS%2FJwJmU%2F76LilHHuq9yab%2FFYqjbBPdOMPgIhANyjT0jO20Kp5D%2FZZ6ZLfIjgjpzNFXkiPlxxI9Dzdv33KogECL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1IgwLJig69L2w%2B1yyPmIq3ANqSdZGB1R0A%2BUbBXgE1laQmEpUQxC8X5u6VHwsqx74eC2D%2FSnr5bjj4ae12h5V%2F8H65uaxZvz9kejgiHZm0NKH6EU2czwB%2BWuUHLvgYYZ4inYwgLRrXCFqlGk1LUjkL0ggU0Op%2BiTYr426MhlFZxhGXshrbJB4mttpn6IyljdU74aAWfDEXYUGtE0m8IBqeWZ46F3kEHVjTscKFb8m9lV5SrI3hBrk7nQQTv%2Fxo6o8ktrggR0hhtdV5xuph16nZEcXP%2B4yKDzvk%2FeEODi74izaERyfK8T7AYJF5dH16w9r0mDYI2%2F5qvYLry0psMZyOruLGA%2B1xG7DLBu4nhftcSbU6u8RFPOGB4lAqNuJSJFi%2FGJtMB%2BsoI9GaBR1bwfvonH4b7KO17WADR%2BEFsB12VWAtA0c2h7mhrBEZEyIDAATR3w2owR8TliPiJAh5xUGhdz5wFZ9h5q5oxBG7eCXivVKdOfV4h1v3jqOhUWQlzuVIUNGDKVjXzO6TwLM%2FwNeGvmzCc6GURB%2F%2B5qv3tA%2FO%2BBcfUHsjlkjypMU0AnBFAliEBccSeuA1I78yFE18vLL69UYRvlHZgSez5KwP%2F7lQRQf8asvg3o4vm7scEvND%2Ftdmfd0s73ZTSNIQSLCjjCmteS%2FBjqkASvEZ10BKXsPC8TD5%2F5Ny3z77a6xykAHn2BJTEFKd8A2DklTiPMoxcNwMV4u7PbHohETs%2FtHkJKx3wYDjEW2nnxF8KXAEA6UKpXizaU4NnVNHxkC45K3CEQRFriA6Vaxli2%2FaFgWG%2Bqn9B6DiJG0wd8q0HQ09DTrK0VCiqeUj%2BORbPd07NBiA4INVhJNTRMQWD5O3qrZA92feysbBZk3%2FJ5YdNBY&X-Amz-Signature=a48364cb597a1bbc24b624522662550560aacbc4d997dc2d754a6a296f912fbf&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
     ```bash
@@ -235,7 +235,7 @@ graph BT
 5. epsilon 네임스페이스에 같은 2-tier 애플리케이션이 배포됨. 그린 웹 페이지를 표시해야 함. app 탭을 클릭하여 애플리케이션을 볼 수 있음. 현재 실패. 문제를 해결 및 수정.
 주어진 아키텍처에 고치기. 아래 아키텍처 다이어그램에서 주어진 이름과 포트 번호를 사용. 필요에 따라 개체를 편집하거나 삭제 또는 재생성.
 
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/636892d0-f438-46e1-b54f-3b5802587e41/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466VJYV4QFR%2F20250410%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250410T141323Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEC4aCXVzLXdlc3QtMiJHMEUCIDMeJxAnyypkeRy%2B%2BoSYpmSjv1WGoZ%2FlnNMIEcpAc8x2AiEA3w3BjpSIbEcIS0c8Qs5Dgn%2Fk7aV3a%2BUz93Sv9%2FnEJY0qiAQIp%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDEUZJHKjCJZGbT8nbircA94Hh29jqLNf%2BoCE2NzESTPARqi8jQV24KtVnYJ1sPRa%2BpNtdZHmlvb93%2FpsEMGtY4VUW3eWKC11psYibqvLHIr96RC6x%2FfVUVT6LBp1rftyyM9cA%2BS%2BF4qfItJLAduGU10G18LaGYS0%2BQFT5vxblTxyEFT58mHO87B6o5rriMBuyLG%2B%2Fc6UglwLGBxZptYJ%2BN0avshkrS2%2FMhV1JpEM4pUNO3rNiKc4dia3CMKj6tvAkv2rXSnNCCsPjMF%2FSeR4QQv2eWjfEVMUQeDf9Omhs%2F5I55fO6GBvOq4jkprHTgBJm2p3Y2pI9%2BgVbaZyymphti%2FSoylsHsFiv5mreFU5WQYYSxyP1BWYzIvOKzxaHMsd0xqCCEbHQ9vIf9E0XiOWV3KK77%2Fxx%2FueHyPpLQuxLPSZ09UQPO6JXb3HuLsxzJr7ymmdGk%2F852TBquM5Q%2BYXLra2SK8NMTBi29fULUI0VdUExE%2BkrM%2BdXA%2FSZ23LVrldo0cWSQ1LEzrX1ZDaTkH5p9CFLv0PtBSN%2FFg7qiMCS5JubFQEAsFO3DJgnPBP7chqwgnAtZIjGOaooMG5IZPpxrSPLlyZBshP1sYGU3OXVG8JSDl65TUk0kEBvH4sb62wLpDEtfDFGDGGoi8oMOOf378GOqUBtLT6Es5xZ%2FwL8QuleuhBCl5ORtgDYzAKMxzwhsmtbHXDPgclV%2BJQRdm3Y5MSStkgCU3Gg3Dn1PgBY0m3b%2FBVwm1%2F8aw20BaT8ySk12h48v9StV7%2FsMrUcKArrLMZayxDypu%2BaBjzB9gBO%2FZe%2F39dNpePyjnR1625LRcFdxukOu5yEpf9rRCoVRyu291R4%2F7hx%2FNp2nCG%2Bj7Ibzy7agcHniuB07Tj&X-Amz-Signature=50541c8e7c0638803590b32ae9126b5f96be4641a4cc121b3fb4bfc6a2e8f18c&X-Amz-SignedHeaders=host&x-id=GetObject)
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/636892d0-f438-46e1-b54f-3b5802587e41/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4664AR2QOBV%2F20250411%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250411T141252Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEYaCXVzLXdlc3QtMiJGMEQCIGxZ09iUZhPssX6jcDS8eVU4Pja%2FSlLLjb6oC4lb7S6MAiBU2e9uJW21pp05pmLJn%2BkKCwr5QSuQODEiVK0fhsaUICqIBAi%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMkFwGZzNM7%2FyimhmPKtwDgH8cbgh2JCNnyxOV9aqlkh02IX%2FmrEtNiDaEYnfPFm1qvnSMy4lwqsKsOXPLqvmXAtFMt9nTsr95Krk6TDzL2jD4ss2ozLGtfBY9jebr1hRUmsroGMB0I966mnCwk14f4apSC7hmeEBgiWdfUbAJWnD%2BoJ%2BwZu57nXH%2FrVLaE8Sz%2FYbBR8WkRfzxtJVYkZadD64SC6zPbs7SLjrTUWQyXZoI9FtLca8Mj25qRya1qZw%2FyDY1cZvLNPIAguq8fWoFw2pl5FbR47mXqYdlm%2BOxX4%2BcZ8YaxemzS9f%2FQqpf%2B0mm792L7fD5RNbj39rLbpdnSABOJd%2FhELnJmEgv8UXV%2BVpYCPoof62itlcd24HDytcTJysRspNjMEUKbnjugcvZ79WLFTXQTOescg0CySJ5gcudECaRG9em3WdSBqo%2BEqPww8pS4oce9%2FQ5iMl%2FA8Qj0jK42jiqhLK3zzeOjOdq7Ht6tOduXXh4s9%2FUwzl2zBLM0dlMrTpADF%2FQYFys0anfm1lWSjmLTgNHxC69tQjMNtbFYRiDjSxfewAuDRemPNA6xyfh1wGjb7wmYXoMG3ZzoOy%2F0g0iPce%2FVFWNJYq3Lwx8BxicyTC4CKWbRJCC1F4FLK5LQFfG282nksIw7bXkvwY6pgFoOR6mb4yw4R3NzeboWhqUKLFXBr4rDnsnKMv48AN6y6tSWucICEM%2FY0mlfhNlg7uxK1Azr20r8fj5S%2F5HamorzChAmZb7RAndQBqqScBI7jDWfCmZhnm7YL7ZYZJ4C%2BLI15c1RjCIKwx7cOOaYAiuZQCbjSborY1TSOWNBwwIpPYuJ67o2Gi4H9kK%2BMXvqQyt0l8aylVAPYOksIvvoYn%2BaN89UAiH&X-Amz-Signature=4233cf1837222c1f13a5659939b01e81ed13dd8203c86bf8470fd498a9378a64&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
     ```bash
@@ -366,7 +366,7 @@ graph BT
 6. zeta 네임스페이스에 같은 2-tier 애플리케이션이 배포됨. 그린 웹 페이지를 표시해야 함. app 탭을 클릭하여 애플리케이션을 볼 수 있음. 현재 실패. 문제를 해결 및 수정.
 주어진 아키텍처에 고치기. 아래 아키텍처 다이어그램에서 주어진 이름과 포트 번호를 사용. 필요에 따라 개체를 편집하거나 삭제 또는 재생성.
 
-    ![36e1a636-902a-47cc-9047-01d0b4cc6105.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/d9828d96-9f33-418b-8bb9-9839686316a5/36e1a636-902a-47cc-9047-01d0b4cc6105.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466X5CVR3U7%2F20250410%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250410T141324Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEC4aCXVzLXdlc3QtMiJGMEQCIGR5jOlL%2Bs8sdzIb5XDp7t1vuRXhijRjzwEYp1p2BJW0AiBURCBsN3bKJ7k6TMLPzk%2FFeGXV%2FhmoLeDalbnRPiWbVyqIBAin%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMWpPgSAHaXE1nZAZdKtwDM83NXpEr1oOVF6gORRHjaaZgxk1mcBrOn6aOUsxkoXX4NwJTKIR326sAWyJoKsrPl1Ifjefmnd6TihMTT%2B2He%2FFrx9Nb%2BnlcvD9muJvaBkFdVgK9GUAbAbEwmu7cXb%2F1towq9%2FRRUhVveWL3VJlUif%2BAnWHuE9%2F1bFE0ZwlEFLayoa%2B6FGN0vzCuIOBdsLOWGxy%2B3K5fry0zYDPfuhCe4mLubbpMJ7UGu%2F3cHFgdYvJ6EiKV7rJbmbes0xM27DhrS1CbZlY6hQOuWpEUkSyURk%2B6olHgEpIBp0MB538ZrggcjT7uliKJ5Ro0xRPOiVLEw8nM2lxY%2F7XCS0jpQNEENnhiJXMirKGhNIuzKrHa7RKqHkFCIRD0lgQTJK9rXWEMoYVPChEvanxVf4Sn3VybmCBRMA%2FPaPmsO%2F%2BT7KqaRNO%2BgNKceRx4X35kq4xMXDtch7X6swN52B1L18NwlD%2BBDqCuLV8R%2BaPtu8jzgdaMcr6mgpIybxFwVmhPoEvMmsJe61fi56pH155Neis3qAaXjn3LBaMcc4dFL1rq7%2BTrt1kSCc5B%2BB3jicRcExDa9P6IKcJcBPbt%2B8C7aFzNOTOM7ZerpjsbgzRSVKPKN%2BwK3Oc8gcYTpjU6YWo%2BEIAwyqDfvwY6pgFfLgxIdcQ2SdWt0%2BcjIMcqLvOsIMF69ZiUeoxc7o6IZPlIsWrosx%2BLle7DuWDy7ahMaEmTQ5lZCOOVgEVgG5kHL%2BhK0xtDXyOSnZLWP4eqH1Q5xgNWUvFJnP9FRtFW9TO9%2FiOEsXb6FrZLS7jFyyCaxsdvgSLQBE3vMpwqlzcnTAmzGqe2ZSgjUlyOhLGC0v4Ob1NeCqVCLJYTJBmTDbLK9oQBVslY&X-Amz-Signature=06bb0221daa2155dbb2d3d86f6b5ecc56e45848b77d0dab9ceda2bcdb342c5a9&X-Amz-SignedHeaders=host&x-id=GetObject)
+    ![36e1a636-902a-47cc-9047-01d0b4cc6105.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/d9828d96-9f33-418b-8bb9-9839686316a5/36e1a636-902a-47cc-9047-01d0b4cc6105.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB46657QSICPH%2F20250411%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250411T141252Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEYaCXVzLXdlc3QtMiJHMEUCIC7toxEnxq7IKHRkZK%2F8LzJ%2Fmfp8ZGHIvOd4KmgvcHjKAiEAv%2Bn9W4CDyfNcijGRK7wiwb7XG943HWe7qMSBThq3N%2FcqiAQIv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDHykIDHETpUrt42HtyrcA2cIxNRMeKZSP6LbOFbRGZlfNl407x2YexauiWHcYbpAAkEPjWScHyjNKiU84eQrMhnq5cLwrq8ERzVlrb50CDLfAoXhpFOUkyAb9eEoGeDH18fC0RHeRDcVN4Htwsjb06lZpBY386Z7KhgMRE08wsRioAwEVQFgZyRI8anpD68nI75d7GbJi2m1ei5O1rBjetMGVlDm6LddqC4dXO9r8gYXDTvC3iir6lyty77VgP7vuzSd9hwniiK%2BH1Vs1I6T12BRyPH3OKexnXZ83ALMzNcsttsPjcjlUadeM71xu4vf5iZGmRcAtHJ%2B5%2FknFo0aSG5dlXjHykMn7%2Fr09uc0txuF%2FY%2FhCeaV%2FmtmPAcIsWVS9PHk6Fyc8RDVvEDX2MHTVoYmjnP%2FGDuTkb1FJnd9lqHtAIPsQTt79%2FpYmPhpjzJTuHjmt2hOiHqXnShQDs0lFI%2FrCed4Pt28%2FNvhvDM91QpkFSUvHrUr9Z1N3nbKsknCymGWGazAiLogLFdeATGBfAKdo32q0dorqznxpTK6hT9Hkykjq92e7%2Fed2arRZZk7b7OtPdJUFBs54vDG35zBNEOL1Rzx6HtyuSLjjIFaDoicHO8JQdhnL5p4KXAVytyPmlIp%2BdDwRBx%2FFSVLMJ%2B25L8GOqUBRQKPhPMMJgLriEwWrYA65H%2B5DIGCUmksTaVUktjvkJ04cbjIbHmYUrw0ZWUzLfUJ7gaKYzWkicdVKhZ%2BWXvh%2FliyJ8Ljx9Fj2y7QDZS5e8ge1WIqi9yto4nr9hueAMGqouO%2BmrH%2FNcJRlHP%2FnruowV%2BSbGqH0OHltjZF50ZhOf69E2pFxGNuL1U%2BxPoOTaqjMJPdW170BLQSdSzbAOqM8xBS1uD8&X-Amz-Signature=3738f74229da9596f9533256ed70123865fbe308dcdf9c58c0abf1569117ff43&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
     ```bash
@@ -412,7 +412,7 @@ graph BT
     ```
 
 
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/ed76229c-cea3-4635-a7f0-f6ffa62d9fc2/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466X5CVR3U7%2F20250410%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250410T141324Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEC4aCXVzLXdlc3QtMiJGMEQCIGR5jOlL%2Bs8sdzIb5XDp7t1vuRXhijRjzwEYp1p2BJW0AiBURCBsN3bKJ7k6TMLPzk%2FFeGXV%2FhmoLeDalbnRPiWbVyqIBAin%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMWpPgSAHaXE1nZAZdKtwDM83NXpEr1oOVF6gORRHjaaZgxk1mcBrOn6aOUsxkoXX4NwJTKIR326sAWyJoKsrPl1Ifjefmnd6TihMTT%2B2He%2FFrx9Nb%2BnlcvD9muJvaBkFdVgK9GUAbAbEwmu7cXb%2F1towq9%2FRRUhVveWL3VJlUif%2BAnWHuE9%2F1bFE0ZwlEFLayoa%2B6FGN0vzCuIOBdsLOWGxy%2B3K5fry0zYDPfuhCe4mLubbpMJ7UGu%2F3cHFgdYvJ6EiKV7rJbmbes0xM27DhrS1CbZlY6hQOuWpEUkSyURk%2B6olHgEpIBp0MB538ZrggcjT7uliKJ5Ro0xRPOiVLEw8nM2lxY%2F7XCS0jpQNEENnhiJXMirKGhNIuzKrHa7RKqHkFCIRD0lgQTJK9rXWEMoYVPChEvanxVf4Sn3VybmCBRMA%2FPaPmsO%2F%2BT7KqaRNO%2BgNKceRx4X35kq4xMXDtch7X6swN52B1L18NwlD%2BBDqCuLV8R%2BaPtu8jzgdaMcr6mgpIybxFwVmhPoEvMmsJe61fi56pH155Neis3qAaXjn3LBaMcc4dFL1rq7%2BTrt1kSCc5B%2BB3jicRcExDa9P6IKcJcBPbt%2B8C7aFzNOTOM7ZerpjsbgzRSVKPKN%2BwK3Oc8gcYTpjU6YWo%2BEIAwyqDfvwY6pgFfLgxIdcQ2SdWt0%2BcjIMcqLvOsIMF69ZiUeoxc7o6IZPlIsWrosx%2BLle7DuWDy7ahMaEmTQ5lZCOOVgEVgG5kHL%2BhK0xtDXyOSnZLWP4eqH1Q5xgNWUvFJnP9FRtFW9TO9%2FiOEsXb6FrZLS7jFyyCaxsdvgSLQBE3vMpwqlzcnTAmzGqe2ZSgjUlyOhLGC0v4Ob1NeCqVCLJYTJBmTDbLK9oQBVslY&X-Amz-Signature=91f50c1932bd9264662b4f2278b642323605e0012f468d572b3f5872576a59cb&X-Amz-SignedHeaders=host&x-id=GetObject)
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/ed76229c-cea3-4635-a7f0-f6ffa62d9fc2/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB46657QSICPH%2F20250411%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250411T141252Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEYaCXVzLXdlc3QtMiJHMEUCIC7toxEnxq7IKHRkZK%2F8LzJ%2Fmfp8ZGHIvOd4KmgvcHjKAiEAv%2Bn9W4CDyfNcijGRK7wiwb7XG943HWe7qMSBThq3N%2FcqiAQIv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDHykIDHETpUrt42HtyrcA2cIxNRMeKZSP6LbOFbRGZlfNl407x2YexauiWHcYbpAAkEPjWScHyjNKiU84eQrMhnq5cLwrq8ERzVlrb50CDLfAoXhpFOUkyAb9eEoGeDH18fC0RHeRDcVN4Htwsjb06lZpBY386Z7KhgMRE08wsRioAwEVQFgZyRI8anpD68nI75d7GbJi2m1ei5O1rBjetMGVlDm6LddqC4dXO9r8gYXDTvC3iir6lyty77VgP7vuzSd9hwniiK%2BH1Vs1I6T12BRyPH3OKexnXZ83ALMzNcsttsPjcjlUadeM71xu4vf5iZGmRcAtHJ%2B5%2FknFo0aSG5dlXjHykMn7%2Fr09uc0txuF%2FY%2FhCeaV%2FmtmPAcIsWVS9PHk6Fyc8RDVvEDX2MHTVoYmjnP%2FGDuTkb1FJnd9lqHtAIPsQTt79%2FpYmPhpjzJTuHjmt2hOiHqXnShQDs0lFI%2FrCed4Pt28%2FNvhvDM91QpkFSUvHrUr9Z1N3nbKsknCymGWGazAiLogLFdeATGBfAKdo32q0dorqznxpTK6hT9Hkykjq92e7%2Fed2arRZZk7b7OtPdJUFBs54vDG35zBNEOL1Rzx6HtyuSLjjIFaDoicHO8JQdhnL5p4KXAVytyPmlIp%2BdDwRBx%2FFSVLMJ%2B25L8GOqUBRQKPhPMMJgLriEwWrYA65H%2B5DIGCUmksTaVUktjvkJ04cbjIbHmYUrw0ZWUzLfUJ7gaKYzWkicdVKhZ%2BWXvh%2FliyJ8Ljx9Fj2y7QDZS5e8ge1WIqi9yto4nr9hueAMGqouO%2BmrH%2FNcJRlHP%2FnruowV%2BSbGqH0OHltjZF50ZhOf69E2pFxGNuL1U%2BxPoOTaqjMJPdW170BLQSdSzbAOqM8xBS1uD8&X-Amz-Signature=08a6b358c8abb609c7116ec642407f2e99a5550434938738a4f6a08376b45a99&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
     ```bash
@@ -1065,5 +1065,274 @@ kubelet 인증서 확인. 만료되지 않았는지, 올바른 그룹의 일원�
 ## Network Troubleshooting
 
 
+### **Network Plugin in Kubernetes**
+
+
+아래와 같이 이용 가능한 몇몇 플러그인이 있음.
+
+
+**1. Weave Net:**
+
+
+`kubectl apply -f https://github.com/weaveworks/weave/releases/download/v2.8.1/weave-daemonset-k8s.yaml`
+
+
+네트워크 플러그인에 대한 자세한 내용 참조.
+
+
+[https://kubernetes.io/docs/concepts/cluster-administration/addons/#networking-and-network-policy](https://kubernetes.io/docs/concepts/cluster-administration/addons/#networking-and-network-policy)
+
+
+**2. Calico :**
+
+
+curl로 설치하고
+
+
+`curl https://raw.githubusercontent.com/projectcalico/calico/v3.25.0/manifests/calico.yaml -O`
+
+
+아래 명령어로 manifest 적용.
+
+
+`kubectl apply -f calico.yaml`
+
+
+Calico는 가장 진보된 CNI 네트워크 플러그인을 가지고 있음.
+
+
+디렉토리에 다중 CNI 구성 파일이 있으면 kubelet은 사전 순 이름으로 처음으로 오는 구성 파일을 사용.
+
+
+### **DNS in Kubernetes**
+
+
+Kubernetes uses **CoreDNS**. **CoreDNS** is a flexible, extensible DNS server that can serve as the Kubernetes cluster DNS.
+
+
+**Memory and Pods**
+
+
+In large scale Kubernetes clusters, CoreDNS's memory usage is predominantly affected by the number of Pods and Services in the cluster. Other factors include the size of the filled DNS answer cache, and the rate of queries received (QPS) per CoreDNS instance.
+
+
+Kubernetes resources for **coreDNS** are:
+
+1. _a service account named_ _**coredns**__,_
+2. _cluster-roles named_ _**coredns**_ _and_ _**kube-dns**_
+3. _clusterrolebindings named_ _**coredns**_ _and_ _**kube-dns**__,_
+4. _a deployment named_ _**coredns**__,_
+5. _a configmap named_ _**coredns**_ _and a_
+6. _service named_ _**kube-dns**__._
+
+While analyzing the coreDNS deployment you can see that the the _**Corefile plugin**_ consists of important configuration which is defined as a _**configmap**_.
+
+
+Port **53** is used for for _DNS resolution_.
+
+
+```bash
+kubernetes cluster.local in-addr.arpa ip6.arpa {
+    pods insecure
+    fallthrough in-addr.arpa ip6.arpa
+    ttl 30
+}
+```
+
+
+This is the backend to k8s for _cluster.local and reverse domains_.
+
+
+`proxy . /etc/resolv.conf`
+
+
+Forward out of cluster domains directly to right _authoritative DNS server_.
+
+
+### Troubleshooting issues related to coreDNS
+
+
+1. If you find **CoreDNS** pods in pending state first check network plugin is installed.
+
+
+2. coredns pods have **CrashLoopBackOff or Error state**
+
+
+If you have nodes that are running SELinux with an older version of Docker you might experience a scenario where the coredns pods are not starting. To solve that you can try one of the following options:
+
+
+a)Upgrade to a newer version of Docker.
+
+
+b)Disable **SELinux.**
+
+
+c)Modify the coredns deployment to set **allowPrivilegeEscalation** to _true_:
+
+
+```bash
+kubectl -n kube-system get deployment coredns -o yaml | \
+sed 's/allowPrivilegeEscalation: false/allowPrivilegeEscalation: true/g' | \
+kubectl apply -f -
+```
+
+
+d)Another cause for **CoreDNS** to have CrashLoopBackOff is when a **CoreDNS** Pod deployed in Kubernetes detects a loop.
+
+
+There are many ways to work around this issue, some are listed here:
+
+- Add the following to your kubelet config yaml: _**resolvConf: <path-to-your-real-resolv-conf-file>**_ This flag tells _**kubelet**_ to pass an alternate _**resolv.conf**_ to Pods. For systems using **systemd-resolved**, _**/run/systemd/resolve/resolv.conf**_ is typically the location of the _**"real" resolv.conf**_, although this can be different depending on your distribution.
+- Disable the local DNS cache on host nodes, and restore _**/etc/resolv.conf**_ to the original.
+- A quick fix is to edit your **Corefile**, replacing forward _**. /etc/resolv.conf**_ with the IP address of your upstream DNS, for example forward **. 8.8.8.8**. But this only fixes the issue for **CoreDNS**, _**kubelet**_ will continue to forward the invalid _**resolv.conf**_ to all default dnsPolicy Pods, leaving them unable to resolve DNS.
+
+3. If **CoreDNS** pods and the **kube-dns** service is working fine, check the **kube-dns** service has valid _**endpoints**_.
+
+
+_kubectl -n kube-system get ep kube-dns_
+
+
+If there are no endpoints for the service, inspect the service and make sure it uses the correct selectors and ports.
+
+
+### **Kube-Proxy**
+
+
+**kube-proxy** is a network proxy that runs on each node in the cluster. **kube-proxy** maintains _network rules on nodes_. These network rules allow network communication to the Pods from network sessions inside or outside of the cluster.
+
+
+In a cluster configured with **kubeadm**, you can find **kube-proxy** as a _**daemonset**_.
+
+
+**kubeproxy** is responsible for watching _services and endpoint associated with each service_. When the client is going to connect to the service using the _virtual IP_ the **kubeproxy** is responsible for _sending traffic to actual pods_.
+
+
+If you run a `kubectl describe ds kube-proxy -n kube-system` you can see that the **kube-proxy** binary runs with following command inside the kube-proxy container.
+
+
+```bash
+Command:
+  /usr/local/bin/kube-proxy
+  --config=/var/lib/kube-proxy/config.conf
+  --hostname-override=$(NODE_NAME)
+```
+
+
+So it fetches the configuration from a configuration file ie, _**/var/lib/kube-proxy/config.conf**_ and we can override the hostname with the node name of at which the pod is running.
+
+
+In the config file we define the **clusterCIDR, kubeproxy mode, ipvs, iptables, bindaddress, kube-config** etc.
+
+
+### Troubleshooting issues related to kube-proxy
+
+
+1. Check **kube-proxy** pod in the **kube-system** namespace is running.
+
+
+2. Check **kube-proxy** logs.
+
+
+3. Check **configmap** is correctly defined and the config file for running **kube-proxy** binary is correct.
+
+
+4. **kube-config** is defined in the **config map**.
+
+
+5. check **kube-proxy** is _running_ inside the container
+
+
+```bash
+# netstat -plan | grep kube-proxy
+tcp        0      0 0.0.0.0:30081           0.0.0.0:*               LISTEN      1/kube-proxy
+tcp        0      0 127.0.0.1:10249         0.0.0.0:*               LISTEN      1/kube-proxy
+tcp        0      0 172.17.0.12:33706       172.17.0.12:6443        ESTABLISHED 1/kube-proxy
+tcp6       0      0 :::10256                :::*                    LISTEN      1/kube-proxy
+```
+
+
+_**References:**_
+
+
+Debug Service issues:
+
+
+[_`https://kubernetes.io/docs/tasks/debug-application-cluster/debug-service/`_](https://kubernetes.io/docs/tasks/debug-application-cluster/debug-service/)
+
+
+DNS Troubleshooting:
+
+
+[_`https://kubernetes.io/docs/tasks/administer-cluster/dns-debugging-resolution/`_](https://kubernetes.io/docs/tasks/administer-cluster/dns-debugging-resolution/)
+
+
 ## Practice Test - Troubleshoot Network
+
+1. triton 네임스페이스에 2-tier 애플리케이션 배포. green 웹 페이지가 성공적으로  보여야 함. 애플리케이션을 보려면 app 탭 클릭. 현재 실패. 문제 해결.
+
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/a50f6a04-6611-47f7-8b7e-374b7f9a07fb/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4665276K3FC%2F20250411%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250411T141258Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEYaCXVzLXdlc3QtMiJHMEUCID9vjY2ijIM5BONrreziqcM5vza82s5gsYs%2FriaSHtRWAiEA0XhKkM8taJ4Qt5sifHLxxxKxU8IXX5NUafw57qXdJm8qiAQIv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDK2t1p65MSTXkFFDaircAzI83Fp2oUdTKeeJSTYTPK71cU4GtKnt9cQO9eATOnet6v0lUsj6lg6b1UokdydCNHBk4Qh5skcM0G4Kr0IIPz9bez43dmNFfHq0QgTPeJkI4iH3VK1pUs9Y18rx3RE33%2B6hbii3OLk7XGpDkwtK%2BRBznblUqQpORDmhskVMwSeJ6Wbx623%2FzkwR7dXsD1mHgos%2FfFpVqtFDp0%2BB1sSVTi7XFEYyPukVqv56Z4NhXl2xKELLXTG6gka1g8AWmyicAa0VoaUCPCzsES2H3xAl2F6NDdztizDlTqgoam05BfRAOSDR2X9YRfpV8lJOguz0llaqssaFs5pmv1%2BvrrysARrocIcTkLqYxYKrxDyVepDhx0qwbsbsr6k4WcQbMfHDM5gMTa7MEIYkze9nUN2QHFgqi%2BlkWwATxXO04vxMB6%2BSGF69T%2BaMPObzZEJ%2BauHZ56y3utMtWzW%2FAAwZ5SWb4yyi9QBww5QolTnrHp7KGb6eGQWGkbftCQVG9N3BcBuuRPIRvmlyiQT2IjtjD6FbTvUkahjakrmihlE3XGXFPkur0Tjl33rGDCEwLlFfbLjDYpAhe9y7R7I8yhELHXLN9oLByn%2F1cbUcs1pp86xYDylUS7KUmuCZXQaTjqsfMLG15L8GOqUBmGbFZt5KF93Fdhny0dIZFerhIJLYW2s9h6yGesHoWI0dPe6ZDBClxxvqHEzvFqDfGErEsLAIOe%2BqGkJU59kFXiGDvt4tmykp78S7SLdDNJ8oyBvOZhB%2Bek%2BC7750tMTuvo1DKDawdifN4vdIeeCTn1eWN7KZ1LS3KzF5CtL7RhWEx5Me9P09C18QNIrSZtNTvKvCfYDSaPk%2BINeymx7VhcpmRb5Y&X-Amz-Signature=9c9180f0167a9116c278a4e69fa8cdaaf30a2f154cd8bc6983215e84513e0d73&X-Amz-SignedHeaders=host&x-id=GetObject)
+
+
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/d2fb6d51-982c-4812-8b98-50d1998f385a/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4665276K3FC%2F20250411%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250411T141258Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEYaCXVzLXdlc3QtMiJHMEUCID9vjY2ijIM5BONrreziqcM5vza82s5gsYs%2FriaSHtRWAiEA0XhKkM8taJ4Qt5sifHLxxxKxU8IXX5NUafw57qXdJm8qiAQIv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDK2t1p65MSTXkFFDaircAzI83Fp2oUdTKeeJSTYTPK71cU4GtKnt9cQO9eATOnet6v0lUsj6lg6b1UokdydCNHBk4Qh5skcM0G4Kr0IIPz9bez43dmNFfHq0QgTPeJkI4iH3VK1pUs9Y18rx3RE33%2B6hbii3OLk7XGpDkwtK%2BRBznblUqQpORDmhskVMwSeJ6Wbx623%2FzkwR7dXsD1mHgos%2FfFpVqtFDp0%2BB1sSVTi7XFEYyPukVqv56Z4NhXl2xKELLXTG6gka1g8AWmyicAa0VoaUCPCzsES2H3xAl2F6NDdztizDlTqgoam05BfRAOSDR2X9YRfpV8lJOguz0llaqssaFs5pmv1%2BvrrysARrocIcTkLqYxYKrxDyVepDhx0qwbsbsr6k4WcQbMfHDM5gMTa7MEIYkze9nUN2QHFgqi%2BlkWwATxXO04vxMB6%2BSGF69T%2BaMPObzZEJ%2BauHZ56y3utMtWzW%2FAAwZ5SWb4yyi9QBww5QolTnrHp7KGb6eGQWGkbftCQVG9N3BcBuuRPIRvmlyiQT2IjtjD6FbTvUkahjakrmihlE3XGXFPkur0Tjl33rGDCEwLlFfbLjDYpAhe9y7R7I8yhELHXLN9oLByn%2F1cbUcs1pp86xYDylUS7KUmuCZXQaTjqsfMLG15L8GOqUBmGbFZt5KF93Fdhny0dIZFerhIJLYW2s9h6yGesHoWI0dPe6ZDBClxxvqHEzvFqDfGErEsLAIOe%2BqGkJU59kFXiGDvt4tmykp78S7SLdDNJ8oyBvOZhB%2Bek%2BC7750tMTuvo1DKDawdifN4vdIeeCTn1eWN7KZ1LS3KzF5CtL7RhWEx5Me9P09C18QNIrSZtNTvKvCfYDSaPk%2BINeymx7VhcpmRb5Y&X-Amz-Signature=642e9a9f005a621b27e9c5bc7ca07a427386720bcad2fc8f6d56f5ba7c4dd99d&X-Amz-SignedHeaders=host&x-id=GetObject)
+
+
+    ```bash
+    root@controlplane ~ ➜  k describe po -n triton webapp-mysql-7bd5857746-mgnx6
+    ......
+    Events:
+      Type     Reason                  Age                    From               Message
+      ----     ------                  ----                   ----               -------
+      Normal   Scheduled               5m44s                  default-scheduler  Successfully assigned triton/webapp-mysql-7bd5857746-mgnx6 to controlplane
+      Warning  FailedCreatePodSandBox  5m44s                  kubelet            Failed to create pod sandbox: rpc error: code = Unknown desc = failed to setup network for sandbox "0e75f4d9a7100b74cbddd9f16c6e5d6b5c12c10dde1a22cb77041ceb54b7c81a": plugin type="weave-net" name="weave" failed (add): unable to allocate IP address: Post "http://127.0.0.1:6784/ip/0e75f4d9a7100b74cbddd9f16c6e5d6b5c12c10dde1a22cb77041ceb54b7c81a": dial tcp 127.0.0.1:6784: connect: connection refused
+    
+    root@controlplane ~ ➜  kubectl apply -f https://github.com/weaveworks/weave/releases/download/v2.8.1/weave-daemonset-k8s.yaml
+    serviceaccount/weave-net created
+    clusterrole.rbac.authorization.k8s.io/weave-net created
+    clusterrolebinding.rbac.authorization.k8s.io/weave-net created
+    role.rbac.authorization.k8s.io/weave-net created
+    rolebinding.rbac.authorization.k8s.io/weave-net created
+    daemonset.apps/weave-net created
+    
+    root@controlplane ~ ➜  k get po -n triton 
+    NAME                            READY   STATUS    RESTARTS   AGE
+    mysql                           1/1     Running   0          17m
+    webapp-mysql-7bd5857746-mgnx6   1/1     Running   0          17m
+    ```
+
+2. 같은 2-tier 애플리케이션이 다시 문제 발생. green 웹 페이지가 성공적으로  보여야 함. 애플리케이션을 보려면 app 탭 클릭. 현재 실패. 문제 해결.
+
+    ```bash
+    root@controlplane ~ ➜  k get po -n kube-system 
+    NAME                                   READY   STATUS             RESTARTS      AGE
+    coredns-668d6bf9bc-fh8vv               1/1     Running            0             81m
+    coredns-668d6bf9bc-q8q47               1/1     Running            0             81m
+    etcd-controlplane                      1/1     Running            0             81m
+    kube-apiserver-controlplane            1/1     Running            0             81m
+    kube-controller-manager-controlplane   1/1     Running            0             81m
+    kube-proxy-j29c4                       0/1     CrashLoopBackOff   3 (35s ago)   81s
+    kube-scheduler-controlplane            1/1     Running            0             81m
+    weave-net-9hwhw                        2/2     Running            0             2m17s
+    
+    root@controlplane ~ ➜  k logs -n kube-system kube-proxy-j29c4 
+    E0411 01:35:34.015213       1 run.go:74] "command failed" err="failed complete: open /var/lib/kube-proxy/configuration.conf: no such file or directory"
+    
+    root@controlplane ~ ➜  k edit ds -n  kube-system kube-proxy 
+    daemonset.apps/kube-proxy edited
+    
+    root@controlplane ~ ➜  k get po -n kube-system 
+    NAME                                   READY   STATUS    RESTARTS   AGE
+    coredns-668d6bf9bc-fh8vv               1/1     Running   0          91m
+    coredns-668d6bf9bc-q8q47               1/1     Running   0          91m
+    etcd-controlplane                      1/1     Running   0          91m
+    kube-apiserver-controlplane            1/1     Running   0          91m
+    kube-controller-manager-controlplane   1/1     Running   0          91m
+    kube-proxy-ztjj8                       1/1     Running   0          6s
+    kube-scheduler-controlplane            1/1     Running   0          91m
+    weave-net-9hwhw                        2/2     Running   0          12m
+    
+    root@controlplane ~ ➜  k get po -n triton 
+    NAME                            READY   STATUS    RESTARTS        AGE
+    mysql                           1/1     Running   2 (2m55s ago)   12m
+    webapp-mysql-7bd5857746-tlttr   1/1     Running   1 (4m19s ago)   12m
+    ```
 
