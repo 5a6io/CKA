@@ -70,7 +70,7 @@
 </tr>
 <tr>
 <td>Section16 - Other Topics</td>
-<td></td>
+<td>:white_check_mark:</td>
 </tr>
 </tbody>
 </table>
