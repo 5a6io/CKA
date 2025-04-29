@@ -1,7 +1,7 @@
 # 🌟CKA(Certified Kubernetes Administrator)
 
 
-✍🏻I summarized the lecture with watching videos on 'Certified Kubernetes Administrator(CKA) with Practice Test.
+✍🏻I summarized the lecture with watching videos on 'Certified Kubernetes Administrator(CKA) with Practice Test.'
 
 
 <table>
@@ -71,6 +71,10 @@
 <tr>
 <td>Section16 - Other Topics</td>
 <td>:white_check_mark:</td>
+</tr>
+<tr>
+<td>Section18 - Mock Exams</td>
+<td></td>
 </tr>
 </tbody>
 </table>
