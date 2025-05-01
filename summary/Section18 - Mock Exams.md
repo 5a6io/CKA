@@ -221,3 +221,199 @@
 
 ## Mock Exam3 Review
 
+1. kubeadm을 사용하여 kubernetes cluster를 배포할 환경을 준비하는 관리자임. 시스템의 네트워크 파라미터를 아래의 값으로 조정하고 변경 사항이 재부팅되지 않도록 함.
+
+    net.ipv4.ip_forward = 1
+
+
+    net.bridge.bridge-nf-call-iptables = 1
+
+    > 풀이
+
+    sysctl을 사용하여 시스템 매개변수를 조정하고 재부팅 후에도 지속되는지 확인.
+
+
+    ```shell
+    echo 'net.ipv4.ip_forward = 1' >> /etc/sysctl.conf
+    echo 'net.bridge.bridge-nf-call-iptables = 1' >> /etc/sysctl.conf
+    sysctl -p
+    
+    sysctl net.ipv4.ip_forward
+    sysctl net.bridge.bridge-nf-call-iptables
+    ```
+
+2. `pvviewer`라는 이름으로 새 서비스 계정 생성. 적절한 ClusterRole인 `pvviewer-role`과 ClusterRoleBinding인 `pvviewer-role-binding`을 생성하여 이 서비스 계정에 클러스터의 모든 pv를 나열할 수 있는 권한을 부여. 다음으로, 기본 네임스페이스에 redis 이미지와 serviceAccount: pvviewer를 사용하여 `pvviewer`라는 pod 생성.
+
+    pv 범위 → cluster
+
+
+    pvc 범위 → namespace
+
+    > 풀이
+
+    ```shell
+    kubectl create serviceaccount pvviewer
+    
+    kubectl create clusterrole pvviewer-role --resource=persistentvolumes --verb=list
+    
+    kubectl create clusterrolebinding pvviewer-role-binding --clusterrole=pvviewer-role --serviceaccount=default:pvviewer
+    ```
+
+
+    ```shell
+    apiVersion: v1
+    kind: Pod
+    metadata:
+      labels:
+        run: pvviewer
+      name: pvviewer
+    spec:
+      containers:
+      - image: redis
+        name: pvviewer
+      # Add service account name
+      serviceAccountName: pvviewer
+    ```
+
+1. 다음을 사용하여 `cm-namespace`에 `app-config`라는 이름의 ConfigMap을 만듦.
+ENV=production
+LOG_LEVEL=info
+그런 다음 ConfigMap의 컨테이너에 환경 변수 ENV와 LOG_LEVEL을 설정하여 동일한 네임스페이스에 있는 cm-webapp이라는 기존 배포 환경을 수정하여 App-configMap을 사용하도록 함.
+    > 풀이
+    1. configmap 생성.
+
+    ```shell
+    kubectl create configmap app-config -n cm-namespace \
+      --from-literal=ENV=production \
+      --from-literal=LOG_LEVEL=info
+    ```
+
+    1. deployment 패치
+
+    ```shell
+    kubectl set env deployment/cm-webapp -n cm-namespace \
+      --from=configmap/app-config
+    ```
+
+1. `np-test-1`이라는 새로운 pod와 `np-test-service`라는 service를 배포함. 이 서비스에 대한 수신 연결이 작동하지 않음. 문제를 해결 필요. 포트 80을 통해 서비스에 대한 수신 연결을 허용하는 `input-to-nptest`라는 이름으로 네트워크 정책을 만들기. 중요: 현재 배포된 객체를 삭제하지 마세요.
+    > 풀이
+
+    ```shell
+    apiVersion: networking.k8s.io/v1
+    kind: NetworkPolicy
+    metadata:
+      name: ingress-to-nptest
+      namespace: default
+    spec:
+      podSelector:
+        matchLabels:
+          run: np-test-1
+      policyTypes:
+      - Ingress
+      ingress:
+      - ports:
+        - protocol: TCP
+          port: 80
+    ```
+
+1. nginx-deploy라는 새로운 배포를 만들었음. 배포를 3개의 복제본으로 확장. 복제본 수가 증가했나요? 문제 해결.
+    > 풀이
+
+    ```shell
+    kubectl scale deploy nginx-deploy --replicas=3
+    
+    kubectl get pods -n kube-system
+    ```
+
+
+    controller가 pod scaling up을 담당. kube-system 네임스페이스를 보면 controller-manager가 작동하지 않음. controller-manager 내부에서 실행하는 명령어가 정확하지 않음. 파일에서 값을 고친 후 재시작.
+
+    > 대안 → sed 명령을 실행하여 모든 값을 한 번에 변경할 수 있습니다:
+
+    ```shell
+    sed -i 's/kube-contro1ler-manager/kube-controller-manager/g' /etc/kubernetes/manifests/kube-controller-manager.yaml
+    ```
+
+2. API 네임스페이스에 위치한 API 배포라는 이름의 배포를 위한 HPA 생성.
+HPA는 requests_per_second라는 사용자 지정 메트릭을 기반으로 배포를 확장하여 모든 포드에서 초당 평균 1000건의 요청을 목표로 해야 함.
+복제본의 최소 개수를 1개로 설정하고 최대 개수를 20개로 설정.
+참고: API 네임스페이스에서 API 배포라는 이름의 배포를 사용할 수 있음. 메트릭 서버에서 메트릭 requests_per_second가 추적되지 않아 오류를 무시함
+    > 풀이
+
+    ```shell
+    apiVersion: autoscaling/v2
+    kind: HorizontalPodAutoscaler
+    metadata:
+      name: api-hpa
+      namespace: api
+    spec:
+      scaleTargetRef:
+        apiVersion: apps/v1
+        kind: Deployment
+        name: api-deployment
+      minReplicas: 1
+      maxReplicas: 20
+      metrics:
+      - type: Pods
+        pods:
+          metric:
+            name: requests_per_second
+          target:
+            type: AverageValue
+            averageValue: "1000"
+    ```
+
+3. `web-service`와 `web-service-v2` 간의 트래픽을 분할하도록 `web-route`를 구성. 이 구성은 트래픽의 80%가 `web-service`로 라우팅되고 20%가 `web-service-v2`로 라우팅되도록 해야 함.
+참고: `web-gateway`, `web-service`, `web-service-v2`는 이미 생성되어 클러스터에서 사용할 수 있음.
+    > 풀이
+
+    ```shell
+    kubectl create -n default -f - <<EOF
+    apiVersion: gateway.networking.k8s.io/v1
+    kind: HTTPRoute
+    metadata:
+      name: web-route
+      namespace: default
+    spec:
+      parentRefs:
+        - name: web-gateway
+          namespace: default
+      rules:
+        - matches:
+            - path:
+                type: PathPrefix
+                value: /
+          backendRefs:
+            - name: web-service
+              port: 80
+              weight: 80
+            - name: web-service-v2
+              port: 80
+              weight: 20
+    EOF
+    ```
+
+4. 하나의 애플리케이션인 webpage-server-01은 helm 도구를 사용하여 Kubernetes 클러스터에 배포됨. 이제 팀은 기존 애플리케이션을 대체하여 새로운 버전의 애플리케이션을 배포하고자 함. 헬름 차트의 새로운 버전은 터미널의 /root/new-version 디렉토리에 제공. 차트를 Kubernetes 클러스터에 설치하기 전에 검증. 
+helm 명령을 사용하여 차트를 검증하고 설치. 새 버전을 성공적으로 설치한 후 이전 버전을 제거
+    > 풀이
+
+    ```shell
+    helm ls -n default # 기본 네임스페이스에 설치된 릴리스 목록 조회.
+    
+    cd /root/
+    
+    helm lint ./new-version # 차트 검증
+    
+    helm install --generate-name ./new-version
+    
+    helm uninstall webpage-server-01 -n default
+    ```
+
+5. Kubernetes 클러스터의 포드 CIDR 네트워크를 식별. 이 정보는 설치 중 CNI 플러그인을 구성하는 데 매우 중요. 포드 CIDR 네트워크를 /root/pod-cidr.txt 파일로 출력.
+
+    ```shell
+    kubectl get node -o jsonpath='{.items[0].spec.podCIDR}' > /root/pod-cidr.txt
+    
+    cat /root/pod-cidr.txt
+    ```
+

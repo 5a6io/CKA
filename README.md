@@ -74,7 +74,7 @@
 </tr>
 <tr>
 <td>Section18 - Mock Exams</td>
-<td></td>
+<td>:white_check_mark:</td>
 </tr>
 </tbody>
 </table>
