@@ -49,11 +49,49 @@
     
     dpkg -i /root/cri-docker_0.3.16.3-0.debian.deb
     
-    systemctl
+    systemctl start cri-docker
+    systemctl enable cri-docker
+    systemctl is-active cri-docker
+    systemctl is-enabled cri-docker
     ```
 
-1. VPA 생성.
-1. kk-ns 네임스페이스에 배포한 nginx. helm 차트 업그레이드.
+1. 이전 작업에서 생성된 `hr-web-app`을 클러스터 노드의 포트 30082에서 액세스할 수 있는 `hr-web-app-service`라는 서비스로 노출. 웹 애플리케이션은 포트 8080.
+
+    ```shell
+    kubectl expose deployment hr-web-app --type=NodePort --port=8080 --name=hr-web-app-service --dry-run=client -o yaml > hr-web-app-service.yaml # NodePort만 추가.
+    ```
+
+1. `analytics-deployment`라는 이름을 가진 deployment에 대한 `analytics-vpa` 라는 이름을 가진 VPA 배포. VPA는 자원 활용을 최적화하기 위해 포드의 CPU 및 메모리 요청을 자동으로 조정해야 함. VPA가 Auto 모드로 작동하여 필요에 따라 업데이트된 리소스 요청이 있는 포드를 삭제하고 재생성할 수 있도록 해야 함.
+
+    ```shell
+    kubectl create -n default -f - <<EOF
+    apiVersion: autoscaling.k8s.io/v1
+    kind: VerticalPodAutoscaler
+    metadata:
+      name: analytics-vpa
+      namespace: default
+    spec:
+      targetRef:
+        apiVersion: apps/v1
+        kind: Deployment
+        name: analytics-deployment
+      updatePolicy:
+        updateMode: "Auto"
+    EOF
+    ```
+
+1. 한 동료가 클러스터의 `kk-ns` 네임스페이스에 `nginx` helm 차트 `kk-mock1`을 배포. 새로운 업데이트가 helm 차트로 푸시되고, 팀은 새로운 변경 사항을 가져오기 위해 helm repository를 업데이트해 달라고 요청. helm 차트를 업데이트한 후, helm 차트 버전을 18.1.15로 업그레이드.
+
+    ```shell
+    helm ls -n kk-ns
+    
+    helm repo update -n kk-ns
+    
+    helm search repo kk-mock1 | grep -i nginx
+    
+    helm upgrade kk-mock1 kk-mock1/nginx --version 18.1.15 -n kk-ns
+    ```
+
 
 ## Mock Exam2 Review
 
