@@ -95,7 +95,67 @@
 
 ## Mock Exam2 Review
 
-1. ingress 생성.
+1. 이 질문을 해결하세요: `ssh cluster1-controlplane`
+네임스페이스 `logging-ns`에 `logging-deposition`이라는 이름의 배포를 생성. 이 배포는 다음 사양으로 제공:
+메인 컨테이너는 `app-container`로 명명하고 `busybox`이미지를 사용하며 로그 작성을 시뮬레이션하기 위해 다음 명령을 실행해야 합니다:
+`sh -c "while true; 'Log entry' >> /var/log/app/app.log; sleep 5; done"`
+사이드카 컨테이너인 `log-agent`를 추가하고, 이 컨테이너는 또한 `busybox`이미지를 사용하며 명령어를 실행:
+`tail -f /var/log/app/app.log`
+`log-agent` 로그는  `app-container`에서 기록한 항목을 표시해야 함.
+
+    ```yaml
+    # logger-deployment.yaml
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: logging-deployment
+      namespace: logging-ns
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          app: logger
+      template:
+        metadata:
+          labels:
+            app: logger
+        spec:
+          volumes:
+          - name: log-volume
+            emptyDir: {}
+          containers:
+          - name: app-container
+            image: busybox
+            command:
+            - sh
+            - -c
+            - "while true; do echo 'Log entry' >> /var/log/app/app.log; sleep 5; done"
+            volumeMounts:
+            - name: log-volume
+              mountPath: /var/log/app
+          - name: log-agent
+            image: busybox
+            command:
+            - tail
+            - -f
+            - /var/log/app/app.log
+            volumeMounts:
+            - name: log-volume
+              mountPath: /var/log/app
+    ```
+
+2. 이 질문을 해결하세요: `ssh cluster1-controlplane`
+`webapp-deploy`라는 이름의 deployment는 `ingress-ns` 네임스페이스에서 실행 중이며 `webapp-svc`라는 서비스를 통해 노출.
+동일한 네임스페이스에 `webapp-ingress`라는 ingress 리소스를 생성하여 트래픽을 서비스로 라우팅.
+
+    입력 리소스는 다음과 같아야 합니다:
+    pathType 사용: Prefix
+    경로 / 백엔드 서비스로 전송된 경로 요청
+    port: 80으로 트래픽 전달
+    host: `kodecloud-ingress.app`에 맞게 구성하십시오
+    다음 명령을 사용하여 앱 가용성을 테스트하십시오:
+    `curl -s http://kodekloud-ingress.app/`
+
     > 풀이
 
     ```shell
@@ -148,7 +208,7 @@
       name: john-developer
     spec:
       signerName: kubernetes.io/kube-apiserver-client
-      request: ${john.csr| base64 | tr -d '\n'}
+      request: $(john.csr| base64 | tr -d '\n')
       usages:
       - digital signature
       - key encipherment
@@ -254,8 +314,98 @@
     kubectl get netpol -n backend
     ```
 
-4. 
-5. 
+4. 이 질문을 해결하세요: `ssh cluster3-controlplane`
+클러스터에 여러 개의 포드가 있는 backend-api라는 실패한 deployment가 있음. 모든 포드가 실행 중인 상태가 되도록 배포 문제를 해결. deployment pod에 정의된 리소스 제한을 조정❌.
+
+    참고: 기본 네임스페이스에는 cpu-mem-quota라는 이름의 ResourceQuota가 적용되므로 편집하거나 수정해서는 안 됩니다.
+
+    > 풀이
+
+    ```shell
+    ssh cluster3-controlplane
+    
+    kubectl get deploy
+    NAME          READY   UP-TO-DATE   AVAILABLE   AGE
+    backend-api   2/3     2            2           3m48s
+    
+    kubectl describe replicasets backend-api-7977bfdbd5
+    requests.memory=128Mi, used: requests.memory=256Mi, limited: requests.memory=300Mi
+    Warning  FailedCreate  Error creating: pods "backend-api-7977bfdbd5-hpcjw" is forbidden: exceeded quota: cpu-mem-quota, 
+    requested: requests.memory=128Mi, used: requests.memory=256Mi, limited: requests.memory=300Mi
+    # 이 문제는 리소스 할당량 제한으로 인해 발생. 네임스페이스의 메모리 제한이 300Mi이며 배포가 이를 초과하고 있음.
+    
+    kubectl edit deployment backend-api -n default
+    resources:
+      requests:
+        cpu: "50m"   # Reduced from 100m to 50m
+        memory: "90Mi"   # Reduced from 128Mi to 90Mi (Fits within quota)
+      limits:
+        cpu: "150m"   
+        memory: "150Mi"
+        
+    kubectl get pods -n default
+    
+    kubectl get rs -n default
+    
+    kubectl delete rs backend-api-7977bfdbd5 -n default
+    
+    kubectl get pods -n default
+    ```
+
+5. 이 질문을 해결하세요: SSH 클러스터4-컨트롤 플레인 공식 Calico 정의 파일을 사용하세요: `https://raw.githubusercontent.com/projectcalico/calico/v3.29.3/manifests/tigera-operator.yaml`
+
+    클러스터에 Calico CNI를 배포.
+
+
+    CIDR을 172.17.0.0/16으로 설정해야 함. CNI 설치 후 pod가 성공적으로 통신할 수 있는지 확인. Calico의 사용자 정의는 다음을 통해 확인할 수 있습니다: `curl https://raw.githubusercontent.com/projectcalico/calico/v3.29.2/manifests/custom-resources.yaml -O` 
+
+    > 풀이
+
+    ```shell
+    ssh cluster4-controlplane
+    
+    kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.29.2/manifests/tigera-operator.yaml
+    
+    curl https://raw.githubusercontent.com/projectcalico/calico/v3.29.2/manifests/custom-resources.yaml -O
+    
+    # This section includes base Calico installation configuration.
+    # For more information, see: https://docs.tigera.io/calico/latest/reference/installation/api#operator.tigera.io/v1.Installation
+    apiVersion: operator.tigera.io/v1
+    kind: Installation
+    metadata:
+      name: default
+    spec:
+      # Configures Calico networking.
+      calicoNetwork:
+        ipPools:
+        - name: default-ipv4-ippool
+          blockSize: 26
+          cidr: 172.17.0.0/16
+          encapsulation: VXLANCrossSubnet
+          natOutgoing: Enabled
+          nodeSelector: all()
+    
+    ---
+    
+    # This section configures the Calico API server.
+    # For more information, see: https://docs.tigera.io/calico/latest/reference/installation/api#operator.tigera.io/v1.APIServer
+    apiVersion: operator.tigera.io/v1
+    kind: APIServer
+    metadata:
+      name: default
+    spec: {}
+    
+    kubectl create -f custom-resources.yaml
+    
+    watch kubectl get pods -n calico-system
+    
+    kubectl run web-app --image nginx
+    
+    kubectl get pod web-app -o jsonpath='{.status.podIP}'
+    
+    kubectl run test --rm -it -n kube-public --image=jrecord/nettools --restart=Never -- curl <IP>
+    ```
+
 
 ## Mock Exam3 Review
 
