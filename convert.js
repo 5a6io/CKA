@@ -60,6 +60,7 @@ const databaseId = process.env.DATABASE_ID;
         if (!existsSync(imageDir)) mkdirSync(imageDir);
 
         const matches = content.match(/!\[([^\]]*)\]\((https:\/\/[^)]+amazonaws\.com[^)]+)\)/g) || [];
+        
         for (let i = 0; i < matches.length; i++){
             const url = matches[i].match(/\((.*?)\)/)[1];
             const cleanUrl = url.split('?')[0];
