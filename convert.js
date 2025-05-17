@@ -4,6 +4,8 @@ import { existsSync } from 'node:fs';
 import { mkdirSync } from 'node:fs';
 import { writeFileSync } from 'node:fs';
 import dotenv from 'dotenv';
+import axios from 'axios';
+import path from 'node:path';
 
 dotenv.config();
 const notion = new Client({auth : process.env.NOTION_API_KEY});
@@ -27,11 +29,17 @@ const databaseId = process.env.DATABASE_ID;
         ],
       });
 
-      const saveDirectory = './summary';
+    const saveDirectory = './summary';
+    const imageDirectory = './images'
 
-      if (!existsSync(saveDirectory)){
+    if (!existsSync(saveDirectory)){
         mkdirSync(saveDirectory);
-      }
+    }
+
+    if (!existsSync(imageDirectory)){
+        mkdirSync(imageDirectory);
+    }
+
 
     const pages = response.results.map(page => {
         const pageId = page.id;
@@ -46,9 +54,32 @@ const databaseId = process.env.DATABASE_ID;
       for (let page of pages){
         const mdblocks = await n2m.pageToMarkdown(page.pageId);
         const mdString = n2m.toMarkdownString(mdblocks);
+        let content = mdString.parent;
+
+        const imageDir = `${imageDirectory}/${page.name}`
+        if (!existsSync(imageDir)) mkdirSync(imageDir);
+
+        const matches = content.match(/!\[([^\]]*)\]\((https:\/\/[^)]+amazonaws\.com[^)]+)\)/g);
+        if (matches) {
+          for (const match of matches){
+            const url = match.match(/\((.*?)\)/)[1];
+            const cleanUrl = url.split('?')[0];
+            const fileName = path.basename(cleanUrl);
+            const localPath = `${imageDir}/${fileName}`
+
+            try {
+              const res = await axios.get(url, { responseType: 'arraybuffer'});
+              writeFileSync(localPath, res.data);
+              content = content.replace(url, `./images/${page.name}/${fileName}`);
+            } catch (e) {
+              console.warn(`이미지 다운로드 실패: ${url}`, e.message);
+            }
+          }
+        }
+
         const filePath = `${saveDirectory}/${page.name}.md`;
         const mdHead = `# 🍨 ${page.name}\n`
-        const mdContent = mdHead+ mdString.parent;
+        const mdContent = mdHead+content;
         if (Object.keys(mdString).length == 0) writeFileSync(filePath, mdHead, "utf8");
         else writeFileSync(filePath, mdContent, "utf8");
       }
