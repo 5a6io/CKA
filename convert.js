@@ -56,18 +56,16 @@ const databaseId = process.env.DATABASE_ID;
         const mdString = n2m.toMarkdownString(mdblocks);
         let content = mdString.parent || '';
 
-        console.log(`mdString => ${mdString}`);
-        console.log(`content => ${content}`);
-
         const imageDir = `${imageDirectory}/${page.name}`
         if (!existsSync(imageDir)) mkdirSync(imageDir);
 
         const matches = content.match(/!\[([^\]]*)\]\((https:\/\/[^)]+amazonaws\.com[^)]+)\)/g) || [];
-        for (const match of matches){
-            const url = match.match(/\((.*?)\)/)[1];
+        for (let i = 0; i < matches.length; i++){
+            const url = matches[i].match(/\((.*?)\)/)[1];
             const cleanUrl = url.split('?')[0];
-            const fileName = path.basename(cleanUrl);
-            const localPath = `${imageDir}/${fileName}`
+            const ext = path.extname(cleanUrl);
+            const fileName = `image${i+1}${ext}`;
+            const localPath = `${imageDir}/${fileName}`;
 
             try {
               const res = await axios.get(url, { responseType: 'arraybuffer'});
