@@ -335,7 +335,7 @@ Pod가 배포되어있음. Pod 관찰하기.
 애플리케이션은 /log/app.log 위치에 log 저장. `kubectl exec webapp -- cat /log/app.log` 로 log 확인. 
 
 
-![image.png](./images/Section8 - Storage/image.png)
+![image.png](./images/Section8 - Storage/image1.png)
 
 1. Pod가 지워졌다면 위와 같은 로그 확인 가능? No
 2. host에 /var/log/webapp에 로그를 저장하기 위한 volume 구성.
@@ -450,7 +450,7 @@ Pod가 배포되어있음. Pod 관찰하기.
     ```
 
 
-    ![image.png](./images/Section8 - Storage/image.png)
+    ![image.png](./images/Section8 - Storage/image2.png)
 
 9. 50Mi를 요구. PVC가 이용 가능한 용량은? 100Mi
 10. PVC로 스토리지를 사용하도록 webapp Pod 업데이트.
@@ -482,7 +482,7 @@ volumes:
 
 3. PVC를 지우고 무슨 일이 일어나는지 관찰.
 
-    ![image.png](./images/Section8 - Storage/image.png)
+    ![image.png](./images/Section8 - Storage/image3.png)
 
 4. 왜 PVC 상태가 Terminating인가?
 

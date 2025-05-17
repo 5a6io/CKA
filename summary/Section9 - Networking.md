@@ -762,14 +762,14 @@ kubeadm tool과 weave 플러그인과 클러스터를 배포한다면 weave peer
     No Network Configured
 
 
-    ![image.png](./images/Section9 - Networking/image.png)
+    ![image.png](./images/Section9 - Networking/image1.png)
 
 3. 클러스터에 weave-net 네트워킹 솔루션 배포.
 
     NOTE: /root/weave 디렉토리 아래에 weave manifest 파일이 이미 제공되어있음.
 
 
-    ![image.png](./images/Section9 - Networking/image.png)
+    ![image.png](./images/Section9 - Networking/image2.png)
 
 
 ## IP Address Management -  Weave
@@ -904,7 +904,7 @@ NodePort
 4. 이 클러스터에 배포된 kube-proxy pod 수.
 5. kube-proxy에 구성된 proxy type.
 
-    ![image.png](./images/Section9 - Networking/image.png)
+    ![image.png](./images/Section9 - Networking/image3.png)
 
 6. 클러스터에서 모든 노드에 kube-proxy pod가 실행 중임을 어떻게 보장하는가? kube-proxy pod를 관찰하고 배포 방법을 확인.
 

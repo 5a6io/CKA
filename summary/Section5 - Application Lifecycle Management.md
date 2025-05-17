@@ -75,7 +75,7 @@ Hello, Application Version: v2 ; Color: green OK
 
 1. replica set이 1개씩 줄어들음.
 
-![image.png](./images/Section5 - Application Lifecycle Management/image.png)
+![image.png](./images/Section5 - Application Lifecycle Management/image1.png)
 
 1. rolling update에서 recreate로 전략 바꾸기
 2. 현재 디플로이먼트의 이미지 바꾸기 v2 → v3
@@ -91,7 +91,7 @@ Hello, Application Version: v3 ; Color: red OK
 ```
 
 
-![image.png](./images/Section5 - Application Lifecycle Management/image.png)
+![image.png](./images/Section5 - Application Lifecycle Management/image2.png)
 
 
 한꺼번에 바뀌다 보니 처음에 /root/curl-test.sh를 수행했을 때 이전 v2 출력문이 나옴.
@@ -157,7 +157,7 @@ command:
 2. /root/webapp-color에 주어진 Dockerfile 관찰. 컨테이너 시작 시 명령어.
 →  python app.py
 
-![image.png](./images/Section5 - Application Lifecycle Management/image.png)
+![image.png](./images/Section5 - Application Lifecycle Management/image3.png)
 
 1. /root/webapp-color에 주어진 Dockerfile2 관찰. 컨테이너 시작 시 명령어.
 → python app.py —color red
@@ -165,23 +165,23 @@ command:
 > 💡 ENTRYPOINT 뒤에 CMD가 붙음.  kuberentes로 생각하면 command 뒤에 args가 붙는 것.
 
 
-![image.png](./images/Section5 - Application Lifecycle Management/image.png)
+![image.png](./images/Section5 - Application Lifecycle Management/image4.png)
 
 1. webapp-color-2 디렉토리 안 두 파일 관찰. 컨테이너 시작 시 명령어. 디렉토리 안 Dockerfile로부터 만든 이미지라 가정.
 → —color green
 
-![image.png](./images/Section5 - Application Lifecycle Management/image.png)
+![image.png](./images/Section5 - Application Lifecycle Management/image5.png)
 
 
-![image.png](./images/Section5 - Application Lifecycle Management/image.png)
+![image.png](./images/Section5 - Application Lifecycle Management/image6.png)
 
 1. webapp-color-3 디렉토리 안 두 파일 관찰. 컨테이너 시작 시 명령어. 디렉토리 안 Dockerfile로부터 만든 이미지라 가정.
 → python [app.py](http://app.py/) —color pink
 
-![image.png](./images/Section5 - Application Lifecycle Management/image.png)
+![image.png](./images/Section5 - Application Lifecycle Management/image7.png)
 
 
-![image.png](./images/Section5 - Application Lifecycle Management/image.png)
+![image.png](./images/Section5 - Application Lifecycle Management/image8.png)
 
 1. 주어진 명세서가지고 Pod 생성. 기본적으로 blue 배경이 보여짐. 주어진 command 라인 arguments를 green으로 바꿈.
 Pod 이름 - webapp-green
@@ -193,10 +193,10 @@ kubectl run webapp-green --image=kodekloud/webapp-color -- --color green
 ```
 
 
-![image.png](./images/Section5 - Application Lifecycle Management/image.png)
+![image.png](./images/Section5 - Application Lifecycle Management/image9.png)
 
 
-![image.png](./images/Section5 - Application Lifecycle Management/image.png)
+![image.png](./images/Section5 - Application Lifecycle Management/image10.png)
 
 
 ## Configure Environment Variables in Applications
@@ -375,7 +375,7 @@ EncryptionConfiguration 파일은 /etc/kubernetes/manifest/enc에 저장 후 이
 ETCDCTL_API 를 다시 수행하면 EncryptionCongfiguration이 적용되어 아래 그림과 같이 암호화되어 나오는 것을 볼 수 있음.
 
 
-![image.png](./images/Section5 - Application Lifecycle Management/image.png)
+![image.png](./images/Section5 - Application Lifecycle Management/image11.png)
 
 
 ## Multi Container Pods
@@ -757,7 +757,7 @@ VPA는 4가지 모드로 동작.
 - Recreate: 범위를 넘어가면 파드를 회복시킴.
 - Auto: 존재하는 파드를 권장된 수로 업데이트. Recreate와 비슷하게 동작. 그러나 In-place Update of Pod Resources가 가능하면 해당 모드 선호됨.
 
-![image.png](./images/Section5 - Application Lifecycle Management/image.png)
+![image.png](./images/Section5 - Application Lifecycle Management/image12.png)
 
 
 | 특징                      | VPA                                                           | HPA                                         |
