@@ -32,10 +32,10 @@ graph BT
 1. 간단한 2 계층 응용프로그램은 alpha 네임스페이스에서 배포됨. 그린 웹 페이지를 표시해야 함. app 탭을 클릭하여 애플리케이션을 볼 수 있음. 현재 실패. 문제를 해결 및 수정.
 주어진 아키텍처에 고치기. 아래 아키텍처 다이어그램에서 주어진 이름과 포트 번호를 사용. 필요에 따라 개체를 편집하거나 삭제 또는 재생성.
 
-    ![image.png](./images/Section15 - Troubleshooting/image1.png)
+    ![image.png](../images/Section15_-_Troubleshooting/image1.png)
 
 
-    ![image.png](./images/Section15 - Troubleshooting/image2.png)
+    ![image.png](../images/Section15_-_Troubleshooting/image2.png)
 
 
     ```bash
@@ -71,7 +71,7 @@ graph BT
 2. beta 네임스페이스에 같은 2-tier 애플리케이션이 배포됨. 그린 웹 페이지를 표시해야 함. app 탭을 클릭하여 애플리케이션을 볼 수 있음. 현재 실패. 문제를 해결 및 수정.
 주어진 아키텍처에 고치기. 아래 아키텍처 다이어그램에서 주어진 이름과 포트 번호를 사용. 필요에 따라 개체를 편집하거나 삭제 또는 재생성.
 
-    ![image.png](./images/Section15 - Troubleshooting/image3.png)
+    ![image.png](../images/Section15_-_Troubleshooting/image3.png)
 
 
     ```bash
@@ -126,7 +126,7 @@ graph BT
 3. gamma namespace에 같은 2-tier 애플리케이션이 배포됨. 그린 웹 페이지를 표시해야 함. app 탭을 클릭하여 애플리케이션을 볼 수 있음. 현재 반응하지 않거나 실패. 문제를 해결 및 수정.
 주어진 아키텍처에 고치기. 아래 아키텍처 다이어그램에서 주어진 이름과 포트 번호를 사용. 필요에 따라 개체를 편집하거나 삭제 또는 재생성.
 
-    ![image.png](./images/Section15 - Troubleshooting/image4.png)
+    ![image.png](../images/Section15_-_Troubleshooting/image4.png)
 
 
     ```bash
@@ -184,7 +184,7 @@ graph BT
 4. delta 네임스페이스에 같은 2-tier 애플리케이션이 배포됨. 그린 웹 페이지를 표시해야 함. app 탭을 클릭하여 애플리케이션을 볼 수 있음. 현재 실패. 문제를 해결 및 수정.
 주어진 아키텍처에 고치기. 아래 아키텍처 다이어그램에서 주어진 이름과 포트 번호를 사용. 필요에 따라 개체를 편집하거나 삭제 또는 재생성.
 
-    ![image.png](./images/Section15 - Troubleshooting/image5.png)
+    ![image.png](../images/Section15_-_Troubleshooting/image5.png)
 
 
     ```bash
@@ -235,7 +235,7 @@ graph BT
 5. epsilon 네임스페이스에 같은 2-tier 애플리케이션이 배포됨. 그린 웹 페이지를 표시해야 함. app 탭을 클릭하여 애플리케이션을 볼 수 있음. 현재 실패. 문제를 해결 및 수정.
 주어진 아키텍처에 고치기. 아래 아키텍처 다이어그램에서 주어진 이름과 포트 번호를 사용. 필요에 따라 개체를 편집하거나 삭제 또는 재생성.
 
-    ![image.png](./images/Section15 - Troubleshooting/image6.png)
+    ![image.png](../images/Section15_-_Troubleshooting/image6.png)
 
 
     ```bash
@@ -366,7 +366,7 @@ graph BT
 6. zeta 네임스페이스에 같은 2-tier 애플리케이션이 배포됨. 그린 웹 페이지를 표시해야 함. app 탭을 클릭하여 애플리케이션을 볼 수 있음. 현재 실패. 문제를 해결 및 수정.
 주어진 아키텍처에 고치기. 아래 아키텍처 다이어그램에서 주어진 이름과 포트 번호를 사용. 필요에 따라 개체를 편집하거나 삭제 또는 재생성.
 
-    ![36e1a636-902a-47cc-9047-01d0b4cc6105.png](./images/Section15 - Troubleshooting/image7.png)
+    ![36e1a636-902a-47cc-9047-01d0b4cc6105.png](../images/Section15_-_Troubleshooting/image7.png)
 
 
     ```bash
@@ -412,7 +412,7 @@ graph BT
     ```
 
 
-    ![image.png](./images/Section15 - Troubleshooting/image8.png)
+    ![image.png](../images/Section15_-_Troubleshooting/image8.png)
 
 
     ```bash
@@ -1270,10 +1270,10 @@ DNS Troubleshooting:
 
 1. triton 네임스페이스에 2-tier 애플리케이션 배포. green 웹 페이지가 성공적으로  보여야 함. 애플리케이션을 보려면 app 탭 클릭. 현재 실패. 문제 해결.
 
-    ![image.png](./images/Section15 - Troubleshooting/image9.png)
+    ![image.png](../images/Section15_-_Troubleshooting/image9.png)
 
 
-    ![image.png](./images/Section15 - Troubleshooting/image10.png)
+    ![image.png](../images/Section15_-_Troubleshooting/image10.png)
 
 
     ```bash

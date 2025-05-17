@@ -37,11 +37,11 @@ Helm 설치 전에 먼저 로컬 컴퓨터에 적절한 로그인 세부 정보�
 1. controlplane node 위에 helm 패키지 설치
 2. helm이 설치됨. 클러스터 내 helm version 확인
 
-    ![image.png](./images/Section12 - Helm Basics/image1.png)
+    ![image.png](../images/Section12_-_Helm_Basics/image1.png)
 
 3. helm이 Debug 모드에서 실행 중인지 여부를 나타내는 데 사용할 수 있는 환경 변수는 무엇인가?
 
-    ![image.png](./images/Section12 - Helm Basics/image2.png)
+    ![image.png](../images/Section12_-_Helm_Basics/image2.png)
 
 4. 장황한 출력을 가능하게 하는 데 사용할 수 있는 명령줄 플래그는 무엇인가?
 
@@ -49,7 +49,7 @@ Helm 설치 전에 먼저 로컬 컴퓨터에 적절한 로그인 세부 정보�
 
 5. `helm get` 명령어와 사용할 수 있는 subcommnad가 아닌 것은?
 
-    ![image.png](./images/Section12 - Helm Basics/image3.png)
+    ![image.png](../images/Section12_-_Helm_Basics/image3.png)
 
 
 ## A quick note about Helm2 vs Helm3
@@ -147,7 +147,7 @@ graph TD
 
 4. Artifact hub로부터 consul helm chart 패키지를 찾고 Official HashiCorp Consul Chart에 대한 API  VERSION을 확인
 
-    ![image.png](./images/Section12 - Helm Basics/image4.png)
+    ![image.png](../images/Section12_-_Helm_Basics/image4.png)
 
 5. controlplane node에 bitnami helm chart repository 추가
 
@@ -157,7 +157,7 @@ graph TD
 
 6. 새로 추가된 bitnami repository로부터 wordpress 패키지를 찾기 위해 사용된 명령어는?
 
-    ![image.png](./images/Section12 - Helm Basics/image5.png)
+    ![image.png](../images/Section12_-_Helm_Basics/image5.png)
 
 7. controlplane node에 helm chart repositories 수
 8. bitnami repository로부터 apache를 사용하여 클러스터에 Apache 애플리케이션 배포
@@ -168,11 +168,11 @@ graph TD
 
 9. helm chart를 사용하여 클러스터에 설치된 apache 버전
 
-    ![image.png](./images/Section12 - Helm Basics/image6.png)
+    ![image.png](../images/Section12_-_Helm_Basics/image6.png)
 
 10. 현재 클러스터에 설치된 nginx chart release 수
 
-    ![image.png](./images/Section12 - Helm Basics/image7.png)
+    ![image.png](../images/Section12_-_Helm_Basics/image7.png)
 
 11. 클러스터에서 nginx chart release happy-browse를 제거
 
@@ -208,7 +208,7 @@ graph TD
 3. 클러스터에 존재하는 nginx의 수정본 수 ➡️ 3
 4. 클러스터에서 현재 실행 중인 nginx의 version
 
-    ![image.png](./images/Section12 - Helm Basics/image8.png)
+    ![image.png](../images/Section12_-_Helm_Basics/image8.png)
 
 5. DevOps 팀이 nginx버전을 1.27.x로 업그레이드하기로 함. bitnami repository에서 helm chart verion 18.3.6 사용.
 
@@ -218,7 +218,7 @@ graph TD
 
 6. 현재 업그레이드 된 nginx 버전
 
-    ![image.png](./images/Section12 - Helm Basics/image9.png)
+    ![image.png](../images/Section12_-_Helm_Basics/image9.png)
 
 7. web site에 문제 발생. 이전 버전으로 nginx rollback
 

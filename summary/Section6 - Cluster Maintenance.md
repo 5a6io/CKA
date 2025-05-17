@@ -89,7 +89,7 @@ controlplane node does not have any taints. controlplane 노드는 taints를 갖
 11. 처음에는 동작했는데 왜 node01 drain 명령어가 실패했는가?
 there is a pod in node01 which is not part of a replicaset
 
-![image.png](./images/Section6 - Cluster Maintenance/image1.png)
+![image.png](../images/Section6_-_Cluster_Maintenance/image1.png)
 
 1. node01 위 replicaset의 일부가 아닌 pod의 이름
 2. node01을 강제로 drain하면 hr-app은 어떻게 되는가?
@@ -443,7 +443,7 @@ Deployment, pod, service(기본으로 주어지는 kubernetes 제외)가 없음.
 
 1. student-node위 kubeconfig에 정의된 클러스터 수
 
-    ![image.png](./images/Section6 - Cluster Maintenance/image2.png)
+    ![image.png](../images/Section6_-_Cluster_Maintenance/image2.png)
 
 2. cluster1의 노드 수
 

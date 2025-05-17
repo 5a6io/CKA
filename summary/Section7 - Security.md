@@ -470,7 +470,7 @@ etcd 서버는 자체 CA를 가질 수 있음. 그래서 kube-api server에서 �
     ```
 
 
-    ![image.png](./images/Section7 - Security/image1.png)
+    ![image.png](../images/Section7_-_Security/image1.png)
 
 
 ## Certificates API
@@ -778,7 +778,7 @@ contexts:
     원인:
 
 
-    ![image.png](./images/Section7 - Security/image2.png)
+    ![image.png](../images/Section7_-_Security/image2.png)
 
 
     ```yaml
@@ -869,7 +869,7 @@ kube proxy는 클러스터 내 여러 노드에서 pod와 서비스 간의 연�
 kubernetes의 모든 리소스는 서로 다른 API 그룹으로 그룹화됨.
 
 
-![image.png](./images/Section7 - Security/image3.png)
+![image.png](../images/Section7_-_Security/image3.png)
 
 
 ## Authorization
@@ -1008,7 +1008,7 @@ role에 대한 자세한 정보를 보려면 `kubectl describe role <role 이름
 2. default 네임스페이스에 존재하는 role 수.
 3. 모든 네임스페이스에 존재하는 role 수.
 
-    ![image.png](./images/Section7 - Security/image4.png)
+    ![image.png](../images/Section7_-_Security/image4.png)
 
 
     ```bash
@@ -1018,7 +1018,7 @@ role에 대한 자세한 정보를 보려면 `kubectl describe role <role 이름
 
 4. kube-system 네임스페이스에 kube-proxy role이 부여된 resource는 무엇인가?
 
-    ![image.png](./images/Section7 - Security/image5.png)
+    ![image.png](../images/Section7_-_Security/image5.png)
 
 5. configmap에 어떤 action을 할 수 있는가?
 6. 주어진 문장에서 옳은 것은?
@@ -1030,7 +1030,7 @@ role에 대한 자세한 정보를 보려면 `kubectl describe role <role 이름
 
 7. kube-proxy role이 어느 계정에 할당되는가?
 
-    ![image.png](./images/Section7 - Security/image6.png)
+    ![image.png](../images/Section7_-_Security/image6.png)
 
 8. dev-user 사용자 생성. User의 세부 정보가 kubeconfig에 추가됨. user에 부여된 권한 관찰. default 네임스페이스에 list pods를 할 수 있는지 확인.
 
@@ -1039,7 +1039,7 @@ role에 대한 자세한 정보를 보려면 `kubectl describe role <role 이름
     ```
 
 
-    ![image.png](./images/Section7 - Security/image7.png)
+    ![image.png](../images/Section7_-_Security/image7.png)
 
 9. default namespace에서 Pod를 create, list와 delete를 할 수 있도록 dev-user에 필요한 role과 role binding 생성.
 
@@ -1378,22 +1378,22 @@ pod spec 부분에서 `automountServiceAccountToken` 필드에 false를 설정�
 1. 기본 네임스페이스에 존재하는 service account 수
 2. 기본 service account가 사용하는 secret token은?
 
-    ![image.png](./images/Section7 - Security/image8.png)
+    ![image.png](../images/Section7_-_Security/image8.png)
 
 3. dashboard application 배포. deployment 관찰. deployment가 사용하는 이미지는?
 4. dashboard 상태는? 성공적으로 로드된 pod 세부 정보를 갖고 있는가?
 
-    ![image.png](./images/Section7 - Security/image9.png)
+    ![image.png](../images/Section7_-_Security/image9.png)
 
 5. dashboard application은 어떤 유형의 계정을 사용하여 Kubernetes API를 쿼리하는가?
 
-    ![image.png](./images/Section7 - Security/image10.png)
+    ![image.png](../images/Section7_-_Security/image10.png)
 
 6. Kubernetes API를 쿼리하는데 Dashboard application이 사용하는 account는?
 7. Dashboard application pod를 관찰하고 그것 위에 마운트된 service account 확인하기
 8. pod 내에서 사용 가능한 service account 인증서는 어디에 위치했는가?
 
-    ![image.png](./images/Section7 - Security/image11.png)
+    ![image.png](../images/Section7_-_Security/image11.png)
 
 9. 애플리케이션은 Kubernetes에 인증하기  위한 생성된 올바른 권한을 가진 service account 필요함. default service account는 제한된 접근을 가짐. `dashboard-sa` 라는 이름을 가진 service account 생성.
 
@@ -1411,7 +1411,7 @@ pod spec 부분에서 `automountServiceAccountToken` 필드에 false를 설정�
     dashboard-sa service account에 대한 token이  생성됨.
 
 
-    ![image.png](./images/Section7 - Security/image12.png)
+    ![image.png](../images/Section7_-_Security/image12.png)
 
 11. 매번 token을 복사 붙여넣기 할 필요 없음. dashboard application은 secret mount 위치로부터 token을 읽도록 프로그래밍됨. 그러나 현재 default service account가 마운트됨. 새롭게 생성된 service account를 사용하여 deployment 업데이트
 
@@ -1436,7 +1436,7 @@ pod spec 부분에서 `automountServiceAccountToken` 필드에 false를 설정�
 
 12. dashboard application UI를 refresh하고 자동적으로 나열된 Pods가 표시되어야 함. 이번에는 토큰을 수동적으로 입력할 필요 없음.
 
-    ![image.png](./images/Section7 - Security/image13.png)
+    ![image.png](../images/Section7_-_Security/image13.png)
 
 
 ## Image Security
@@ -1776,7 +1776,7 @@ capabilites 옵션을 사용하고 파드에 추가하기 위해 일련의 capab
 
 3. `multi-pod.yaml` 파일이 주어짐. `web` container의 프로세스는 어떤 사용자로부터 시작되었는가?
 
-    ![image.png](./images/Section7 - Security/image14.png)
+    ![image.png](../images/Section7_-_Security/image14.png)
 
 
     컨테이너 아래에 정의한 것이 우선 적용되므로 1001이 아닌 1002.
@@ -2194,13 +2194,13 @@ DB Pod에서 지정된 주소로의 외부 백업 서버로 전송되는 트래�
 
 1. 환경에 정의된 Network Policy 수는?
 
-    ![image.png](./images/Section7 - Security/image15.png)
+    ![image.png](../images/Section7_-_Security/image15.png)
 
 2. NetworkPolicy의 이름은?
 3. NetworkPolicy가 적용된 Pod는?
 4. NetworkPolicy는 어떤 유형의 트래픽을 다루도록 구성되었는가?
 
-    ![image.png](./images/Section7 - Security/image16.png)
+    ![image.png](../images/Section7_-_Security/image16.png)
 
 5. NetworkPolicy로 구성된 규칙의 영향은?
 
