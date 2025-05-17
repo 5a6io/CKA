@@ -13,10 +13,6 @@
 </thead>
 <tbody>
 <tr>
-<td>Section1 - Introduction</td>
-<td>:white_check_mark:</td>
-</tr>
-<tr>
 <td>Section2 - Core Concepts</td>
 <td>:white_check_mark:</td>
 </tr>
