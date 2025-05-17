@@ -53,13 +53,16 @@ const databaseId = process.env.DATABASE_ID;
 
       for (let page of pages){
         const mdblocks = await n2m.pageToMarkdown(page.pageId);
-        const mdString = n2m.toMarkdownString(mdblocks).parent;
+        const mdString = n2m.toMarkdownString(mdblocks);
+        let content = mdString.parent;
+
+        console.log(`mdString => ${mdString}`);
+        console.log(`content => ${content}`);
 
         const imageDir = `${imageDirectory}/${page.name}`
         if (!existsSync(imageDir)) mkdirSync(imageDir);
 
-        const matches = mdString.match(/!\[([^\]]*)\]\((https:\/\/[^)]+amazonaws\.com[^)]+)\)/g) || [];
-        
+        const matches = content.match(/!\[([^\]]*)\]\((https:\/\/[^)]+amazonaws\.com[^)]+)\)/g) || [];
         for (const match of matches){
             const url = match.match(/\((.*?)\)/)[1];
             const cleanUrl = url.split('?')[0];
@@ -77,7 +80,7 @@ const databaseId = process.env.DATABASE_ID;
 
         const filePath = `${saveDirectory}/${page.name}.md`;
         const mdHead = `# 🍨 ${page.name}\n`
-        const mdContent = mdHead+mdString;
+        const mdContent = mdHead+content;
         if (Object.keys(mdString).length == 0) writeFileSync(filePath, mdHead, "utf8");
         else writeFileSync(filePath, mdContent, "utf8");
       }
