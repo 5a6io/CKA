@@ -54,7 +54,7 @@ const databaseId = process.env.DATABASE_ID;
       for (let page of pages){
         const mdblocks = await n2m.pageToMarkdown(page.pageId);
         const mdString = n2m.toMarkdownString(mdblocks);
-        let content = mdString.parent;
+        let content = mdString.parent || '';
 
         console.log(`mdString => ${mdString}`);
         console.log(`content => ${content}`);
