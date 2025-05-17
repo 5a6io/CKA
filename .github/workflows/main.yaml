@@ -22,7 +22,7 @@ jobs:
       - name: Install dependencies
         run: |
           npm ci
-          npm install notion-to-md axios
+          npm install axios notion-to-md
 
       - name: Update README and summary/*.md
         env:
