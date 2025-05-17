@@ -53,7 +53,7 @@ const databaseId = process.env.DATABASE_ID;
 
       for (let page of pages){
         const mdblocks = await n2m.pageToMarkdown(page.pageId);
-        const mdString = n2m.toMarkdownString(mdblocks);
+        const mdString = n2m.toMarkdownString(mdblocks).parent;
 
         const imageDir = `${imageDirectory}/${page.name}`
         if (!existsSync(imageDir)) mkdirSync(imageDir);
