@@ -11,9 +11,9 @@
   "license": "ISC",
   "dependencies": {
     "@notionhq/client": "^2.2.15",
+    "axios": "^1.9.0",
     "dotenv": "^16.4.7",
-    "notion-to-md": "^3.1.9",
-    "axios": "^1.9.0"
+    "notion-to-md": "^3.1.9"
   },
   "type": "module"
 }
