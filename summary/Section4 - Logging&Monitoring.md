@@ -69,15 +69,26 @@ kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/late
 
 1. 
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/be867e9c-0d47-47a3-971e-146d2c8c7945/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB46653EMMU33%2F20250516%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250516T140907Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEI7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIDmSyOqoZKO5ctn05oUWYtZUi%2B70oAo3%2Be6bnghkBksTAiAb0ZyL%2BBqy1navZ6USJWzIsp1%2FBF1%2BLzgJC9AcEmMpnyr%2FAwhHEAAaDDYzNzQyMzE4MzgwNSIMxplOdTh1v86QN2C%2BKtwDvlYeWp9ZQH9mAflDpfZU3y2rVA2uazH%2BZQbuLjs9TuVcvvnLJ%2FfqfHX5Fn7cHoD9rL4rdCFS5HEVKfe4c39%2FOERZ1d17v%2Bqzh3RDBJPV9GvQXilTZIQBHp1SQg1DU45kJ1n6ATGn2X7%2F5rMs5s7G4vqMaHKf5cMV5wUczzAkom%2B2GsRb5kUDAFIOwVncOqeyawUryAVdCkK5bBhVvCdRbehvBwniZQjl4uMZt98axpVm2AQMWeCVcm6WVsFk5bJ4A8SPVYS5v1KaxpEtKvazYvr1O0F%2For2u6qp8HvywuYL9TMV0YmG3JP801JUNfPt%2Bl%2BShOQkdlZWs3vbHuxD3aLW6shcVqY5oA9eG5UxbgDn%2Bz7XkLLCb7ICscw3mA7mUAiqJj%2Fr0v7pzWe7Fcre1ACJAByBE4%2B%2F5niSHNHThNoybwG2l0pHxM246u4K5SMcmh0%2FEi7QZG%2Bx6SeTCToqiLBnQgBF6d9GuQkQmLGmCSx%2F%2FkjSW7nEeNB3h5TmeWqTC5GZpssuCacA2sFzLBKsZUEJAIV0MFBx3ZiB8x39CNr1%2FHY31xV9BpI8bHFm5YH81f9XMZGdjq5UVxniDYkC72NmhSbz%2BrAB48z9HZQusVv4UtCYL3ULyiWOHAJIwn4GdwQY6pgHhcdX6lxBkx6kCA6fOk43dz09%2BQ9ehPavbw%2BGm5LioOBNQ3aXVKrPWXP7zehJuIJVrd9YNCOZVH%2FK5eZeIHq0D%2BzltoV%2FDND7sFcA1I3UQ9JLjbShAyot22x%2F1%2BBS1rbXJroQ5DU6zB07tsg3VvEVySzAFbuhIwncgYe10QAAW5UuRVgt7rL9K808AKC0GNP3E23qWeLF7iBjn92SQtOqISHV7UxaQ&X-Amz-Signature=b727a18106ea35c542d16e889f3b7b997b87310dd9e322a066f567ddfb44ba4a&X-Amz-SignedHeaders=host&x-id=GetObject)
+    ```bash
+    kubectl top node
+    NAME           CPU(cores)  CPU%    MEMORY(bytes)    MEMORY%
+    controlplane   213m        1%      876Mi            1%
+    node01         26m         0%      148Mi            0%
+    ```
 
-1. 가장 CPU 사용률이 많은 노드 → controlplane
-2. 가장 메모리 사용률이 많은 노드 → contorlplane
-3. 가장 메모리 사용률이 높은 파드 → rabbit
+2. 가장 CPU 사용률이 많은 노드 → controlplane
+3. 가장 메모리 사용률이 많은 노드 → contorlplane
+4. 가장 메모리 사용률이 높은 파드 → rabbit
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2ea2032-00e9-4883-a13b-cb03cf5b2334/a5ad8203-cf78-4c06-9de1-67cb491aedc9/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB46653EMMU33%2F20250516%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250516T140907Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEI7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIDmSyOqoZKO5ctn05oUWYtZUi%2B70oAo3%2Be6bnghkBksTAiAb0ZyL%2BBqy1navZ6USJWzIsp1%2FBF1%2BLzgJC9AcEmMpnyr%2FAwhHEAAaDDYzNzQyMzE4MzgwNSIMxplOdTh1v86QN2C%2BKtwDvlYeWp9ZQH9mAflDpfZU3y2rVA2uazH%2BZQbuLjs9TuVcvvnLJ%2FfqfHX5Fn7cHoD9rL4rdCFS5HEVKfe4c39%2FOERZ1d17v%2Bqzh3RDBJPV9GvQXilTZIQBHp1SQg1DU45kJ1n6ATGn2X7%2F5rMs5s7G4vqMaHKf5cMV5wUczzAkom%2B2GsRb5kUDAFIOwVncOqeyawUryAVdCkK5bBhVvCdRbehvBwniZQjl4uMZt98axpVm2AQMWeCVcm6WVsFk5bJ4A8SPVYS5v1KaxpEtKvazYvr1O0F%2For2u6qp8HvywuYL9TMV0YmG3JP801JUNfPt%2Bl%2BShOQkdlZWs3vbHuxD3aLW6shcVqY5oA9eG5UxbgDn%2Bz7XkLLCb7ICscw3mA7mUAiqJj%2Fr0v7pzWe7Fcre1ACJAByBE4%2B%2F5niSHNHThNoybwG2l0pHxM246u4K5SMcmh0%2FEi7QZG%2Bx6SeTCToqiLBnQgBF6d9GuQkQmLGmCSx%2F%2FkjSW7nEeNB3h5TmeWqTC5GZpssuCacA2sFzLBKsZUEJAIV0MFBx3ZiB8x39CNr1%2FHY31xV9BpI8bHFm5YH81f9XMZGdjq5UVxniDYkC72NmhSbz%2BrAB48z9HZQusVv4UtCYL3ULyiWOHAJIwn4GdwQY6pgHhcdX6lxBkx6kCA6fOk43dz09%2BQ9ehPavbw%2BGm5LioOBNQ3aXVKrPWXP7zehJuIJVrd9YNCOZVH%2FK5eZeIHq0D%2BzltoV%2FDND7sFcA1I3UQ9JLjbShAyot22x%2F1%2BBS1rbXJroQ5DU6zB07tsg3VvEVySzAFbuhIwncgYe10QAAW5UuRVgt7rL9K808AKC0GNP3E23qWeLF7iBjn92SQtOqISHV7UxaQ&X-Amz-Signature=c6566c06ce995c77478a4eb391b6c573c0c0e56005467d2982f6d943ffa12e8e&X-Amz-SignedHeaders=host&x-id=GetObject)
+    ```bash
+    kubectl top pod
+    NAME       CPU(cores)  MEMORY(bytes)
+    elephant   16m        30Mi
+    lion       1m         16Mi
+    rabbit     107m       250Mi
+    ```
 
-1. 가장 CPU 사용률이 낮은 파드 → lion
+5. 가장 CPU 사용률이 낮은 파드 → lion
 
 ## Managing Application Logs
 
