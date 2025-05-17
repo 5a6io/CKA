@@ -56,7 +56,7 @@ const databaseId = process.env.DATABASE_ID;
         const mdString = n2m.toMarkdownString(mdblocks);
         let content = mdString.parent || '';
 
-        const imageDir = `${imageDirectory}/${page.name}`
+        const imageDir = `${imageDirectory}/${page.name.replace(/[^\w\-]/g, '_')}`;
         if (!existsSync(imageDir)) mkdirSync(imageDir);
 
         const matches = content.match(/!\[([^\]]*)\]\((https:\/\/[^)]+amazonaws\.com[^)]+)\)/g) || [];
@@ -71,7 +71,7 @@ const databaseId = process.env.DATABASE_ID;
             try {
               const res = await axios.get(url, { responseType: 'arraybuffer'});
               writeFileSync(localPath, res.data);
-              content = content.replace(url, `./images/${page.name}/${fileName}`);
+              content = content.replace(url, `../images/${page.name.replace(/[^\w\-]/g, '_')}/${fileName}`);
             } catch (e) {
               console.warn(`이미지 다운로드 실패: ${url}`, e.message);
             }
