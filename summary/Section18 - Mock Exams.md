@@ -1,5 +1,8 @@
 # 🍨 Section18 - Mock Exams
 
+> 💡 파파란색 배경 - 반복적으로 틀리는 문제
+
+
 ## Mock Exam1 Review
 
 1. `mc-namespace` namespace에 세 개의 컨테이너를 가지는 `mc-pod`  생성. 첫 번째 컨테이너 이름은 `mc-pod-1` , `nginx:1-alpine` 이미지 실행 `NODE_NAME` 환경 변수를 노드 이름으로 설정해야 함. 두 번째 컨테이너의 이름은  `mc-pod-2`, `busybox:1` 이미지로 실행,  `date` 명령어의 출력을 매 초마다  `/var/log/shared/date.log`파일에 지속적으로 기록해야 함. 세 번째 컨테이너는  `mc-pod-3`,  `busybox:1` 이미지로 실행, 두 번째 컨테이너에서 생성된 `date.log` 파일의 내용을 출력. 공유되고 비영구적인 볼륨 사용. → emptyDir
