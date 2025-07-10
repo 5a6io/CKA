@@ -242,7 +242,35 @@
     kubectl run test-nslookup --image=busybox:1.28 --rm -it --restart=Never -- nslookup <P-O-D-I-P.default.pod> > /root/CKA/nginx.pod
     ```
 
-1. cka5673 네임스페이스의 기존 웹 gateway을 수정하여 포트 443 for [kodekloud.com](http://kodekloud.com/) 의 HTTPS 트래픽을 처리하려면 비밀 kodecloud-tls에 저장된 TLS 인증서를 사용하세요.
+2. `nginx-critical` 이라는 static pod를 node01에 생성.
+
+    nginx 이미지 사용. 
+
+
+    ```bash
+    kubectl run nginx-critical --image=nginx --dry-run=client -o yaml > static.yaml
+    
+    root@controlplane:~# scp static.yaml node01:/root/
+    
+    root@controlplane:~# kubectl get nodes -o wide
+    
+    # Perform SSH
+    root@controlplane:~# ssh node01
+    OR
+    root@controlplane:~# ssh <IP of node01>
+    
+    root@node01:~# mkdir -p /etc/kubernetes/manifests
+    
+    root@node01:~# vi /var/lib/kubelet/config.yaml
+    
+    root@node01:~# cp /root/static.yaml /etc/kubernetes/manifests/
+    
+    root@node01:~# exit
+    logout
+    root@controlplane:~# kubectl get pods
+    ```
+
+1. /cka5673 네임스페이스의 기존 웹 gateway을 수정하여 포트 443 for [kodekloud.com](http://kodekloud.com/) 의 HTTPS 트래픽을 처리하려면 비밀 kodecloud-tls에 저장된 TLS 인증서를 사용하세요.
 
     ```shell
     cluster1-controlplane ~ ➜  kubectl get gateway web-gateway -n cka5673 -o yaml
@@ -259,7 +287,7 @@
       - allowedRoutes:
           namespaces:
             from: Same
-        name: https
+        name: http
         port: 80
         protocol: HTTP
     ```
@@ -408,6 +436,9 @@
     
     kubectl run test --rm -it -n kube-public --image=jrecord/nettools --restart=Never -- curl <IP>
     ```
+
+
+2025.07.10 기준 MockExam2 12, 13 번 문제 없어짐.
 
 
 ## Mock Exam3 Review
