@@ -520,22 +520,60 @@ LOG_LEVEL=info
 1. `np-test-1`이라는 새로운 pod와 `np-test-service`라는 service를 배포함. 이 서비스에 대한 수신 연결이 작동하지 않음. 문제를 해결 필요. 포트 80을 통해 서비스에 대한 수신 연결을 허용하는 `input-to-nptest`라는 이름으로 네트워크 정책을 만들기. 중요: 현재 배포된 객체를 삭제하지 마세요.
     > 풀이
 
-    ```shell
+    ```yaml
     apiVersion: networking.k8s.io/v1
     kind: NetworkPolicy
     metadata:
       name: ingress-to-nptest
       namespace: default
+    
     spec:
-      podSelector:
-        matchLabels:
-          run: np-test-1
+    
+      
+    podSelector:
+    
+        
+    matchLabels:
+    
+          
+    run: np-test-1
+    
       policyTypes:
       - Ingress
       ingress:
       - ports:
         - protocol: TCP
           port: 80
+    ```
+
+2. 워커 노드 `node01` 에 스케줄링 못하게 taint. 우선 image는 `redis:alpine` `dev-rdedis` 라는 pod 생성. 워커 노드에 스케줄링 되지 않도록 하기. 마지막으로 `node01` 에 스케줄링 가능하도록 toleration을 가지는 `prod-redis` 라는 새 pod 생성하고 이미지는 `redis:alpine` .
+
+    ```yaml
+    kubectl taint node node01 env_type=production:NoSchedule
+    kubectl run dev-redis --image redis:alpine
+    kubectl get po -o wide
+    ```
+
+
+    ```yaml
+    apiVersion: v1
+    kind: Pod
+    metadata:
+      name: prod-redis
+    spec:
+      containers:
+      - name: prod-redis
+        image: redis:alpine
+      tolerations:
+      - effect: NoSchedule
+        key: env_type
+        operator: Equal
+        value: production
+    ```
+
+
+    ```yaml
+    kubectl get pods -o wide | grep prod-redis
     ```
 
 1. nginx-deploy라는 새로운 배포를 만들었음. 배포를 3개의 복제본으로 확장. 복제본 수가 증가했나요? 문제 해결.
