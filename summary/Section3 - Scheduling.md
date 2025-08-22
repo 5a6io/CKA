@@ -51,6 +51,117 @@
 ## Practice Test - Static Pods
 
 
+## Priority Classes
+
+
+## Practice Test - Priority Classes
+
+1. 다음 Priority Class들 중 default kubernetes 설정의 일부인 것은?
+
+    system-cluster-critical
+
+2. `system-node-critical` 에 할당된 priority 값은?
+
+    ![image.png](../images/Section3_-_Scheduling/image1.png)
+
+3. system-node-critical에서 `preemptionPolicy` 의 값은?
+4. 값은 100000, PreemptLowerPriority, `high-priority` 라는 이름을 가진 PriorityClass 생성. global 기본으로 설정하지 말기.
+
+    ```bash
+    k create pc high-priority --value=100000 --preemption-policy='
+    PreemptLowerPriority' --global-default=false
+    priorityclass.scheduling.k8s.io/high-priority created
+    ```
+
+5. 1000의 값을 가진 `low-priority`라는 이름의 또 다른 PriorityClass를 생성. global default로 설정하지 말기.
+
+    ```bash
+    k create pc low-priority --value=1000 --global-default=false
+    priorityclass.scheduling.k8s.io/low-priority created
+    ```
+
+6. 기본 네임스페이스에 `nginx` 이미지로 실행하고 `low-priority` 라는 PriorityClass를 사용하는 `low-prio-pod`라는 이름을 가진 pod 생성.
+
+    ```yaml
+    apiVersion: v1
+    kind: Pod
+    metadata:
+      name: low-prio-pod
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+      priorityClassName: low-priority
+    ```
+
+7. 기본 네임스페이스에 `nginx` 이미지로 실행하고 `high-priority` 라는 PriorityClass를 사용하는 `high-prio-pod`라는 이름을 가진 또 다른 pod 생성.
+
+    ```yaml
+    apiVersion: v1
+    kind: Pod
+    metadata:
+      name: high-prio-pod
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+      priorityClassName: high-priority
+    ```
+
+8. 다음 명령어를 사용하여 두 파드의 priority class 비교 가능.
+
+    ![image.png](../images/Section3_-_Scheduling/image2.png)
+
+9. `low-app` 이라는 이름을 가진 파드, `critical-app` 이라는 이름을 가진 파드가 프로비저닝 되어있음. `kubectl get pods` 를 사용하여 pod 상태 확인.
+
+    ![image.png](../images/Section3_-_Scheduling/image3.png)
+
+
+    다음 중 옳은 것은?
+
+
+    critical-app pod pending and low-app pod running
+
+10. 높은 리소스를 요청하고 `low-app` pod가 스케줄링되었기 때문에 `critical-app` pod는 Pending 상태에 빠짐. 다음 명령어를 사용하여 `critical-app` 파드 상태 확인하기.
+
+    ```bash
+    kubectl describe pod critical-app
+    
+    Events:
+      Type     Reason            Age                   From               Message
+      ----     ------            ----                  ----               -------
+      Warning  FailedScheduling  4m2s (x2 over 9m10s)  default-scheduler  0/1 nodes are available: 1 Insufficient cpu, 1 Insufficient memory. preemption: 0/1 nodes are available: 1 No preemption victims found for incoming pod.
+    ```
+
+11. `critical-app` 이 running 상태를 가지고 이 상황을 해결하기 위해 다음을 수행.
+    - Assign the `high-priority` class to the `critical-app`
+    - Delete and recreate the pod with the new priority
+
+    반드시 조치를 취한 후 running 상태가 되어야 함.
+
+
+    ```bash
+    root@controlplane ~ ➜  k get po critical-app -o yaml > critical-app.yaml
+    
+    root@controlplane ~ ➜  vi critical-app.yaml 
+    
+    root@controlplane ~ ➜  k delete po critical-app --force
+    Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+    pod "critical-app" force deleted
+    
+    root@controlplane ~ ➜  k apply -f critical-app.yaml 
+    pod/critical-app created
+    
+    root@controlplane ~ ➜  k get po
+    NAME            READY   STATUS    RESTARTS   AGE
+    critical-app    1/1     Running   0          7s
+    high-prio-pod   1/1     Running   0          17m
+    low-app         1/1     Running   0          16m
+    low-prio-pod    1/1     Running   0          25m
+    ```
+
+> priority class 8월 22일 추가
+
 ## Multiple Schedulers
 
 
