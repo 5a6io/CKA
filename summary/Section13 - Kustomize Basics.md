@@ -1190,7 +1190,7 @@ spec:
 특정 컨테이너의 이미지에서 이름을 어떻게 변경할 수 있는가?
 
 
-kustomization.yaml 파일ㅇ르 보면 특정 Kubernetes 객체를 대상으로 종류와 이름을 제공하는 타겟이 있음.
+kustomization.yaml 파일을 보면 특정 Kubernetes 객체를 대상으로 종류와 이름을 제공하는 타겟이 있음.
 
 
 Replace List
